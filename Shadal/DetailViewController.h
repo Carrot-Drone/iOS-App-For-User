@@ -11,7 +11,7 @@
 
 @interface DetailViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray * resArray;
+@property (strong, nonatomic) NSMutableArray * resArray;
 
 - (void)setDetailItem:(id)detailItem;
 

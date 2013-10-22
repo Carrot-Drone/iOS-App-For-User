@@ -19,4 +19,5 @@
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber;
 - (NSString *)stringWithOpenAndClosingHours;
+- (NSComparisonResult)compare:(Restaurant *)otherObject;
 @end

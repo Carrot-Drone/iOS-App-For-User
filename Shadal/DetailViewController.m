@@ -18,7 +18,7 @@
 @synthesize resArray;
 
 - (void)setDetailItem:(id)detailItem{
-    resArray = (NSArray *)detailItem;
+    resArray = (NSMutableArray *)detailItem;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -33,7 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [resArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
 }
 
 #pragma mark - Table view data source

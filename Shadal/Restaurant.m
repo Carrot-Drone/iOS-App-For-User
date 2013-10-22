@@ -46,4 +46,8 @@
     [aCoder encodeObject:[NSNumber numberWithDouble:closingHours] forKey:@"closingHours"];
 }
 
+- (NSComparisonResult)compare:(Restaurant *)otherObject {
+    return [self.name compare:otherObject.name];
+}
+
 @end
