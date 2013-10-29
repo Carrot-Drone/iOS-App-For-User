@@ -27,7 +27,6 @@
 		F536D599180CC8D600E73254 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F536D598180CC8D600E73254 /* MenuCell.m */; };
 		F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F536D59A180CC8E400E73254 /* MenuCell.xib */; };
 		F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54118351800EC92006A2136 /* RestaurantViewController.m */; };
-		F57C935E180D42AE009A9906 /* SNU 전단지 정리본.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = F57C935D180D42AE009A9906 /* SNU 전단지 정리본.xlsx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,6 @@
 		F536D59A180CC8E400E73254 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		F54118341800EC92006A2136 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
 		F54118351800EC92006A2136 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
-		F57C935D180D42AE009A9906 /* SNU 전단지 정리본.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SNU 전단지 정리본.xlsx"; sourceTree = "<group>"; };
 		F5D3711D1804396F00241D9D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +99,6 @@
 		F5110ABB17FC013C00D7AA85 = {
 			isa = PBXGroup;
 			children = (
-				F57C935D180D42AE009A9906 /* SNU 전단지 정리본.xlsx */,
 				F5273666180D094F008160F9 /* allData.bin */,
 				F5110ACD17FC013C00D7AA85 /* Shadal */,
 				F5110AEF17FC013C00D7AA85 /* ShadalTests */,
@@ -262,7 +259,6 @@
 				F5110AE317FC013C00D7AA85 /* Images.xcassets in Resources */,
 				F5110AD217FC013C00D7AA85 /* InfoPlist.strings in Resources */,
 				F5273667180D0950008160F9 /* allData.bin in Resources */,
-				F57C935E180D42AE009A9906 /* SNU 전단지 정리본.xlsx in Resources */,
 				F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */,
 				F5110ADB17FC013C00D7AA85 /* Main.storyboard in Resources */,
 			);

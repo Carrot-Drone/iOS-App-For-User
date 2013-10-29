@@ -45,7 +45,10 @@
     
     self.titleLabel.text = [restaurant name];
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
+    
 	// Do any additional setup after loading the view.
+}
+- (void)viewWillAppear:(BOOL)animated{
 }
 
 #pragma mark - Table view data source
