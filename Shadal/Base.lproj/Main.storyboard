@@ -179,6 +179,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="faU-Ug-dQV" secondAttribute="bottom" id="nqB-HD-Nmv"/>
+                            <constraint firstItem="faU-Ug-dQV" firstAttribute="top" secondItem="XYB-bs-iwa" secondAttribute="top" constant="130" id="vx7-1v-ntl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lhF-as-78p"/>

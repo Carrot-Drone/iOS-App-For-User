@@ -20,21 +20,20 @@
 
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
+    restaurant.phoneNumber = [restaurant.phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
 - (IBAction)call:(id)sender{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
     [prefs setObject:restaurant.phoneNumber forKey:@"phoneNumber"];
-    
-    
-    NSURL *url = [NSURL URLWithString:[@"tel://" stringByAppendingString:restaurant.phoneNumber]];
-    UIWebView *callWebview = [[UIWebView alloc] init];
-    [callWebview loadRequest:[NSURLRequest requestWithURL:url]];
-    /*
     NSString * urlString = [NSString stringWithFormat:@"tel://%@", restaurant.phoneNumber];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
-*/}
+    NSURL * url = [NSURL URLWithString:urlString];
+    
+    if (![[UIApplication sharedApplication] openURL:url]) {
+        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
