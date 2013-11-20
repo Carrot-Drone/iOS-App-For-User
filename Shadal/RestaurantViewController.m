@@ -25,8 +25,11 @@
 
 - (IBAction)call:(id)sender{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=Gwanak", restaurant.name, restaurant.phoneNumber];
     [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
-    [prefs setObject:restaurant.phoneNumber forKey:@"phoneNumber"];
+    [prefs setObject:params forKey:@"params"];
+    
     NSString * urlString = [NSString stringWithFormat:@"tel://%@", restaurant.phoneNumber];
     NSURL * url = [NSURL URLWithString:urlString];
     
