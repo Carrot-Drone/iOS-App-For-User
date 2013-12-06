@@ -17,6 +17,10 @@
 @property (nonatomic) double openingHours;
 @property (nonatomic) double closingHours;
 
+@property (nonatomic) BOOL flyer;
+@property (nonatomic) BOOL coupon;
+@property (nonatomic, strong) NSString * couponString;
+
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber;
 - (NSString *)stringWithOpenAndClosingHours;
 - (NSComparisonResult)compare:(Restaurant *)otherObject;

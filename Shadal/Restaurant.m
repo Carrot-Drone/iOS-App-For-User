@@ -10,6 +10,7 @@
 
 @implementation Restaurant
 @synthesize name, menu, phoneNumber, openingHours, closingHours, categories;
+@synthesize flyer, coupon, couponString;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber{
     self = [super init];
@@ -34,6 +35,9 @@
     categories = [aDecoder decodeObjectForKey:@"categories"];
     openingHours = [[aDecoder decodeObjectForKey:@"openingHours"] doubleValue];
     closingHours = [[aDecoder decodeObjectForKey:@"closingHours"] doubleValue];
+    flyer = [[aDecoder decodeObjectForKey:@"flyer"] boolValue];
+    coupon = [[aDecoder decodeObjectForKey:@"coupon"] boolValue];
+    couponString = [aDecoder decodeObjectForKey:@"couponString"];
     
     return self;
 }
@@ -44,6 +48,9 @@
     [aCoder encodeObject:phoneNumber forKey:@"phoneNumber"];
     [aCoder encodeObject:[NSNumber numberWithDouble:openingHours] forKey:@"openingHours"];
     [aCoder encodeObject:[NSNumber numberWithDouble:closingHours] forKey:@"closingHours"];
+    [aCoder encodeObject:[NSNumber numberWithBool:flyer] forKey:@"flyer"];
+    [aCoder encodeObject:[NSNumber numberWithBool:coupon] forKey:@"coupon"];
+    [aCoder encodeObject:couponString forKey:@"couponString"];
 }
 
 - (NSComparisonResult)compare:(Restaurant *)otherObject {

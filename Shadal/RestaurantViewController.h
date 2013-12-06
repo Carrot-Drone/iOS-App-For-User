@@ -17,6 +17,8 @@
 @property (nonatomic, strong) IBOutlet UILabel * titleLabel;
 @property (nonatomic, strong) IBOutlet UIButton * phoneNumber;
 
+@property (nonatomic, strong) UIBarButtonItem * barButton;
+
 - (IBAction)call:(id)sender;
 
 

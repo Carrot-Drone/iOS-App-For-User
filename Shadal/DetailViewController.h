@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantViewController.h"
 
-@interface DetailViewController : UITableViewController
+@interface DetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray * resArray;
 
+@property (nonatomic, strong) IBOutlet UITableView * tableView;
 - (void)setDetailItem:(id)detailItem;
 
 @end

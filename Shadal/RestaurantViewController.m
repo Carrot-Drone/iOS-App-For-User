@@ -7,6 +7,7 @@
 //
 
 #import "RestaurantViewController.h"
+#import "FlyerViewController.h"
 #import "MenuCell.h"
 #import "Constants.h"
 
@@ -17,6 +18,7 @@
 @implementation RestaurantViewController
 @synthesize tableView;
 @synthesize restaurant, titleLabel, phoneNumber;
+@synthesize barButton;
 
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
@@ -53,11 +55,38 @@
     self.titleLabel.text = [restaurant name];
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
     
+    
+    // set Flyer Button
+    UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
+    [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
+    [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [button1 setImage:[UIImage imageNamed:@"flyer"] forState:UIControlStateNormal];
+    barButton = [[UIBarButtonItem alloc]initWithCustomView:button1];
+    
+    if(!restaurant.flyer){
+        barButton.style = UIBarButtonItemStyleBordered;
+        barButton.enabled = YES;
+        self.navigationItem.rightBarButtonItem = barButton;
+    }else{
+        barButton.style = UIBarButtonItemStylePlain;
+        barButton.enabled = NO;
+    }
+    
 	// Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated{
 }
 
+- (void)flyerClicked:(id)sender{
+    [self performSegueWithIdentifier:@"Flyer" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"Flyer"]) {
+        [[segue destinationViewController] setDetailItem:restaurant];
+    }
+}
 #pragma ma`rk - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "RestaurantCell.h"
 #import "Restaurant.h"
 
 @interface DetailViewController ()
@@ -21,11 +22,10 @@
     resArray = (NSMutableArray *)detailItem;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -36,6 +36,13 @@
     [resArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // this UIViewController is about to re-appear, make sure we remove the current selection in our table view
+    NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
 }
 
 #pragma mark - Table view data source
@@ -53,13 +60,34 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    
+    RestaurantCell * cell = (RestaurantCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if(cell == nil){
+        NSArray * array;
+        array = [[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:nil options:nil];
+        cell = [array objectAtIndex:0];
+    }
     
     Restaurant * res = [resArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = res.name;
-    cell.detailTextLabel.text = [res stringWithOpenAndClosingHours];
+    cell.restaurantLabel.text = res.name;
+    
+    if(res.flyer){
+        cell.secondImage.image = [UIImage imageNamed:@"flyer"];
+        if(res.coupon){
+            cell.firstImage.image = [UIImage imageNamed:@"coupon"];
+        }else{
+            cell.firstImage.hidden = YES;
+        }
+    }else{
+        cell.firstImage.hidden = YES;
+        if(res.coupon){
+            cell.secondImage.image = [UIImage imageNamed:@"coupon"];
+        }else{
+            cell.secondImage.hidden = YES;
+        }
+    }
     
     return cell;
 }
@@ -69,12 +97,10 @@
     
 }
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"Restaurant"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
         [[segue destinationViewController] setDetailItem:[resArray objectAtIndex:indexPath.row]];
     }
 }

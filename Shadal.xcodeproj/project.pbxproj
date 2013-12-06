@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49103D551851A63F00070801 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49103D541851A63F00070801 /* RestaurantCell.m */; };
+		49103D571851A65500070801 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49103D561851A65500070801 /* RestaurantCell.xib */; };
+		49103D5A1851A7FF00070801 /* flyer.png in Resources */ = {isa = PBXBuildFile; fileRef = 49103D581851A7FF00070801 /* flyer.png */; };
+		49103D5B1851A7FF00070801 /* coupon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49103D591851A7FF00070801 /* coupon.png */; };
+		49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3DB261851C594002C9EBA /* FlyerViewController.m */; };
+		49C3DB291851C618002C9EBA /* 02-877-5941.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49C3DB281851C618002C9EBA /* 02-877-5941.jpg */; };
 		F5110AC817FC013C00D7AA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC717FC013C00D7AA85 /* Foundation.framework */; };
 		F5110ACA17FC013C00D7AA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */; };
 		F5110ACC17FC013C00D7AA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110ACB17FC013C00D7AA85 /* UIKit.framework */; };
@@ -40,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49103D531851A63F00070801 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
+		49103D541851A63F00070801 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		49103D561851A65500070801 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		49103D581851A7FF00070801 /* flyer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flyer.png; sourceTree = "<group>"; };
+		49103D591851A7FF00070801 /* coupon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coupon.png; sourceTree = "<group>"; };
+		49C3DB251851C594002C9EBA /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerViewController.h; sourceTree = "<group>"; };
+		49C3DB261851C594002C9EBA /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerViewController.m; sourceTree = "<group>"; };
+		49C3DB281851C618002C9EBA /* 02-877-5941.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-877-5941.jpg"; sourceTree = "<group>"; };
 		F5110AC417FC013C00D7AA85 /* 샤달.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "샤달.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5110AC717FC013C00D7AA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +144,9 @@
 		F5110ACD17FC013C00D7AA85 /* Shadal */ = {
 			isa = PBXGroup;
 			children = (
+				49103D581851A7FF00070801 /* flyer.png */,
+				49103D591851A7FF00070801 /* coupon.png */,
+				49C3DB281851C618002C9EBA /* 02-877-5941.jpg */,
 				F5D3711D1804396F00241D9D /* Constants.h */,
 				F5110AD617FC013C00D7AA85 /* AppDelegate.h */,
 				F5110AD717FC013C00D7AA85 /* AppDelegate.m */,
@@ -142,6 +159,11 @@
 				F5110B0317FC10E200D7AA85 /* DetailViewController.m */,
 				F54118341800EC92006A2136 /* RestaurantViewController.h */,
 				F54118351800EC92006A2136 /* RestaurantViewController.m */,
+				49C3DB251851C594002C9EBA /* FlyerViewController.h */,
+				49C3DB261851C594002C9EBA /* FlyerViewController.m */,
+				49103D531851A63F00070801 /* RestaurantCell.h */,
+				49103D541851A63F00070801 /* RestaurantCell.m */,
+				49103D561851A65500070801 /* RestaurantCell.xib */,
 				F536D597180CC8D600E73254 /* MenuCell.h */,
 				F536D598180CC8D600E73254 /* MenuCell.m */,
 				F536D59A180CC8E400E73254 /* MenuCell.xib */,
@@ -227,6 +249,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Wafflestudio;
 				TargetAttributes = {
+					F5110AC317FC013C00D7AA85 = {
+						DevelopmentTeam = 8F8C98NKPP;
+					};
 					F5110AE717FC013C00D7AA85 = {
 						TestTargetID = F5110AC317FC013C00D7AA85;
 					};
@@ -257,10 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5110AE317FC013C00D7AA85 /* Images.xcassets in Resources */,
+				49103D5B1851A7FF00070801 /* coupon.png in Resources */,
 				F5110AD217FC013C00D7AA85 /* InfoPlist.strings in Resources */,
+				49103D571851A65500070801 /* RestaurantCell.xib in Resources */,
 				F5273667180D0950008160F9 /* allData.bin in Resources */,
+				49C3DB291851C618002C9EBA /* 02-877-5941.jpg in Resources */,
 				F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */,
 				F5110ADB17FC013C00D7AA85 /* Main.storyboard in Resources */,
+				49103D5A1851A7FF00070801 /* flyer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +312,8 @@
 				F536D599180CC8D600E73254 /* MenuCell.m in Sources */,
 				F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */,
 				F5110ADE17FC013C00D7AA85 /* MasterViewController.m in Sources */,
+				49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */,
+				49103D551851A63F00070801 /* RestaurantCell.m in Sources */,
 				F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */,
 				F5110AD417FC013C00D7AA85 /* main.m in Sources */,
 				F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */,
@@ -408,6 +439,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/swchoi06/iPhoneProject/myProject/Shadal,
@@ -418,6 +451,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,6 +462,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/swchoi06/iPhoneProject/myProject/Shadal,
@@ -438,6 +474,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
