@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8CD10EC0-8581-44B0-90FE-E0D689EEAED2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shadal</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B2D6DF7A-4113-4D8E-9615-B94347DABF11</key>
+		<string>https://github.com/swchoi06/Shadal.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Shadal.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B2D6DF7A-4113-4D8E-9615-B94347DABF11</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/swchoi06/Shadal.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B2D6DF7A-4113-4D8E-9615-B94347DABF11</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B2D6DF7A-4113-4D8E-9615-B94347DABF11</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Shadal</string>
+		</dict>
+	</array>
+</dict>
+</plist>

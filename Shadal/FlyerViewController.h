@@ -12,7 +12,7 @@
 @interface FlyerViewController : UIViewController
 
 @property (nonatomic, strong) Restaurant * restaurant;
-@property (nonatomic, strong) IBOutlet UIImageView * imageView;
+@property (nonatomic, strong) IBOutlet UIScrollView * scrollView;
 
 - (IBAction)backButtonClicked:(id)sender;
 
