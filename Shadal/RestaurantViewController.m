@@ -55,24 +55,33 @@
     self.titleLabel.text = [restaurant name];
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
     
-    
     // set Flyer Button
-    UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
-    [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
-    [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [button1 setImage:[UIImage imageNamed:@"flyer"] forState:UIControlStateNormal];
-    barButton = [[UIBarButtonItem alloc]initWithCustomView:button1];
-    
-    if(!restaurant.flyer){
+    if(restaurant.flyer){
+        UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
+        [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
+        [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button1 setImage:[UIImage imageNamed:@"flyer"] forState:UIControlStateNormal];
+        barButton = [[UIBarButtonItem alloc]initWithCustomView:button1];
         barButton.style = UIBarButtonItemStyleBordered;
         barButton.enabled = YES;
+        
         self.navigationItem.rightBarButtonItem = barButton;
-    }else{
-        barButton.style = UIBarButtonItemStylePlain;
-        barButton.enabled = NO;
     }
     
-	// Do any additional setup after loading the view.
+    // set Coupon String
+    if(restaurant.coupon){
+        UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        [couponLabel setText:restaurant.couponString];
+        couponLabel.numberOfLines = 5;
+        couponLabel.baselineAdjustment = YES;
+        couponLabel.adjustsFontSizeToFitWidth = YES;
+        couponLabel.minimumScaleFactor = 0.8;
+        couponLabel.clipsToBounds = YES;
+        couponLabel.backgroundColor = [UIColor clearColor];
+        couponLabel.textAlignment = NSTextAlignmentCenter;
+
+        tableView.tableHeaderView = couponLabel;
+    }
 }
 - (void)viewWillAppear:(BOOL)animated{
 }
