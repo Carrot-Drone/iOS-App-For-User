@@ -35,12 +35,16 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = restaurant.name;
+    float content_width = [UIScreen mainScreen].bounds.size.width;
+    float content_height = [UIScreen mainScreen].bounds.size.height - self.scrollView.frame.origin.y;
+    
+    NSLog(@"%f %f", content_width, content_height);
     
     // If there's only one image
     if([UIImage imageNamed_advanced:restaurant.phoneNumber]){
-        scrollView.contentSize = CGSizeMake(320, 503);
+        scrollView.contentSize = CGSizeMake(content_width, content_height);
         UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed_advanced:restaurant.phoneNumber]];
-        imageView.frame = CGRectMake(0, 0, 320, 503);
+        imageView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
         [imageView setContentMode:UIViewContentModeScaleAspectFit];
         [scrollView addSubview:imageView];
     }else{
@@ -48,9 +52,9 @@
         int numberOfImg = 0;
         while(image != nil){
             numberOfImg++;
-            scrollView.contentSize = CGSizeMake(320*numberOfImg, 503);
+            scrollView.contentSize = CGSizeMake(content_width*numberOfImg, content_height);
             UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
-            imageView.frame = CGRectMake(320*(numberOfImg-1), 0, 320, 503);
+            imageView.frame = CGRectMake(content_width*(numberOfImg-1), 0, content_width, content_height);
             [imageView setContentMode:UIViewContentModeScaleAspectFit];
             [scrollView addSubview:imageView];
             

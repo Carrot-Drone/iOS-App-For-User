@@ -12,6 +12,8 @@
 	<dict>
 		<key>B2D6DF7A-4113-4D8E-9615-B94347DABF11</key>
 		<string>https://github.com/swchoi06/Shadal.git</string>
+		<key>BA66AF8E-5D1A-4EAC-A16F-2163AEBF3A6C</key>
+		<string>ssh://github.com/swchoi06/ShadalIOSCreateDataFile.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Shadal.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>B2D6DF7A-4113-4D8E-9615-B94347DABF11</key>
 		<string>../..</string>
+		<key>BA66AF8E-5D1A-4EAC-A16F-2163AEBF3A6C</key>
+		<string>../../../ShadalIOSCreateDataFile</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/swchoi06/Shadal.git</string>
@@ -35,6 +39,14 @@
 			<string>B2D6DF7A-4113-4D8E-9615-B94347DABF11</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Shadal</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA66AF8E-5D1A-4EAC-A16F-2163AEBF3A6C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShadalIOSCreateDataFile</string>
 		</dict>
 	</array>
 </dict>
