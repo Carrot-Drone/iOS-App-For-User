@@ -58,7 +58,7 @@
 		491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_Customized.m"; sourceTree = "<group>"; };
 		49C3DB251851C594002C9EBA /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerViewController.h; sourceTree = "<group>"; };
 		49C3DB261851C594002C9EBA /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerViewController.m; sourceTree = "<group>"; };
-		F5110AC417FC013C00D7AA85 /* 샤달-연건.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "샤달-연건.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5110AC417FC013C00D7AA85 /* 샤달.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "샤달.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5110AC717FC013C00D7AA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F5110ACB17FC013C00D7AA85 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -132,7 +132,7 @@
 		F5110AC517FC013C00D7AA85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5110AC417FC013C00D7AA85 /* 샤달-연건.app */,
+				F5110AC417FC013C00D7AA85 /* 샤달.app */,
 				F5110AE817FC013C00D7AA85 /* ShadalTests.xctest */,
 			);
 			name = Products;
@@ -238,7 +238,7 @@
 			);
 			name = "샤달";
 			productName = Shadal;
-			productReference = F5110AC417FC013C00D7AA85 /* 샤달-연건.app */;
+			productReference = F5110AC417FC013C00D7AA85 /* 샤달.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F5110AE717FC013C00D7AA85 /* ShadalTests */ = {
@@ -404,6 +404,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SukWon Choi (8F8C98NKPP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -421,6 +422,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "FA6CD55F-70CF-45A2-9977-BC5333FF58F4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -441,6 +443,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SukWon Choi (8F8C98NKPP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -451,6 +454,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE = "FA6CD55F-70CF-45A2-9977-BC5333FF58F4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

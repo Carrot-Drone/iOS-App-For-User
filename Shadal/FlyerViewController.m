@@ -38,7 +38,6 @@
     float content_width = [UIScreen mainScreen].bounds.size.width;
     float content_height = [UIScreen mainScreen].bounds.size.height - self.scrollView.frame.origin.y;
     
-    NSLog(@"%f %f", content_width, content_height);
     
     // If there's only one image
     if([UIImage imageNamed_advanced:restaurant.phoneNumber]){

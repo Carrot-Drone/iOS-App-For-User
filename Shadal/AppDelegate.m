@@ -17,56 +17,6 @@
     return filePath;
 }
 
-- (void)sendData{
-    NSMutableArray * categories = [[NSMutableArray alloc] init];
-    [categories addObject:@"치킨"];
-    [categories addObject:@"피자"];
-    [categories addObject:@"중국집"];
-    [categories addObject:@"한식/분식"];
-    [categories addObject:@"도시락/돈까스"];
-    [categories addObject:@"족발/보쌈"];
-    [categories addObject:@"냉면"];
-    [categories addObject:@"기타"];
-    int k =1;
-    for(int i=0; i<[categories count]; i++){
-        NSMutableArray * resArray = [allData objectForKey:[categories objectAtIndex:i]];
-        
-        for(int j=0; j<[resArray count]; j++){
-            Restaurant * restaurant = [resArray objectAtIndex:j];
-            NSLog(@"%d %@",k++, restaurant.name);
-            
-            NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&campus=Yongon", restaurant.name, restaurant.phoneNumber];
-            NSURL *url = [NSURL URLWithString:WEB_BASE_URL];
-            
-            
-            NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
-            
-            [theRequest setHTTPMethod:@"POST"];
-            
-            [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
-            [connection start];
-        }
-    }
-    /*
-        Restaurant * restaurant;
-    
-        NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&campus=Yongon", restaurant.name, restaurant.phoneNumber];
-        NSURL *url = [NSURL URLWithString:WEB_BASE_URL];
-    
-        
-        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
-        
-        [theRequest setHTTPMethod:@"POST"];
-
-        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
-        [connection start];
-     */
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 //    [self createFileFromExcel];
@@ -74,7 +24,6 @@
     NSData * myData = [NSData dataWithContentsOfFile:[self filePath]];
     self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
-    [self sendData];
     return YES;
 }
 
