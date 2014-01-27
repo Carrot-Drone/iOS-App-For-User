@@ -232,6 +232,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="ZcC-ys-7aN" id="jGQ-Ri-Lwd"/>
+                        <outlet property="title" destination="EmG-co-zqX" id="wal-bz-YF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZV-ZX-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
