@@ -30,6 +30,10 @@
 		F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0017FC044E00D7AA85 /* Restaurant.m */; };
 		F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0317FC10E200D7AA85 /* DetailViewController.m */; };
 		F5273667180D0950008160F9 /* allData.bin in Resources */ = {isa = PBXBuildFile; fileRef = F5273666180D094F008160F9 /* allData.bin */; };
+		F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4651896530C0003A53D /* 02-875-9522_1.jpg */; };
+		F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4661896530C0003A53D /* 02-875-9522_2.jpg */; };
+		F531C46D189653B00003A53D /* 02-876-9293_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F531C46B189653B00003A53D /* 02-876-9293_1.png */; };
+		F531C46E189653B00003A53D /* 02-876-9293_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F531C46C189653B00003A53D /* 02-876-9293_2.png */; };
 		F536D599180CC8D600E73254 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F536D598180CC8D600E73254 /* MenuCell.m */; };
 		F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F536D59A180CC8E400E73254 /* MenuCell.xib */; };
 		F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54118351800EC92006A2136 /* RestaurantViewController.m */; };
@@ -82,6 +86,10 @@
 		F5110B0217FC10E200D7AA85 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F5110B0317FC10E200D7AA85 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F5273666180D094F008160F9 /* allData.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = allData.bin; sourceTree = "<group>"; };
+		F531C4651896530C0003A53D /* 02-875-9522_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_1.jpg"; sourceTree = "<group>"; };
+		F531C4661896530C0003A53D /* 02-875-9522_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_2.jpg"; sourceTree = "<group>"; };
+		F531C46B189653B00003A53D /* 02-876-9293_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-876-9293_1.png"; sourceTree = "<group>"; };
+		F531C46C189653B00003A53D /* 02-876-9293_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-876-9293_2.png"; sourceTree = "<group>"; };
 		F536D597180CC8D600E73254 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		F536D598180CC8D600E73254 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		F536D59A180CC8E400E73254 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
@@ -214,6 +222,10 @@
 		F5A41BEE1873C2FC00004DC5 /* 전단지 */ = {
 			isa = PBXGroup;
 			children = (
+				F531C46B189653B00003A53D /* 02-876-9293_1.png */,
+				F531C46C189653B00003A53D /* 02-876-9293_2.png */,
+				F531C4651896530C0003A53D /* 02-875-9522_1.jpg */,
+				F531C4661896530C0003A53D /* 02-875-9522_2.jpg */,
 				F5A41BEF1873C2FC00004DC5 /* 02-875-8285_1.jpg */,
 				F5A41BF01873C2FC00004DC5 /* 02-875-8285_2.jpg */,
 				F5A41BF11873C2FC00004DC5 /* 02-878-3727.jpg */,
@@ -301,16 +313,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5110AE317FC013C00D7AA85 /* Images.xcassets in Resources */,
+				F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */,
 				49103D5B1851A7FF00070801 /* coupon.png in Resources */,
 				F5110AD217FC013C00D7AA85 /* InfoPlist.strings in Resources */,
+				F531C46D189653B00003A53D /* 02-876-9293_1.png in Resources */,
 				49103D571851A65500070801 /* RestaurantCell.xib in Resources */,
 				F5A41BF41873C2FC00004DC5 /* 02-878-3727.jpg in Resources */,
 				F5273667180D0950008160F9 /* allData.bin in Resources */,
+				F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */,
 				F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */,
 				F5110ADB17FC013C00D7AA85 /* Main.storyboard in Resources */,
 				49103D5A1851A7FF00070801 /* flyer.png in Resources */,
 				F5A41BF31873C2FC00004DC5 /* 02-875-8285_2.jpg in Resources */,
 				F5A41BF21873C2FC00004DC5 /* 02-875-8285_1.jpg in Resources */,
+				F531C46E189653B00003A53D /* 02-876-9293_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

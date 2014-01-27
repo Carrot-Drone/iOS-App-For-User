@@ -16,6 +16,7 @@
 @implementation FlyerViewController
 @synthesize restaurant;
 @synthesize scrollView;
+@synthesize title;
 
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
@@ -61,6 +62,9 @@
         }
         if(numberOfImg == 0) NSLog(@"Image not exist %@", restaurant.name);
     }
+    
+    // Set Navigation bar title
+    [title setTitle:restaurant.name];
 }
 
 - (void)didReceiveMemoryWarning

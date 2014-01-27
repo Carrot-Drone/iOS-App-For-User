@@ -14,6 +14,8 @@
 @property (nonatomic, strong) Restaurant * restaurant;
 @property (nonatomic, strong) IBOutlet UIScrollView * scrollView;
 
+@property (nonatomic, strong) IBOutlet UINavigationItem * title;
+
 - (IBAction)backButtonClicked:(id)sender;
 
 @end
