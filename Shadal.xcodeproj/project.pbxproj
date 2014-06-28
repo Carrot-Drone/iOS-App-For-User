@@ -37,6 +37,7 @@
 		F536D599180CC8D600E73254 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F536D598180CC8D600E73254 /* MenuCell.m */; };
 		F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F536D59A180CC8E400E73254 /* MenuCell.xib */; };
 		F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54118351800EC92006A2136 /* RestaurantViewController.m */; };
+		F54CF570195AA21200B7C67A /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = F54CF56F195AA21200B7C67A /* Server.m */; };
 		F5A41BF21873C2FC00004DC5 /* 02-875-8285_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5A41BEF1873C2FC00004DC5 /* 02-875-8285_1.jpg */; };
 		F5A41BF31873C2FC00004DC5 /* 02-875-8285_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5A41BF01873C2FC00004DC5 /* 02-875-8285_2.jpg */; };
 		F5A41BF41873C2FC00004DC5 /* 02-878-3727.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5A41BF11873C2FC00004DC5 /* 02-878-3727.jpg */; };
@@ -95,6 +96,8 @@
 		F536D59A180CC8E400E73254 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		F54118341800EC92006A2136 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
 		F54118351800EC92006A2136 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
+		F54CF56E195AA21200B7C67A /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		F54CF56F195AA21200B7C67A /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 		F5A41BEF1873C2FC00004DC5 /* 02-875-8285_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-8285_1.jpg"; sourceTree = "<group>"; };
 		F5A41BF01873C2FC00004DC5 /* 02-875-8285_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-8285_2.jpg"; sourceTree = "<group>"; };
 		F5A41BF11873C2FC00004DC5 /* 02-878-3727.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-878-3727.jpg"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				49103D581851A7FF00070801 /* flyer.png */,
 				49103D591851A7FF00070801 /* coupon.png */,
 				F5D3711D1804396F00241D9D /* Constants.h */,
+				F54CF56E195AA21200B7C67A /* Server.h */,
+				F54CF56F195AA21200B7C67A /* Server.m */,
 				F5110AD617FC013C00D7AA85 /* AppDelegate.h */,
 				F5110AD717FC013C00D7AA85 /* AppDelegate.m */,
 				F5110AFF17FC044E00D7AA85 /* Restaurant.h */,
@@ -236,9 +241,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F5110AC317FC013C00D7AA85 /* 샤달 */ = {
+		F5110AC317FC013C00D7AA85 /* 샤달 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "샤달" */;
+			buildConfigurationList = F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "샤달" */;
 			buildPhases = (
 				F5110AC017FC013C00D7AA85 /* Sources */,
 				F5110AC117FC013C00D7AA85 /* Frameworks */,
@@ -301,7 +306,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F5110AC317FC013C00D7AA85 /* 샤달 */,
+				F5110AC317FC013C00D7AA85 /* 샤달 */,
 				F5110AE717FC013C00D7AA85 /* ShadalTests */,
 			);
 		};
@@ -354,6 +359,7 @@
 				49103D551851A63F00070801 /* RestaurantCell.m in Sources */,
 				F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */,
 				F5110AD417FC013C00D7AA85 /* main.m in Sources */,
+				F54CF570195AA21200B7C67A /* Server.m in Sources */,
 				F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +377,7 @@
 /* Begin PBXTargetDependency section */
 		F5110AEE17FC013C00D7AA85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5110AC317FC013C00D7AA85 /* 샤달 */;
+			target = F5110AC317FC013C00D7AA85 /* 샤달 */;
 			targetProxy = F5110AED17FC013C00D7AA85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -580,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "샤달" */ = {
+		F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "샤달" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F5110AFA17FC013C00D7AA85 /* Debug */,

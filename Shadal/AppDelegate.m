@@ -43,8 +43,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if([[prefs objectForKey:@"callBool"] boolValue]==NO){
         NSString * params = [prefs objectForKey:@"params"];
-        NSURL *url = [NSURL URLWithString:WEB_BASE_URL];
-        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, NEW_CALL]];
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
         
         [theRequest setHTTPMethod:@"POST"];

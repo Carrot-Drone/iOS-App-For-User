@@ -9,7 +9,10 @@
 #import "RestaurantViewController.h"
 #import "FlyerViewController.h"
 #import "MenuCell.h"
+#import "Server.h"
 #import "Constants.h"
+
+#import "AppDelegate.h"
 
 @interface RestaurantViewController ()  
 
@@ -23,35 +26,12 @@
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
     restaurant.phoneNumber = [restaurant.phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
-}
-
-- (IBAction)call:(id)sender{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=Gwanak", restaurant.name, restaurant.phoneNumber];
-    [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
-    [prefs setObject:params forKey:@"params"];
-    
-    NSString * urlString = [NSString stringWithFormat:@"tel://%@", restaurant.phoneNumber];
-    NSURL * url = [NSURL URLWithString:urlString];
-    
-    if (![[UIApplication sharedApplication] openURL:url]) {
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    if(restaurant.updated_at == nil){
+        restaurant.updated_at = @"00:00";
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
+- (void)updateUI{
     self.titleLabel.text = [restaurant name];
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
     
@@ -79,9 +59,58 @@
         couponLabel.clipsToBounds = YES;
         couponLabel.backgroundColor = [UIColor clearColor];
         couponLabel.textAlignment = NSTextAlignmentCenter;
-
+        
         tableView.tableHeaderView = couponLabel;
     }
+    
+    [tableView reloadData];
+}
+
+- (void)updateViewData{
+    [Server updateRestaurant:restaurant];
+}
+
+- (IBAction)call:(id)sender{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@", restaurant.name, restaurant.phoneNumber, CAMPUS];
+    [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
+    [prefs setObject:params forKey:@"params"];
+    
+    NSString * urlString = [NSString stringWithFormat:@"tel://%@", restaurant.phoneNumber];
+    NSURL * url = [NSURL URLWithString:urlString];
+    
+    if (![[UIApplication sharedApplication] openURL:url]) {
+        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self updateUI];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self updateViewData];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self updateUI];
+        });
+    });
+    
+    
+    // myNotificationCenter 객체 생성 후 defaultCenter에 등록
+    NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
+    
+    // myNotificationCenter 객체를 이용해서 옵저버 등록, “firstNotification” 이름의 노티피케이션이
+    // 전송되면 노티피케이션을 받아 셀렉터를 이용하여 메서드 실행
+    [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
 }
 - (void)viewWillAppear:(BOOL)animated{
 }
@@ -123,7 +152,8 @@
     }
     NSArray * menuArray = [[[restaurant.menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
     cell.menuLabel.text = [menuArray objectAtIndex:0];
-    cell.priceLabel.text = [menuArray objectAtIndex:1];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%ld", (long)[[menuArray objectAtIndex:1] integerValue]]
+    ;
     if([cell.priceLabel.text isEqualToString:@"0"]){
         cell.priceLabel.text = @"";
     }else{

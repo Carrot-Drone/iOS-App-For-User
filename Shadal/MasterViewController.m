@@ -41,6 +41,7 @@
 }
 
 - (void)showEmail{
+    
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
     controller.mailComposeDelegate = self;
     [controller setToRecipients:[NSArray arrayWithObject:@"swchoi06@wafflestudio.com"]];

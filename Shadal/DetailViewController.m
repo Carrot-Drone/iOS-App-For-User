@@ -10,6 +10,8 @@
 #import "RestaurantCell.h"
 #import "Restaurant.h"
 
+#import "Constants.h"
+
 @interface DetailViewController ()
 
 @end
@@ -94,7 +96,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self performSegueWithIdentifier:@"Restaurant" sender:self];
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

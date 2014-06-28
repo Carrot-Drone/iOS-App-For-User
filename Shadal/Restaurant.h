@@ -10,6 +10,9 @@
 
 @interface Restaurant : NSObject <NSCoding>
 
+@property (nonatomic) int server_id;
+@property (nonatomic, strong) NSString * updated_at;
+
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSMutableArray * menu;
 @property (nonatomic, strong) NSString * phoneNumber;
@@ -22,6 +25,9 @@
 @property (nonatomic, strong) NSString * couponString;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber;
+- (NSDictionary *)dictionaryFromRestaurant;
+- (void)setRestaurantFromDictionary:(NSDictionary *)dictionary;
+
 - (NSString *)stringWithOpenAndClosingHours;
 - (NSComparisonResult)compare:(Restaurant *)otherObject;
 @end
