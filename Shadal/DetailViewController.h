@@ -12,6 +12,7 @@
 @interface DetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray * resArray;
+@property (nonatomic, strong) NSString * category;
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 - (void)setDetailItem:(id)detailItem;

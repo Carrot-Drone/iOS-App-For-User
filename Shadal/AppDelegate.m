@@ -13,14 +13,23 @@
 
 @synthesize allData;
 - (NSString *)filePath{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"allData" ofType:@"bin"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"allData.bin"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
+    {
+        NSString *myPathInfo = [[NSBundle mainBundle] pathForResource:@"allData" ofType:@"bin"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager copyItemAtPath:myPathInfo toPath:filePath error:NULL];
+    }
+    
     return filePath;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [self createFileFromExcel];
-    
     NSData * myData = [NSData dataWithContentsOfFile:[self filePath]];
     self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
@@ -53,10 +62,20 @@
         [connection start];
     }
 }
-
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application{
+    // Save alldata to file
+    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:allData];
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentDir = [paths objectAtIndex:0];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
+
+    [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
 }
 
 @end

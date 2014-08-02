@@ -13,8 +13,9 @@
 @implementation Server{
 }
 
-static NSMutableData * responseData;
 static Restaurant * _restaurant;
+
+static NSMutableData * responseData;
 
 +(void)updateRestaurant:(Restaurant *)restaurant{
     _restaurant = restaurant;
@@ -38,11 +39,25 @@ static Restaurant * _restaurant;
     });
 }
 
-+ (Restaurant *)getRestaurantFromServer:(int)restaurant_id{
-    return nil;
-}
-+ (BOOL)checkForNewRestaurant{
-    return NO;
++ (void)checkForNewRestaurant:(NSString *)category{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]];
+        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
+        [theRequest setHTTPMethod:@"POST"];
+        
+        NSString * params = [NSString stringWithFormat:@"category=%@&campus=%@", category, CAMPUS];
+        
+        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
+        [connection scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                              forMode:NSDefaultRunLoopMode];
+        
+        NSLog(@"Connection Start");
+        
+        responseData = [[NSMutableData alloc] init];
+        [connection start];
+    });
 }
 + (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
     NSLog(@"Did receiveResponse");
@@ -57,14 +72,27 @@ static Restaurant * _restaurant;
 
 + (void)connectionDidFinishLoading:(NSURLConnection *)connection{
     NSLog(@"Did finish loading");
-    
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-    [_restaurant setRestaurantFromDictionary:json];
-    
-    // 노티피케이션 전송. RestaurantViewController 에서 이 노티피케이션을 받아서 updateUI 함수를 실행. 뷰를 업데이트
-    NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
-    NSDictionary *dic = [NSDictionary dictionaryWithObject:_restaurant forKey:@"restaurant"];
-    
-    [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:dic];
+    NSString * url = [[[connection currentRequest] URL] absoluteString];
+    if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]]){
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+        
+        // 노티피케이션 전송
+        NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
+        [myNotificationCenter postNotificationName:@"checkForResInCategory" object:self userInfo:json];
+    }else if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_UPDATE]]){
+        if([responseData length]==0){
+            
+        }else{
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+            [_restaurant setRestaurantFromDictionary:json];
+            
+            NSLog(@"%@", json);
+            
+            // 노티피케이션 전송. RestaurantViewController 에서 이 노티피케이션을 받아서 updateUI 함수를 실행. 뷰를 업데이트
+            NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
+            
+            [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:nil];
+        }
+    }
 }
 @end

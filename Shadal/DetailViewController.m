@@ -6,9 +6,11 @@
 //  Copyright (c) 2013년 Wafflestudio. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "RestaurantCell.h"
 #import "Restaurant.h"
+#import "Server.h"
 
 #import "Constants.h"
 
@@ -18,10 +20,67 @@
 
 @implementation DetailViewController
 
-@synthesize resArray;
+@synthesize resArray, category;
 
 - (void)setDetailItem:(id)detailItem{
+    NSLog(@"%@", category); 
     resArray = (NSMutableArray *)detailItem;
+}
+
+
+- (void)updateViewData{
+    [Server checkForNewRestaurant:category];
+}
+
+- (void)updateUI:(NSNotification *)notification{
+    NSDictionary * dictionary = [notification userInfo];
+    
+    // Add New Restaurant
+    for(NSDictionary * restaurant in dictionary){
+        BOOL isNew = true;
+        for(Restaurant * res in resArray){
+            if([res.name isEqualToString:[restaurant objectForKey:@"name"]]
+               && [res.phoneNumber isEqualToString:[restaurant objectForKey:@"phone_number"]])
+               {
+                isNew = false;
+                break;
+            }
+        }
+        if(isNew){
+            Restaurant * newRes = [[Restaurant alloc] initWithName:[restaurant objectForKey:@"name"] phoneNumber:[restaurant objectForKey:@"phone_number"]];
+            [resArray addObject:newRes];
+        }
+    }
+    
+    // Remove deleted Restaurant
+    NSMutableArray * resShouldRemoved = [[NSMutableArray alloc] init];
+    for(Restaurant * res in resArray){
+        BOOL isRemoved = true;
+        for(NSDictionary * restaurant in dictionary){
+            if(([res.name isEqualToString:[restaurant objectForKey:@"name"]]
+                   && [res.phoneNumber isEqualToString:[restaurant objectForKey:@"phone_number"]])
+               ){
+                res.flyer = [[restaurant objectForKey:@"flyer"] boolValue];
+                res.coupon = [[restaurant objectForKey:@"coupon"] boolValue];
+                isRemoved = false;
+                break;
+            }
+        }
+        if(isRemoved){
+            [resShouldRemoved addObject:res];
+        }
+    }
+    for(Restaurant * res in resShouldRemoved){
+        [resArray removeObject:res];
+    }
+    
+    [resArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    
+    
+    //update tableView
+    [[self tableView] reloadData];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,14 +94,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [resArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
-    }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self updateViewData];
+    });
+    
+    
+    // myNotificationCenter 객체 생성 후 defaultCenter에 등록
+    NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
+    
+    // myNotificationCenter 객체를 이용해서 옵저버 등록
+    [sendNotification addObserver:self selector:@selector(updateUI:) name:@"checkForResInCategory" object: nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // this UIViewController is about to re-appear, make sure we remove the current selection in our table view
+    [resArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    
+    [[self tableView] reloadData];
+    
     NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
     [self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
 }
@@ -90,6 +162,7 @@
             cell.secondImage.hidden = YES;
         }
     }
+    NSLog(@"%@ %d %d", res.name, res.coupon, res.flyer); 
     
     return cell;
 }

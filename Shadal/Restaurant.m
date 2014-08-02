@@ -40,6 +40,11 @@
 }
 
 - (void)setRestaurantFromDictionary:(NSDictionary *)dictionary{
+    NSLog(@"%@", dictionary);
+    
+    self.server_id = [[dictionary objectForKey:@"id"] intValue];
+    self.updated_at = [dictionary objectForKey:@"updated_at"];
+    
     self.name = [dictionary objectForKey:@"name"];
     self.phoneNumber = [dictionary objectForKey:@"phone_number"];
     self.categories = [dictionary objectForKey:@"category"];

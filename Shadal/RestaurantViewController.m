@@ -99,17 +99,13 @@
     [self updateUI];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self updateViewData];
-        dispatch_async(dispatch_get_main_queue(), ^(void){
-            [self updateUI];
-        });
     });
     
     
     // myNotificationCenter 객체 생성 후 defaultCenter에 등록
     NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
     
-    // myNotificationCenter 객체를 이용해서 옵저버 등록, “firstNotification” 이름의 노티피케이션이
-    // 전송되면 노티피케이션을 받아 셀렉터를 이용하여 메서드 실행
+    // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
 }
 - (void)viewWillAppear:(BOOL)animated{

@@ -12,7 +12,6 @@
 @interface Server : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 + (void)updateRestaurant:(Restaurant *)restaurant;
-+ (Restaurant *)getRestaurantFromServer:(int)restaurant_id;
-+ (BOOL)checkForNewRestaurant;
++ (void)checkForNewRestaurant:(NSString *)category;
 
 @end

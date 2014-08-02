@@ -112,7 +112,9 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        [[segue destinationViewController] setDetailItem:[allData objectForKey:[categories objectAtIndex:indexPath.row]]];
+        DetailViewController * viewController = (DetailViewController *)[segue destinationViewController];
+        viewController.category = [categories objectAtIndex:indexPath.row];
+        [viewController setDetailItem:[allData objectForKey:viewController.category]];
     }
 }
 
