@@ -60,8 +60,10 @@
             if(([res.name isEqualToString:[restaurant objectForKey:@"name"]]
                    && [res.phoneNumber isEqualToString:[restaurant objectForKey:@"phone_number"]])
                ){
-                res.flyer = [[restaurant objectForKey:@"flyer"] boolValue];
-                res.coupon = [[restaurant objectForKey:@"coupon"] boolValue];
+                // update Res info based on new Res
+                // Only for meta data. If you push in to the real Restaurant view, it will then update it's content
+                res.has_flyer = [[restaurant objectForKey:@"has_flyer"] boolValue];
+                res.has_coupon = [[restaurant objectForKey:@"has_coupon"] boolValue];
                 isRemoved = false;
                 break;
             }
@@ -147,22 +149,22 @@
     
     cell.restaurantLabel.text = res.name;
     
-    if(res.flyer){
+    if(res.has_flyer){
         cell.secondImage.image = [UIImage imageNamed:@"flyer"];
-        if(res.coupon){
+        if(res.has_coupon){
             cell.firstImage.image = [UIImage imageNamed:@"coupon"];
         }else{
             cell.firstImage.hidden = YES;
         }
     }else{
         cell.firstImage.hidden = YES;
-        if(res.coupon){
+        if(res.has_coupon){
             cell.secondImage.image = [UIImage imageNamed:@"coupon"];
         }else{
             cell.secondImage.hidden = YES;
         }
     }
-    NSLog(@"%@ %d %d", res.name, res.coupon, res.flyer); 
+    NSLog(@"%@ %d %d", res.name, res.has_coupon, res.has_flyer);
     
     return cell;
 }

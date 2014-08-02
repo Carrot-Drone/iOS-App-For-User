@@ -36,7 +36,7 @@
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
     
     // set Flyer Button
-    if(restaurant.flyer){
+    if(restaurant.has_flyer){
         UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
         [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
         [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -49,7 +49,7 @@
     }
     
     // set Coupon String
-    if(restaurant.coupon){
+    if(restaurant.has_coupon){
         UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         [couponLabel setText:restaurant.couponString];
         couponLabel.numberOfLines = 5;

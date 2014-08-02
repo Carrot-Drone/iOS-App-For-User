@@ -11,7 +11,7 @@
 @implementation Restaurant
 @synthesize server_id, updated_at;
 @synthesize name, menu, phoneNumber, openingHours, closingHours, categories;
-@synthesize flyer, coupon, couponString;
+@synthesize has_flyer, has_coupon, couponString;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber{
     self = [super init];
@@ -33,8 +33,8 @@
     [dic setObject:categories forKey:@"categories"];
     [dic setObject:[NSNumber numberWithDouble:openingHours] forKey:@"openingHours"];
     [dic setObject:[NSNumber numberWithDouble:closingHours] forKey:@"closingHours"];
-    [dic setObject:[NSNumber numberWithBool:flyer] forKey:@"flyer"];
-    [dic setObject:[NSNumber numberWithBool:coupon] forKey:@"coupon"];
+    [dic setObject:[NSNumber numberWithBool:has_flyer] forKey:@"has_flyer"];
+    [dic setObject:[NSNumber numberWithBool:has_coupon] forKey:@"has_coupon"];
     [dic setObject:couponString forKey:@"couponString"];
     return dic;
 }
@@ -50,9 +50,9 @@
     self.categories = [dictionary objectForKey:@"category"];
     self.openingHours = [[dictionary objectForKey:@"openingHours"] doubleValue];
     self.closingHours = [[dictionary objectForKey:@"closingHours"] doubleValue];
-    self.flyer = [[dictionary objectForKey:@"flyer"] boolValue];
-    self.coupon = [[dictionary objectForKey:@"coupon"] boolValue];
-    self.couponString = [dictionary objectForKey:@"couponString"];
+    self.has_flyer = [[dictionary objectForKey:@"has_flyer"] boolValue];
+    self.has_coupon = [[dictionary objectForKey:@"has_coupon"] boolValue];
+    self.couponString = [dictionary objectForKey:@"coupon_string"];
     
     NSArray * menus = [dictionary objectForKey:@"menus"];
     NSMutableArray *res_menu = [[NSMutableArray alloc] init];
@@ -98,8 +98,8 @@
     categories = [aDecoder decodeObjectForKey:@"categories"];
     openingHours = [[aDecoder decodeObjectForKey:@"openingHours"] doubleValue];
     closingHours = [[aDecoder decodeObjectForKey:@"closingHours"] doubleValue];
-    flyer = [[aDecoder decodeObjectForKey:@"flyer"] boolValue];
-    coupon = [[aDecoder decodeObjectForKey:@"coupon"] boolValue];
+    has_flyer = [[aDecoder decodeObjectForKey:@"flyer"] boolValue];
+    has_coupon = [[aDecoder decodeObjectForKey:@"coupon"] boolValue];
     couponString = [aDecoder decodeObjectForKey:@"couponString"];
     
     return self;
@@ -115,8 +115,8 @@
     [aCoder encodeObject:categories forKey:@"categories"];
     [aCoder encodeObject:[NSNumber numberWithDouble:openingHours] forKey:@"openingHours"];
     [aCoder encodeObject:[NSNumber numberWithDouble:closingHours] forKey:@"closingHours"];
-    [aCoder encodeObject:[NSNumber numberWithBool:flyer] forKey:@"flyer"];
-    [aCoder encodeObject:[NSNumber numberWithBool:coupon] forKey:@"coupon"];
+    [aCoder encodeObject:[NSNumber numberWithBool:has_flyer] forKey:@"has_flyer"];
+    [aCoder encodeObject:[NSNumber numberWithBool:has_coupon] forKey:@"has_coupon"];
     [aCoder encodeObject:couponString forKey:@"couponString"];
 }
 
