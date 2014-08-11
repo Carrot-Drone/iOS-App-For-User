@@ -23,10 +23,8 @@
 @synthesize resArray, category;
 
 - (void)setDetailItem:(id)detailItem{
-    NSLog(@"%@", category); 
     resArray = (NSMutableArray *)detailItem;
 }
-
 
 - (void)updateViewData{
     [Server checkForNewRestaurant:category];
@@ -101,7 +99,6 @@
         [self updateViewData];
     });
     
-    
     // myNotificationCenter 객체 생성 후 defaultCenter에 등록
     NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
     
@@ -164,7 +161,6 @@
             cell.secondImage.hidden = YES;
         }
     }
-    NSLog(@"%@ %d %d", res.name, res.has_coupon, res.has_flyer);
     
     return cell;
 }

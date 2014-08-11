@@ -14,7 +14,6 @@
 }
 
 static Restaurant * _restaurant;
-
 static NSMutableData * responseData;
 
 +(void)updateRestaurant:(Restaurant *)restaurant{

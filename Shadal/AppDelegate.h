@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, strong) NSMutableDictionary * allData;
+
 //@property (nonatomic) BookHandle book;
 
 @end

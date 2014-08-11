@@ -20,9 +20,32 @@
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
-        NSString *myPathInfo = [[NSBundle mainBundle] pathForResource:@"allData" ofType:@"bin"];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        [fileManager copyItemAtPath:myPathInfo toPath:filePath error:NULL];
+         NSString *myPathInfo = [[NSBundle mainBundle] pathForResource:@"allData" ofType:@"bin"];
+         NSFileManager *fileManager = [NSFileManager defaultManager];
+         [fileManager copyItemAtPath:myPathInfo toPath:filePath error:NULL];
+        /*
+        NSMutableDictionary * dummyData = [[NSMutableDictionary alloc] init];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"족발/보쌈"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"피자"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"중국집"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"한식/분식"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"도시락/돈까스"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"기타"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"치킨"];
+        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"냉면"];
+        
+        
+        // Save alldata to file
+        NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:dummyData];
+        
+        NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString* documentDir = [paths objectAtIndex:0];
+        
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
+        
+        [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
+         */
+        
     }
     
     return filePath;
@@ -32,7 +55,6 @@
 {
     NSData * myData = [NSData dataWithContentsOfFile:[self filePath]];
     self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
-    
     return YES;
 }
 

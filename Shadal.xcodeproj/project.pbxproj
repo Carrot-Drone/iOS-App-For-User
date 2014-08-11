@@ -30,6 +30,7 @@
 		F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0017FC044E00D7AA85 /* Restaurant.m */; };
 		F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0317FC10E200D7AA85 /* DetailViewController.m */; };
 		F5273667180D0950008160F9 /* allData.bin in Resources */ = {isa = PBXBuildFile; fileRef = F5273666180D094F008160F9 /* allData.bin */; };
+		F52A85CD1999126B0010C261 /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A85CC1999126B0010C261 /* FavoriteTableViewController.m */; };
 		F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4651896530C0003A53D /* 02-875-9522_1.jpg */; };
 		F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4661896530C0003A53D /* 02-875-9522_2.jpg */; };
 		F531C46D189653B00003A53D /* 02-876-9293_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F531C46B189653B00003A53D /* 02-876-9293_1.png */; };
@@ -41,6 +42,7 @@
 		F5A41BF21873C2FC00004DC5 /* 02-875-8285_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5A41BEF1873C2FC00004DC5 /* 02-875-8285_1.jpg */; };
 		F5A41BF31873C2FC00004DC5 /* 02-875-8285_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5A41BF01873C2FC00004DC5 /* 02-875-8285_2.jpg */; };
 		F5A41BF41873C2FC00004DC5 /* 02-878-3727.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5A41BF11873C2FC00004DC5 /* 02-878-3727.jpg */; };
+		F5D00E85199930F000858DCC /* RandomRestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D00E84199930F000858DCC /* RandomRestaurantViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		F5110B0217FC10E200D7AA85 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F5110B0317FC10E200D7AA85 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F5273666180D094F008160F9 /* allData.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = allData.bin; sourceTree = "<group>"; };
+		F52A85CB1999126B0010C261 /* FavoriteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTableViewController.h; sourceTree = "<group>"; };
+		F52A85CC1999126B0010C261 /* FavoriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTableViewController.m; sourceTree = "<group>"; };
 		F531C4651896530C0003A53D /* 02-875-9522_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_1.jpg"; sourceTree = "<group>"; };
 		F531C4661896530C0003A53D /* 02-875-9522_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_2.jpg"; sourceTree = "<group>"; };
 		F531C46B189653B00003A53D /* 02-876-9293_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-876-9293_1.png"; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		F5A41BEF1873C2FC00004DC5 /* 02-875-8285_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-8285_1.jpg"; sourceTree = "<group>"; };
 		F5A41BF01873C2FC00004DC5 /* 02-875-8285_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-8285_2.jpg"; sourceTree = "<group>"; };
 		F5A41BF11873C2FC00004DC5 /* 02-878-3727.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-878-3727.jpg"; sourceTree = "<group>"; };
+		F5D00E83199930F000858DCC /* RandomRestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomRestaurantViewController.h; sourceTree = "<group>"; };
+		F5D00E84199930F000858DCC /* RandomRestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomRestaurantViewController.m; sourceTree = "<group>"; };
 		F5D3711D1804396F00241D9D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,32 +169,16 @@
 		F5110ACD17FC013C00D7AA85 /* Shadal */ = {
 			isa = PBXGroup;
 			children = (
-				49103D581851A7FF00070801 /* flyer.png */,
-				49103D591851A7FF00070801 /* coupon.png */,
-				F5D3711D1804396F00241D9D /* Constants.h */,
-				F54CF56E195AA21200B7C67A /* Server.h */,
-				F54CF56F195AA21200B7C67A /* Server.m */,
 				F5110AD617FC013C00D7AA85 /* AppDelegate.h */,
 				F5110AD717FC013C00D7AA85 /* AppDelegate.m */,
-				F5110AFF17FC044E00D7AA85 /* Restaurant.h */,
-				F5110B0017FC044E00D7AA85 /* Restaurant.m */,
 				F5110AD917FC013C00D7AA85 /* Main.storyboard */,
-				F5110ADC17FC013C00D7AA85 /* MasterViewController.h */,
-				F5110ADD17FC013C00D7AA85 /* MasterViewController.m */,
-				F5110B0217FC10E200D7AA85 /* DetailViewController.h */,
-				F5110B0317FC10E200D7AA85 /* DetailViewController.m */,
-				F54118341800EC92006A2136 /* RestaurantViewController.h */,
-				F54118351800EC92006A2136 /* RestaurantViewController.m */,
-				49C3DB251851C594002C9EBA /* FlyerViewController.h */,
-				49C3DB261851C594002C9EBA /* FlyerViewController.m */,
-				49103D531851A63F00070801 /* RestaurantCell.h */,
-				49103D541851A63F00070801 /* RestaurantCell.m */,
-				49103D561851A65500070801 /* RestaurantCell.xib */,
-				F536D597180CC8D600E73254 /* MenuCell.h */,
-				F536D598180CC8D600E73254 /* MenuCell.m */,
-				F536D59A180CC8E400E73254 /* MenuCell.xib */,
+				F52A85C719990D530010C261 /* Views */,
+				F52A85C619990D380010C261 /* Custom Cells */,
+				F52A85C519990D2E0010C261 /* Commons */,
+				F52A85C419990D150010C261 /* Model */,
 				491FD30E1852DCD300885396 /* UIImage+UIImage_Customized.h */,
 				491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */,
+				F52A85C319990D070010C261 /* Resource */,
 				F5110AE217FC013C00D7AA85 /* Images.xcassets */,
 				F5110ACE17FC013C00D7AA85 /* Supporting Files */,
 			);
@@ -222,6 +212,66 @@
 				F5110AF217FC013C00D7AA85 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F52A85C319990D070010C261 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				49103D581851A7FF00070801 /* flyer.png */,
+				49103D591851A7FF00070801 /* coupon.png */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		F52A85C419990D150010C261 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5110AFF17FC044E00D7AA85 /* Restaurant.h */,
+				F5110B0017FC044E00D7AA85 /* Restaurant.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F52A85C519990D2E0010C261 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				F5D3711D1804396F00241D9D /* Constants.h */,
+				F54CF56E195AA21200B7C67A /* Server.h */,
+				F54CF56F195AA21200B7C67A /* Server.m */,
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
+		F52A85C619990D380010C261 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				49103D531851A63F00070801 /* RestaurantCell.h */,
+				49103D541851A63F00070801 /* RestaurantCell.m */,
+				49103D561851A65500070801 /* RestaurantCell.xib */,
+				F536D597180CC8D600E73254 /* MenuCell.h */,
+				F536D598180CC8D600E73254 /* MenuCell.m */,
+				F536D59A180CC8E400E73254 /* MenuCell.xib */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		F52A85C719990D530010C261 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5110ADC17FC013C00D7AA85 /* MasterViewController.h */,
+				F5110ADD17FC013C00D7AA85 /* MasterViewController.m */,
+				F5110B0217FC10E200D7AA85 /* DetailViewController.h */,
+				F5110B0317FC10E200D7AA85 /* DetailViewController.m */,
+				F54118341800EC92006A2136 /* RestaurantViewController.h */,
+				F54118351800EC92006A2136 /* RestaurantViewController.m */,
+				49C3DB251851C594002C9EBA /* FlyerViewController.h */,
+				49C3DB261851C594002C9EBA /* FlyerViewController.m */,
+				F52A85CB1999126B0010C261 /* FavoriteTableViewController.h */,
+				F52A85CC1999126B0010C261 /* FavoriteTableViewController.m */,
+				F5D00E83199930F000858DCC /* RandomRestaurantViewController.h */,
+				F5D00E84199930F000858DCC /* RandomRestaurantViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F5A41BEE1873C2FC00004DC5 /* 전단지 */ = {
@@ -350,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D00E85199930F000858DCC /* RandomRestaurantViewController.m in Sources */,
 				F5110AD817FC013C00D7AA85 /* AppDelegate.m in Sources */,
 				F536D599180CC8D600E73254 /* MenuCell.m in Sources */,
 				491FD3101852DCD300885396 /* UIImage+UIImage_Customized.m in Sources */,
@@ -357,6 +408,7 @@
 				F5110ADE17FC013C00D7AA85 /* MasterViewController.m in Sources */,
 				49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */,
 				49103D551851A63F00070801 /* RestaurantCell.m in Sources */,
+				F52A85CD1999126B0010C261 /* FavoriteTableViewController.m in Sources */,
 				F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */,
 				F5110AD417FC013C00D7AA85 /* main.m in Sources */,
 				F54CF570195AA21200B7C67A /* Server.m in Sources */,

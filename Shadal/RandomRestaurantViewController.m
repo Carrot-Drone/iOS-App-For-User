@@ -1,39 +1,23 @@
 //
-//  RestaurantViewController.m
+//  RandomRestaurantViewController.m
 //  Shadal
 //
-//  Created by SukWon Choi on 13. 10. 6..
-//  Copyright (c) 2013년 Wafflestudio. All rights reserved.
+//  Created by Sukwon Choi on 8/12/14.
+//  Copyright (c) 2014 Wafflestudio. All rights reserved.
 //
 
-#import "RestaurantViewController.h"
-#import "FlyerViewController.h"
-#import "MenuCell.h"
-#import "Server.h"
-#import "Constants.h"
-
-#import "AppDelegate.h"
-
+#import "RandomRestaurantViewController.h"
 #include "stdlib.h"
 
-@interface RestaurantViewController ()  
+@interface RandomRestaurantViewController ()
 
 @end
 
-@implementation RestaurantViewController
-@synthesize tableView;
+@implementation RandomRestaurantViewController
 @synthesize restaurant, titleLabel, phoneNumber;
-@synthesize barButton;
 @synthesize favorite;
+@synthesize tableView;
 
-
-- (void)setDetailItem:(id)detailItem{
-    restaurant = (Restaurant *)detailItem;
-    restaurant.phoneNumber = [restaurant.phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
-    if(restaurant.updated_at == nil){
-        restaurant.updated_at = @"00:00";
-    }
-}
 
 - (void)updateUI{
     self.titleLabel.text = [restaurant name];
@@ -42,15 +26,15 @@
     // set Flyer Button
     if(restaurant.has_flyer){
         /*
-        UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
-        [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
-        [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [button1 setImage:[UIImage imageNamed:@"flyer"] forState:UIControlStateNormal];
-        barButton = [[UIBarButtonItem alloc]initWithCustomView:button1];
-        barButton.style = UIBarButtonItemStyleBordered;
-        barButton.enabled = YES;
-        
-        self.navigationItem.rightBarButtonItem = barButton;
+         UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
+         [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
+         [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
+         [button1 setImage:[UIImage imageNamed:@"flyer"] forState:UIControlStateNormal];
+         barButton = [[UIBarButtonItem alloc]initWithCustomView:button1];
+         barButton.style = UIBarButtonItemStyleBordered;
+         barButton.enabled = YES;
+         
+         self.navigationItem.rightBarButtonItem = barButton;
          */
     }
     
@@ -65,8 +49,8 @@
         couponLabel.clipsToBounds = YES;
         couponLabel.backgroundColor = [UIColor clearColor];
         couponLabel.textAlignment = NSTextAlignmentCenter;
-        
-        tableView.tableHeaderView = couponLabel;
+    
+        self.tableView.tableHeaderView = couponLabel;
     }
     
     // set Favorite
@@ -79,24 +63,6 @@
     [tableView reloadData];
 }
 
-- (void)updateViewData{
-    [Server updateRestaurant:restaurant];
-}
-
-- (IBAction)call:(id)sender{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@", restaurant.name, restaurant.phoneNumber, CAMPUS];
-    [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
-    [prefs setObject:params forKey:@"params"];
-    
-    NSString * urlString = [NSString stringWithFormat:@"tel://%@", restaurant.phoneNumber];
-    NSURL * url = [NSURL URLWithString:urlString];
-    
-    if (![[UIApplication sharedApplication] openURL:url]) {
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
-    }
-}
 -(IBAction)favoriteButtonClicked:(id)sender{
     restaurant.isFavorite = !restaurant.isFavorite;
     [self updateUI];
@@ -113,36 +79,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self updateUI];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self updateViewData];
-    });
-    
-    
-    // myNotificationCenter 객체 생성 후 defaultCenter에 등록
-    NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
-    
-    // myNotificationCenter 객체를 이용해서 옵저버 등록
-    [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
 }
 - (void)viewWillAppear:(BOOL)animated{
-}
-
-- (void)flyerClicked:(id)sender{
-    [self performSegueWithIdentifier:@"Flyer" sender:self];
+    self.restaurant = [self randomRestaurant];
+    [self updateUI];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"Flyer"]) {
-        [[segue destinationViewController] setDetailItem:restaurant];
-    }
 }
-#pragma ma`rk - Table view data source
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"Number of section");
     if(!restaurant.menu==nil)
         return [restaurant.menu count];
     else return 0;
@@ -150,7 +99,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Number of row");
     if(![restaurant.menu count]==0)
         return [[[restaurant.menu objectAtIndex:section] objectAtIndex:1] count];
     else return 0;
@@ -184,4 +132,52 @@
     
     return cell;
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)call:(id)sender{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@", restaurant.name, restaurant.phoneNumber, CAMPUS];
+    [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
+    [prefs setObject:params forKey:@"params"];
+    
+    NSString * urlString = [NSString stringWithFormat:@"tel://%@", restaurant.phoneNumber];
+    NSURL * url = [NSURL URLWithString:urlString];
+    
+    if (![[UIApplication sharedApplication] openURL:url]) {
+        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+}
+
+
+- (Restaurant *)randomRestaurant{
+    NSDictionary * allData = [(AppDelegate *)[[UIApplication sharedApplication] delegate] allData];
+    
+    // 전체 음식점 갯수
+    int cnt = 0;
+    for(id key in allData){
+        cnt += [[allData objectForKey:key] count];
+    }
+    int r = arc4random() % cnt;
+    NSLog(@"random number r : %d", r);
+    
+    Restaurant * res;
+    NSLog(@"start");
+    for(id key in allData){
+        NSString* category = key;
+        if([[allData objectForKey:category] count] <= r){
+            r -= [[allData objectForKey:category] count];
+        }else{
+            res = [[allData objectForKey:category] objectAtIndex:r];
+            break;
+        }
+    }
+    return res;
+}
+
 @end

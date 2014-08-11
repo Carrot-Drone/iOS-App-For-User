@@ -24,6 +24,8 @@
 @property (nonatomic) BOOL has_coupon;
 @property (nonatomic, strong) NSString * couponString;
 
+@property (nonatomic) BOOL isFavorite;
+
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber;
 - (NSDictionary *)dictionaryFromRestaurant;
 - (void)setRestaurantFromDictionary:(NSDictionary *)dictionary;

@@ -12,6 +12,7 @@
 @synthesize server_id, updated_at;
 @synthesize name, menu, phoneNumber, openingHours, closingHours, categories;
 @synthesize has_flyer, has_coupon, couponString;
+@synthesize isFavorite;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber{
     self = [super init];
@@ -57,7 +58,10 @@
     NSArray * menus = [dictionary objectForKey:@"menus"];
     NSMutableArray *res_menu = [[NSMutableArray alloc] init];
     
-    NSString * currentSection = [[menus objectAtIndex:0] objectForKey:@"section"];
+    NSString * currentSection = @"";
+    if([menus count]!=0){
+        currentSection = [[menus objectAtIndex:0] objectForKey:@"section"];
+    }
     NSMutableArray * sections = [[NSMutableArray alloc] init];
     NSMutableArray * prices = [[NSMutableArray alloc] init];
 
@@ -101,6 +105,7 @@
     has_flyer = [[aDecoder decodeObjectForKey:@"flyer"] boolValue];
     has_coupon = [[aDecoder decodeObjectForKey:@"coupon"] boolValue];
     couponString = [aDecoder decodeObjectForKey:@"couponString"];
+    isFavorite = [[aDecoder decodeObjectForKey:@"isFavorite"] boolValue];
     
     return self;
 }
@@ -118,6 +123,7 @@
     [aCoder encodeObject:[NSNumber numberWithBool:has_flyer] forKey:@"has_flyer"];
     [aCoder encodeObject:[NSNumber numberWithBool:has_coupon] forKey:@"has_coupon"];
     [aCoder encodeObject:couponString forKey:@"couponString"];
+    [aCoder encodeObject:[NSNumber numberWithBool:isFavorite] forKey:@"isFavorite"];
 }
 
 - (NSComparisonResult)compare:(Restaurant *)otherObject {

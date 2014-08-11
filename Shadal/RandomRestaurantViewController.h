@@ -1,15 +1,19 @@
 //
-//  RestaurantViewController.h
+//  RandomRestaurantViewController.h
 //  Shadal
 //
-//  Created by SukWon Choi on 13. 10. 6..
-//  Copyright (c) 2013년 Wafflestudio. All rights reserved.
+//  Created by Sukwon Choi on 8/12/14.
+//  Copyright (c) 2014 Wafflestudio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "Restaurant.h"
+#import "RestaurantCell.h"
+#import "Constants.h"
+#import "MenuCell.h"
 
-@interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface RandomRestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) Restaurant * restaurant;
 
@@ -19,11 +23,8 @@
 @property (nonatomic, strong) IBOutlet UILabel * titleLabel;
 @property (nonatomic, strong) IBOutlet UIButton * phoneNumber;
 
-@property (nonatomic, strong) UIBarButtonItem * barButton;
 
 - (IBAction)call:(id)sender;
 - (IBAction)favoriteButtonClicked:(id)sender;
-- (void)setDetailItem:(id)detailItem;
-
 
 @end
