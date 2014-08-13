@@ -24,6 +24,8 @@
 - (IBAction)call:(id)sender;
 - (IBAction)favoriteButtonClicked:(id)sender;
 - (void)setDetailItem:(id)detailItem;
+- (void)updateUI;
+
 
 
 @end

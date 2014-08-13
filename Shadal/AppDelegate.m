@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 
+#import "RestaurantViewController.h"
+
 @implementation AppDelegate
 
 @synthesize allData;
@@ -23,31 +25,8 @@
          NSString *myPathInfo = [[NSBundle mainBundle] pathForResource:@"allData" ofType:@"bin"];
          NSFileManager *fileManager = [NSFileManager defaultManager];
          [fileManager copyItemAtPath:myPathInfo toPath:filePath error:NULL];
-        /*
-        NSMutableDictionary * dummyData = [[NSMutableDictionary alloc] init];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"족발/보쌈"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"피자"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"중국집"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"한식/분식"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"도시락/돈까스"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"기타"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"치킨"];
-        [dummyData setObject:[[NSMutableArray alloc] init] forKey:@"냉면"];
-        
-        
-        // Save alldata to file
-        NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:dummyData];
-        
-        NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString* documentDir = [paths objectAtIndex:0];
-        
-        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
-        
-        [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
-         */
         
     }
-    
     return filePath;
 }
 
@@ -55,7 +34,45 @@
 {
     NSData * myData = [NSData dataWithContentsOfFile:[self filePath]];
     self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
+    
+    UITabBarController * tabbarController = (UITabBarController *)self.window.rootViewController;
+    tabbarController.delegate = self;
+    
     return YES;
+}
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    if([(UINavigationController *)viewController respondsToSelector:@selector(viewControllers)]){
+        UIViewController * rootViewController = ((UINavigationController *)viewController).viewControllers[0];
+        if([rootViewController isKindOfClass:[RestaurantViewController class]]){
+            [((RestaurantViewController *)rootViewController) setDetailItem:[self randomRestaurant]];
+            [((RestaurantViewController *)rootViewController) updateUI];
+        }
+    }
+    return true;
+}
+
+- (Restaurant *)randomRestaurant{
+    
+    // 전체 음식점 갯수
+    int cnt = 0;
+    for(id key in allData){
+        cnt += [[allData objectForKey:key] count];
+    }
+    int r = arc4random() % cnt;
+    NSLog(@"random number r : %d", r);
+    
+    Restaurant * res;
+    NSLog(@"start");
+    for(id key in allData){
+        NSString* category = key;
+        if([[allData objectForKey:category] count] <= r){
+            r -= [[allData objectForKey:category] count];
+        }else{
+            res = [[allData objectForKey:category] objectAtIndex:r];
+            break;
+        }
+    }
+    return res;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
