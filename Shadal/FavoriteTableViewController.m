@@ -18,11 +18,12 @@
 @synthesize favoriteRes;
 
 - (void)setDetailItem:(id)detailItem{
-    favoriteRes = (NSMutableArray *)detailItem;
+    favoriteRes = (NSMutableDictionary *)detailItem;
 }
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     categories = [[NSMutableArray alloc] init];
     [categories addObject:@"치킨"];
@@ -34,8 +35,13 @@
     [categories addObject:@"냉면"];
     [categories addObject:@"기타"];
     
-    
     favoriteRes = [[NSMutableDictionary alloc] init];
+    
+    // init navigation bar
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     // init Favorite Res array

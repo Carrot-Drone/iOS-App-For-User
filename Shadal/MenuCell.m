@@ -11,15 +11,17 @@
 @implementation MenuCell
 @synthesize menuLabel, priceLabel;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    // set default font
+    UIFont * customFont = [UIFont fontWithName:@"SeN-CL" size:18];
+    if(customFont == nil) NSLog(@"Font not exist");
+    [menuLabel setFont:customFont];
+    
+    customFont = [UIFont fontWithName:@"SeN-CL" size:14];
+    if(customFont == nil) NSLog(@"Font not exist");
+    [priceLabel setFont:customFont];
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

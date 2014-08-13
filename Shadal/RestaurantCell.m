@@ -11,15 +11,19 @@
 @implementation RestaurantCell
 @synthesize restaurantLabel;
 
+- (void)awakeFromNib
+{
+    // set default font
+    UIFont * customFont = [UIFont fontWithName:@"SeN-CL" size:19.5];
+    if(customFont == nil) NSLog(@"Font not exist");
+    
+    [restaurantLabel setFont:customFont];
+    
+}
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // set default font
-        UIFont * customFont = [UIFont fontWithName:@"SeN-CEB" size:5];
-        if(customFont == nil) NSLog(@"Font not exist");
-        
-        [restaurantLabel setFont:customFont];
     }
     return self;
 }

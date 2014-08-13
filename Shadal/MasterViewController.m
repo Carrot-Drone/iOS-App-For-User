@@ -9,9 +9,10 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "CustomTitleView.h"
 
 #import "Restaurant.h"
-
+#import "CategoryCell.h"
 #import "AppDelegate.h"
 
 
@@ -27,6 +28,10 @@
 {
     [super viewDidLoad];
     
+    // reset default tint color
+    self.navigationController.navigationBar.tintColor = nil;
+
+    // init data
     allData = [(AppDelegate *)[[UIApplication sharedApplication] delegate] allData];
     categories = [[NSMutableArray alloc] init];
     
@@ -39,6 +44,16 @@
     [categories addObject:@"냉면"];
     [categories addObject:@"기타"];
     
+    // custom title view
+    UIView * customTitleView;
+    customTitleView = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][0];
+    self.navigationItem.titleView = customTitleView;
+    
+    // init navigation bar
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
 }
 
 - (void)showEmail{
@@ -82,14 +97,24 @@
     return [categories count]+1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 48;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    CategoryCell * cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:@""];
+    
+    if(cell == nil){
+        NSArray * array;
+        array = [[NSBundle mainBundle] loadNibNamed:@"CategoryCell" owner:nil options:nil];
+        cell = [array objectAtIndex:0];
+    }
+    
     if(indexPath.row == [categories count]){
-        cell.textLabel.text = @"Contact Us";
+        cell.categoryLabel.text = @"Contact Us";
     }else{
-        cell.textLabel.text = [categories objectAtIndex:indexPath.row];
+        cell.categoryLabel.text = [categories objectAtIndex:indexPath.row];
     }
     return cell;
 }
@@ -116,6 +141,43 @@
         DetailViewController * viewController = (DetailViewController *)[segue destinationViewController];
         viewController.category = [categories objectAtIndex:indexPath.row];
         [viewController setDetailItem:[allData objectForKey:viewController.category]];
+        
+        CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+        
+        NSInteger index = [self.tableView indexPathForSelectedRow].row;
+        UIImage * categoryImg;
+        switch (index) {
+            case 0:
+                categoryImg = [UIImage imageNamed:@"iconChic.png"];
+                break;
+            case 1:
+                categoryImg = [UIImage imageNamed:@"iconPizza.png"];
+                break;
+            case 2:
+                categoryImg = [UIImage imageNamed:@"iconChinese.png"];
+                break;
+            case 3:
+                categoryImg = [UIImage imageNamed:@"iconBab.png"];
+                break;
+            case 4:
+                categoryImg = [UIImage imageNamed:@"iconDosirak.png"];
+                break;
+            case 5:
+                categoryImg = [UIImage imageNamed:@"iconBossam.png"];
+                break;
+            case 6:
+                categoryImg = [UIImage imageNamed:@"iconNoodle.png"];
+                break;
+            case 7:
+                categoryImg = [UIImage imageNamed:@"iconEtc.png"];
+                break;
+            default:
+                break;
+        }
+        
+        titleView.categoryImageView.image = categoryImg;
+        titleView.categoryLabel.text = [categories objectAtIndex:index];
+        viewController.navigationItem.titleView = titleView;
     }
 }
 

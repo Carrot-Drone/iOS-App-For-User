@@ -34,8 +34,19 @@
     NSData * myData = [NSData dataWithContentsOfFile:[self filePath]];
     self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
+    // init tabbar
     UITabBarController * tabbarController = (UITabBarController *)self.window.rootViewController;
     tabbarController.delegate = self;
+    
+    
+    // init navigation bar
+    UIFont * customFont = [UIFont fontWithName:@"SeN-CEB" size:19.5];
+    if(customFont == nil) NSLog(@"Font not exist");
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor whiteColor],NSForegroundColorAttributeName,
+                                               customFont, NSFontAttributeName,
+                                               nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
     return YES;
 }
