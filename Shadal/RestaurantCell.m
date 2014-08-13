@@ -9,12 +9,17 @@
 #import "RestaurantCell.h"
 
 @implementation RestaurantCell
+@synthesize restaurantLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        // set default font
+        UIFont * customFont = [UIFont fontWithName:@"SeN-CEB" size:5];
+        if(customFont == nil) NSLog(@"Font not exist");
+        
+        [restaurantLabel setFont:customFont];
     }
     return self;
 }

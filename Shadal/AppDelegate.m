@@ -25,7 +25,6 @@
          NSString *myPathInfo = [[NSBundle mainBundle] pathForResource:@"allData" ofType:@"bin"];
          NSFileManager *fileManager = [NSFileManager defaultManager];
          [fileManager copyItemAtPath:myPathInfo toPath:filePath error:NULL];
-        
     }
     return filePath;
 }
@@ -59,8 +58,6 @@
         cnt += [[allData objectForKey:key] count];
     }
     int r = arc4random() % cnt;
-    NSLog(@"random number r : %d", r);
-    
     Restaurant * res;
     NSLog(@"start");
     for(id key in allData){

@@ -38,6 +38,7 @@
     [categories addObject:@"족발/보쌈"];
     [categories addObject:@"냉면"];
     [categories addObject:@"기타"];
+    
 }
 
 - (void)showEmail{
