@@ -11,6 +11,8 @@
 #import "Restaurant.h"
 #import "RestaurantCell.h"
 
-@interface FavoriteTableViewController : UITableViewController
+@interface FavoriteViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSMutableDictionary * favoriteRes;
+
+@property (strong, nonatomic) IBOutlet UITableView * tableView;
 @end

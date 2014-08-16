@@ -37,7 +37,7 @@
 
 - (void)updateUI{
     // init navigation bar
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
     
     self.navigationItem.title = restaurant.name;
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
@@ -120,7 +120,8 @@
 
 - (void)viewDidLoad
 {
-    [self.view setBackgroundColor:[UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f]];
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
+    [self.tableView setBackgroundColor:BACKGROUND_COLOR];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self updateViewData];
@@ -192,5 +193,9 @@
     cell.userInteractionEnabled = NO;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
+    view.tintColor = BACKGROUND_COLOR;
 }
 @end

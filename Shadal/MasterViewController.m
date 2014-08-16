@@ -15,6 +15,8 @@
 #import "CategoryCell.h"
 #import "AppDelegate.h"
 
+#import "Constants.h"
+
 
 @interface MasterViewController () {
     NSMutableArray * categories;
@@ -50,9 +52,10 @@
     self.navigationItem.titleView = customTitleView;
     
     // init navigation bar
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0];
-    
+    self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    self.tableView.backgroundColor = BACKGROUND_COLOR;
 
 }
 
@@ -94,7 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [categories count]+1;
+    return [categories count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -111,11 +114,8 @@
         cell = [array objectAtIndex:0];
     }
     
-    if(indexPath.row == [categories count]){
-        cell.categoryLabel.text = @"Contact Us";
-    }else{
-        cell.categoryLabel.text = [categories objectAtIndex:indexPath.row];
-    }
+    cell.categoryLabel.text = [categories objectAtIndex:indexPath.row];
+    
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -181,4 +181,26 @@
     }
 }
 
+- (NSInteger)realRowNumberForIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView
+{
+	NSInteger retInt = 0;
+	if (!indexPath.section)
+	{
+		return indexPath.row;
+	}
+	for (int i=0; i<indexPath.section;i++)
+	{
+		retInt += [tableView numberOfRowsInSection:i];
+	}
+    
+	return retInt + indexPath.row;
+}
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    NSInteger realInt = [self realRowNumberForIndexPath:indexPath inTableView:tableView];
+    if(realInt % 2 == 0)
+        cell.backgroundColor = BACKGROUND_COLOR;
+    else
+        cell.backgroundColor = HIGHLIGHT_COLOR;
+}
 @end

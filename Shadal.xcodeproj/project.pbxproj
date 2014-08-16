@@ -28,8 +28,10 @@
 		F5110AF617FC013C00D7AA85 /* ShadalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110AF517FC013C00D7AA85 /* ShadalTests.m */; };
 		F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0017FC044E00D7AA85 /* Restaurant.m */; };
 		F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0317FC10E200D7AA85 /* DetailViewController.m */; };
+		F519367F199F324000339903 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F519367E199F324000339903 /* SettingTableViewController.m */; };
+		F5193681199F48F200339903 /* StarBackgroundNull.png in Resources */ = {isa = PBXBuildFile; fileRef = F5193680199F48F200339903 /* StarBackgroundNull.png */; };
 		F5273667180D0950008160F9 /* allData.bin in Resources */ = {isa = PBXBuildFile; fileRef = F5273666180D094F008160F9 /* allData.bin */; };
-		F52A85CD1999126B0010C261 /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A85CC1999126B0010C261 /* FavoriteTableViewController.m */; };
+		F52A85CD1999126B0010C261 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A85CC1999126B0010C261 /* FavoriteViewController.m */; };
 		F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4651896530C0003A53D /* 02-875-9522_1.jpg */; };
 		F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4661896530C0003A53D /* 02-875-9522_2.jpg */; };
 		F531C46D189653B00003A53D /* 02-876-9293_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F531C46B189653B00003A53D /* 02-876-9293_1.png */; };
@@ -112,9 +114,12 @@
 		F5110B0017FC044E00D7AA85 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		F5110B0217FC10E200D7AA85 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F5110B0317FC10E200D7AA85 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F519367D199F324000339903 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		F519367E199F324000339903 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		F5193680199F48F200339903 /* StarBackgroundNull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarBackgroundNull.png; sourceTree = "<group>"; };
 		F5273666180D094F008160F9 /* allData.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = allData.bin; sourceTree = "<group>"; };
-		F52A85CB1999126B0010C261 /* FavoriteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTableViewController.h; sourceTree = "<group>"; };
-		F52A85CC1999126B0010C261 /* FavoriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTableViewController.m; sourceTree = "<group>"; };
+		F52A85CB1999126B0010C261 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		F52A85CC1999126B0010C261 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		F531C4651896530C0003A53D /* 02-875-9522_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_1.jpg"; sourceTree = "<group>"; };
 		F531C4661896530C0003A53D /* 02-875-9522_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_2.jpg"; sourceTree = "<group>"; };
 		F531C46B189653B00003A53D /* 02-876-9293_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-876-9293_1.png"; sourceTree = "<group>"; };
@@ -285,6 +290,7 @@
 				F54D1389199B9DB300AFE026 /* StarOff.png */,
 				F54D138A199B9DB300AFE026 /* StarOn.png */,
 				F54D138B199B9DB300AFE026 /* StarOnList.png */,
+				F5193680199F48F200339903 /* StarBackgroundNull.png */,
 				F54D1368199B89A600AFE026 /* 서울남산체EB.ttf */,
 				F54D1369199B89A600AFE026 /* 서울남산체L.ttf */,
 				49103D581851A7FF00070801 /* flyer.png */,
@@ -342,8 +348,10 @@
 				F54118351800EC92006A2136 /* RestaurantViewController.m */,
 				49C3DB251851C594002C9EBA /* FlyerViewController.h */,
 				49C3DB261851C594002C9EBA /* FlyerViewController.m */,
-				F52A85CB1999126B0010C261 /* FavoriteTableViewController.h */,
-				F52A85CC1999126B0010C261 /* FavoriteTableViewController.m */,
+				F52A85CB1999126B0010C261 /* FavoriteViewController.h */,
+				F52A85CC1999126B0010C261 /* FavoriteViewController.m */,
+				F519367D199F324000339903 /* SettingTableViewController.h */,
+				F519367E199F324000339903 /* SettingTableViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -463,6 +471,7 @@
 				F5A41BF41873C2FC00004DC5 /* 02-878-3727.jpg in Resources */,
 				F54D136B199B89A600AFE026 /* 서울남산체L.ttf in Resources */,
 				F54D139A199B9DB300AFE026 /* iconPizza.png in Resources */,
+				F5193681199F48F200339903 /* StarBackgroundNull.png in Resources */,
 				F54D1390199B9DB300AFE026 /* CallBotton.png in Resources */,
 				F5273667180D0950008160F9 /* allData.bin in Resources */,
 				F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */,
@@ -501,11 +510,12 @@
 				F536D599180CC8D600E73254 /* MenuCell.m in Sources */,
 				491FD3101852DCD300885396 /* UIImage+UIImage_Customized.m in Sources */,
 				F54D1376199B92CB00AFE026 /* CustomTitleView.m in Sources */,
+				F519367F199F324000339903 /* SettingTableViewController.m in Sources */,
 				F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */,
 				F5110ADE17FC013C00D7AA85 /* MasterViewController.m in Sources */,
 				49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */,
 				49103D551851A63F00070801 /* RestaurantCell.m in Sources */,
-				F52A85CD1999126B0010C261 /* FavoriteTableViewController.m in Sources */,
+				F52A85CD1999126B0010C261 /* FavoriteViewController.m in Sources */,
 				F54D136F199B8E8700AFE026 /* CategoryCell.m in Sources */,
 				F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */,
 				F5110AD417FC013C00D7AA85 /* main.m in Sources */,

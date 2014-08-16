@@ -35,9 +35,13 @@
     self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
     // init tabbar
-    UITabBarController * tabbarController = (UITabBarController *)self.window.rootViewController;
-    tabbarController.delegate = self;
-    
+    UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
+    tabBarController.delegate = self;
+    [tabBarController.tabBar setBarTintColor:MAIN_COLOR];
+    [tabBarController.tabBar setTintColor:[UIColor whiteColor]];
+
+    [self setTabBarItemImage];
+
     
     // init navigation bar
     UIFont * customFont = [UIFont fontWithName:@"SeN-CEB" size:19.5];
@@ -124,4 +128,34 @@
     [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
 }
 
+- (void)setTabBarItemImage{
+    UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    UITabBarItem *item1 = [tabBarController.tabBar.items objectAtIndex:0];
+    item1.title = @"메인화면";
+    item1.image = [UIImage imageNamed:@"StarOnList.png"];
+    item1.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    
+    UITabBarItem *item2 = [tabBarController.tabBar.items objectAtIndex:1];
+    item2.title = @"즐겨찾기";
+    item2.image = [UIImage imageNamed:@"StarOnList.png"];
+    item2.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    UITabBarItem *item3 = [tabBarController.tabBar.items objectAtIndex:2];
+    item3.title = @"아무거나";
+    item3.image = [UIImage imageNamed:@"StarOnList.png"];
+    item3.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    UITabBarItem *item4 = [tabBarController.tabBar.items objectAtIndex:3];
+    item4.title = @"더보기";
+    item4.image = [UIImage imageNamed:@"StarOnList.png"];
+    item4.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    
+    for (UITabBarItem  *tab in tabBarController.tabBar.items) {
+        
+        tab.image = [tab.image imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        tab.selectedImage = [tab.selectedImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+        
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor yellowColor], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+    }
+}
 @end

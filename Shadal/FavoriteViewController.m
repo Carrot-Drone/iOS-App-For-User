@@ -6,16 +6,17 @@
 //  Copyright (c) 2014 Wafflestudio. All rights reserved.
 //
 
-#import "FavoriteTableViewController.h"
+#import "FavoriteViewController.h"
+#import "Constants.h";
 
-@interface FavoriteTableViewController (){
+@interface FavoriteViewController (){
     NSMutableArray * categories;
 }
 
 @end
 
-@implementation FavoriteTableViewController
-@synthesize favoriteRes;
+@implementation FavoriteViewController
+@synthesize favoriteRes, tableView;
 
 - (void)setDetailItem:(id)detailItem{
     favoriteRes = (NSMutableDictionary *)detailItem;
@@ -23,7 +24,6 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
     categories = [[NSMutableArray alloc] init];
     [categories addObject:@"치킨"];
@@ -38,9 +38,10 @@
     favoriteRes = [[NSMutableDictionary alloc] init];
     
     // init navigation bar
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -64,7 +65,12 @@
             }
         }
     }
-    
+    if([self totalNumberOfRestaurant]==0){
+        self.tableView.hidden = YES;
+        self.view.backgroundColor = [UIColor yellowColor];
+    }else{
+        self.tableView.hidden = NO;
+    }
     [[self tableView] reloadData];
     
     NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
@@ -138,6 +144,7 @@
     [self performSegueWithIdentifier:@"Restaurant" sender:self];
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"Restaurant"]) {
@@ -147,4 +154,11 @@
     }
 }
 
+- (NSInteger) totalNumberOfRestaurant{
+    int cnt = 0;
+    for(id key in favoriteRes){
+        cnt += [[favoriteRes objectForKey:key] count];
+    }
+    return (NSInteger)cnt;
+}
 @end

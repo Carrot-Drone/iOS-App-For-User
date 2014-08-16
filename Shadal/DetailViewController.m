@@ -31,6 +31,7 @@
 }
 
 - (void)updateUI:(NSNotification *)notification{
+    self.tableView.backgroundColor = BACKGROUND_COLOR;
     NSDictionary * dictionary = [notification userInfo];
     
     // Add New Restaurant
@@ -179,6 +180,30 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         [[segue destinationViewController] setDetailItem:[resArray objectAtIndex:indexPath.row]];
     }
+}
+
+
+- (NSInteger)realRowNumberForIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView
+{
+	NSInteger retInt = 0;
+	if (!indexPath.section)
+	{
+		return indexPath.row;
+	}
+	for (int i=0; i<indexPath.section;i++)
+	{
+		retInt += [tableView numberOfRowsInSection:i];
+	}
+    
+	return retInt + indexPath.row;
+}
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    NSInteger realInt = [self realRowNumberForIndexPath:indexPath inTableView:tableView];
+    if(realInt % 2 == 0)
+        cell.backgroundColor = BACKGROUND_COLOR;
+    else
+        cell.backgroundColor = HIGHLIGHT_COLOR;
 }
 
 @end
