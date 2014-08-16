@@ -9,6 +9,10 @@
 #ifndef Shadal_Constants_h
 #define Shadal_Constants_h
 
+#define SEOUL_FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
+#define SEOUL_FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
+
+
 //#define WEB_BASE_URL                @"http://localhost:3000"
 #define WEB_BASE_URL                @"http://services.snu.ac.kr:3111"
 #define NEW_CALL                    @"/new_call"

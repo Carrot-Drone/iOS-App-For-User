@@ -16,8 +16,8 @@
 @property (nonatomic, strong) IBOutlet UIButton * favorite;
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
-@property (nonatomic, strong) IBOutlet UILabel * titleLabel;
 @property (nonatomic, strong) IBOutlet UIButton * phoneNumber;
+@property (nonatomic, strong) IBOutlet UILabel * openingTimeLabel;
 
 @property (nonatomic, strong) UIBarButtonItem * barButton;
 

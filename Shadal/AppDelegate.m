@@ -70,7 +70,6 @@
     }
     int r = arc4random() % cnt;
     Restaurant * res;
-    NSLog(@"start");
     for(id key in allData){
         NSString* category = key;
         if([[allData objectForKey:category] count] <= r){

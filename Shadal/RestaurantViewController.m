@@ -22,7 +22,7 @@
 
 @implementation RestaurantViewController
 @synthesize tableView;
-@synthesize restaurant, titleLabel, phoneNumber;
+@synthesize restaurant, phoneNumber, openingTimeLabel;
 @synthesize barButton;
 @synthesize favorite;
 
@@ -36,8 +36,16 @@
 }
 
 - (void)updateUI{
-    self.titleLabel.text = [restaurant name];
+    // init navigation bar
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0];
+    
+    self.navigationItem.title = restaurant.name;
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
+    [phoneNumber.titleLabel setFont:SEOUL_FONT_EB(19.5)];
+    [phoneNumber setTintColor:[UIColor whiteColor]];
+    
+    [openingTimeLabel setFont:SEOUL_FONT_EB(11.0)];
+    [openingTimeLabel setText:[restaurant stringWithOpenAndClosingHours]];
     
     // set Flyer Button
     if(restaurant.has_flyer){
@@ -71,9 +79,9 @@
     
     // set Favorite
     if(restaurant.isFavorite){
-        [favorite setBackgroundImage:[UIImage imageNamed:@"coupon.png"] forState:UIControlStateNormal];
+        [favorite setBackgroundImage:[UIImage imageNamed:@"StarOn.png"] forState:UIControlStateNormal];
     }else{
-        [favorite setBackgroundImage:[UIImage imageNamed:@"flyer.png"] forState:UIControlStateNormal];
+        [favorite setBackgroundImage:[UIImage imageNamed:@"StarOff.png"] forState:UIControlStateNormal];
     }
     
     [tableView reloadData];
@@ -112,20 +120,23 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    [self updateUI];
+    [self.view setBackgroundColor:[UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f]];
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self updateViewData];
     });
-    
     
     // myNotificationCenter 객체 생성 후 defaultCenter에 등록
     NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
     
     // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
+    
+    
+    [super viewDidLoad];
 }
 - (void)viewWillAppear:(BOOL)animated{
+    [self updateUI];
 }
 
 - (void)flyerClicked:(id)sender{
@@ -142,7 +153,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"Number of section");
     if(!restaurant.menu==nil)
         return [restaurant.menu count];
     else return 0;
@@ -150,7 +160,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Number of row");
     if(![restaurant.menu count]==0)
         return [[[restaurant.menu objectAtIndex:section] objectAtIndex:1] count];
     else return 0;
