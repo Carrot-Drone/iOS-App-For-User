@@ -85,8 +85,7 @@ static NSMutableData * responseData;
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
             [_restaurant setRestaurantFromDictionary:json];
             
-            NSLog(@"%@", json);
-            
+            if(json == NULL) return ;
             // 노티피케이션 전송. RestaurantViewController 에서 이 노티피케이션을 받아서 updateUI 함수를 실행. 뷰를 업데이트
             NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
             

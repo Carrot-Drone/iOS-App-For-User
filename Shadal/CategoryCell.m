@@ -9,7 +9,7 @@
 #import "CategoryCell.h"
 
 @implementation CategoryCell
-@synthesize categoryLabel;
+@synthesize categoryLabel, categoryImage;
 - (void)awakeFromNib
 {
     // Initialization code

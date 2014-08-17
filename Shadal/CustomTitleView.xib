@@ -29,17 +29,17 @@
             </connections>
         </view>
         <view contentMode="scaleToFill" id="yLr-MZ-3Cw" customClass="CustomTitleView">
-            <rect key="frame" x="0.0" y="0.0" width="109" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="132" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="치킨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUQ-LU-MWI">
-                    <rect key="frame" x="52" y="19" width="92" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="치킨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="iUQ-LU-MWI">
+                    <rect key="frame" x="40" y="19" width="92" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconChic.png" translatesAutoresizingMaskIntoConstraints="NO" id="yzl-yO-b7s">
-                    <rect key="frame" x="14" y="15" width="30" height="30"/>
+                    <rect key="frame" x="2" y="15" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>

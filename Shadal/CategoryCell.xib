@@ -14,17 +14,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jl-Zn-4T6">
-                        <rect key="frame" x="20" y="13" width="185" height="21"/>
+                        <rect key="frame" x="57" y="13" width="185" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconChic.png" translatesAutoresizingMaskIntoConstraints="NO" id="va8-Ek-ohV">
+                        <rect key="frame" x="9" y="4" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="categoryImage" destination="va8-Ek-ohV" id="4ye-KZ-UAU"/>
                 <outlet property="categoryLabel" destination="7Jl-Zn-4T6" id="Ffv-fs-u2Q"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="iconChic.png" width="80" height="80"/>
+    </resources>
 </document>

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SettingTableViewController : UITableViewController
+@interface SettingTableViewController : UITableViewController <MFMailComposeViewControllerDelegate>
+
+-(IBAction)linkToFacebook:(id)sender;
+-(IBAction)linkToYongon:(id)sender;
+-(IBAction)showEmail:(id)sender;
 
 @end

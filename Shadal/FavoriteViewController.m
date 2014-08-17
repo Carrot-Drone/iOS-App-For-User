@@ -7,8 +7,8 @@
 //
 
 #import "FavoriteViewController.h"
-#import "Constants.h";
-
+#import "Constants.h"
+#import "CustomTitleView.h"
 @interface FavoriteViewController (){
     NSMutableArray * categories;
 }
@@ -39,9 +39,13 @@
     
     // init navigation bar
     self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
-    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+    // init titleView
+    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+    titleView.categoryImageView.image = [UIImage imageNamed:@"BotIconStarSelect"];
+    titleView.categoryLabel.text = @"즐겨찾기";
+    self.navigationItem.titleView = titleView;
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -67,7 +71,7 @@
     }
     if([self totalNumberOfRestaurant]==0){
         self.tableView.hidden = YES;
-        self.view.backgroundColor = [UIColor yellowColor];
+        self.view.backgroundColor = BACKGROUND_COLOR;
     }else{
         self.tableView.hidden = NO;
     }

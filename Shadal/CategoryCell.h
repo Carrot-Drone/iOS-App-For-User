@@ -11,5 +11,6 @@
 @interface CategoryCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel * categoryLabel;
+@property (nonatomic, strong) IBOutlet UIImageView * categoryImage;
 
 @end

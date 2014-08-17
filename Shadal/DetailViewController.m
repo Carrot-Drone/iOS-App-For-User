@@ -14,7 +14,10 @@
 
 #import "Constants.h"
 
-@interface DetailViewController ()
+@interface DetailViewController (){
+    NSMutableArray * resWithFlyer;
+    NSMutableArray * resWithoutFlyer;
+}
 
 @end
 
@@ -81,7 +84,26 @@
     
     
     //update tableView
+    [resWithFlyer removeAllObjects];
+    [resWithoutFlyer removeAllObjects];
+    
+    for(Restaurant * res in resArray){
+        if(res.has_flyer){
+            [resWithFlyer addObject:res];
+        }else{
+            [resWithoutFlyer addObject:res];
+        }
+    }
+    
+    [resWithFlyer sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    [resWithoutFlyer sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    
     [[self tableView] reloadData];
+     
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -96,6 +118,9 @@
 {
     [super viewDidLoad];
     
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
+    [self.tableView setBackgroundColor:BACKGROUND_COLOR];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self updateViewData];
     });
@@ -105,6 +130,10 @@
     
     // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(updateUI:) name:@"checkForResInCategory" object: nil];
+    
+    // init objects
+    resWithFlyer = [[NSMutableArray alloc] init];
+    resWithoutFlyer = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -113,7 +142,25 @@
         return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
     }];
     
-    [[self tableView] reloadData];
+    [resWithFlyer removeAllObjects];
+    [resWithoutFlyer removeAllObjects];
+    
+    for(Restaurant * res in resArray){
+        if(res.has_flyer){
+            [resWithFlyer addObject:res];
+        }else{
+            [resWithoutFlyer addObject:res];
+        }
+    }
+    
+    [resWithFlyer sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    [resWithoutFlyer sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    
+    [self.tableView reloadData];
     
     NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
     [self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
@@ -123,11 +170,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(section == 0){
+        return [resWithFlyer count];
+    }else{
+        return [resWithoutFlyer count];
+    }
     return [resArray count];
 }
 
@@ -143,14 +195,21 @@
         cell = [array objectAtIndex:0];
     }
     
-    Restaurant * res = [resArray objectAtIndex:indexPath.row];
+    Restaurant * res;
+    if(indexPath.section ==0){
+        res = [resWithFlyer objectAtIndex:indexPath.row];
+    }else{
+        res = [resWithoutFlyer objectAtIndex:indexPath.row];
+    }
     
     cell.restaurantLabel.text = res.name;
     
     if(res.has_flyer){
         cell.secondImage.image = [UIImage imageNamed:@"flyer"];
+        cell.secondImage.hidden = NO;
         if(res.has_coupon){
             cell.firstImage.image = [UIImage imageNamed:@"coupon"];
+            cell.firstImage.hidden = NO;
         }else{
             cell.firstImage.hidden = YES;
         }
@@ -158,12 +217,21 @@
         cell.firstImage.hidden = YES;
         if(res.has_coupon){
             cell.secondImage.image = [UIImage imageNamed:@"coupon"];
+            cell.secondImage.hidden = NO;
         }else{
             cell.secondImage.hidden = YES;
         }
     }
     
     return cell;
+}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if([resWithFlyer count]==0) return @"";
+    if(section == 0){
+        return @"전단지";
+    }else{
+        return @"일반";
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -178,7 +246,12 @@
 {
     if ([[segue identifier] isEqualToString:@"Restaurant"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        [[segue destinationViewController] setDetailItem:[resArray objectAtIndex:indexPath.row]];
+        
+        Restaurant * res;
+        if(indexPath.section == 0) res = [resWithFlyer objectAtIndex:indexPath.row];
+        else res = [resWithoutFlyer objectAtIndex:indexPath.row];
+        
+        [[segue destinationViewController] setDetailItem:res];
     }
 }
 

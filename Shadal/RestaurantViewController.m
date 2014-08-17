@@ -13,6 +13,7 @@
 #import "Constants.h"
 
 #import "AppDelegate.h"
+#import "UIImage+IMAGECategories.h"
 
 #include "stdlib.h"
 
@@ -133,7 +134,7 @@
     // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
     
-    
+//    self.phoneNumber.backgroundColor = [UIColor colorWithRed:73/255.0 green:196/255.0 blue:57/255.0 alpha:1.0];
     [super viewDidLoad];
 }
 - (void)viewWillAppear:(BOOL)animated{

@@ -13,7 +13,11 @@
 // #define Design component
 #define SEOUL_FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
 #define SEOUL_FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
-#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:255/255.0 green:114/255.0 blue:51/255.0 alpha:1.0]
+#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:73/255.0 blue:13/255.0 alpha:1.0]
+#define SUB_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
+
+#define COLOR1 (UIColor *)[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0]
+
 #define BACKGROUND_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
 #define HIGHLIGHT_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0]
 

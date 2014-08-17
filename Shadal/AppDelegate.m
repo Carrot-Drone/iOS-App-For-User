@@ -37,8 +37,8 @@
     // init tabbar
     UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
     tabBarController.delegate = self;
-    [tabBarController.tabBar setBarTintColor:MAIN_COLOR];
-    [tabBarController.tabBar setTintColor:[UIColor whiteColor]];
+    [tabBarController.tabBar setBarTintColor:COLOR1];
+    [tabBarController.tabBar setTintColor:MAIN_COLOR];
 
     [self setTabBarItemImage];
 
@@ -72,17 +72,20 @@
     for(id key in allData){
         cnt += [[allData objectForKey:key] count];
     }
-    int r = arc4random() % cnt;
     Restaurant * res;
-    for(id key in allData){
-        NSString* category = key;
-        if([[allData objectForKey:category] count] <= r){
-            r -= [[allData objectForKey:category] count];
-        }else{
-            res = [[allData objectForKey:category] objectAtIndex:r];
-            break;
+    do{
+        int r = arc4random() % cnt;
+        for(id key in allData){
+            NSString* category = key;
+            if([[allData objectForKey:category] count] <= r){
+                r -= [[allData objectForKey:category] count];
+            }else{
+                res = [[allData objectForKey:category] objectAtIndex:r];
+                break;
+            }
         }
-    }
+    }while(res.server_id != 0);
+    
     return res;
 }
 
@@ -114,6 +117,15 @@
 }
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    // Save alldata to file
+    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:allData];
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentDir = [paths objectAtIndex:0];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
+    
+    [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application{
@@ -133,29 +145,33 @@
     
     UITabBarItem *item1 = [tabBarController.tabBar.items objectAtIndex:0];
     item1.title = @"메인화면";
-    item1.image = [UIImage imageNamed:@"StarOnList.png"];
-    item1.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    item1.image = [UIImage imageNamed:@"BotIconMain.png"];
+    item1.selectedImage = [UIImage imageNamed:@"BotIconMainSelect.png"];
     
     UITabBarItem *item2 = [tabBarController.tabBar.items objectAtIndex:1];
     item2.title = @"즐겨찾기";
-    item2.image = [UIImage imageNamed:@"StarOnList.png"];
-    item2.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    item2.image = [UIImage imageNamed:@"BotIconStar.png"];
+    item2.selectedImage = [UIImage imageNamed:@"BotIconStarSelect.png"];
     UITabBarItem *item3 = [tabBarController.tabBar.items objectAtIndex:2];
     item3.title = @"아무거나";
-    item3.image = [UIImage imageNamed:@"StarOnList.png"];
-    item3.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    item3.image = [UIImage imageNamed:@"BotIconRandom.png"];
+    item3.selectedImage = [UIImage imageNamed:@"BotIconRandomSelect.png"];
     UITabBarItem *item4 = [tabBarController.tabBar.items objectAtIndex:3];
     item4.title = @"더보기";
-    item4.image = [UIImage imageNamed:@"StarOnList.png"];
-    item4.selectedImage = [UIImage imageNamed:@"StarOff.png"];
+    item4.image = [UIImage imageNamed:@"BotIconMore.png"];
+    item4.selectedImage = [UIImage imageNamed:@"BotIconMoreSelect.png"];
     
     for (UITabBarItem  *tab in tabBarController.tabBar.items) {
         
-        tab.image = [tab.image imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-        tab.selectedImage = [tab.selectedImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+//        tab.image = [tab.image imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+//        tab.selectedImage = [tab.selectedImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor darkGrayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
         
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor yellowColor], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  MAIN_COLOR, NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+        /*
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor colorWithRed:51/255.0 green:255/255.0 blue:231/255.0 alpha:1.0], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+         */
+        
     }
 }
 @end

@@ -102,8 +102,8 @@
     categories = [aDecoder decodeObjectForKey:@"categories"];
     openingHours = [[aDecoder decodeObjectForKey:@"openingHours"] doubleValue];
     closingHours = [[aDecoder decodeObjectForKey:@"closingHours"] doubleValue];
-    has_flyer = [[aDecoder decodeObjectForKey:@"flyer"] boolValue];
-    has_coupon = [[aDecoder decodeObjectForKey:@"coupon"] boolValue];
+    has_flyer = [[aDecoder decodeObjectForKey:@"has_flyer"] boolValue];
+    has_coupon = [[aDecoder decodeObjectForKey:@"has_coupon"] boolValue];
     couponString = [aDecoder decodeObjectForKey:@"couponString"];
     isFavorite = [[aDecoder decodeObjectForKey:@"isFavorite"] boolValue];
     

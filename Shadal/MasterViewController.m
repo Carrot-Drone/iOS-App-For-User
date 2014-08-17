@@ -59,35 +59,6 @@
 
 }
 
-- (void)showEmail{
-    
-    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
-    controller.mailComposeDelegate = self;
-    [controller setToRecipients:[NSArray arrayWithObject:@"swchoi06@wafflestudio.com"]];
-    [controller setSubject:@"없는 배달음식 추천하기"];
-    [controller setMessageBody:@"ex) 미쳐버린 파닭은 왜 없나요ㅠㅠ" isHTML:NO];
-    if (controller) [self presentViewController:controller animated:YES completion:NULL];
-}
-
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
-    switch (result) {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail Canceled");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail Failed");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail Saved");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail Sent");
-            break;
-        default:
-            break;
-    }
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -114,17 +85,13 @@
         cell = [array objectAtIndex:0];
     }
     
+    cell.categoryImage.image = [self getCategoryImage:indexPath.row];
     cell.categoryLabel.text = [categories objectAtIndex:indexPath.row];
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == [categories count]){
-        [self showEmail];
-        
-    }else{
-        [self performSegueWithIdentifier:@"showDetail" sender:self];
-    }
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -145,36 +112,8 @@
         CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
         
         NSInteger index = [self.tableView indexPathForSelectedRow].row;
-        UIImage * categoryImg;
-        switch (index) {
-            case 0:
-                categoryImg = [UIImage imageNamed:@"iconChic.png"];
-                break;
-            case 1:
-                categoryImg = [UIImage imageNamed:@"iconPizza.png"];
-                break;
-            case 2:
-                categoryImg = [UIImage imageNamed:@"iconChinese.png"];
-                break;
-            case 3:
-                categoryImg = [UIImage imageNamed:@"iconBab.png"];
-                break;
-            case 4:
-                categoryImg = [UIImage imageNamed:@"iconDosirak.png"];
-                break;
-            case 5:
-                categoryImg = [UIImage imageNamed:@"iconBossam.png"];
-                break;
-            case 6:
-                categoryImg = [UIImage imageNamed:@"iconNoodle.png"];
-                break;
-            case 7:
-                categoryImg = [UIImage imageNamed:@"iconEtc.png"];
-                break;
-            default:
-                break;
-        }
-        
+        UIImage * categoryImg = [self getCategoryImage:(int)index];
+
         titleView.categoryImageView.image = categoryImg;
         titleView.categoryLabel.text = [categories objectAtIndex:index];
         viewController.navigationItem.titleView = titleView;
@@ -202,5 +141,39 @@
         cell.backgroundColor = BACKGROUND_COLOR;
     else
         cell.backgroundColor = HIGHLIGHT_COLOR;
+}
+
+-(UIImage *)getCategoryImage:(int)index{
+    UIImage * categoryImg;
+    switch (index) {
+        case 0:
+            categoryImg = [UIImage imageNamed:@"iconChic.png"];
+            break;
+        case 1:
+            categoryImg = [UIImage imageNamed:@"iconPizza.png"];
+            break;
+        case 2:
+            categoryImg = [UIImage imageNamed:@"iconChinese.png"];
+            break;
+        case 3:
+            categoryImg = [UIImage imageNamed:@"iconBab.png"];
+            break;
+        case 4:
+            categoryImg = [UIImage imageNamed:@"iconDosirak.png"];
+            break;
+        case 5:
+            categoryImg = [UIImage imageNamed:@"iconBossam.png"];
+            break;
+        case 6:
+            categoryImg = [UIImage imageNamed:@"iconNoodle.png"];
+            break;
+        case 7:
+            categoryImg = [UIImage imageNamed:@"iconEtc.png"];
+            break;
+        default:
+            break;
+    }
+    return categoryImg;
+    
 }
 @end
