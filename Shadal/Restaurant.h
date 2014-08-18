@@ -22,9 +22,10 @@
 
 @property (nonatomic) BOOL has_flyer;
 @property (nonatomic) BOOL has_coupon;
+@property (nonatomic) BOOL is_new;
+@property (nonatomic) BOOL isFavorite;
 @property (nonatomic, strong) NSString * couponString;
 
-@property (nonatomic) BOOL isFavorite;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber;
 - (NSDictionary *)dictionaryFromRestaurant;

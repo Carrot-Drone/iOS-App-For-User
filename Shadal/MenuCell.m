@@ -22,6 +22,22 @@
     if(customFont == nil) NSLog(@"Font not exist");
     [priceLabel setFont:customFont];
 }
+-(void)setFontAttribute{
+
+    NSMutableAttributedString *attributedString;
+    attributedString = [[NSMutableAttributedString alloc] initWithString:menuLabel.text];
+    [attributedString addAttribute:NSKernAttributeName
+                             value:[NSNumber numberWithFloat:0.5]
+                             range:NSMakeRange(0, [menuLabel.text length])];
+    menuLabel.attributedText = attributedString;
+    
+    attributedString = [[NSMutableAttributedString alloc] initWithString:priceLabel.text];
+    [attributedString addAttribute:NSKernAttributeName
+                             value:[NSNumber numberWithFloat:0.5]
+                             range:NSMakeRange(0, [priceLabel.text length])];
+    priceLabel.attributedText = attributedString;
+
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

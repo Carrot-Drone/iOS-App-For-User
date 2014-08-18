@@ -84,8 +84,7 @@
                 break;
             }
         }
-    }while(res.server_id != 0);
-    
+    }while(res.server_id == 0 || [res.menu count] == 0);
     return res;
 }
 

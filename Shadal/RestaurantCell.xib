@@ -13,31 +13,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="47"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-OI-0DF">
-                        <rect key="frame" x="20" y="2" width="224" height="43"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="162" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-OI-0DF">
+                        <rect key="frame" x="20" y="2" width="162" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="pID-jk-LvC">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pID-jk-LvC">
                         <rect key="frame" x="239" y="14" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flyer.png" translatesAutoresizingMaskIntoConstraints="NO" id="lUQ-eK-MZu">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTh-zJ-jZ0">
+                        <rect key="frame" x="211" y="14" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="180-KN-ZfV">
+                        <rect key="frame" x="183" y="14" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUQ-eK-MZu">
                         <rect key="frame" x="267" y="14" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="firstImage" destination="pID-jk-LvC" id="Nwx-vc-3CR"/>
+                <outlet property="firstImage" destination="180-KN-ZfV" id="hdX-Em-dQd"/>
+                <outlet property="forthImage" destination="lUQ-eK-MZu" id="off-6F-6nl"/>
                 <outlet property="restaurantLabel" destination="lHM-OI-0DF" id="VAY-5s-Tdq"/>
-                <outlet property="secondImage" destination="lUQ-eK-MZu" id="90M-Xr-8V6"/>
+                <outlet property="secondImage" destination="VTh-zJ-jZ0" id="cgr-9f-2Rx"/>
+                <outlet property="thirdImage" destination="pID-jk-LvC" id="mlt-wL-YEQ"/>
             </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="coupon.png" width="128" height="128"/>
-        <image name="flyer.png" width="128" height="128"/>
-    </resources>
 </document>

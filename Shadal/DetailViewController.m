@@ -183,6 +183,7 @@
     return [resArray count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -201,27 +202,8 @@
     }else{
         res = [resWithoutFlyer objectAtIndex:indexPath.row];
     }
-    
+    [cell setResIcons:res];
     cell.restaurantLabel.text = res.name;
-    
-    if(res.has_flyer){
-        cell.secondImage.image = [UIImage imageNamed:@"flyer"];
-        cell.secondImage.hidden = NO;
-        if(res.has_coupon){
-            cell.firstImage.image = [UIImage imageNamed:@"coupon"];
-            cell.firstImage.hidden = NO;
-        }else{
-            cell.firstImage.hidden = YES;
-        }
-    }else{
-        cell.firstImage.hidden = YES;
-        if(res.has_coupon){
-            cell.secondImage.image = [UIImage imageNamed:@"coupon"];
-            cell.secondImage.hidden = NO;
-        }else{
-            cell.secondImage.hidden = YES;
-        }
-    }
     
     return cell;
 }
@@ -278,5 +260,4 @@
     else
         cell.backgroundColor = HIGHLIGHT_COLOR;
 }
-
 @end

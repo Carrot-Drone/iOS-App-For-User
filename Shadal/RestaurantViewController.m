@@ -35,8 +35,6 @@
     if(restaurant.updated_at == nil){
         restaurant.updated_at = @"00:00";
     }
-    
-    restaurant.has_flyer=YES;
 }
 
 - (void)updateUI{
@@ -137,7 +135,7 @@
     // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
     
-//    self.phoneNumber.backgroundColor = [UIColor colorWithRed:73/255.0 green:196/255.0 blue:57/255.0 alpha:1.0];
+    self.phoneNumber.backgroundColor = [UIColor colorWithRed:73/255.0 green:196/255.0 blue:57/255.0 alpha:1.0];
     [super viewDidLoad];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -215,7 +213,9 @@
             }
             cell.restaurantLabel.text = @"전단지 보기";
             cell.firstImage.hidden = YES;
-            cell.secondImage.image = [UIImage imageNamed:@"flyer.png"];
+            cell.secondImage.hidden = YES;
+            cell.thirdImage.hidden = YES;
+            cell.forthImage.image = [UIImage imageNamed:@"flyer.png"];
             return cell;
         }
         
@@ -236,6 +236,8 @@
     }else{
         cell.priceLabel.text = [NSString stringWithFormat:@"%@원", cell.priceLabel.text];
     }
+    // 자간 조절
+    [cell setFontAttribute];
     cell.userInteractionEnabled = NO;
     
     return cell;

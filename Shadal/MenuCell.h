@@ -12,5 +12,5 @@
 
 @property (nonatomic, strong) IBOutlet UILabel * menuLabel;
 @property (nonatomic, strong) IBOutlet UILabel * priceLabel;
-
+-(void)setFontAttribute;
 @end

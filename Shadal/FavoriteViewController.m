@@ -123,22 +123,9 @@
     Restaurant * res = [[favoriteRes objectForKey:[categories objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     
     [cell.restaurantLabel setText:res.name];
-    
-    if(res.has_flyer){
-        cell.secondImage.image = [UIImage imageNamed:@"flyer"];
-        if(res.has_coupon){
-            cell.firstImage.image = [UIImage imageNamed:@"coupon"];
-        }else{
-            cell.firstImage.hidden = YES;
-        }
-    }else{
-        cell.firstImage.hidden = YES;
-        if(res.has_coupon){
-            cell.secondImage.image = [UIImage imageNamed:@"coupon"];
-        }else{
-            cell.secondImage.hidden = YES;
-        }
-    }
+    res.isFavorite = NO;
+    [cell setResIcons:res];
+    res.isFavorite = YES;
     
     return cell;
 

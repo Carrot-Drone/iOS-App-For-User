@@ -12,7 +12,7 @@
 @synthesize server_id, updated_at;
 @synthesize name, menu, phoneNumber, openingHours, closingHours, categories;
 @synthesize has_flyer, has_coupon, couponString;
-@synthesize isFavorite;
+@synthesize isFavorite, is_new;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber{
     self = [super init];
@@ -36,13 +36,12 @@
     [dic setObject:[NSNumber numberWithDouble:closingHours] forKey:@"closingHours"];
     [dic setObject:[NSNumber numberWithBool:has_flyer] forKey:@"has_flyer"];
     [dic setObject:[NSNumber numberWithBool:has_coupon] forKey:@"has_coupon"];
+    [dic setObject:[NSNumber numberWithBool:is_new] forKey:@"is_new"];
     [dic setObject:couponString forKey:@"couponString"];
     return dic;
 }
 
-- (void)setRestaurantFromDictionary:(NSDictionary *)dictionary{
-    NSLog(@"%@", dictionary);
-    
+- (void)setRestaurantFromDictionary:(NSDictionary *)dictionary{    
     self.server_id = [[dictionary objectForKey:@"id"] intValue];
     self.updated_at = [dictionary objectForKey:@"updated_at"];
     
@@ -53,6 +52,7 @@
     self.closingHours = [[dictionary objectForKey:@"closingHours"] doubleValue];
     self.has_flyer = [[dictionary objectForKey:@"has_flyer"] boolValue];
     self.has_coupon = [[dictionary objectForKey:@"has_coupon"] boolValue];
+    self.is_new = [[dictionary objectForKey:@"is_new"] boolValue];
     self.couponString = [dictionary objectForKey:@"coupon_string"];
     
     NSArray * menus = [dictionary objectForKey:@"menus"];
@@ -106,6 +106,7 @@
     has_coupon = [[aDecoder decodeObjectForKey:@"has_coupon"] boolValue];
     couponString = [aDecoder decodeObjectForKey:@"couponString"];
     isFavorite = [[aDecoder decodeObjectForKey:@"isFavorite"] boolValue];
+    is_new = [[aDecoder decodeObjectForKey:@"is_new"] boolValue];
     
     return self;
 }
@@ -124,6 +125,7 @@
     [aCoder encodeObject:[NSNumber numberWithBool:has_coupon] forKey:@"has_coupon"];
     [aCoder encodeObject:couponString forKey:@"couponString"];
     [aCoder encodeObject:[NSNumber numberWithBool:isFavorite] forKey:@"isFavorite"];
+    [aCoder encodeObject:[NSNumber numberWithBool:is_new] forKey:@"is_new"];
 }
 
 - (NSComparisonResult)compare:(Restaurant *)otherObject {

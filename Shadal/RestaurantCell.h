@@ -13,5 +13,9 @@
 @property (nonatomic, strong) IBOutlet UILabel * restaurantLabel;
 @property (nonatomic, strong) IBOutlet UIImageView * firstImage;
 @property (nonatomic, strong) IBOutlet UIImageView * secondImage;
+@property (nonatomic, strong) IBOutlet UIImageView * thirdImage;
+@property (nonatomic, strong) IBOutlet UIImageView * forthImage;
+
+- (void)setResIcons:(Restaurant *)res;
 
 @end
