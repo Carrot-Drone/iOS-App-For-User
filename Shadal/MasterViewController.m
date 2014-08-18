@@ -12,6 +12,7 @@
 #import "CustomTitleView.h"
 
 #import "Restaurant.h"
+#import "RestaurantCell.h"
 #import "CategoryCell.h"
 #import "AppDelegate.h"
 
@@ -21,6 +22,10 @@
 @interface MasterViewController () {
     NSMutableArray * categories;
     NSDictionary * allData;
+    
+    NSMutableArray *searchResults;
+    
+    NSInteger selectedRow;
 }
 @end
 
@@ -36,6 +41,7 @@
     // init data
     allData = [(AppDelegate *)[[UIApplication sharedApplication] delegate] allData];
     categories = [[NSMutableArray alloc] init];
+    searchResults = [[NSMutableArray alloc] init];
     
     [categories addObject:@"치킨"];
     [categories addObject:@"피자"];
@@ -56,7 +62,35 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tableView.backgroundColor = BACKGROUND_COLOR;
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+    
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+}
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
 
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    [searchResults removeAllObjects];
+    for(id key in allData){
+        NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+        [searchResults addObjectsFromArray:[[allData objectForKey:key] filteredArrayUsingPredicate:resultPredicate]];
+    }
+    [searchResults sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
+    }];
+    for(Restaurant * res in searchResults){
+        NSLog(@"%@", res.name);
+    }
 }
 
 #pragma mark - Table View
@@ -68,7 +102,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [categories count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    } else {
+        return [categories count];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,6 +116,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(tableView == self.searchDisplayController.searchResultsTableView){
+        // 음식점을 검색하는 경우.
+        RestaurantCell * cell = (RestaurantCell *)[tableView dequeueReusableCellWithIdentifier:@""];
+        
+        if(cell == nil){
+            NSArray * array;
+            array = [[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:nil options:nil];
+            cell = [array objectAtIndex:0];
+        }
+        
+        Restaurant * res = [searchResults objectAtIndex:indexPath.row];
+        [cell setResIcons:res];
+        cell.restaurantLabel.text = res.name;
+        return cell;
+    }
     CategoryCell * cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:@""];
     
     if(cell == nil){
@@ -91,12 +145,26 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    if(tableView == self.searchDisplayController.searchResultsTableView){
+        selectedRow = indexPath.row;
+        [self performSegueWithIdentifier:@"Restaurant" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"showDetail" sender:self];
+    }
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    NSInteger realInt = [self realRowNumberForIndexPath:indexPath inTableView:tableView];
+    if(realInt % 2 == 0)
+        cell.backgroundColor = BACKGROUND_COLOR;
+    else
+        cell.backgroundColor = HIGHLIGHT_COLOR;
 }
 
 
@@ -113,12 +181,17 @@
         
         NSInteger index = [self.tableView indexPathForSelectedRow].row;
         UIImage * categoryImg = [self getCategoryImage:(int)index];
-
+        
         titleView.categoryImageView.image = categoryImg;
         titleView.categoryLabel.text = [categories objectAtIndex:index];
         viewController.navigationItem.titleView = titleView;
+    }else if ([[segue identifier] isEqualToString:@"Restaurant"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Restaurant * res = [searchResults objectAtIndex:selectedRow];
+        [[segue destinationViewController] setDetailItem:res];
     }
 }
+
 
 - (NSInteger)realRowNumberForIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView
 {
@@ -134,15 +207,6 @@
     
 	return retInt + indexPath.row;
 }
-- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
-{
-    NSInteger realInt = [self realRowNumberForIndexPath:indexPath inTableView:tableView];
-    if(realInt % 2 == 0)
-        cell.backgroundColor = BACKGROUND_COLOR;
-    else
-        cell.backgroundColor = HIGHLIGHT_COLOR;
-}
-
 -(UIImage *)getCategoryImage:(int)index{
     UIImage * categoryImg;
     switch (index) {
