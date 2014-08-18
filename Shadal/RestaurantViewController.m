@@ -9,6 +9,7 @@
 #import "RestaurantViewController.h"
 #import "FlyerViewController.h"
 #import "MenuCell.h"
+#import "RestaurantCell.h"
 #import "Server.h"
 #import "Constants.h"
 
@@ -34,6 +35,8 @@
     if(restaurant.updated_at == nil){
         restaurant.updated_at = @"00:00";
     }
+    
+    restaurant.has_flyer=YES;
 }
 
 - (void)updateUI{
@@ -148,26 +151,49 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"Flyer"]) {
-        [[segue destinationViewController] setDetailItem:restaurant];
+        FlyerViewController * flyerViewController = (FlyerViewController *)[segue destinationViewController];
+        [flyerViewController setDetailItem:self.restaurant];
     }
 }
 #pragma ma`rk - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    NSInteger num;
     if(!restaurant.menu==nil)
-        return [restaurant.menu count];
-    else return 0;
+        num = [restaurant.menu count];
+    else num = 0;
+    
+    // 전단지가 있을 경우
+    if(restaurant.has_flyer){
+        num++;
+    }
+    return num;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    // '전단지' section
+    if(restaurant.has_flyer){
+        if(section == 0) return 1;
+        
+        section -= 1;
+    }
+    
     if(![restaurant.menu count]==0)
         return [[[restaurant.menu objectAtIndex:section] objectAtIndex:1] count];
     else return 0;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    // '전단지' section
+    if(restaurant.has_flyer){
+        if(section == 0) return @"전단지";
+        
+        section -= 1;
+    }
+    
     if(![restaurant.menu count]==0)
         return [[restaurant.menu objectAtIndex:section] objectAtIndex:0];
     else return @"";
@@ -176,13 +202,32 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    NSInteger section = indexPath.section;
+    // 전단지 보기
+    if(restaurant.has_flyer){
+        if(section == 0){
+            RestaurantCell * cell;
+            
+            if(cell == nil){
+                NSArray * array;
+                array = [[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:nil options:nil];
+                cell = [array objectAtIndex:0];
+            }
+            cell.restaurantLabel.text = @"전단지 보기";
+            cell.firstImage.hidden = YES;
+            cell.secondImage.image = [UIImage imageNamed:@"flyer.png"];
+            return cell;
+        }
+        
+        section -= 1;
+    }
     MenuCell *cell = (MenuCell *) [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(cell == nil) {
         NSArray * array;
         array = [[NSBundle mainBundle] loadNibNamed:@"MenuCell" owner:nil options:nil];
         cell = [array objectAtIndex:0];
     }
-    NSArray * menuArray = [[[restaurant.menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
+    NSArray * menuArray = [[[restaurant.menu objectAtIndex:section] objectAtIndex:1] objectAtIndex:indexPath.row];
     cell.menuLabel.text = [menuArray objectAtIndex:0];
     cell.priceLabel.text = [NSString stringWithFormat:@"%ld", (long)[[menuArray objectAtIndex:1] integerValue]]
     ;
@@ -199,4 +244,13 @@
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
     view.tintColor = BACKGROUND_COLOR;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(restaurant.has_flyer){
+        if(indexPath.section==0 && indexPath.row==0){
+            [self flyerClicked:self];
+        }
+    }
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "FlyerViewController.h"
 #import "UIImage+UIImage_Customized.h"
+#import "Constants.h"
 
 @interface FlyerViewController ()
 
@@ -17,6 +18,7 @@
 @synthesize restaurant;
 @synthesize scrollView;
 @synthesize title;
+@synthesize navItem, navBar;
 
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
@@ -35,7 +37,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = restaurant.name;
+    
+    // init navigation bar
+    self.navItem.title = restaurant.name;
+    self.navBar.barTintColor = MAIN_COLOR;
+    self.navBar.translucent = NO;
+    self.navBar.tintColor = [UIColor whiteColor];
+    
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,320, 25)];
+    view.backgroundColor=MAIN_COLOR;
+    [self.view addSubview:view];
+    
     float content_width = [UIScreen mainScreen].bounds.size.width;
     float content_height = [UIScreen mainScreen].bounds.size.height - self.scrollView.frame.origin.y;
     
@@ -64,7 +76,7 @@
     }
     
     // Set Navigation bar title
-    [title setTitle:restaurant.name];
+    [self.navItem setTitle:restaurant.name];
 }
 
 - (void)didReceiveMemoryWarning
