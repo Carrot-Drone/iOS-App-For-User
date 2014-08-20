@@ -41,7 +41,11 @@
     return dic;
 }
 
-- (void)setRestaurantFromDictionary:(NSDictionary *)dictionary{    
+- (void)setRestaurantFromDictionary:(NSDictionary *)dictionary{
+    if([dictionary objectForKey:@"menus"] == NULL || [dictionary objectForKey:@"name"]==NULL || [dictionary objectForKey:@"phone_number"]==NULL){
+        NSLog(@"Wrong Restaurant Data");
+        return;
+    }
     self.server_id = [[dictionary objectForKey:@"id"] intValue];
     self.updated_at = [dictionary objectForKey:@"updated_at"];
     

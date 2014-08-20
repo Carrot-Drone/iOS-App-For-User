@@ -55,7 +55,6 @@
 		F539ED0219A07D1B004AB442 /* BotIconStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F539ECF219A07D1B004AB442 /* BotIconStar@2x.png */; };
 		F539ED0319A07D1B004AB442 /* BotIconStarSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = F539ECF319A07D1B004AB442 /* BotIconStarSelect.png */; };
 		F539ED0419A07D1B004AB442 /* BotIconStarSelect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F539ECF419A07D1B004AB442 /* BotIconStarSelect@2x.png */; };
-		F539ED0519A07F34004AB442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5110AD917FC013C00D7AA85 /* Main.storyboard */; };
 		F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54118351800EC92006A2136 /* RestaurantViewController.m */; };
 		F54CF570195AA21200B7C67A /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = F54CF56F195AA21200B7C67A /* Server.m */; };
 		F54D136A199B89A600AFE026 /* 서울남산체EB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F54D1368199B89A600AFE026 /* 서울남산체EB.ttf */; };
@@ -494,7 +493,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F539ED0519A07F34004AB442 /* Main.storyboard in Resources */,
 				F5110AE317FC013C00D7AA85 /* Images.xcassets in Resources */,
 				F54D139B199B9DB300AFE026 /* ImgIcon.png in Resources */,
 				F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */,

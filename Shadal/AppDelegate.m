@@ -37,7 +37,7 @@
     // init tabbar
     UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
     tabBarController.delegate = self;
-    [tabBarController.tabBar setBarTintColor:COLOR1];
+    [tabBarController.tabBar setBarTintColor:BAR_TINT_COLOR];
     [tabBarController.tabBar setTintColor:MAIN_COLOR];
 
     [self setTabBarItemImage];

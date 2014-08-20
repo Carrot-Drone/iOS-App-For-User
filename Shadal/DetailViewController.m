@@ -50,7 +50,11 @@
         }
         if(isNew){
             Restaurant * newRes = [[Restaurant alloc] initWithName:[restaurant objectForKey:@"name"] phoneNumber:[restaurant objectForKey:@"phone_number"]];
-            [resArray addObject:newRes];
+            if([newRes.name isEqualToString:@""] || newRes.name == NULL || newRes.phoneNumber == NULL || [newRes.phoneNumber isEqualToString:@""]){
+                NSLog(@"Error in Res data");
+            }else{
+                [resArray addObject:newRes];
+            }
         }
     }
     

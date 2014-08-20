@@ -16,7 +16,7 @@
 #define MAIN_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:73/255.0 blue:13/255.0 alpha:1.0]
 #define SUB_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
 
-#define COLOR1 (UIColor *)[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0]
+#define BAR_TINT_COLOR (UIColor *)[UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1.0]
 
 #define BACKGROUND_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
 #define HIGHLIGHT_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0]
@@ -27,6 +27,7 @@
 #define NEW_CALL                    @"/new_call"
 #define CHECK_FOR_UPDATE            @"/checkForUpdate"
 #define CHECK_FOR_RES_IN_CATEGORY   @"/checkForResInCategory"
+#define FLYERS_FOR_RES              @"/flyersForRes"
 
 #define CAMPUS @"Gwanak"
 //#define WEB_BASE_URL2 @"http://services.snu.ac.kr:3111/new_menu"

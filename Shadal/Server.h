@@ -13,5 +13,7 @@
 
 + (void)updateRestaurant:(Restaurant *)restaurant;
 + (void)checkForNewRestaurant:(NSString *)category;
++ (void)flyersInRestaurant:(Restaurant *)restaurant;
+
 
 @end

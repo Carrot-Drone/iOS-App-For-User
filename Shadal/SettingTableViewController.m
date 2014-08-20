@@ -40,7 +40,7 @@
     
     // init titleView
     CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
-    titleView.categoryImageView.image = [UIImage imageNamed:@"BotIconMoreSelect"];
+    titleView.categoryImageView.image = [UIImage imageNamed:@"BotIconMore"];
     titleView.categoryLabel.text = @"더보기";
     self.navigationItem.titleView = titleView;
 

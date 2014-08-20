@@ -58,6 +58,28 @@ static NSMutableData * responseData;
         [connection start];
     });
 }
+
++ (void)flyersInRestaurant:(Restaurant *)restaurant{
+    _restaurant = restaurant;
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, FLYERS_FOR_RES]];
+        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
+        [theRequest setHTTPMethod:@"POST"];
+        
+        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@", restaurant.server_id, restaurant.phoneNumber, CAMPUS];
+        
+        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
+        [connection scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                              forMode:NSDefaultRunLoopMode];
+        
+        NSLog(@"Connection Start");
+        
+        responseData = [[NSMutableData alloc] init];
+        [connection start];
+    });
+}
 + (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
     NSLog(@"Did receiveResponse");
 }
@@ -74,23 +96,28 @@ static NSMutableData * responseData;
     NSString * url = [[[connection currentRequest] URL] absoluteString];
     if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]]){
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-        
+        NSLog(@"json : 2%@", json);
+
         // 노티피케이션 전송
         NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
         [myNotificationCenter postNotificationName:@"checkForResInCategory" object:self userInfo:json];
+        
     }else if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_UPDATE]]){
         if([responseData length]==0){
             
         }else{
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-            [_restaurant setRestaurantFromDictionary:json];
-            
-            if(json == NULL) return ;
-            // 노티피케이션 전송. RestaurantViewController 에서 이 노티피케이션을 받아서 updateUI 함수를 실행. 뷰를 업데이트
-            NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
-            
-            [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:nil];
+            NSLog(@"json : 1%@", json);
+            if(json != NULL)
+                [_restaurant setRestaurantFromDictionary:json];
         }
+        
+        // 노티피케이션 전송. RestaurantViewController 에서 이 노티피케이션을 받아서 updateUI 함수를 실행. 뷰를 업데이트
+        NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
+        
+        [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:nil];
+    }else{
+        NSLog(@"wow");
     }
 }
 @end
