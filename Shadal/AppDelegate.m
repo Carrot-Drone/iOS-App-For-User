@@ -90,6 +90,7 @@
         if([rootViewController isKindOfClass:[RestaurantViewController class]]){
             [((RestaurantViewController *)rootViewController) setDetailItem:[self randomRestaurant]];
             [((RestaurantViewController *)rootViewController) updateUI];
+            ((RestaurantViewController *)rootViewController).isFromRandom = TRUE;
         }
     }
     return true;

@@ -27,7 +27,7 @@
 @synthesize restaurant, phoneNumber, openingTimeLabel;
 @synthesize barButton;
 @synthesize favorite;
-
+@synthesize isFromRandom;
 
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
@@ -124,10 +124,6 @@
 {
     [self.view setBackgroundColor:BACKGROUND_COLOR];
     [self.tableView setBackgroundColor:BACKGROUND_COLOR];
-
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self updateViewData];
-    });
     
     // myNotificationCenter 객체 생성 후 defaultCenter에 등록
     NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
@@ -140,6 +136,12 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self updateUI];
+    if(!self.isFromRandom){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"NOOOO");
+            [self updateViewData];
+        });
+    }
 }
 
 - (void)flyerClicked:(id)sender{

@@ -9,6 +9,7 @@
 #import "FavoriteViewController.h"
 #import "Constants.h"
 #import "CustomTitleView.h"
+#import "RestaurantViewController.h"
 @interface FavoriteViewController (){
     NSMutableArray * categories;
 }

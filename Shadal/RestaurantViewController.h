@@ -12,6 +12,7 @@
 @interface RestaurantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) Restaurant * restaurant;
+@property (nonatomic) BOOL isFromRandom;
 
 @property (nonatomic, strong) IBOutlet UIButton * favorite;
 
