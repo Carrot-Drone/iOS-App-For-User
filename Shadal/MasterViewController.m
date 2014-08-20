@@ -88,9 +88,6 @@
     [searchResults sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [(Restaurant *)obj1 compare:(Restaurant*) obj2];
     }];
-    for(Restaurant * res in searchResults){
-        NSLog(@"%@", res.name);
-    }
 }
 
 #pragma mark - Table View

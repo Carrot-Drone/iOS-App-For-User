@@ -30,7 +30,6 @@
 		F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0017FC044E00D7AA85 /* Restaurant.m */; };
 		F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0317FC10E200D7AA85 /* DetailViewController.m */; };
 		F519367F199F324000339903 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F519367E199F324000339903 /* SettingTableViewController.m */; };
-		F5273667180D0950008160F9 /* allData.bin in Resources */ = {isa = PBXBuildFile; fileRef = F5273666180D094F008160F9 /* allData.bin */; };
 		F52A85CD1999126B0010C261 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A85CC1999126B0010C261 /* FavoriteViewController.m */; };
 		F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4651896530C0003A53D /* 02-875-9522_1.jpg */; };
 		F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F531C4661896530C0003A53D /* 02-875-9522_2.jpg */; };
@@ -56,6 +55,7 @@
 		F539ED0319A07D1B004AB442 /* BotIconStarSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = F539ECF319A07D1B004AB442 /* BotIconStarSelect.png */; };
 		F539ED0419A07D1B004AB442 /* BotIconStarSelect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F539ECF419A07D1B004AB442 /* BotIconStarSelect@2x.png */; };
 		F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54118351800EC92006A2136 /* RestaurantViewController.m */; };
+		F5465CD719A492AB00471802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5110AD917FC013C00D7AA85 /* Main.storyboard */; };
 		F54CF570195AA21200B7C67A /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = F54CF56F195AA21200B7C67A /* Server.m */; };
 		F54D136A199B89A600AFE026 /* 서울남산체EB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F54D1368199B89A600AFE026 /* 서울남산체EB.ttf */; };
 		F54D136B199B89A600AFE026 /* 서울남산체L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F54D1369199B89A600AFE026 /* 서울남산체L.ttf */; };
@@ -130,7 +130,6 @@
 		F5110B0317FC10E200D7AA85 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F519367D199F324000339903 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		F519367E199F324000339903 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
-		F5273666180D094F008160F9 /* allData.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = allData.bin; sourceTree = "<group>"; };
 		F52A85CB1999126B0010C261 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		F52A85CC1999126B0010C261 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		F531C4651896530C0003A53D /* 02-875-9522_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02-875-9522_1.jpg"; sourceTree = "<group>"; };
@@ -216,11 +215,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F503E7BE19A4ED35001814AE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				491FD30E1852DCD300885396 /* UIImage+UIImage_Customized.h */,
+				491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */,
+				F59DB07519A0D7DD007F9A71 /* UIColor+COLORCategories.h */,
+				F59DB07619A0D7DD007F9A71 /* UIColor+COLORCategories.m */,
+				F59DB07719A0D7DD007F9A71 /* UIImage+IMAGECategories.h */,
+				F59DB07819A0D7DD007F9A71 /* UIImage+IMAGECategories.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		F5110ABB17FC013C00D7AA85 = {
 			isa = PBXGroup;
 			children = (
 				F5A41BEE1873C2FC00004DC5 /* 전단지 */,
-				F5273666180D094F008160F9 /* allData.bin */,
 				F5110ACD17FC013C00D7AA85 /* Shadal */,
 				F5110AEF17FC013C00D7AA85 /* ShadalTests */,
 				F5110AC617FC013C00D7AA85 /* Frameworks */,
@@ -258,12 +269,7 @@
 				F52A85C619990D380010C261 /* Custom Components */,
 				F52A85C519990D2E0010C261 /* Commons */,
 				F52A85C419990D150010C261 /* Model */,
-				491FD30E1852DCD300885396 /* UIImage+UIImage_Customized.h */,
-				491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */,
-				F59DB07519A0D7DD007F9A71 /* UIColor+COLORCategories.h */,
-				F59DB07619A0D7DD007F9A71 /* UIColor+COLORCategories.m */,
-				F59DB07719A0D7DD007F9A71 /* UIImage+IMAGECategories.h */,
-				F59DB07819A0D7DD007F9A71 /* UIImage+IMAGECategories.m */,
+				F503E7BE19A4ED35001814AE /* Category */,
 				F52A85C319990D070010C261 /* Resource */,
 				F5110AE217FC013C00D7AA85 /* Images.xcassets */,
 				F5110ACE17FC013C00D7AA85 /* Supporting Files */,
@@ -493,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5465CD719A492AB00471802 /* Main.storyboard in Resources */,
 				F5110AE317FC013C00D7AA85 /* Images.xcassets in Resources */,
 				F54D139B199B9DB300AFE026 /* ImgIcon.png in Resources */,
 				F531C4691896530C0003A53D /* 02-875-9522_2.jpg in Resources */,
@@ -521,7 +528,6 @@
 				F54D139A199B9DB300AFE026 /* iconPizza.png in Resources */,
 				F54D1390199B9DB300AFE026 /* CallBotton.png in Resources */,
 				F539ECFF19A07D1B004AB442 /* BotIconRandomSelect.png in Resources */,
-				F5273667180D0950008160F9 /* allData.bin in Resources */,
 				F539ED0419A07D1B004AB442 /* BotIconStarSelect@2x.png in Resources */,
 				F531C4681896530C0003A53D /* 02-875-9522_1.jpg in Resources */,
 				F539ECFA19A07D1B004AB442 /* BotIconMore@2x.png in Resources */,

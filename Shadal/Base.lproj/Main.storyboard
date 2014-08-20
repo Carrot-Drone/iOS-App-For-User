@@ -324,6 +324,7 @@
         <!--Restaurant View Controller - Item-->
         <scene sceneID="d9Q-BR-kbj">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Iz-QP-kbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="UNh-Qy-9UW" customClass="RestaurantViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4OB-jA-YNI"/>
@@ -413,13 +414,13 @@
                         <segue destination="NDD-nF-JW4" kind="modal" identifier="Flyer" id="9Af-Og-L2d"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Iz-QP-kbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1798" y="680"/>
         </scene>
         <!--Flyer View Controller-->
         <scene sceneID="ip9-vh-uL0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZV-ZX-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NDD-nF-JW4" customClass="FlyerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JbI-zX-yBj"/>
@@ -441,19 +442,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZcC-ys-7aN">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZcC-ys-7aN">
+                                <rect key="frame" x="0.0" y="65" width="320" height="466"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="JRi-qq-Qqg">
+                                <rect key="frame" x="141" y="531" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="1" green="0.44705882349999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZcC-ys-7aN" firstAttribute="top" secondItem="7gA-Tm-ae9" secondAttribute="top" constant="65" id="CjI-gh-Off"/>
+                            <constraint firstAttribute="bottom" secondItem="ZcC-ys-7aN" secondAttribute="bottom" constant="37" id="hPX-KA-ekL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="navBar" destination="1bT-YD-WB9" id="KAS-Wz-UuE"/>
                         <outlet property="navItem" destination="EmG-co-zqX" id="8gY-mx-DTJ"/>
-                        <outlet property="scrollView" destination="ZcC-ys-7aN" id="jGQ-Ri-Lwd"/>
+                        <outlet property="pageControl" destination="JRi-qq-Qqg" id="M2q-II-eeu"/>
+                        <outlet property="scrollView" destination="ZcC-ys-7aN" id="JtA-Zs-c1G"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KZV-ZX-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2345" y="64"/>
         </scene>

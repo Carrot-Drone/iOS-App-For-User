@@ -16,9 +16,7 @@
 
 @implementation FlyerViewController
 @synthesize restaurant;
-@synthesize scrollView;
 @synthesize title;
-@synthesize navItem, navBar;
 
 - (void)setDetailItem:(id)detailItem{
     restaurant = (Restaurant *)detailItem;
@@ -39,19 +37,45 @@
     [super viewDidLoad];
     
     // init navigation bar
-    self.navItem.title = restaurant.name;
-    self.navBar.barTintColor = MAIN_COLOR;
-    self.navBar.translucent = NO;
-    self.navBar.tintColor = [UIColor whiteColor];
+    navItem.title = restaurant.name;
+    navBar.barTintColor = MAIN_COLOR;
+    navBar.translucent = NO;
+    navBar.tintColor = [UIColor whiteColor];
     
+    // Status bar color
     UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,320, 25)];
     view.backgroundColor=MAIN_COLOR;
     [self.view addSubview:view];
     
+    // set scrollview delegate
+    scrollView.delegate = self;
+    
+    // Set Navigation bar title
+    [navItem setTitle:restaurant.name];
+    
+    // init Page control
+    pageControl.numberOfPages =[restaurant.flyers_url count];
+    pageControl.hidesForSinglePage = NO;
+    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+    pageControl.tintColor = [UIColor orangeColor];
+    pageControl.currentPage = 0;
+    
+    float bottom_offset = 37;
     float content_width = [UIScreen mainScreen].bounds.size.width;
-    float content_height = [UIScreen mainScreen].bounds.size.height - self.scrollView.frame.origin.y;
+    float content_height = [UIScreen mainScreen].bounds.size.height - scrollView.frame.origin.y - bottom_offset;
     
-    
+    scrollView.contentSize = CGSizeMake(content_width*pageControl.numberOfPages, content_height);
+    for(int i=0; i<[restaurant.flyers_url count]; i++){
+        NSString * imageURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, [restaurant.flyers_url objectAtIndex:i]];
+        
+        UIImage * image =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        
+        UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(content_width*i, 0, content_width, content_height);
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
+        [scrollView addSubview:imageView];
+    }
+    /*
     // If there's only one image
     if([UIImage imageNamed_advanced:restaurant.phoneNumber]){
         scrollView.contentSize = CGSizeMake(content_width, content_height);
@@ -74,16 +98,14 @@
         }
         if(numberOfImg == 0) NSLog(@"Image not exist %@", restaurant.name);
     }
-    
-    // Set Navigation bar title
-    [self.navItem setTitle:restaurant.name];
+    */
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat pageNum = nearbyintf((scrollView.contentOffset.x / scrollView.frame.size.width));
+    pageControl.currentPage = pageNum;
 }
+
 
 - (IBAction)backButtonClicked:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
