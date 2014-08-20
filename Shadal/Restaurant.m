@@ -13,6 +13,7 @@
 @synthesize name, menu, phoneNumber, openingHours, closingHours, categories;
 @synthesize has_flyer, has_coupon, couponString;
 @synthesize isFavorite, is_new;
+@synthesize flyers_url;
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber{
     self = [super init];
@@ -38,6 +39,7 @@
     [dic setObject:[NSNumber numberWithBool:has_coupon] forKey:@"has_coupon"];
     [dic setObject:[NSNumber numberWithBool:is_new] forKey:@"is_new"];
     [dic setObject:couponString forKey:@"couponString"];
+    [dic setObject:flyers_url forKey:@"flyers_url"];
     return dic;
 }
 
@@ -58,6 +60,11 @@
     self.has_coupon = [[dictionary objectForKey:@"has_coupon"] boolValue];
     self.is_new = [[dictionary objectForKey:@"is_new"] boolValue];
     self.couponString = [dictionary objectForKey:@"coupon_string"];
+    
+    self.flyers_url = [dictionary objectForKey:@"flyers_url"];
+    if([self.flyers_url count]!=0){
+        NSLog(@"%@", [self.flyers_url objectAtIndex:0]);
+    }
     
     NSArray * menus = [dictionary objectForKey:@"menus"];
     NSMutableArray *res_menu = [[NSMutableArray alloc] init];
@@ -112,6 +119,8 @@
     isFavorite = [[aDecoder decodeObjectForKey:@"isFavorite"] boolValue];
     is_new = [[aDecoder decodeObjectForKey:@"is_new"] boolValue];
     
+    flyers_url = [aDecoder decodeObjectForKey:@"flyers_url"];
+    
     return self;
 }
 
@@ -130,6 +139,8 @@
     [aCoder encodeObject:couponString forKey:@"couponString"];
     [aCoder encodeObject:[NSNumber numberWithBool:isFavorite] forKey:@"isFavorite"];
     [aCoder encodeObject:[NSNumber numberWithBool:is_new] forKey:@"is_new"];
+    
+    [aCoder encodeObject:flyers_url forKey:@"flyers_url"];
 }
 
 - (NSComparisonResult)compare:(Restaurant *)otherObject {

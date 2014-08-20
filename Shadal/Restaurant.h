@@ -26,6 +26,8 @@
 @property (nonatomic) BOOL isFavorite;
 @property (nonatomic, strong) NSString * couponString;
 
+@property (nonatomic, strong) NSMutableArray * flyers_url;
+
 
 - (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber;
 - (NSDictionary *)dictionaryFromRestaurant;
