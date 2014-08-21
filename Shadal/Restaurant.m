@@ -62,9 +62,6 @@
     self.couponString = [dictionary objectForKey:@"coupon_string"];
     
     self.flyers_url = [dictionary objectForKey:@"flyers_url"];
-    if([self.flyers_url count]!=0){
-        NSLog(@"%@", [self.flyers_url objectAtIndex:0]);
-    }
     
     NSArray * menus = [dictionary objectForKey:@"menus"];
     NSMutableArray *res_menu = [[NSMutableArray alloc] init];

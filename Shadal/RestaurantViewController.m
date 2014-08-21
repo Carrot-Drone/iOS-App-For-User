@@ -49,34 +49,28 @@
     [openingTimeLabel setFont:SEOUL_FONT_EB(11.0)];
     [openingTimeLabel setText:[restaurant stringWithOpenAndClosingHours]];
     
-    // set Flyer Button
-    if(restaurant.has_flyer){
-        /*
-        UIButton *button1=[UIButton buttonWithType:UIButtonTypeCustom];
-        [button1 setFrame:CGRectMake(10.0, 2.0, 30.0, 30.0)];
-        [button1 addTarget:self action:@selector(flyerClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [button1 setImage:[UIImage imageNamed:@"flyer"] forState:UIControlStateNormal];
-        barButton = [[UIBarButtonItem alloc]initWithCustomView:button1];
-        barButton.style = UIBarButtonItemStyleBordered;
-        barButton.enabled = YES;
-        
-        self.navigationItem.rightBarButtonItem = barButton;
-         */
-    }
-    
     // set Coupon String
     if(restaurant.has_coupon){
-        UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
         [couponLabel setText:restaurant.couponString];
+        couponLabel.font = SEOUL_FONT_EB(18);
         couponLabel.numberOfLines = 5;
         couponLabel.baselineAdjustment = YES;
         couponLabel.adjustsFontSizeToFitWidth = YES;
         couponLabel.minimumScaleFactor = 0.8;
         couponLabel.clipsToBounds = YES;
         couponLabel.backgroundColor = [UIColor clearColor];
-        couponLabel.textAlignment = NSTextAlignmentCenter;
         
-        tableView.tableHeaderView = couponLabel;
+        // set line space
+        NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:couponLabel.text];
+        NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
+        [paragrahStyle setLineSpacing:5];
+        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragrahStyle range:NSMakeRange(0, [couponLabel.text length])];
+        
+        couponLabel.attributedText = attributedString ;
+        couponLabel.textAlignment = NSTextAlignmentCenter;
+
+        self.tableView.tableHeaderView = couponLabel;
     }
     
     // set Favorite
@@ -131,7 +125,8 @@
     // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(updateUI) name:@"updateUI" object: nil];
     
-    self.phoneNumber.backgroundColor = [UIColor colorWithRed:73/255.0 green:196/255.0 blue:57/255.0 alpha:1.0];
+//    self.phoneNumber.backgroundColor = [UIColor colorWithRed:73/255.0 green:196/255.0 blue:57/255.0 alpha:1.0];
+    
     [super viewDidLoad];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -220,7 +215,7 @@
             cell.firstImage.hidden = YES;
             cell.secondImage.hidden = YES;
             cell.thirdImage.hidden = YES;
-            cell.forthImage.image = [UIImage imageNamed:@"flyer.png"];
+            cell.forthImage.image = [UIImage imageNamed:@"flyerBlack"];
             return cell;
         }
         
@@ -243,6 +238,7 @@
     }
     // 자간 조절
     [cell setFontAttribute];
+    
     cell.userInteractionEnabled = NO;
     
     return cell;

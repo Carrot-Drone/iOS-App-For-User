@@ -8,7 +8,7 @@
 
 #import "Restaurant.h"
 #import "RestaurantCell.h"
-
+#import "Constants.h"
 @implementation RestaurantCell
 @synthesize restaurantLabel;
 @synthesize firstImage,secondImage,thirdImage,forthImage;
@@ -16,7 +16,7 @@
 - (void)awakeFromNib
 {
     // set default font
-    UIFont * customFont = [UIFont fontWithName:@"SeN-CL" size:19.5];
+    UIFont * customFont = SEOUL_FONT_L(19.5);
     if(customFont == nil) NSLog(@"Font not exist");
     
     [restaurantLabel setFont:customFont];
@@ -32,31 +32,21 @@
     RestaurantCell * cell = self;
     if(res.has_flyer){
         cell.forthImage.hidden = NO;
-        cell.forthImage.image = [UIImage imageNamed:@"flyer"];
+        cell.forthImage.image = [UIImage imageNamed:@"flyerOrange"];
         if(res.has_coupon){
-            if(res.isFavorite){
-                if(res.is_new){
+            cell.thirdImage.hidden = NO;
+            cell.thirdImage.image = [UIImage imageNamed:@"CouponIcon"];
+            if(res.is_new){
+                cell.secondImage.hidden = NO;
+                cell.secondImage.image = [UIImage imageNamed:@"NewIcon"];
+                if(res.isFavorite){
                     cell.firstImage.hidden = NO;
                     cell.firstImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
                 }else{
                     cell.firstImage.hidden = YES;
                     return;
                 }
-            }else if(res.is_new){
-                cell.secondImage.hidden = NO;
-                cell.secondImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
-                
-                cell.firstImage.hidden = YES;
-                return;
-            }else{
-                cell.firstImage.hidden = YES;
-                cell.secondImage.hidden = YES;
-                return;
-            }
-        }else if(res.isFavorite){
-            cell.thirdImage.hidden = NO;
-            cell.thirdImage.image = [UIImage imageNamed:@"StarOnList"];
-            if(res.is_new){
+            }else if(res.isFavorite){
                 cell.secondImage.hidden = NO;
                 cell.secondImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
                 
@@ -68,6 +58,20 @@
                 return;
             }
         }else if(res.is_new){
+            cell.thirdImage.hidden = NO;
+            cell.thirdImage.image = [UIImage imageNamed:@"NewIcon"];
+            if(res.isFavorite){
+                cell.secondImage.hidden = NO;
+                cell.secondImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
+                
+                cell.firstImage.hidden = YES;
+                return;
+            }else{
+                cell.firstImage.hidden = YES;
+                cell.secondImage.hidden = YES;
+                return;
+            }
+        }else if(res.isFavorite){
             cell.thirdImage.hidden = NO;
             cell.thirdImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
             
@@ -82,11 +86,11 @@
         }
     }else if(res.has_coupon){
         cell.forthImage.hidden = NO;
-        cell.forthImage.image = [UIImage imageNamed:@"coupon"];
-        if(res.isFavorite){
+        cell.forthImage.image = [UIImage imageNamed:@"CouponIcon"];
+        if(res.is_new){
             cell.thirdImage.hidden = NO;
-            cell.thirdImage.image = [UIImage imageNamed:@"StarOnList"];
-            if(res.is_new){
+            cell.thirdImage.image = [UIImage imageNamed:@"NewIcon"];
+            if(res.isFavorite){
                 cell.secondImage.hidden = NO;
                 cell.secondImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
                 
@@ -97,23 +101,7 @@
                 cell.secondImage.hidden = YES;
                 return;
             }
-        }else if(res.is_new){
-            cell.thirdImage.hidden = NO;
-            cell.thirdImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
-            
-            cell.firstImage.hidden = YES;
-            cell.secondImage.hidden = YES;
-            return;
-        }else{
-            cell.firstImage.hidden = YES;
-            cell.secondImage.hidden = YES;
-            cell.thirdImage.hidden = YES;
-            return;
-        }
-    }else if(res.isFavorite){
-        cell.forthImage.hidden = NO;
-        cell.forthImage.image = [UIImage imageNamed:@"StarOnList"];
-        if(res.is_new){
+        }else if(res.isFavorite){
             cell.thirdImage.hidden = NO;
             cell.thirdImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
             
@@ -127,6 +115,22 @@
             return;
         }
     }else if(res.is_new){
+        cell.forthImage.hidden = NO;
+        cell.forthImage.image = [UIImage imageNamed:@"NewIcon"];
+        if(res.isFavorite){
+            cell.thirdImage.hidden = NO;
+            cell.thirdImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
+            
+            cell.firstImage.hidden = YES;
+            cell.secondImage.hidden = YES;
+            return;
+        }else{
+            cell.firstImage.hidden = YES;
+            cell.secondImage.hidden = YES;
+            cell.thirdImage.hidden = YES;
+            return;
+        }
+    }else if(res.isFavorite){
         cell.forthImage.hidden = NO;
         cell.forthImage.image = [UIImage imageNamed:@"StarOnList"]; //NEW
         

@@ -13,4 +13,5 @@
 + (UIImage *)imageNamed_advanced:(NSString *)name;
 + (UIImage *)imageNamed_advanced:(NSString *)name option:(int)index;
 
++ (NSString *)contentTypeForImageData:(NSData *)data;
 @end

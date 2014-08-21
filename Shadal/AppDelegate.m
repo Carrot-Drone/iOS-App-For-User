@@ -18,7 +18,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"allData.bin"];
+    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"Gwanak.json"];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
@@ -52,9 +52,9 @@
         NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString* documentDir = [paths objectAtIndex:0];
         
-        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
         
-        [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
+        [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
 
     }
     return filePath;
@@ -73,9 +73,8 @@
 
     [self setTabBarItemImage];
 
-    
     // init navigation bar
-    UIFont * customFont = [UIFont fontWithName:@"SeN-CEB" size:19.5];
+    UIFont * customFont = SEOUL_FONT_EB(19.5);
     if(customFont == nil) NSLog(@"Font not exist");
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIColor whiteColor],NSForegroundColorAttributeName,
@@ -154,9 +153,9 @@
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentDir = [paths objectAtIndex:0];
     
-    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
     
-    [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
+    [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application{
@@ -166,9 +165,9 @@
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentDir = [paths objectAtIndex:0];
     
-    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/allData.bin", documentDir] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
 
-    [myData writeToFile:[NSString stringWithFormat:@"%@/allData.bin", documentDir] atomically:YES];
+    [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
 }
 
 - (void)setTabBarItemImage{
@@ -196,9 +195,9 @@
         
 //        tab.image = [tab.image imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
 //        tab.selectedImage = [tab.selectedImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor darkGrayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB_TAB(12.5), NSFontAttributeName,  [UIColor darkGrayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
         
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  MAIN_COLOR, NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB_TAB(12.5), NSFontAttributeName,  MAIN_COLOR, NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
         /*
         [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor colorWithRed:51/255.0 green:255/255.0 blue:231/255.0 alpha:1.0], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
          */

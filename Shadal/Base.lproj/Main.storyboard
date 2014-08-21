@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarBackgroundNull.png" translatesAutoresizingMaskIntoConstraints="NO" id="nbL-fd-Z8g">
-                                <rect key="frame" x="28" y="100" width="263" height="169"/>
+                                <rect key="frame" x="28" y="200" width="263" height="169"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KCE-L7-l3u">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -335,7 +335,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho4-b4-mwg" customClass="CustomButton">
                                 <rect key="frame" x="77" y="75" width="167" height="33"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Button" backgroundImage="CallBotton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -509,7 +509,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StarBackgroundNull.png" width="263" height="169"/>
+        <image name="CallBotton.png" width="334" height="67"/>
+        <image name="StarBackgroundNull.png" width="526" height="338"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

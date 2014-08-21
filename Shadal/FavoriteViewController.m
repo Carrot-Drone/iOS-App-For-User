@@ -43,7 +43,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // init titleView
-    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][3];
     titleView.categoryImageView.image = [UIImage imageNamed:@"BotIconStar"];
     titleView.categoryLabel.text = @"즐겨찾기";
     self.navigationItem.titleView = titleView;

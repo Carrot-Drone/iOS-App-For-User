@@ -39,7 +39,7 @@
     
     
     // init titleView
-    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][2];
     titleView.categoryImageView.image = [UIImage imageNamed:@"BotIconMore"];
     titleView.categoryLabel.text = @"더보기";
     self.navigationItem.titleView = titleView;
@@ -110,5 +110,6 @@
             [self linkToYongon:self];
         }
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end

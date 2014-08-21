@@ -61,12 +61,15 @@
     self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+    // init tableView
     self.tableView.backgroundColor = BACKGROUND_COLOR;
+    
+    // hide search bar
+    self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self.tableView reloadData];
-    
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -177,9 +180,17 @@
         viewController.category = [categories objectAtIndex:indexPath.row];
         [viewController setDetailItem:[allData objectForKey:viewController.category]];
         
-        CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
-        
         NSInteger index = [self.tableView indexPathForSelectedRow].row;
+        CustomTitleView * titleView;
+        if(index==0 || index == 1|| index == 6 || index==7){
+            titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+        }else if(index==2){
+            titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+        }
+        else{
+            titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][1];
+        }
+    
         UIImage * categoryImg = [self getCategoryImage:(int)index];
         
         titleView.categoryImageView.image = categoryImg;

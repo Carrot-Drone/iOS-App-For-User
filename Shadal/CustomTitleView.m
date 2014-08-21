@@ -7,6 +7,7 @@
 //
 
 #import "CustomTitleView.h"
+#import "Constants.h"
 
 @implementation CustomTitleView
 @synthesize titleLabel, subTitleLabel;
@@ -16,17 +17,17 @@
 - (void)awakeFromNib
 {
     // set default font
-    UIFont * customFont = [UIFont fontWithName:@"SeN-CEB" size:30.5];
+    UIFont * customFont = SEOUL_FONT_EB(30.5);
     if(customFont == nil) NSLog(@"Font not exist");
     [titleLabel setFont:customFont];
     [titleLabel setTextColor:[UIColor whiteColor]];
     
-    customFont = [UIFont fontWithName:@"SeN-CEB" size:12.5];
+    customFont = SEOUL_FONT_EB(12.5);
     if(customFont == nil) NSLog(@"Font not exist");
     [subTitleLabel setFont:customFont];
     [subTitleLabel setTextColor:[UIColor whiteColor]];
     
-    customFont = [UIFont fontWithName:@"SeN-CEB" size:23.0];
+    customFont = SEOUL_FONT_EB(23.0);
     if(customFont == nil) NSLog(@"Font not exist");
     [categoryLabel setFont:customFont];
     [categoryLabel setTextColor:[UIColor whiteColor]];

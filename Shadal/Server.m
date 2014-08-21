@@ -109,7 +109,6 @@ static NSMutableData * responseData;
             
         }else{
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-            NSLog(@"json : 1%@", json);
             if(json != NULL)
                 [_restaurant setRestaurantFromDictionary:json];
         }
@@ -119,7 +118,6 @@ static NSMutableData * responseData;
         
         [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:nil];
     }else{
-        NSLog(@"wow");
     }
 }
 @end

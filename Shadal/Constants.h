@@ -11,9 +11,15 @@
 
 
 // #define Design component
-#define SEOUL_FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
-#define SEOUL_FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
-#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:73/255.0 blue:13/255.0 alpha:1.0]
+#define SEOUL_FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"08SeoulNamsanL") size:(CGFloat)(_size_)])
+#define SEOUL_FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeoulNamsanEB") size:(CGFloat)(_size_)])
+#define SEOUL_FONT_L_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
+#define SEOUL_FONT_EB_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
+
+
+// color
+//#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:73/255.0 blue:13/255.0 alpha:1.0]
+#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:53/255.0 blue:0/255.0 alpha:1.0]
 #define SUB_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
 
 #define BAR_TINT_COLOR (UIColor *)[UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1.0]

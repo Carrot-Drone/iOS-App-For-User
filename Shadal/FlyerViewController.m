@@ -60,8 +60,6 @@
         pageControl.currentPageIndicatorTintColor = [UIColor redColor];
         pageControl.tintColor = [UIColor orangeColor];
     }
-    
-
 }
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -81,6 +79,7 @@
             NSString * imageURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, [restaurant.flyers_url objectAtIndex:i]];
         
             UIImage * image =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
                 imageView.frame = CGRectMake(content_width*i, 0, content_width, content_height);

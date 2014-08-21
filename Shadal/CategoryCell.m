@@ -7,6 +7,7 @@
 //
 
 #import "CategoryCell.h"
+#import "Constants.h"
 
 @implementation CategoryCell
 @synthesize categoryLabel, categoryImage;
@@ -14,8 +15,8 @@
 {
     // Initialization code
     // set default font
-    UIFont * customFont = [UIFont fontWithName:@"SeN-CL" size:19.5];
-    if(customFont == nil) NSLog(@"Font not exist");
+    UIFont * customFont = SEOUL_FONT_L(19.5);
+    if(customFont == nil) NSLog(@"!Font not exist");
     
     [categoryLabel setFont:customFont];
 }
