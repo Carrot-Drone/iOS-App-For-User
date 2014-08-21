@@ -68,6 +68,9 @@
     
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
+-(void)viewDidAppear:(BOOL)animated{
+    
+}
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self filterContentForSearchText:searchString
@@ -115,7 +118,7 @@
 {
     if(tableView == self.searchDisplayController.searchResultsTableView){
         // 음식점을 검색하는 경우.
-        RestaurantCell * cell = (RestaurantCell *)[tableView dequeueReusableCellWithIdentifier:@""];
+        RestaurantCell * cell = (RestaurantCell *)[tableView dequeueReusableCellWithIdentifier:@"RestaurantCell"];
         
         if(cell == nil){
             NSArray * array;
@@ -128,7 +131,7 @@
         cell.restaurantLabel.text = res.name;
         return cell;
     }
-    CategoryCell * cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:@""];
+    CategoryCell * cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
     
     if(cell == nil){
         NSArray * array;
@@ -183,7 +186,6 @@
         titleView.categoryLabel.text = [categories objectAtIndex:index];
         viewController.navigationItem.titleView = titleView;
     }else if ([[segue identifier] isEqualToString:@"Restaurant"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Restaurant * res = [searchResults objectAtIndex:selectedRow];
         [[segue destinationViewController] setDetailItem:res];
     }

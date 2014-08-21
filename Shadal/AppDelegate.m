@@ -105,6 +105,7 @@
     }
     Restaurant * res;
     do{
+        if(cnt == 0) break;
         int r = arc4random() % cnt;
         for(id key in allData){
             NSString* category = key;

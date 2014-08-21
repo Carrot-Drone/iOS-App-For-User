@@ -55,50 +55,41 @@
     
     // init Page control
     pageControl.numberOfPages =[restaurant.flyers_url count];
-    pageControl.hidesForSinglePage = NO;
-    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    pageControl.tintColor = [UIColor orangeColor];
-    pageControl.currentPage = 0;
+    if(pageControl.numberOfPages != 0){
+        pageControl.hidesForSinglePage = NO;
+        pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+        pageControl.tintColor = [UIColor orangeColor];
+    }
+    
+
+}
+-(void)viewDidAppear:(BOOL)animated{
     
     float bottom_offset = 37;
     float content_width = [UIScreen mainScreen].bounds.size.width;
     float content_height = [UIScreen mainScreen].bounds.size.height - scrollView.frame.origin.y - bottom_offset;
     
-    scrollView.contentSize = CGSizeMake(content_width*pageControl.numberOfPages, content_height);
     for(int i=0; i<[restaurant.flyers_url count]; i++){
-        NSString * imageURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, [restaurant.flyers_url objectAtIndex:i]];
-        
-        UIImage * image =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
-        
-        UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = CGRectMake(content_width*i, 0, content_width, content_height);
-        [imageView setContentMode:UIViewContentModeScaleAspectFit];
-        [scrollView addSubview:imageView];
+        UIActivityIndicatorView * indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        indicator.frame = CGRectMake(142 + i*content_width, 214, 20, 20);
+        [indicator startAnimating];
+        [scrollView addSubview:indicator];
     }
-    /*
-    // If there's only one image
-    if([UIImage imageNamed_advanced:restaurant.phoneNumber]){
-        scrollView.contentSize = CGSizeMake(content_width, content_height);
-        UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed_advanced:restaurant.phoneNumber]];
-        imageView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
-        [imageView setContentMode:UIViewContentModeScaleAspectFit];
-        [scrollView addSubview:imageView];
-    }else{
-        UIImage * image = [UIImage imageNamed_advanced:restaurant.phoneNumber option:1];
-        int numberOfImg = 0;
-        while(image != nil){
-            numberOfImg++;
-            scrollView.contentSize = CGSizeMake(content_width*numberOfImg, content_height);
-            UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
-            imageView.frame = CGRectMake(content_width*(numberOfImg-1), 0, content_width, content_height);
-            [imageView setContentMode:UIViewContentModeScaleAspectFit];
-            [scrollView addSubview:imageView];
-            
-            image = [UIImage imageNamed_advanced:restaurant.phoneNumber option:numberOfImg+1];
+    scrollView.contentSize = CGSizeMake(content_width*pageControl.numberOfPages, content_height);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for(int i=0; i<[restaurant.flyers_url count]; i++){
+            NSString * imageURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, [restaurant.flyers_url objectAtIndex:i]];
+        
+            UIImage * image =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
+                imageView.frame = CGRectMake(content_width*i, 0, content_width, content_height);
+                [imageView setContentMode:UIViewContentModeScaleAspectFit];
+                [scrollView addSubview:imageView];
+            });
         }
-        if(numberOfImg == 0) NSLog(@"Image not exist %@", restaurant.name);
-    }
-    */
+    });
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

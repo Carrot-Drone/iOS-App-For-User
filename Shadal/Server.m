@@ -96,8 +96,10 @@ static NSMutableData * responseData;
     NSString * url = [[[connection currentRequest] URL] absoluteString];
     if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]]){
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-        NSLog(@"json : 2%@", json);
-
+        if(json == NULL){
+            NSLog(@"Received json is NULL");
+            return;
+        }
         // 노티피케이션 전송
         NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
         [myNotificationCenter postNotificationName:@"checkForResInCategory" object:self userInfo:json];

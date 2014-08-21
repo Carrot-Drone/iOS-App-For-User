@@ -138,13 +138,16 @@
     [self updateUI];
     if(!self.isFromRandom){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSLog(@"NOOOO");
             [self updateViewData];
         });
     }
 }
 
 - (void)flyerClicked:(id)sender{
+    if(restaurant.has_flyer == NO){
+        NSLog(@"Restaurant doesn't have any flyers ");
+        return;
+    }
     [self performSegueWithIdentifier:@"Flyer" sender:self];
 }
 
@@ -201,7 +204,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Menu";
     NSInteger section = indexPath.section;
     // 전단지 보기
     if(restaurant.has_flyer){

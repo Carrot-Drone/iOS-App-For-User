@@ -27,7 +27,7 @@
 #define CHECK_FOR_UPDATE            @"/checkForUpdate"
 #define CHECK_FOR_RES_IN_CATEGORY   @"/checkForResInCategory"
 #define FLYERS_FOR_RES              @"/flyersForRes"
-#define ALL_DATA                    [NSString stringWithFormat:@"/allData%@", CAMPUS]
+#define ALL_DATA                   [NSString stringWithFormat:@"/campus/%@.json", CAMPUS]
 
 #define CAMPUS @"Gwanak"
 //#define WEB_BASE_URL2 @"http://services.snu.ac.kr:3111/new_menu"

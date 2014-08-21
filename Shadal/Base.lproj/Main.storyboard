@@ -324,7 +324,6 @@
         <!--Restaurant View Controller - Item-->
         <scene sceneID="d9Q-BR-kbj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Iz-QP-kbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="UNh-Qy-9UW" customClass="RestaurantViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4OB-jA-YNI"/>
@@ -414,13 +413,13 @@
                         <segue destination="NDD-nF-JW4" kind="modal" identifier="Flyer" id="9Af-Og-L2d"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Iz-QP-kbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1798" y="680"/>
         </scene>
         <!--Flyer View Controller-->
         <scene sceneID="ip9-vh-uL0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KZV-ZX-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NDD-nF-JW4" customClass="FlyerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JbI-zX-yBj"/>
@@ -464,6 +463,7 @@
                         <outlet property="scrollView" destination="ZcC-ys-7aN" id="JtA-Zs-c1G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZV-ZX-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2345" y="64"/>
         </scene>
@@ -517,6 +517,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wYe-iV-KuM"/>
+        <segue reference="PaS-H3-OiP"/>
     </inferredMetricsTieBreakers>
 </document>
