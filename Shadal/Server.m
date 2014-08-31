@@ -9,6 +9,7 @@
 #import "Server.h"
 #import "Constants.h"
 #import "Restaurant.h"
+#import "Reachability.h"
 
 @implementation Server{
 }
@@ -16,7 +17,22 @@
 static Restaurant * _restaurant;
 static NSMutableData * responseData;
 
++(BOOL)isConnected{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        NSLog(@"There IS NO internet connection");
+        return NO;
+    } else {
+        NSLog(@"There IS internet connection");
+        return YES;
+    }
+}
+
 +(void)updateRestaurant:(Restaurant *)restaurant{
+    if(![Server isConnected]){
+        return;
+    }
     _restaurant = restaurant;
     dispatch_async(dispatch_get_main_queue(), ^(void){
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_UPDATE]];
@@ -39,6 +55,9 @@ static NSMutableData * responseData;
 }
 
 + (void)checkForNewRestaurant:(NSString *)category{
+    if(![Server isConnected]){
+        return;
+    }
     dispatch_async(dispatch_get_main_queue(), ^(void){
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]];
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
@@ -60,6 +79,9 @@ static NSMutableData * responseData;
 }
 
 + (void)flyersInRestaurant:(Restaurant *)restaurant{
+    if(![Server isConnected]){
+        return;
+    }
     _restaurant = restaurant;
     dispatch_async(dispatch_get_main_queue(), ^(void){
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, FLYERS_FOR_RES]];

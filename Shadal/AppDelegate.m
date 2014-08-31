@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Constants.h"
+#import "Server.h"
 
 #import "RestaurantViewController.h"
 

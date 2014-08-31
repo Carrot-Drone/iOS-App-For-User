@@ -74,6 +74,7 @@
 		F54D139C199B9DB300AFE026 /* StarOff.png in Resources */ = {isa = PBXBuildFile; fileRef = F54D1389199B9DB300AFE026 /* StarOff.png */; };
 		F54D139D199B9DB300AFE026 /* StarOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F54D138A199B9DB300AFE026 /* StarOn.png */; };
 		F54D139E199B9DB300AFE026 /* StarOnList.png in Resources */ = {isa = PBXBuildFile; fileRef = F54D138B199B9DB300AFE026 /* StarOnList.png */; };
+		F5554F2A19B3687C004686AB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F5554F2919B3687C004686AB /* Reachability.m */; };
 		F59DB07919A0D7DD007F9A71 /* UIColor+COLORCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F59DB07619A0D7DD007F9A71 /* UIColor+COLORCategories.m */; };
 		F59DB07A19A0D7DD007F9A71 /* UIImage+IMAGECategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F59DB07819A0D7DD007F9A71 /* UIImage+IMAGECategories.m */; };
 /* End PBXBuildFile section */
@@ -174,6 +175,8 @@
 		F54D1389199B9DB300AFE026 /* StarOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarOff.png; path = Resources/StarOff.png; sourceTree = "<group>"; };
 		F54D138A199B9DB300AFE026 /* StarOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarOn.png; path = Resources/StarOn.png; sourceTree = "<group>"; };
 		F54D138B199B9DB300AFE026 /* StarOnList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarOnList.png; path = Resources/StarOnList.png; sourceTree = "<group>"; };
+		F5554F2819B3687C004686AB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F5554F2919B3687C004686AB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F59DB07519A0D7DD007F9A71 /* UIColor+COLORCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+COLORCategories.h"; sourceTree = "<group>"; };
 		F59DB07619A0D7DD007F9A71 /* UIColor+COLORCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+COLORCategories.m"; sourceTree = "<group>"; };
 		F59DB07719A0D7DD007F9A71 /* UIImage+IMAGECategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IMAGECategories.h"; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				F5D3711D1804396F00241D9D /* Constants.h */,
+				F5554F2819B3687C004686AB /* Reachability.h */,
+				F5554F2919B3687C004686AB /* Reachability.m */,
 				F54CF56E195AA21200B7C67A /* Server.h */,
 				F54CF56F195AA21200B7C67A /* Server.m */,
 			);
@@ -547,6 +552,7 @@
 				F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */,
 				F5110ADE17FC013C00D7AA85 /* MasterViewController.m in Sources */,
 				49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */,
+				F5554F2A19B3687C004686AB /* Reachability.m in Sources */,
 				49103D551851A63F00070801 /* RestaurantCell.m in Sources */,
 				F52A85CD1999126B0010C261 /* FavoriteViewController.m in Sources */,
 				F5008D5719A0F65400831238 /* CustomButton.m in Sources */,
