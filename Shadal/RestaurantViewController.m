@@ -71,6 +71,8 @@
         couponLabel.textAlignment = NSTextAlignmentCenter;
 
         self.tableView.tableHeaderView = couponLabel;
+    }else{
+        self.tableView.tableHeaderView = nil;
     }
     
     // set Favorite
