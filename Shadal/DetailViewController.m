@@ -70,6 +70,8 @@
                 // Only for meta data. If you push in to the real Restaurant view, it will then update it's content
                 res.has_flyer = [[restaurant objectForKey:@"has_flyer"] boolValue];
                 res.has_coupon = [[restaurant objectForKey:@"has_coupon"] boolValue];
+                res.is_new = [[restaurant objectForKey:@"is_new"] boolValue];
+                
                 isRemoved = false;
                 break;
             }
