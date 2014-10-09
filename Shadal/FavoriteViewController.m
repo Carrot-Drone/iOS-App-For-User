@@ -151,6 +151,7 @@
     for(id key in favoriteRes){
         cnt += [[favoriteRes objectForKey:key] count];
     }
+    NSLog(@"totla Number of Res : %d", cnt);
     return (NSInteger)cnt;
 }
 @end

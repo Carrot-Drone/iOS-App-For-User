@@ -51,7 +51,7 @@
     
     // set Coupon String
     if(restaurant.has_coupon){
-        UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
+        UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
         [couponLabel setText:restaurant.couponString];
         couponLabel.font = SEOUL_FONT_EB(18);
         couponLabel.numberOfLines = 5;

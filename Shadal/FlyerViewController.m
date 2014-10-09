@@ -43,7 +43,7 @@
     navBar.tintColor = [UIColor whiteColor];
     
     // Status bar color
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,320, 25)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, 25)];
     view.backgroundColor=MAIN_COLOR;
     [self.view addSubview:view];
     
@@ -69,7 +69,7 @@
     
     for(int i=0; i<[restaurant.flyers_url count]; i++){
         UIActivityIndicatorView * indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        indicator.frame = CGRectMake(142 + i*content_width, 214, 20, 20);
+        indicator.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2 + i*content_width, [UIScreen mainScreen].bounds.size.height/2, 20, 20);
         [indicator startAnimating];
         [scrollView addSubview:indicator];
     }
