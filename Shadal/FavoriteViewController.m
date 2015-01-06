@@ -110,11 +110,11 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"RestaurantCell";
     
-    RestaurantCell * cell = (RestaurantCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    RestaurantCell * cell = (RestaurantCell *)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil){
         NSArray * array;

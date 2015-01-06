@@ -23,6 +23,7 @@
     if(customFont == nil) NSLog(@"Font not exist");
     [priceLabel setFont:customFont];
 }
+
 -(void)setFontAttribute{
 
     NSMutableAttributedString *attributedString;

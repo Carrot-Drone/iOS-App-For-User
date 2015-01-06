@@ -118,6 +118,7 @@ static NSMutableData * responseData;
     NSString * url = [[[connection currentRequest] URL] absoluteString];
     if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]]){
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+        
         if(json == NULL){
             NSLog(@"Received json is NULL");
             return;

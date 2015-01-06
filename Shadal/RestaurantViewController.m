@@ -160,7 +160,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     NSInteger num;
-    if(!restaurant.menu==nil)
+    if(!(restaurant.menu==nil))
         num = [restaurant.menu count];
     else num = 0;
     
@@ -201,7 +201,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Menu";
+    static NSString *CellIdentifier = @"MenuCell";
     NSInteger section = indexPath.section;
     // 전단지 보기
     if(restaurant.has_flyer){

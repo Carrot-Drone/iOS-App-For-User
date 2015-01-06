@@ -91,8 +91,8 @@
     
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat pageNum = nearbyintf((scrollView.contentOffset.x / scrollView.frame.size.width));
+- (void)scrollViewDidScroll:(UIScrollView *)_scrollView{
+    CGFloat pageNum = nearbyintf((_scrollView.contentOffset.x / _scrollView.frame.size.width));
     pageControl.currentPage = pageNum;
 }
 

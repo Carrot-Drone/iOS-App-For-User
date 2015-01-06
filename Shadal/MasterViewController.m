@@ -134,7 +134,7 @@
         cell.restaurantLabel.text = res.name;
         return cell;
     }
-    CategoryCell * cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
+    CategoryCell * cell = (CategoryCell *)[tableView dequeueReusableCellWithIdentifier:@""];
     
     if(cell == nil){
         NSArray * array;
@@ -142,7 +142,7 @@
         cell = [array objectAtIndex:0];
     }
     
-    cell.categoryImage.image = [self getCategoryImage:indexPath.row];
+    cell.categoryImage.image = [self getCategoryImage:(int)indexPath.row];
     cell.categoryLabel.text = [categories objectAtIndex:indexPath.row];
     
     return cell;

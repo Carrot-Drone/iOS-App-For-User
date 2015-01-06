@@ -15,11 +15,11 @@
 @synthesize isFavorite, is_new;
 @synthesize flyers_url;
 
-- (id)initWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber{
+- (id)initWithName:(NSString *)_name phoneNumber:(NSString *)_phoneNumber{
     self = [super init];
     if(self != nil){
-        self.name = name;
-        self.phoneNumber = phoneNumber;
+        self.name = _name;
+        self.phoneNumber = _phoneNumber;
     }
     return self;
 }
