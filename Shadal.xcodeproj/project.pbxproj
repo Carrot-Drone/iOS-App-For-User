@@ -11,6 +11,11 @@
 		49103D571851A65500070801 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49103D561851A65500070801 /* RestaurantCell.xib */; };
 		491FD3101852DCD300885396 /* UIImage+UIImage_Customized.m in Sources */ = {isa = PBXBuildFile; fileRef = 491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */; };
 		49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3DB261851C594002C9EBA /* FlyerViewController.m */; };
+		49DA83761A5BA1F6002AEDDB /* ImgIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83711A5BA1F6002AEDDB /* ImgIcon.png */; };
+		49DA83771A5BA1F6002AEDDB /* SearchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83721A5BA1F6002AEDDB /* SearchIcon.png */; };
+		49DA83781A5BA1F6002AEDDB /* StarOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83731A5BA1F6002AEDDB /* StarOff@2x.png */; };
+		49DA83791A5BA1F6002AEDDB /* StarOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83741A5BA1F6002AEDDB /* StarOn@2x.png */; };
+		49DA837A1A5BA1F6002AEDDB /* 서울남산체L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83751A5BA1F6002AEDDB /* 서울남산체L.ttf */; };
 		F5008D5719A0F65400831238 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5008D5619A0F65400831238 /* CustomButton.m */; };
 		F5110AC817FC013C00D7AA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC717FC013C00D7AA85 /* Foundation.framework */; };
 		F5110ACA17FC013C00D7AA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */; };
@@ -28,8 +33,6 @@
 		F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0017FC044E00D7AA85 /* Restaurant.m */; };
 		F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0317FC10E200D7AA85 /* DetailViewController.m */; };
 		F519367F199F324000339903 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F519367E199F324000339903 /* SettingTableViewController.m */; };
-		F52319B719A68D8A00236221 /* SeoulNamsanEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = F52319B519A68D8A00236221 /* SeoulNamsanEB.otf */; };
-		F52319B819A68D8A00236221 /* SeoulNamsanL.otf in Resources */ = {isa = PBXBuildFile; fileRef = F52319B619A68D8A00236221 /* SeoulNamsanL.otf */; };
 		F52319BD19A691CD00236221 /* 서울남산체EB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F52319BA19A691CD00236221 /* 서울남산체EB.ttf */; };
 		F52319BF19A6925B00236221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5110AD917FC013C00D7AA85 /* Main.storyboard */; };
 		F52319C219A69C2E00236221 /* CouponIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F52319C019A69C2E00236221 /* CouponIcon.png */; };
@@ -97,6 +100,11 @@
 		491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_Customized.m"; sourceTree = "<group>"; };
 		49C3DB251851C594002C9EBA /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerViewController.h; sourceTree = "<group>"; };
 		49C3DB261851C594002C9EBA /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerViewController.m; sourceTree = "<group>"; };
+		49DA83711A5BA1F6002AEDDB /* ImgIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImgIcon.png; path = Resources/ImgIcon.png; sourceTree = "<group>"; };
+		49DA83721A5BA1F6002AEDDB /* SearchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SearchIcon.png; path = Resources/SearchIcon.png; sourceTree = "<group>"; };
+		49DA83731A5BA1F6002AEDDB /* StarOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "StarOff@2x.png"; path = "Resources/StarOff@2x.png"; sourceTree = "<group>"; };
+		49DA83741A5BA1F6002AEDDB /* StarOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "StarOn@2x.png"; path = "Resources/StarOn@2x.png"; sourceTree = "<group>"; };
+		49DA83751A5BA1F6002AEDDB /* 서울남산체L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "서울남산체L.ttf"; path = "Resources/서울남산체L.ttf"; sourceTree = "<group>"; };
 		F5008D5519A0F65400831238 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		F5008D5619A0F65400831238 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		F5110AC417FC013C00D7AA85 /* 샤달.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "샤달.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,8 +132,6 @@
 		F5110B0317FC10E200D7AA85 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F519367D199F324000339903 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		F519367E199F324000339903 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
-		F52319B519A68D8A00236221 /* SeoulNamsanEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SeoulNamsanEB.otf; path = Resources/SeoulNamsanEB.otf; sourceTree = "<group>"; };
-		F52319B619A68D8A00236221 /* SeoulNamsanL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SeoulNamsanL.otf; path = Resources/SeoulNamsanL.otf; sourceTree = "<group>"; };
 		F52319BA19A691CD00236221 /* 서울남산체EB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "서울남산체EB.ttf"; path = "Resources/서울남산체EB.ttf"; sourceTree = "<group>"; };
 		F52319C019A69C2E00236221 /* CouponIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CouponIcon.png; path = Resources/CouponIcon.png; sourceTree = "<group>"; };
 		F52319C119A69C2E00236221 /* NewIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewIcon.png; path = Resources/NewIcon.png; sourceTree = "<group>"; };
@@ -301,13 +307,16 @@
 		F52A85C319990D070010C261 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				49DA83751A5BA1F6002AEDDB /* 서울남산체L.ttf */,
+				F52319BA19A691CD00236221 /* 서울남산체EB.ttf */,
+				49DA83711A5BA1F6002AEDDB /* ImgIcon.png */,
+				49DA83721A5BA1F6002AEDDB /* SearchIcon.png */,
+				49DA83731A5BA1F6002AEDDB /* StarOff@2x.png */,
+				49DA83741A5BA1F6002AEDDB /* StarOn@2x.png */,
 				F52319C419A6A2F200236221 /* flyerBlack.png */,
 				F52319C519A6A2F200236221 /* flyerOrange.png */,
 				F52319C019A69C2E00236221 /* CouponIcon.png */,
 				F52319C119A69C2E00236221 /* NewIcon.png */,
-				F52319BA19A691CD00236221 /* 서울남산체EB.ttf */,
-				F52319B519A68D8A00236221 /* SeoulNamsanEB.otf */,
-				F52319B619A68D8A00236221 /* SeoulNamsanL.otf */,
 				F539ECE519A07D1B004AB442 /* BotIconMain.png */,
 				F539ECE619A07D1B004AB442 /* BotIconMain@2x.png */,
 				F539ECE719A07D1B004AB442 /* BotIconMainselect.png */,
@@ -453,6 +462,7 @@
 						DevelopmentTeam = 8F8C98NKPP;
 					};
 					F5110AE717FC013C00D7AA85 = {
+						DevelopmentTeam = 8F8C98NKPP;
 						TestTargetID = F5110AC317FC013C00D7AA85;
 					};
 				};
@@ -490,6 +500,7 @@
 				F54D1397199B9DB300AFE026 /* iconDosirak.png in Resources */,
 				F5110AD217FC013C00D7AA85 /* InfoPlist.strings in Resources */,
 				F539ECF819A07D1B004AB442 /* BotIconMainselect@2x.png in Resources */,
+				49DA837A1A5BA1F6002AEDDB /* 서울남산체L.ttf in Resources */,
 				F54D1394199B9DB300AFE026 /* iconBossam.png in Resources */,
 				F539ED0319A07D1B004AB442 /* BotIconStarSelect.png in Resources */,
 				F54D1395199B9DB300AFE026 /* iconChic.png in Resources */,
@@ -497,12 +508,14 @@
 				F54D1370199B8E8700AFE026 /* CategoryCell.xib in Resources */,
 				F52319C219A69C2E00236221 /* CouponIcon.png in Resources */,
 				49103D571851A65500070801 /* RestaurantCell.xib in Resources */,
+				49DA83761A5BA1F6002AEDDB /* ImgIcon.png in Resources */,
 				F539ECFD19A07D1B004AB442 /* BotIconRandom.png in Resources */,
 				F54D139D199B9DB300AFE026 /* StarOn.png in Resources */,
 				F539ED0219A07D1B004AB442 /* BotIconStar@2x.png in Resources */,
-				F52319B819A68D8A00236221 /* SeoulNamsanL.otf in Resources */,
+				49DA83781A5BA1F6002AEDDB /* StarOff@2x.png in Resources */,
 				F54D1399199B9DB300AFE026 /* iconNoodle.png in Resources */,
 				F539ED0019A07D1B004AB442 /* BotIconRandomSelect@2x.png in Resources */,
+				49DA83791A5BA1F6002AEDDB /* StarOn@2x.png in Resources */,
 				F54D139C199B9DB300AFE026 /* StarOff.png in Resources */,
 				F539ED0119A07D1B004AB442 /* BotIconStar.png in Resources */,
 				F54D139A199B9DB300AFE026 /* iconPizza.png in Resources */,
@@ -510,11 +523,11 @@
 				F52319BD19A691CD00236221 /* 서울남산체EB.ttf in Resources */,
 				F539ECFF19A07D1B004AB442 /* BotIconRandomSelect.png in Resources */,
 				F539ED0419A07D1B004AB442 /* BotIconStarSelect@2x.png in Resources */,
+				49DA83771A5BA1F6002AEDDB /* SearchIcon.png in Resources */,
 				F539ECFA19A07D1B004AB442 /* BotIconMore@2x.png in Resources */,
 				F54D1393199B9DB300AFE026 /* iconBab.png in Resources */,
 				F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */,
 				F52319C619A6A2F200236221 /* flyerBlack.png in Resources */,
-				F52319B719A68D8A00236221 /* SeoulNamsanEB.otf in Resources */,
 				F54D1378199B92E000AFE026 /* CustomTitleView.xib in Resources */,
 				F54D1398199B9DB300AFE026 /* iconEtc.png in Resources */,
 				F539ECFC19A07D1B004AB442 /* BotIconMoreSelect@2x.png in Resources */,
@@ -737,7 +750,9 @@
 		F5110AFD17FC013C00D7AA85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shadal.app/Shadal";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/샤달.app/샤달";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -751,6 +766,7 @@
 				);
 				INFOPLIST_FILE = "ShadalTests/ShadalTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -760,6 +776,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shadal.app/Shadal";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -769,6 +787,7 @@
 				GCC_PREFIX_HEADER = "Shadal/Shadal-Prefix.pch";
 				INFOPLIST_FILE = "ShadalTests/ShadalTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

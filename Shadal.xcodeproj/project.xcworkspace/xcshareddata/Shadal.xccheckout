@@ -10,22 +10,18 @@
 	<string>Shadal</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BA66AF8E-5D1A-4EAC-A16F-2163AEBF3A6C</key>
-		<string>ssh://github.com/swchoi06/ShadalIOSCreateDataFile.git</string>
 		<key>C0F6BD2530EA26ABC1AC2406117DCA2F4F61A069</key>
-		<string>https://github.com/swchoi06/Shadal.git</string>
+		<string>github.com:swchoi06/Shadal.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Shadal.xcodeproj/project.xcworkspace</string>
+	<string>Shadal.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BA66AF8E-5D1A-4EAC-A16F-2163AEBF3A6C</key>
-		<string>../..IOSCreateDataFile</string>
 		<key>C0F6BD2530EA26ABC1AC2406117DCA2F4F61A069</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/swchoi06/Shadal.git</string>
+	<string>github.com:swchoi06/Shadal.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -39,14 +35,6 @@
 			<string>C0F6BD2530EA26ABC1AC2406117DCA2F4F61A069</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Shadal</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BA66AF8E-5D1A-4EAC-A16F-2163AEBF3A6C</string>
-			<key>IDESourceControlWCCName</key>
-			<string>ShadalIOSCreateDataFile</string>
 		</dict>
 	</array>
 </dict>

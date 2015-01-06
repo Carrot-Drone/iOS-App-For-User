@@ -26,8 +26,6 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SeoulNamsanEB.otf</string>
-		<string>SeoulNamsanL.otf</string>
 		<string>서울남산체EB.ttf</string>
 		<string>서울남산체L.ttf</string>
 	</array>
