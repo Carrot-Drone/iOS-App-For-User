@@ -10,10 +10,15 @@
 #import "Restaurant.h"
 
 @interface Server : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+
+// Async
 + (BOOL)isConnected;
 + (void)updateRestaurant:(Restaurant *)restaurant;
 + (void)checkForNewRestaurant:(NSString *)category;
 + (void)flyersInRestaurant:(Restaurant *)restaurant;
+
+// Sync
++ (NSArray *)allRestaurants;
 
 
 @end

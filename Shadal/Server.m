@@ -39,7 +39,7 @@ static NSMutableData * responseData;
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
         [theRequest setHTTPMethod:@"POST"];
         
-        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@&updated_at=%@", restaurant.server_id, restaurant.phoneNumber, CAMPUS, restaurant.updated_at];
+        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@&updated_at=%@", restaurant.server_id, restaurant.phoneNumber, s_campus, restaurant.updated_at];
         
         [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
@@ -63,7 +63,7 @@ static NSMutableData * responseData;
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
         [theRequest setHTTPMethod:@"POST"];
         
-        NSString * params = [NSString stringWithFormat:@"category=%@&campus=%@", category, CAMPUS];
+        NSString * params = [NSString stringWithFormat:@"category=%@&campus=%@", category, s_campus];
         
         [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
@@ -88,7 +88,7 @@ static NSMutableData * responseData;
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
         [theRequest setHTTPMethod:@"POST"];
         
-        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@", restaurant.server_id, restaurant.phoneNumber, CAMPUS];
+        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@", restaurant.server_id, restaurant.phoneNumber, s_campus];
         
         [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
@@ -142,5 +142,16 @@ static NSMutableData * responseData;
         [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:nil];
     }else{
     }
+}
+
++(NSArray *)allRestaurants{
+    NSString * dataURL = [NSString stringWithFormat:@"%@%@?campus=%@", WEB_BASE_URL, ALL_DATA, s_campus];
+    
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:dataURL]];
+    
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    return json;
+    
 }
 @end

@@ -23,42 +23,41 @@
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
-        NSString * dataURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, ALL_DATA];
-    
-        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:dataURL]];
-        
-        NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        NSMutableDictionary * _allData = [[NSMutableDictionary alloc] init];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"치킨"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"피자"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"중국집"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"한식/분식"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"도시락/돈까스"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"족발/보쌈"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"냉면"];
-        [_allData setObject:[[NSMutableArray alloc] init] forKey:@"기타"];
-        
-        for(int i=0; i<[json count]; i++){
-            NSDictionary * res = [json objectAtIndex:i];
-            
-            Restaurant * restaurant = [[Restaurant alloc] init];
-            [restaurant setRestaurantFromDictionary:res];
-            
-            [[_allData objectForKey:restaurant.categories] addObject:restaurant];
-        }
-        // Save alldata to file
-        NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:_allData];
-        
-        NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString* documentDir = [paths objectAtIndex:0];
-        
-        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
-        
-        [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
-
+        [self resetData];
     }
     return filePath;
+}
+
+- (void)resetData{
+    NSArray *json = [Server allRestaurants];
+    
+    NSMutableDictionary * _allData = [[NSMutableDictionary alloc] init];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"치킨"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"피자"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"중국집"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"한식/분식"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"도시락/돈까스"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"족발/보쌈"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"냉면"];
+    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"기타"];
+    
+    for(int i=0; i<[json count]; i++){
+        NSDictionary * res = [json objectAtIndex:i];
+        
+        Restaurant * restaurant = [[Restaurant alloc] init];
+        [restaurant setRestaurantFromDictionary:res];
+        
+        [[_allData objectForKey:restaurant.categories] addObject:restaurant];
+    }
+    // Save alldata to file
+    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:_allData];
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentDir = [paths objectAtIndex:0];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
+    
+    [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
