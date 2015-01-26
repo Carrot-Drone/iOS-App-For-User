@@ -70,6 +70,9 @@
     for(int i=0; i<[restaurant.flyers_url count]; i++){
         UIActivityIndicatorView * indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         indicator.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2 + i*content_width, [UIScreen mainScreen].bounds.size.height/2, 20, 20);
+        
+        indicator.center = self.view.center;
+        
         [indicator startAnimating];
         [scrollView addSubview:indicator];
     }
