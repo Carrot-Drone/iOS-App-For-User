@@ -27,6 +27,8 @@
 #define BACKGROUND_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
 #define HIGHLIGHT_COLOR (UIColor *)[UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0]
 
+#define SEARCH_BAR_BACKGROUND_COLOR (UIColor *)[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0]
+
 // server
 //#define WEB_BASE_URL                @"http://localhost:3000"
 #define WEB_BASE_URL                @"http://www.shadal.kr"

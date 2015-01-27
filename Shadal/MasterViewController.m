@@ -6,6 +6,8 @@
 //  Copyright (c) 2013년 Wafflestudio. All rights reserved.
 //
 
+#import "UIImage+IMAGECategories.h"
+
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
@@ -66,6 +68,16 @@
     
     // hide search bar
     self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
+    
+    // set color of bounce area
+    UIView *topview = [[UIView alloc] initWithFrame:CGRectMake(0,-480,320,480)];
+    topview.backgroundColor = SEARCH_BAR_BACKGROUND_COLOR;
+    [self.tableView addSubview:topview];
+    
+    // set search bar
+    UISearchBar * searchBar = self.searchDisplayController.searchBar;
+    searchBar.translucent = NO;
+    searchBar.backgroundImage = [UIImage image1x1WithColor:SEARCH_BAR_BACKGROUND_COLOR];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
