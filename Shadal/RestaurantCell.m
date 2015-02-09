@@ -16,7 +16,7 @@
 - (void)awakeFromNib
 {
     // set default font
-    UIFont * customFont = SEOUL_FONT_L(19.5);
+    UIFont * customFont = FONT_L(17);
     if(customFont == nil) NSLog(@"Font not exist");
     
     [restaurantLabel setFont:customFont];

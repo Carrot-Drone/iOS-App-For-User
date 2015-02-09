@@ -15,11 +15,11 @@
 - (void)awakeFromNib
 {
     // set default font
-    UIFont * customFont = SEOUL_FONT_L(18);
+    UIFont * customFont = FONT_L(17);
     if(customFont == nil) NSLog(@"Font not exist");
     [menuLabel setFont:customFont];
     
-    customFont = SEOUL_FONT_L(14);
+    customFont = FONT_L(14);
     if(customFont == nil) NSLog(@"Font not exist");
     [priceLabel setFont:customFont];
 }

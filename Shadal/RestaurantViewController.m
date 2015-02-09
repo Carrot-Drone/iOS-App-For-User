@@ -43,17 +43,17 @@
     
     self.navigationItem.title = restaurant.name;
     [phoneNumber setTitle:[restaurant phoneNumber] forState:UIControlStateNormal];
-    [phoneNumber.titleLabel setFont:SEOUL_FONT_EB(19.5)];
+    [phoneNumber.titleLabel setFont:FONT_EB(19.5)];
     [phoneNumber setTintColor:[UIColor whiteColor]];
     
-    [openingTimeLabel setFont:SEOUL_FONT_EB(11.0)];
+    [openingTimeLabel setFont:FONT_EB(11.0)];
     [openingTimeLabel setText:[restaurant stringWithOpenAndClosingHours]];
     
     // set Coupon String
     if(restaurant.has_coupon){
         UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
         [couponLabel setText:restaurant.couponString];
-        couponLabel.font = SEOUL_FONT_EB(18);
+        couponLabel.font = FONT_L(15);
         couponLabel.numberOfLines = 5;
         couponLabel.baselineAdjustment = YES;
         couponLabel.adjustsFontSizeToFitWidth = YES;
@@ -197,6 +197,10 @@
     if(![restaurant.menu count]==0)
         return [[restaurant.menu objectAtIndex:section] objectAtIndex:0];
     else return @"";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 40;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

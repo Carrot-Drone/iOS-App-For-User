@@ -11,11 +11,17 @@
 
 
 // #define Design component
-#define SEOUL_FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
-#define SEOUL_FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
+//#define FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
+//#define FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
 
-#define SEOUL_FONT_L_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CL") size:(CGFloat)(_size_)])
-#define SEOUL_FONT_EB_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"SeN-CEB") size:(CGFloat)(_size_)])
+//#define FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Arita-dotum-Light_OTF") size:(CGFloat)(_size_)])
+//#define FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Arita-dotum-Bold_OTF") size:(CGFloat)(_size_)])
+
+#define FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Light") size:(CGFloat)(_size_)])
+#define FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Bold") size:(CGFloat)(_size_)])
+
+#define FONT_L_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Light") size:(CGFloat)(_size_)])
+#define FONT_EB_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Light") size:(CGFloat)(_size_)])
 
 
 // color
@@ -32,7 +38,6 @@
 // server
 //#define WEB_BASE_URL                @"http://localhost:3000"
 #define WEB_BASE_URL                @"http://www.shadal.kr"
-//#define WEB_BASE_URL                @"http://www.shadal.kr:3000"
 #define NEW_CALL                    @"/new_call"
 #define CHECK_FOR_UPDATE            @"/checkForUpdate"
 #define CHECK_FOR_RES_IN_CATEGORY   @"/checkForResInCategory"

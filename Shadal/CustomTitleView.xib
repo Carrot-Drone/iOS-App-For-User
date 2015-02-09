@@ -10,17 +10,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="샤달" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8h-hr-VeR">
-                    <rect key="frame" x="20" y="4" width="73" height="38"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="샤달" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8h-hr-VeR">
+                    <rect key="frame" x="20" y="5" width="52" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": 서울대학교 배달음식 어플리케이션" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuq-Wd-3hw">
-                    <rect key="frame" x="77" y="21" width="268" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 서울대학교 배달음식 어플리케이션" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuq-Wd-3hw">
+                    <rect key="frame" x="77" y="21" width="184" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="H8h-hr-VeR" secondAttribute="centerY" constant="-2" id="HfY-Kv-ewZ"/>
+                <constraint firstItem="H8h-hr-VeR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Ltk-3X-A2h"/>
+                <constraint firstAttribute="bottom" secondItem="Yuq-Wd-3hw" secondAttribute="bottom" constant="5" id="ReS-eZ-9dQ"/>
+                <constraint firstItem="Yuq-Wd-3hw" firstAttribute="leading" secondItem="H8h-hr-VeR" secondAttribute="trailing" constant="5" id="VkW-GT-o3i"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

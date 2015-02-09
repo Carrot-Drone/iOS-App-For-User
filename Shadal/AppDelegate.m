@@ -74,13 +74,22 @@
     [self setTabBarItemImage];
 
     // init navigation bar
-    UIFont * customFont = SEOUL_FONT_EB(19.5);
+    UIFont * customFont = FONT_EB(19.5);
     if(customFont == nil) NSLog(@"Font not exist");
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIColor whiteColor],NSForegroundColorAttributeName,
                                                customFont, NSFontAttributeName,
                                                nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    NSArray *fontFamilies = [UIFont familyNames];
+    
+    for (int i = 0; i < [fontFamilies count]; i++)
+    {
+        NSString *fontFamily = [fontFamilies objectAtIndex:i];
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
+        NSLog (@"%@: %@", fontFamily, fontNames);
+    }
     
     return YES;
 }
@@ -196,11 +205,11 @@
         
 //        tab.image = [tab.image imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
 //        tab.selectedImage = [tab.selectedImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB_TAB(12.5), NSFontAttributeName,  [UIColor darkGrayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:FONT_EB_TAB(12.5), NSFontAttributeName,  [UIColor darkGrayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
         
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB_TAB(12.5), NSFontAttributeName,  MAIN_COLOR, NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:FONT_EB_TAB(12.5), NSFontAttributeName,  MAIN_COLOR, NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
         /*
-        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SEOUL_FONT_EB(12.5), NSFontAttributeName,  [UIColor colorWithRed:51/255.0 green:255/255.0 blue:231/255.0 alpha:1.0], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+        [tab setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:FONT_EB(12.5), NSFontAttributeName,  [UIColor colorWithRed:51/255.0 green:255/255.0 blue:231/255.0 alpha:1.0], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
          */
         
     }

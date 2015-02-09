@@ -15,7 +15,7 @@
 {
     // Initialization code
     // set default font
-    UIFont * customFont = SEOUL_FONT_L(19.5);
+    UIFont * customFont = FONT_L(18);
     if(customFont == nil) NSLog(@"!Font not exist");
     
     [categoryLabel setFont:customFont];

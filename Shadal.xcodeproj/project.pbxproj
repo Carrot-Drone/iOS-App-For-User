@@ -10,6 +10,8 @@
 		49103D551851A63F00070801 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49103D541851A63F00070801 /* RestaurantCell.m */; };
 		49103D571851A65500070801 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49103D561851A65500070801 /* RestaurantCell.xib */; };
 		491FD3101852DCD300885396 /* UIImage+UIImage_Customized.m in Sources */ = {isa = PBXBuildFile; fileRef = 491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */; };
+		494508B81A88DFAB00037253 /* arita-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 494508B61A88DFAB00037253 /* arita-Bold.otf */; };
+		494508B91A88DFAB00037253 /* arita-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 494508B71A88DFAB00037253 /* arita-Light.otf */; };
 		49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3DB261851C594002C9EBA /* FlyerViewController.m */; };
 		49DA83761A5BA1F6002AEDDB /* ImgIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83711A5BA1F6002AEDDB /* ImgIcon.png */; };
 		49DA83771A5BA1F6002AEDDB /* SearchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DA83721A5BA1F6002AEDDB /* SearchIcon.png */; };
@@ -98,6 +100,8 @@
 		49103D561851A65500070801 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		491FD30E1852DCD300885396 /* UIImage+UIImage_Customized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImage_Customized.h"; sourceTree = "<group>"; };
 		491FD30F1852DCD300885396 /* UIImage+UIImage_Customized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_Customized.m"; sourceTree = "<group>"; };
+		494508B61A88DFAB00037253 /* arita-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arita-Bold.otf"; sourceTree = "<group>"; };
+		494508B71A88DFAB00037253 /* arita-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arita-Light.otf"; sourceTree = "<group>"; };
 		49C3DB251851C594002C9EBA /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerViewController.h; sourceTree = "<group>"; };
 		49C3DB261851C594002C9EBA /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerViewController.m; sourceTree = "<group>"; };
 		49DA83711A5BA1F6002AEDDB /* ImgIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImgIcon.png; path = Resources/ImgIcon.png; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 		F52A85C319990D070010C261 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				494508B61A88DFAB00037253 /* arita-Bold.otf */,
+				494508B71A88DFAB00037253 /* arita-Light.otf */,
 				49DA83751A5BA1F6002AEDDB /* 서울남산체L.ttf */,
 				F52319BA19A691CD00236221 /* 서울남산체EB.ttf */,
 				49DA83711A5BA1F6002AEDDB /* ImgIcon.png */,
@@ -506,6 +512,7 @@
 				F54D1395199B9DB300AFE026 /* iconChic.png in Resources */,
 				F52319C319A69C2E00236221 /* NewIcon.png in Resources */,
 				F54D1370199B8E8700AFE026 /* CategoryCell.xib in Resources */,
+				494508B81A88DFAB00037253 /* arita-Bold.otf in Resources */,
 				F52319C219A69C2E00236221 /* CouponIcon.png in Resources */,
 				49103D571851A65500070801 /* RestaurantCell.xib in Resources */,
 				49DA83761A5BA1F6002AEDDB /* ImgIcon.png in Resources */,
@@ -534,6 +541,7 @@
 				F539ECFE19A07D1B004AB442 /* BotIconRandom@2x.png in Resources */,
 				F539ECFB19A07D1B004AB442 /* BotIconMoreSelect.png in Resources */,
 				F539ECF719A07D1B004AB442 /* BotIconMainselect.png in Resources */,
+				494508B91A88DFAB00037253 /* arita-Light.otf in Resources */,
 				F54D1396199B9DB300AFE026 /* iconChinese.png in Resources */,
 				F54D139E199B9DB300AFE026 /* StarOnList.png in Resources */,
 				F539ECE419A07C39004AB442 /* StarBackgroundNull.png in Resources */,
