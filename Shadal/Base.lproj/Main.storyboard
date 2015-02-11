@@ -568,7 +568,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-vz-rRH">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-vz-rRH">
                                 <rect key="frame" x="142" y="266" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>

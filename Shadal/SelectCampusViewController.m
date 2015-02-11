@@ -29,10 +29,9 @@
     
     // myNotificationCenter 객체 생성 후 defaultCenter에 등록
     NSNotificationCenter *sendNotification = [NSNotificationCenter defaultCenter];
-    
     // myNotificationCenter 객체를 이용해서 옵저버 등록
     [sendNotification addObserver:self selector:@selector(campuses:) name:@"campuses" object: nil];
-    
+    [sendNotification addObserver:self selector:@selector(start) name:@"start" object:nil];
     [Server campuses];
     
     // init button
@@ -42,6 +41,9 @@
     // init tableView
     campusTableView.delegate = self;
     campusTableView.dataSource = self;
+    
+    // init indicator view
+    [indicatorView stopAnimating];
 }
 
 // Notification from server
@@ -56,8 +58,20 @@
 }
 
 - (void)startButtonClicked{
-    [Static setCampusInfo:[campuses objectAtIndex:lastSelected.row]];
-    [Static loadData];
+    [indicatorView startAnimating];
+    [self performSelector:@selector(startLoading:) withObject:nil afterDelay:0.1f];
+}
+- (void)startLoading:(id)sender{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [Static setCampusInfo:[campuses objectAtIndex:lastSelected.row]];
+        
+        [Static loadData];
+        
+        [self start];
+    });
+}
+
+- (void)start{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -110,8 +110,6 @@ static NSString * s_uuid;
 }
 
 + (void)resetData{
-    NSArray *json = [Server allRestaurants];
-    
     NSMutableDictionary * _allData = [[NSMutableDictionary alloc] init];
     [_allData setObject:[[NSMutableArray alloc] init] forKey:@"치킨"];
     [_allData setObject:[[NSMutableArray alloc] init] forKey:@"피자"];
@@ -122,6 +120,7 @@ static NSString * s_uuid;
     [_allData setObject:[[NSMutableArray alloc] init] forKey:@"냉면"];
     [_allData setObject:[[NSMutableArray alloc] init] forKey:@"기타"];
     
+    NSArray *json = [Server allRestaurants];
     for(int i=0; i<[json count]; i++){
         NSDictionary * res = [json objectAtIndex:i];
         
@@ -130,6 +129,7 @@ static NSString * s_uuid;
         
         [[_allData objectForKey:restaurant.categories] addObject:restaurant];
     }
+    
     // Save alldata to file
     NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:_allData];
     
