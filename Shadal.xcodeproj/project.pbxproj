@@ -53,6 +53,9 @@
 		499E69E81A8AE1150067E008 /* StarOnList.png in Resources */ = {isa = PBXBuildFile; fileRef = 499E69C11A8AE1150067E008 /* StarOnList.png */; };
 		499E69E91A8AE1150067E008 /* 서울남산체EB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 499E69C21A8AE1150067E008 /* 서울남산체EB.ttf */; };
 		499E69EA1A8AE1150067E008 /* 서울남산체L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 499E69C31A8AE1150067E008 /* 서울남산체L.ttf */; };
+		499E69EC1A8AE3C50067E008 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499E69EB1A8AE3C50067E008 /* Security.framework */; };
+		499E69F21A8AE6D80067E008 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E69EF1A8AE6D80067E008 /* SSKeychain.m */; };
+		499E69F31A8AE6D80067E008 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E69F11A8AE6D80067E008 /* SSKeychainQuery.m */; };
 		49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3DB261851C594002C9EBA /* FlyerViewController.m */; };
 		F5008D5719A0F65400831238 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5008D5619A0F65400831238 /* CustomButton.m */; };
 		F5110AC817FC013C00D7AA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC717FC013C00D7AA85 /* Foundation.framework */; };
@@ -147,6 +150,11 @@
 		499E69C11A8AE1150067E008 /* StarOnList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarOnList.png; path = image_resources/StarOnList.png; sourceTree = "<group>"; };
 		499E69C21A8AE1150067E008 /* 서울남산체EB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "서울남산체EB.ttf"; path = "image_resources/서울남산체EB.ttf"; sourceTree = "<group>"; };
 		499E69C31A8AE1150067E008 /* 서울남산체L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "서울남산체L.ttf"; path = "image_resources/서울남산체L.ttf"; sourceTree = "<group>"; };
+		499E69EB1A8AE3C50067E008 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		499E69EE1A8AE6D80067E008 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		499E69EF1A8AE6D80067E008 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		499E69F01A8AE6D80067E008 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		499E69F11A8AE6D80067E008 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		49C3DB251851C594002C9EBA /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerViewController.h; sourceTree = "<group>"; };
 		49C3DB261851C594002C9EBA /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerViewController.m; sourceTree = "<group>"; };
 		F5008D5519A0F65400831238 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499E69EC1A8AE3C50067E008 /* Security.framework in Frameworks */,
 				F5110ACA17FC013C00D7AA85 /* CoreGraphics.framework in Frameworks */,
 				F5110ACC17FC013C00D7AA85 /* UIKit.framework in Frameworks */,
 				F5110AC817FC013C00D7AA85 /* Foundation.framework in Frameworks */,
@@ -224,6 +233,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		499E69ED1A8AE6BB0067E008 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				499E69EE1A8AE6D80067E008 /* SSKeychain.h */,
+				499E69EF1A8AE6D80067E008 /* SSKeychain.m */,
+				499E69F01A8AE6D80067E008 /* SSKeychainQuery.h */,
+				499E69F11A8AE6D80067E008 /* SSKeychainQuery.m */,
+			);
+			name = "External Libraries";
+			sourceTree = "<group>";
+		};
 		F503E7BE19A4ED35001814AE /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +279,7 @@
 		F5110AC617FC013C00D7AA85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				499E69EB1A8AE3C50067E008 /* Security.framework */,
 				F5110AC717FC013C00D7AA85 /* Foundation.framework */,
 				F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */,
 				F5110ACB17FC013C00D7AA85 /* UIKit.framework */,
@@ -278,6 +299,7 @@
 				F52A85C419990D150010C261 /* Model */,
 				F52A85C519990D2E0010C261 /* Commons */,
 				F503E7BE19A4ED35001814AE /* Category */,
+				499E69ED1A8AE6BB0067E008 /* External Libraries */,
 				F52A85C319990D070010C261 /* Resources */,
 				F5110AE217FC013C00D7AA85 /* Images.xcassets */,
 				F5110ACE17FC013C00D7AA85 /* Supporting Files */,
@@ -592,8 +614,10 @@
 				F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */,
 				4973B16D1A8914890006A690 /* SelectCampusViewController.m in Sources */,
 				F5110AD417FC013C00D7AA85 /* main.m in Sources */,
+				499E69F21A8AE6D80067E008 /* SSKeychain.m in Sources */,
 				F54CF570195AA21200B7C67A /* Server.m in Sources */,
 				F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */,
+				499E69F31A8AE6D80067E008 /* SSKeychainQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

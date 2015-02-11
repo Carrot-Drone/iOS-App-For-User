@@ -14,6 +14,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++(NSString *)getUUID;
++(void)setUUID;
+
 //@property (nonatomic) BookHandle book;
 
 @end

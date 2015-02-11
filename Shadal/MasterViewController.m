@@ -38,10 +38,6 @@
 {
     [super viewDidLoad];
     
-    if([Static campus]==nil){
-        // No campus has selected
-        [self performSegueWithIdentifier:@"selectCampus" sender:self];
-    }
     
     // reset default tint color
     self.navigationController.navigationBar.tintColor = nil;
@@ -102,7 +98,10 @@
     [self.tableView reloadData];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    
+    if([Static campus]==nil){
+        // No campus has selected
+        [self performSegueWithIdentifier:@"selectCampus" sender:self];
+    }
 }
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
