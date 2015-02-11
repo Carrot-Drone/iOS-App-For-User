@@ -195,7 +195,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="샤달 패밀리" id="52C-ZI-cj4">
+                            <tableViewSection headerTitle="" id="52C-ZI-cj4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FamilyCell" textLabel="NTh-Rh-el5" style="IBUITableViewCellStyleDefault" id="shF-Ta-rBx">
                                         <rect key="frame" x="0.0" y="327" width="320" height="44"/>
@@ -204,7 +204,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="샤달 : 연건 캠퍼스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NTh-Rh-el5">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="캠퍼스 바꾸기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NTh-Rh-el5">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -213,6 +213,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jnN-Fm-x5I" kind="modal" identifier="selectCampus" id="dfN-1B-67c"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -275,6 +278,7 @@
                         <outlet property="searchDisplayController" destination="06y-4D-yG9" id="IIb-x3-VyO"/>
                         <segue destination="ko1-1f-R0n" kind="push" identifier="showDetail" id="kcL-Eg-LeQ"/>
                         <segue destination="UNh-Qy-9UW" kind="push" identifier="Restaurant" id="wYe-iV-KuM"/>
+                        <segue destination="jnN-Fm-x5I" kind="modal" identifier="selectCampus" animates="NO" id="5yc-lt-mdp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
@@ -513,6 +517,86 @@
             </objects>
             <point key="canvasLocation" x="2345" y="64"/>
         </scene>
+        <!--Select Campus View Controller-->
+        <scene sceneID="uaS-3P-NEH">
+            <objects>
+                <viewController id="jnN-Fm-x5I" customClass="SelectCampusViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gpg-WF-uKM"/>
+                        <viewControllerLayoutGuide type="bottom" id="bes-uZ-umc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1UL-Rg-D23">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1l-dY-5OC">
+                                <rect key="frame" x="52" y="474" width="200" height="30"/>
+                                <state key="normal" title="캠퍼스 선택하기">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94c-sG-v9z">
+                                <rect key="frame" x="52" y="512" width="200" height="30"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="htP-4B-dRT">
+                                <rect key="frame" x="25" y="80" width="270" height="386"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8Mr-TO-iga" style="IBUITableViewCellStyleDefault" id="Xm4-8L-mRh">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xm4-8L-mRh" id="JT0-DG-sYR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Mr-TO-iga">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캠퍼스를 선택하세요 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6H-Mx-BkV">
+                                <rect key="frame" x="89" y="37" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y1l-dY-5OC" firstAttribute="leading" secondItem="1UL-Rg-D23" secondAttribute="leadingMargin" constant="36" id="7jV-Cq-PLx"/>
+                            <constraint firstItem="bes-uZ-umc" firstAttribute="top" secondItem="94c-sG-v9z" secondAttribute="bottom" constant="26" id="8kM-Og-gZB"/>
+                            <constraint firstAttribute="centerX" secondItem="htP-4B-dRT" secondAttribute="centerX" id="AJF-R9-iaL"/>
+                            <constraint firstItem="x6H-Mx-BkV" firstAttribute="top" secondItem="gpg-WF-uKM" secondAttribute="bottom" constant="17" id="Agm-Zx-DTz"/>
+                            <constraint firstAttribute="centerX" secondItem="Y1l-dY-5OC" secondAttribute="centerX" constant="8" id="G0y-8r-T8e"/>
+                            <constraint firstAttribute="centerX" secondItem="94c-sG-v9z" secondAttribute="centerX" constant="8" id="Xtu-S8-Rt9"/>
+                            <constraint firstItem="Y1l-dY-5OC" firstAttribute="top" secondItem="htP-4B-dRT" secondAttribute="bottom" constant="8" id="fLJ-uY-KKe"/>
+                            <constraint firstItem="htP-4B-dRT" firstAttribute="top" secondItem="x6H-Mx-BkV" secondAttribute="bottom" constant="22" id="gh6-aO-Ubi"/>
+                            <constraint firstItem="94c-sG-v9z" firstAttribute="leading" secondItem="1UL-Rg-D23" secondAttribute="leadingMargin" constant="36" id="htE-jp-ERL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="94c-sG-v9z" secondAttribute="trailing" constant="52" id="sKp-as-H48"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y1l-dY-5OC" secondAttribute="trailing" constant="52" id="ucc-NF-Plx"/>
+                            <constraint firstItem="94c-sG-v9z" firstAttribute="top" secondItem="Y1l-dY-5OC" secondAttribute="bottom" constant="8" id="wTF-ij-vKn"/>
+                            <constraint firstAttribute="centerX" secondItem="x6H-Mx-BkV" secondAttribute="centerX" id="wfX-Gl-eSo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="campusTableView" destination="htP-4B-dRT" id="3gT-ic-aNo"/>
+                        <outlet property="selectCampusButton" destination="Y1l-dY-5OC" id="awf-FN-ZNe"/>
+                        <outlet property="startButton" destination="94c-sG-v9z" id="TaS-W1-Oeh"/>
+                        <outlet property="titleLabel" destination="x6H-Mx-BkV" id="YoB-TR-r29"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSx-EU-lae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="2233"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Nm4-zv-yPI">
             <objects>
@@ -532,7 +616,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzs-qV-OuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="32"/>
+            <point key="canvasLocation" x="-1" y="62"/>
         </scene>
         <!--Item-->
         <scene sceneID="U5O-7H-WMc">
@@ -564,6 +648,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="dfN-1B-67c"/>
         <segue reference="wYe-iV-KuM"/>
     </inferredMetricsTieBreakers>
 </document>

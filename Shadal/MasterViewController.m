@@ -19,6 +19,7 @@
 #import "AppDelegate.h"
 
 #import "Constants.h"
+#import "Static.h"
 
 
 @interface MasterViewController () {
@@ -37,11 +38,15 @@
 {
     [super viewDidLoad];
     
+    if([Static campus]==nil){
+        // No campus has selected
+        [self performSegueWithIdentifier:@"selectCampus" sender:self];
+    }
+    
     // reset default tint color
     self.navigationController.navigationBar.tintColor = nil;
 
     // init data
-    allData = [(AppDelegate *)[[UIApplication sharedApplication] delegate] allData];
     categories = [[NSMutableArray alloc] init];
     searchResults = [[NSMutableArray alloc] init];
     
@@ -55,8 +60,12 @@
     [categories addObject:@"기타"];
     
     // custom title view
-    UIView * customTitleView;
+    
+    CustomTitleView * customTitleView;
     customTitleView = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][0];
+    if ([Static campusInfo] != nil){
+        customTitleView.subTitleLabel.text = [[Static campusInfo] objectForKey:@"name_kor"];
+    }
     self.navigationItem.titleView = customTitleView;
     
     // init navigation bar
@@ -81,6 +90,15 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
+    // update title view
+    CustomTitleView * customTitleView = (CustomTitleView *)self.navigationItem.titleView;
+    NSDictionary * campusInfo = [Static campusInfo];
+    if (campusInfo != nil){
+        customTitleView.subTitleLabel.text = [campusInfo objectForKey:@"name_kor"];
+    }
+    
+    // init allData
+    allData = [Static allData];
     [self.tableView reloadData];
 }
 -(void)viewDidAppear:(BOOL)animated{

@@ -42,13 +42,8 @@
 #define CHECK_FOR_UPDATE            @"/checkForUpdate"
 #define CHECK_FOR_RES_IN_CATEGORY   @"/checkForResInCategory"
 #define FLYERS_FOR_RES              @"/flyersForRes"
+#define CAMPUSES                    @"/campuses"
 
 #define ALL_DATA                    @"/allRestaurants"
-//#define ALL_DATA                    @"/allDataGwanak"
-//#define ALL_DATA                   [NSString stringWithFormat:@"/campus/%@.json", CAMPUS]
-
-#define CAMPUS [NSArray arrayWithObjects:@"Gwanak", @"Yongon", nil]
 
 #endif
-
-static NSString * s_campus = @"Gwanak";

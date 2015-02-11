@@ -11,6 +11,7 @@
 #import "MenuCell.h"
 #import "RestaurantCell.h"
 #import "Server.h"
+#import "Static.h"
 #import "Constants.h"
 
 #import "AppDelegate.h"
@@ -92,7 +93,7 @@
 - (IBAction)call:(id)sender{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@", restaurant.name, restaurant.phoneNumber, s_campus];
+    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@", restaurant.name, restaurant.phoneNumber, [Static campus]];
     [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
     [prefs setObject:params forKey:@"params"];
     

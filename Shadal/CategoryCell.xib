@@ -15,15 +15,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iconChic.png" translatesAutoresizingMaskIntoConstraints="NO" id="va8-Ek-ohV">
-                        <rect key="frame" x="8" y="6" width="35" height="35"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconChic.png" translatesAutoresizingMaskIntoConstraints="NO" id="va8-Ek-ohV">
+                        <rect key="frame" x="8" y="4" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="va8-Ek-ohV" secondAttribute="height" multiplier="1:1" id="CYz-R3-3yT"/>
                             <constraint firstAttribute="width" constant="35" id="EWz-AS-5f9"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jl-Zn-4T6">
-                        <rect key="frame" x="51" y="12" width="250" height="24"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jl-Zn-4T6">
+                        <rect key="frame" x="51" y="11" width="250" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -32,7 +32,7 @@
                     <constraint firstItem="7Jl-Zn-4T6" firstAttribute="leading" secondItem="va8-Ek-ohV" secondAttribute="trailing" constant="8" id="XmG-3Y-2xQ"/>
                     <constraint firstAttribute="centerY" secondItem="va8-Ek-ohV" secondAttribute="centerY" id="f0N-hd-U41"/>
                     <constraint firstAttribute="trailingMargin" secondItem="7Jl-Zn-4T6" secondAttribute="trailing" constant="11" id="qJp-r4-Nuk"/>
-                    <constraint firstAttribute="centerY" secondItem="7Jl-Zn-4T6" secondAttribute="centerY" constant="-2" id="vna-s7-fnE"/>
+                    <constraint firstAttribute="centerY" secondItem="7Jl-Zn-4T6" secondAttribute="centerY" id="vna-s7-fnE"/>
                     <constraint firstItem="va8-Ek-ohV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="zvt-7Q-CC6"/>
                 </constraints>
             </tableViewCellContentView>

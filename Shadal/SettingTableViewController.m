@@ -9,6 +9,7 @@
 #import "SettingTableViewController.h"
 
 #import "Constants.h"
+#import "Static.h"
 #import "CustomTitleView.h"
 
 @interface SettingTableViewController ()
@@ -52,11 +53,6 @@
 -(IBAction)linkToFacebook:(id)sender{
     [[UIApplication sharedApplication] openURL:
      [NSURL URLWithString: @"https://facebook.com/snushadal"]];
-}
--(IBAction)linkToYongon:(id)sender{
-    NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/kr/app/syadal-yeongeon-kaempeoseu/id787858927?mt=8"];
-    [[UIApplication sharedApplication] openURL:url];
-    
 }
 - (IBAction)showEmail:(id)sender{
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
@@ -107,7 +103,19 @@
     }
     if(indexPath.section==2){
         if(indexPath.row==0){
-            [self linkToYongon:self];
+            
+            // Init all navigation controller to reset res data
+            for(UIViewController *viewController in self.tabBarController.viewControllers)
+            {
+                if([viewController isKindOfClass:[UINavigationController class]])
+                    [(UINavigationController *)viewController popToRootViewControllerAnimated:NO];
+            }
+            
+            // Save Curren Data
+            [Static saveData];
+            
+            // Person selectCampus VC
+            [self performSegueWithIdentifier:@"selectCampus" sender:self];
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

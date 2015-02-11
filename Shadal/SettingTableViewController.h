@@ -12,7 +12,6 @@
 @interface SettingTableViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 -(IBAction)linkToFacebook:(id)sender;
--(IBAction)linkToYongon:(id)sender;
 -(IBAction)showEmail:(id)sender;
 
 @end

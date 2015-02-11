@@ -8,6 +8,7 @@
 
 #import "FavoriteViewController.h"
 #import "Constants.h"
+#import "Static.h"
 #import "CustomTitleView.h"
 #import "RestaurantViewController.h"
 @interface FavoriteViewController (){
@@ -43,7 +44,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // init titleView
-    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][3];
+    CustomTitleView * titleView  = [[NSBundle mainBundle] loadNibNamed:@"CustomTitleView" owner:nil options:nil][2];
     titleView.categoryImageView.image = [UIImage imageNamed:@"BotIconStar"];
     titleView.categoryLabel.text = @"즐겨찾기";
     self.navigationItem.titleView = titleView;
@@ -57,8 +58,8 @@
             [array removeAllObjects];
     }
     
-    NSDictionary* allData = [(AppDelegate *)[[UIApplication sharedApplication] delegate] allData];
-    for(id key in [[(AppDelegate *)[[UIApplication sharedApplication] delegate] allData] allKeys]){
+    NSDictionary* allData = [Static allData];
+    for(id key in [allData allKeys]){
         NSArray * restaurants = [allData objectForKey:key];
         for(Restaurant * res in restaurants){
             if(res.isFavorite){
@@ -151,7 +152,6 @@
     for(id key in favoriteRes){
         cnt += [[favoriteRes objectForKey:key] count];
     }
-    NSLog(@"totla Number of Res : %d", cnt);
     return (NSInteger)cnt;
 }
 @end

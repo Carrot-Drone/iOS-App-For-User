@@ -9,61 +9,15 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "Server.h"
+#import "Static.h"
 
 #import "RestaurantViewController.h"
 
 @implementation AppDelegate
 
-@synthesize allData;
-- (NSString *)filePath{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"Gwanak.json"];
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
-    {
-        [self resetData];
-    }
-    return filePath;
-}
-
-- (void)resetData{
-    NSArray *json = [Server allRestaurants];
-    
-    NSMutableDictionary * _allData = [[NSMutableDictionary alloc] init];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"치킨"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"피자"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"중국집"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"한식/분식"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"도시락/돈까스"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"족발/보쌈"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"냉면"];
-    [_allData setObject:[[NSMutableArray alloc] init] forKey:@"기타"];
-    
-    for(int i=0; i<[json count]; i++){
-        NSDictionary * res = [json objectAtIndex:i];
-        
-        Restaurant * restaurant = [[Restaurant alloc] init];
-        [restaurant setRestaurantFromDictionary:res];
-        
-        [[_allData objectForKey:restaurant.categories] addObject:restaurant];
-    }
-    // Save alldata to file
-    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:_allData];
-    
-    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentDir = [paths objectAtIndex:0];
-    
-    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
-    
-    [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSData * myData = [NSData dataWithContentsOfFile:[self filePath]];
-    self.allData = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
+    [Static loadData];
     
     // init tabbar
     UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -82,15 +36,6 @@
                                                nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
-    NSArray *fontFamilies = [UIFont familyNames];
-    
-    for (int i = 0; i < [fontFamilies count]; i++)
-    {
-        NSString *fontFamily = [fontFamilies objectAtIndex:i];
-        NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
-        NSLog (@"%@: %@", fontFamily, fontNames);
-    }
-    
     return YES;
 }
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
@@ -107,6 +52,7 @@
 
 - (Restaurant *)randomRestaurant{
     
+    NSDictionary * allData = [Static allData];
     // 전체 음식점 갯수
     int cnt = 0;
     for(id key in allData){
@@ -133,51 +79,21 @@
 {
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:[NSNumber numberWithBool:YES] forKey:@"callBool"];
-}
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    [connection start];
-}
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if([[prefs objectForKey:@"callBool"] boolValue]==NO){
         NSString * params = [prefs objectForKey:@"params"];
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, NEW_CALL]];
-        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
-        
-        [theRequest setHTTPMethod:@"POST"];
-        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
-        [connection start];
+        [Server sendCallLog:params];
     }
 }
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Save alldata to file
-    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:allData];
-    
-    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentDir = [paths objectAtIndex:0];
-    
-    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
-    
-    [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
+    [Static saveData];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application{
-    // Save alldata to file
-    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:allData];
-    
-    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentDir = [paths objectAtIndex:0];
-    
-    [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] error:nil];
-
-    [myData writeToFile:[NSString stringWithFormat:@"%@/Gwanak.json", documentDir] atomically:YES];
+    [Static saveData];
 }
 
 - (void)setTabBarItemImage{

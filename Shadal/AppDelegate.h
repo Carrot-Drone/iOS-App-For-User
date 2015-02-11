@@ -10,11 +10,9 @@
 //#import <LibXL/LibXL.h>
 #import "Restaurant.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (nonatomic, strong) NSMutableDictionary * allData;
 
 //@property (nonatomic) BookHandle book;
 

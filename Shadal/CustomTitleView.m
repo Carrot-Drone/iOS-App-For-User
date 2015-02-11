@@ -17,7 +17,7 @@
 - (void)awakeFromNib
 {
     // set default font
-    UIFont * customFont = FONT_EB(30.5);
+    UIFont * customFont = FONT_EB(24);
     if(customFont == nil) NSLog(@"Font not exist");
     [titleLabel setFont:customFont];
     [titleLabel setTextColor:[UIColor whiteColor]];
@@ -27,7 +27,7 @@
     [subTitleLabel setFont:customFont];
     [subTitleLabel setTextColor:[UIColor whiteColor]];
     
-    customFont = FONT_EB(23.0);
+    customFont = FONT_EB(22.0);
     if(customFont == nil) NSLog(@"Font not exist");
     [categoryLabel setFont:customFont];
     [categoryLabel setTextColor:[UIColor whiteColor]];
