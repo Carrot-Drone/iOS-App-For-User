@@ -568,9 +568,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-vz-rRH">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nOm-vz-rRH" secondAttribute="centerX" id="1kI-9D-0VS"/>
                             <constraint firstItem="Y1l-dY-5OC" firstAttribute="leading" secondItem="1UL-Rg-D23" secondAttribute="leadingMargin" constant="36" id="7jV-Cq-PLx"/>
                             <constraint firstItem="bes-uZ-umc" firstAttribute="top" secondItem="94c-sG-v9z" secondAttribute="bottom" constant="26" id="8kM-Og-gZB"/>
                             <constraint firstAttribute="centerX" secondItem="htP-4B-dRT" secondAttribute="centerX" id="AJF-R9-iaL"/>
@@ -582,12 +587,14 @@
                             <constraint firstItem="94c-sG-v9z" firstAttribute="leading" secondItem="1UL-Rg-D23" secondAttribute="leadingMargin" constant="36" id="htE-jp-ERL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="94c-sG-v9z" secondAttribute="trailing" constant="52" id="sKp-as-H48"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y1l-dY-5OC" secondAttribute="trailing" constant="52" id="ucc-NF-Plx"/>
+                            <constraint firstAttribute="centerY" secondItem="nOm-vz-rRH" secondAttribute="centerY" id="wT5-Qb-m9K"/>
                             <constraint firstItem="94c-sG-v9z" firstAttribute="top" secondItem="Y1l-dY-5OC" secondAttribute="bottom" constant="8" id="wTF-ij-vKn"/>
                             <constraint firstAttribute="centerX" secondItem="x6H-Mx-BkV" secondAttribute="centerX" id="wfX-Gl-eSo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="campusTableView" destination="htP-4B-dRT" id="3gT-ic-aNo"/>
+                        <outlet property="indicatorView" destination="nOm-vz-rRH" id="8aa-f9-JQ8"/>
                         <outlet property="selectCampusButton" destination="Y1l-dY-5OC" id="awf-FN-ZNe"/>
                         <outlet property="startButton" destination="94c-sG-v9z" id="TaS-W1-Oeh"/>
                         <outlet property="titleLabel" destination="x6H-Mx-BkV" id="YoB-TR-r29"/>

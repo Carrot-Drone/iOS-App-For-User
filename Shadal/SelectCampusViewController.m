@@ -18,6 +18,7 @@
 @end
 
 @implementation SelectCampusViewController
+@synthesize indicatorView;
 @synthesize titleLabel, campusTableView;
 @synthesize selectCampusButton, startButton;
 

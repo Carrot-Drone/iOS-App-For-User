@@ -10,7 +10,7 @@
 
 @interface SelectCampusViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView * indicatorView;
 
 @property (nonatomic, strong) IBOutlet UILabel * titleLabel;
 @property (nonatomic, strong) IBOutlet UITableView * campusTableView;

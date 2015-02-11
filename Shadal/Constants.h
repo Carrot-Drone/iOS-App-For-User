@@ -38,11 +38,14 @@
 // server
 //#define WEB_BASE_URL                @"http://localhost:3000"
 #define WEB_BASE_URL                @"http://www.shadal.kr"
+//#define WEB_BASE_URL                @"http://services.snu.ac.kr:3000"
+
 #define NEW_CALL                    @"/new_call"
 #define CHECK_FOR_UPDATE            @"/checkForUpdate"
 #define CHECK_FOR_RES_IN_CATEGORY   @"/checkForResInCategory"
 #define FLYERS_FOR_RES              @"/flyersForRes"
 #define CAMPUSES                    @"/campuses"
+#define UPDATE_UUID                 @"/updateDevice"
 
 #define ALL_DATA                    @"/allRestaurants"
 

@@ -17,6 +17,9 @@
 + (NSMutableDictionary *)allData;
 + (void)setAllData:(NSMutableDictionary *)dic;
 
++(NSString *)UUID;
++(void)setUUID;
+
 + (void)saveData;
 + (void)loadData;
 

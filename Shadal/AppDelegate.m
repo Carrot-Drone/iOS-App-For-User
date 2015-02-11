@@ -16,29 +16,11 @@
 
 @implementation AppDelegate
 
-static NSString * my_uuid;
-
-+(NSString *)getUUID{
-    return my_uuid;
-}
-+ (void)setUUID{
-    // Set Uuid
-    NSString *retrieveuuid = [SSKeychain passwordForService:@"com.wafflestudio.shawa" account:@"user"];
-    
-    if([retrieveuuid length]>0){
-        my_uuid = retrieveuuid;
-    }else{
-        CFUUIDRef uuidRef = CFUUIDCreate(NULL);
-        CFStringRef identifier = CFUUIDCreateString(NULL, uuidRef);
-        CFRelease(uuidRef);
-        my_uuid = CFBridgingRelease(identifier);
-        [SSKeychain setPassword:my_uuid forService:@"com.wafflestudio.shawa" account:@"user"];
-    }
-}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [AppDelegate setUUID];
-    NSLog([AppDelegate getUUID]);
+    [Static setUUID];
+    NSLog([Static UUID]);
+    
     [Static loadData];
     
     // init tabbar
@@ -106,7 +88,8 @@ static NSString * my_uuid;
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if([[prefs objectForKey:@"callBool"] boolValue]==NO){
         NSString * params = [prefs objectForKey:@"params"];
-        [Server sendCallLog:params];
+        if(params != nil)
+            [Server sendCallLog:params];
     }
 }
 - (void)applicationWillTerminate:(UIApplication *)application

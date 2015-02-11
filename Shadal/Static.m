@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Wafflestudio. All rights reserved.
 //
 
+#import "SSKeychain.h"
 #import "Static.h"
 #import "Server.h"
 
@@ -14,6 +15,9 @@
 static NSDictionary * current_campus_info;
 static NSDictionary * s_allData;
 static NSArray * s_campuses;
+static NSString * s_uuid;
+
+
 
 // Static variable
 
@@ -26,6 +30,8 @@ static NSArray * s_campuses;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:current_campus_info forKey:@"campus_info"];
+    
+    [Server updateUUID];
 }
 
 + (NSString *)campus{
@@ -37,6 +43,24 @@ static NSArray * s_campuses;
 }
 + (void)setAllData:(NSMutableDictionary *)dic{
     s_allData = [dic copy];
+}
+
++(NSString *)UUID{
+    return s_uuid;
+}
++ (void)setUUID{
+    // Set Uuid
+    NSString *retrieveuuid = [SSKeychain passwordForService:@"com.wafflestudio.shawa" account:@"user"];
+    
+    if([retrieveuuid length]>0){
+        s_uuid = retrieveuuid;
+    }else{
+        CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+        CFStringRef identifier = CFUUIDCreateString(NULL, uuidRef);
+        CFRelease(uuidRef);
+        s_uuid = CFBridgingRelease(identifier);
+        [SSKeychain setPassword:s_uuid forService:@"com.wafflestudio.shawa" account:@"user"];
+    }
 }
 
 // Save and load data

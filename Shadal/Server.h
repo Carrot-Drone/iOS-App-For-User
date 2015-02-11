@@ -15,10 +15,11 @@
 + (BOOL)isConnected;
 + (void)updateRestaurant:(Restaurant *)restaurant;
 + (void)checkForNewRestaurant:(NSString *)category;
-+ (void)flyersInRestaurant:(Restaurant *)restaurant;
 + (void)campuses;
 
 + (void)sendCallLog:(NSString *)params;
+
++ (void)updateUUID;
 
 // Sync
 + (NSArray *)allRestaurants;

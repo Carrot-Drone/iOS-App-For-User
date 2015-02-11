@@ -34,15 +34,11 @@ static NSMutableData * responseData;
     if(![Server isConnected]){
         return;
     }
+    
     _restaurant = restaurant;
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_UPDATE]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?restaurant_id=%d&phone_number=%@&campus=%@&updated_at=%@", WEB_BASE_URL, CHECK_FOR_UPDATE, restaurant.server_id, restaurant.phoneNumber, [Static campus], restaurant.updated_at]];
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
-        [theRequest setHTTPMethod:@"POST"];
-        
-        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@&updated_at=%@", restaurant.server_id, restaurant.phoneNumber, [Static campus], restaurant.updated_at];
-        
-        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
         NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
         [connection scheduleInRunLoop:[NSRunLoop mainRunLoop]
@@ -60,38 +56,8 @@ static NSMutableData * responseData;
         return;
     }
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?category=%@&campus=%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY, category, [Static campus]]];
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
-        [theRequest setHTTPMethod:@"POST"];
-        
-        NSString * params = [NSString stringWithFormat:@"category=%@&campus=%@", category, [Static campus]];
-        
-        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
-        [connection scheduleInRunLoop:[NSRunLoop mainRunLoop]
-                              forMode:NSDefaultRunLoopMode];
-        
-        NSLog(@"Connection Start");
-        
-        responseData = [[NSMutableData alloc] init];
-        [connection start];
-    });
-}
-
-+ (void)flyersInRestaurant:(Restaurant *)restaurant{
-    if(![Server isConnected]){
-        return;
-    }
-    _restaurant = restaurant;
-    dispatch_async(dispatch_get_main_queue(), ^(void){
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, FLYERS_FOR_RES]];
-        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
-        [theRequest setHTTPMethod:@"POST"];
-        
-        NSString * params = [NSString stringWithFormat:@"restaurant_id=%d&phone_number=%@&campus=%@", restaurant.server_id, restaurant.phoneNumber, [Static campus]];
-        
-        [theRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
         NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
         [connection scheduleInRunLoop:[NSRunLoop mainRunLoop]
@@ -131,6 +97,24 @@ static NSMutableData * responseData;
     
     NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
     [connection start];
+}
+
++ (void)updateUUID{
+    if(![Server isConnected]){
+        return;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?campus=%@&uuid=%@&device=ios", WEB_BASE_URL, UPDATE_UUID, [Static campus], [Static UUID]]];
+        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
+        NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
+        [connection scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                              forMode:NSDefaultRunLoopMode];
+        
+        NSLog(@"Connection Start");
+        
+        responseData = [[NSMutableData alloc] init];
+        [connection start];
+    });
 }
 
 + (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
@@ -176,14 +160,18 @@ static NSMutableData * responseData;
             
         }else{
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-            
-            // 노티피케이션 전송
-            NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
-            [myNotificationCenter postNotificationName:@"campuses" object:self userInfo:json];
+            if([json count]==0){
+                [connection start];
+            }else{
+                // 노티피케이션 전송
+                NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
+                [myNotificationCenter postNotificationName:@"campuses" object:self userInfo:json];
+            }
         }
     }else if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, NEW_CALL]]){
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         [prefs setObject:[NSNumber numberWithBool:YES] forKey:@"callBool"];
+        [prefs setObject:nil forKey:@"params"];
     }
 }
 

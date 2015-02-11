@@ -93,7 +93,7 @@
 - (IBAction)call:(id)sender{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@", restaurant.name, restaurant.phoneNumber, [Static campus]];
+    NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@&uuid=%@", restaurant.name, restaurant.phoneNumber, [Static campus], [Static UUID]];
     [prefs setObject:[NSNumber numberWithBool:NO] forKey:@"callBool"];
     [prefs setObject:params forKey:@"params"];
     
