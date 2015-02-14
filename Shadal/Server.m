@@ -37,7 +37,10 @@ static NSMutableData * responseData;
     
     _restaurant = restaurant;
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?restaurant_id=%d&phone_number=%@&campus=%@&updated_at=%@", WEB_BASE_URL, CHECK_FOR_UPDATE, restaurant.server_id, restaurant.phoneNumber, [Static campus], restaurant.updated_at]];
+        NSString * url_address = [NSString stringWithFormat:@"%@%@?restaurant_id=%d&phone_number=%@&campus=%@&updated_at=%@", WEB_BASE_URL, CHECK_FOR_UPDATE, restaurant.server_id, restaurant.phoneNumber, [Static campus], restaurant.updated_at];
+        url_address = [url_address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *url = [NSURL URLWithString:url_address];
+        
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
         
         NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
@@ -56,7 +59,10 @@ static NSMutableData * responseData;
         return;
     }
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?category=%@&campus=%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY, category, [Static campus]]];
+        NSString * url_address = [NSString stringWithFormat:@"%@%@?category=%@&campus=%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY, category, [Static campus]];
+        url_address = [url_address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *url = [NSURL URLWithString:url_address];
+        
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
         
         NSURLConnection * connection = [NSURLConnection connectionWithRequest:theRequest delegate:self];
@@ -64,9 +70,10 @@ static NSMutableData * responseData;
                               forMode:NSDefaultRunLoopMode];
         
         NSLog(@"Connection Start");
-        
+        NSLog(@"%@", [NSString stringWithFormat:@"%@%@?category=%@&campus=%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY, category, [Static campus]]);
         responseData = [[NSMutableData alloc] init];
         [connection start];
+        
     });
 }
 
@@ -124,14 +131,15 @@ static NSMutableData * responseData;
     [responseData appendData:data];
 }
 + (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    NSLog(@"Failed to update restaurant");
+    NSLog(@"Failed to update restaurant %@", [error description]);
+    NSLog(@"%@", [[[connection currentRequest] URL]absoluteString]);
     [connection start];
 }
 
 + (void)connectionDidFinishLoading:(NSURLConnection *)connection{
     NSLog(@"Did finish loading");
     NSString * url = [[[connection currentRequest] URL] absoluteString];
-    if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]]){
+    if([url containsString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_RES_IN_CATEGORY]]){
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
         
         if(json == NULL){
@@ -142,7 +150,7 @@ static NSMutableData * responseData;
         NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
         [myNotificationCenter postNotificationName:@"checkForResInCategory" object:self userInfo:json];
         
-    }else if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_UPDATE]]){
+    }else if([url containsString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CHECK_FOR_UPDATE]]){
         if([responseData length]==0){
             
         }else{
@@ -155,7 +163,7 @@ static NSMutableData * responseData;
         NSNotificationCenter *myNotificationCenter = [NSNotificationCenter defaultCenter];
         
         [myNotificationCenter postNotificationName:@"updateUI" object:self userInfo:nil];
-    }else if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CAMPUSES]]){
+    }else if([url containsString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, CAMPUSES]]){
         if([responseData length]==0){
             
         }else{
@@ -168,7 +176,7 @@ static NSMutableData * responseData;
                 [myNotificationCenter postNotificationName:@"campuses" object:self userInfo:json];
             }
         }
-    }else if([url isEqualToString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, NEW_CALL]]){
+    }else if([url containsString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, NEW_CALL]]){
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         [prefs setObject:[NSNumber numberWithBool:YES] forKey:@"callBool"];
         [prefs setObject:nil forKey:@"params"];
