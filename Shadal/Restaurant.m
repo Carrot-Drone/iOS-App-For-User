@@ -15,8 +15,27 @@
 @synthesize isFavorite, is_new;
 @synthesize flyers_url;
 
-- (id)initWithName:(NSString *)_name phoneNumber:(NSString *)_phoneNumber{
+- (id)init{
     self = [super init];
+    if(self != nil){
+        self.name = @"";
+        self.menu = nil;
+        self.phoneNumber = @"";
+        self.openingHours = 0.0;
+        self.closingHours = 0.0;
+        self.categories = @"";
+        self.has_flyer = NO;
+        self.has_coupon = NO;
+        self.couponString = @"";
+        self.isFavorite = NO;
+        self.is_new = NO;
+        self.flyers_url = nil;
+    }
+    
+    return self;
+}
+- (id)initWithName:(NSString *)_name phoneNumber:(NSString *)_phoneNumber{
+    self = [self init];
     if(self != nil){
         self.name = _name;
         self.phoneNumber = _phoneNumber;

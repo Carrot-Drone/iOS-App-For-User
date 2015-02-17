@@ -51,7 +51,7 @@
     [openingTimeLabel setText:[restaurant stringWithOpenAndClosingHours]];
     
     // set Coupon String
-    if(restaurant.has_coupon){
+    if(![restaurant.couponString isEqualToString:@""]){
         UILabel * couponLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
         [couponLabel setText:restaurant.couponString];
         couponLabel.font = FONT_L(15);
