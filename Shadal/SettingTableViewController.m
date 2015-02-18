@@ -56,11 +56,19 @@
      [NSURL URLWithString: @"https://facebook.com/snushadal"]];
 }
 - (IBAction)showEmail:(id)sender{
+    if(![MFMailComposeViewController canSendMail] ) {
+        NSLog(@"Cannot send mail\n%s", __PRETTY_FUNCTION__) ;
+        return ;
+    }
+
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
     controller.mailComposeDelegate = self;
-    [controller setToRecipients:[NSArray arrayWithObject:@"swchoi06@wafflestudio.com"]];
-    [controller setSubject:@"없는 배달음식 추천하기"];
-    [controller setMessageBody:@"ex) 미쳐버린 파닭은 왜 없나요ㅠㅠ" isHTML:NO];
+    
+    [[controller navigationBar] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName]];
+
+    [controller setToRecipients:[NSArray arrayWithObject:[[Static campusInfo] objectForKey:@"email"]]];
+    [controller setSubject:[NSString stringWithFormat:@"[%@][iOS][맛집제보]", [[Static campusInfo] objectForKey:@"name_kor_short"]]];
+    [controller setMessageBody:@"" isHTML:NO];
     if (controller) [self presentViewController:controller animated:YES completion:NULL];
 }
 
