@@ -13,9 +13,15 @@
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView * indicatorView;
 
 @property (nonatomic, strong) IBOutlet UILabel * titleLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel * subtitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel * maintitleLabel;
+
 @property (nonatomic, strong) IBOutlet UITableView * campusTableView;
 
 @property (nonatomic, strong) IBOutlet UIButton * selectCampusButton;
 @property (nonatomic, strong) IBOutlet UIButton * startButton;
+
+@property (nonatomic, strong) UITabBarController * tabBarController;
 
 @end

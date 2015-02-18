@@ -25,8 +25,9 @@
 
 
 // color
-#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:53/255.0 blue:0/255.0 alpha:1.0]
+#define MAIN_COLOR (UIColor *)[UIColor colorWithRed:239/255.0 green:111/255.0 blue:43/255.0 alpha:1.0]
 #define SUB_COLOR (UIColor *)[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]
+#define SUB_COLOR2 (UIColor *)[UIColor colorWithRed:246/255.0 green:174/255.0 blue:134/255.0 alpha:1.0]
 
 #define BAR_TINT_COLOR (UIColor *)[UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1.0]
 

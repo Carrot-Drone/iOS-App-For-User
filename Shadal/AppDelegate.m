@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Static setUUID];
-    NSLog([Static UUID]);
+    NSLog(@"%@",[Static UUID]);
     
     [Static loadData];
     
@@ -94,7 +94,6 @@
 }
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [Static saveData];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application{

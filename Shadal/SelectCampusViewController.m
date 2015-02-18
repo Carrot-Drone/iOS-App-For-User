@@ -9,6 +9,7 @@
 #import "SelectCampusViewController.h"
 #import "Static.h"
 #import "Server.h"
+#import "Constants.h"
 
 @interface SelectCampusViewController (){
     NSMutableArray * campuses;
@@ -20,10 +21,16 @@
 @implementation SelectCampusViewController
 @synthesize indicatorView;
 @synthesize titleLabel, campusTableView;
+@synthesize maintitleLabel, subtitleLabel;
 @synthesize selectCampusButton, startButton;
+
+@synthesize tabBarController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // save current data
+    [Static saveData];
     
     campuses = [[NSMutableArray alloc] init];
     
@@ -44,7 +51,23 @@
     
     // init indicator view
     [indicatorView stopAnimating];
+    [indicatorView setHidden:YES];
+    
+    // init background color
+    [self.view setBackgroundColor:MAIN_COLOR];
+    
+    // init buttons
+    [selectCampusButton setBackgroundColor:[UIColor whiteColor]];
+    [selectCampusButton setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
+    selectCampusButton.layer.cornerRadius = 5;
+
+    
+    [startButton setBackgroundColor:SUB_COLOR2];
+    [startButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [startButton setUserInteractionEnabled:NO];
+    startButton.layer.cornerRadius = 5;
 }
+
 
 // Notification from server
 - (void)campuses:(NSNotification *)notification{
@@ -59,6 +82,7 @@
 
 - (void)startButtonClicked{
     [indicatorView startAnimating];
+    [indicatorView setHidden:NO];
     [self performSelector:@selector(startLoading:) withObject:nil afterDelay:0.1f];
 }
 - (void)startLoading:(id)sender{
@@ -73,11 +97,22 @@
 
 - (void)start{
     [self dismissViewControllerAnimated:YES completion:nil];
+
+    if(tabBarController != nil){
+        tabBarController.selectedViewController = [tabBarController.viewControllers objectAtIndex:0];
+    }
+    
+    
 }
 
 - (void)selectCampusButtonClicked{
     [selectCampusButton setHidden:YES];
     [campusTableView setHidden:NO];
+    
+    // remove maintitleLabel to rearrange contraint
+    [maintitleLabel setHidden:YES];
+    [subtitleLabel setHidden:YES];
+    [titleLabel setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,5 +164,12 @@
     
     // keep track of the last selected cell
     lastSelected = indexPath;
+    
+    if(lastSelected != nil){
+        [startButton setBackgroundColor:[UIColor whiteColor]];
+        [startButton setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
+        [startButton setUserInteractionEnabled:YES];
+    }
 }
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SettingTableViewController.h"
+#import "SelectCampusViewController.h"
 
 #import "Constants.h"
 #import "Static.h"
@@ -119,5 +120,12 @@
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"selectCampus"]){
+        SelectCampusViewController * vc =  segue.destinationViewController;
+        vc.tabBarController = self.tabBarController;
+    }
 }
 @end
