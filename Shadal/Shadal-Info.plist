@@ -26,10 +26,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>arita-Bold.otf</string>
-		<string>arita-Light.otf</string>
-		<string>서울남산체EB.ttf</string>
-		<string>서울남산체L.ttf</string>
+		<string>NanumGothic.otf</string>
+		<string>NanumGothicBold.otf</string>
+		<string>NanumGothicExtraBold.otf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>

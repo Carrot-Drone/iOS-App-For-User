@@ -40,6 +40,16 @@
                                                nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
+    
+    NSArray *fontFamilies = [UIFont familyNames];
+    
+    for (int i = 0; i < [fontFamilies count]; i++)
+    {
+        NSString *fontFamily = [fontFamilies objectAtIndex:i];
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
+        NSLog (@"%@: %@", fontFamily, fontNames);
+    }
+    
     return YES;
 }
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
@@ -107,7 +117,6 @@
     item1.title = @"메인화면";
     item1.image = [UIImage imageNamed:@"BotIconMain.png"];
     item1.selectedImage = [UIImage imageNamed:@"BotIconMainSelect.png"];
-    
     UITabBarItem *item2 = [tabBarController.tabBar.items objectAtIndex:1];
     item2.title = @"즐겨찾기";
     item2.image = [UIImage imageNamed:@"BotIconStar.png"];

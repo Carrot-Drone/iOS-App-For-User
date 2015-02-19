@@ -17,11 +17,11 @@
 //#define FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Arita-dotum-Light_OTF") size:(CGFloat)(_size_)])
 //#define FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Arita-dotum-Bold_OTF") size:(CGFloat)(_size_)])
 
-#define FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Light") size:(CGFloat)(_size_)])
-#define FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Bold") size:(CGFloat)(_size_)])
+#define FONT_L(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"NanumGothicOTF") size:(CGFloat)(_size_)])
+#define FONT_EB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"NanumGothicOTFBold") size:(CGFloat)(_size_)])
 
-#define FONT_L_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Light") size:(CGFloat)(_size_)])
-#define FONT_EB_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"Helvetica-Light") size:(CGFloat)(_size_)])
+#define FONT_L_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"NanumGothicOTF") size:(CGFloat)(_size_)])
+#define FONT_EB_TAB(_size_) ((UIFont *)[UIFont fontWithName:(NSString *)(@"NanumGothicOTFBold") size:(CGFloat)(_size_)])
 
 
 // color

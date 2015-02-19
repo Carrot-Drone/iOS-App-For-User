@@ -425,11 +425,11 @@
                             <constraint firstItem="Jen-Mk-seX" firstAttribute="centerX" secondItem="faU-Ug-dQV" secondAttribute="centerX" id="Gth-z6-SZy"/>
                             <constraint firstItem="faU-Ug-dQV" firstAttribute="leading" secondItem="XYB-bs-iwa" secondAttribute="leading" priority="950" id="IQO-CZ-gag"/>
                             <constraint firstItem="faU-Ug-dQV" firstAttribute="top" secondItem="XYB-bs-iwa" secondAttribute="top" constant="130" id="K3l-Q9-nZt"/>
+                            <constraint firstAttribute="centerX" secondItem="Ho4-b4-mwg" secondAttribute="centerX" constant="-0.5" id="LWv-uI-O0w"/>
                             <constraint firstItem="Jen-Mk-seX" firstAttribute="top" secondItem="Ho4-b4-mwg" secondAttribute="bottom" id="N1b-AC-Hyb"/>
                             <constraint firstItem="faU-Ug-dQV" firstAttribute="top" relation="lessThanOrEqual" secondItem="Jen-Mk-seX" secondAttribute="bottom" constant="5" id="d8Q-cv-ztC"/>
                             <constraint firstAttribute="bottom" secondItem="faU-Ug-dQV" secondAttribute="bottom" constant="49" id="gry-yc-H06"/>
                             <constraint firstItem="Ho4-b4-mwg" firstAttribute="top" secondItem="4OB-jA-YNI" secondAttribute="bottom" constant="8" symbolic="YES" id="nU3-ZW-4Ha"/>
-                            <constraint firstItem="Jen-Mk-seX" firstAttribute="centerX" secondItem="Ho4-b4-mwg" secondAttribute="centerX" id="ngU-h8-xVt"/>
                             <constraint firstAttribute="trailing" secondItem="faU-Ug-dQV" secondAttribute="trailing" id="u1q-dP-OBD"/>
                         </constraints>
                     </view>
@@ -532,19 +532,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1l-dY-5OC">
-                                <rect key="frame" x="52" y="429" width="200" height="40"/>
+                                <rect key="frame" x="50" y="429" width="220" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pXB-97-JRR"/>
-                                    <constraint firstAttribute="width" constant="200" id="ubI-e1-gAP"/>
+                                    <constraint firstAttribute="width" constant="220" id="ubI-e1-gAP"/>
                                 </constraints>
                                 <state key="normal" title="캠퍼스 선택하기">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94c-sG-v9z">
-                                <rect key="frame" x="52" y="478" width="200" height="40"/>
+                                <rect key="frame" x="50" y="478" width="220" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="RWn-hO-8sS"/>
+                                    <constraint firstAttribute="width" constant="220" id="RWn-hO-8sS"/>
                                     <constraint firstAttribute="height" constant="40" id="kd1-qh-5Yx"/>
                                 </constraints>
                                 <state key="normal" title="GO!">
@@ -565,7 +565,7 @@
                                 </constraints>
                             </imageView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="htP-4B-dRT">
-                                <rect key="frame" x="24" y="100.5" width="272" height="362.5"/>
+                                <rect key="frame" x="16" y="100" width="288" height="362.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8Mr-TO-iga" style="IBUITableViewCellStyleDefault" id="Xm4-8L-mRh">
@@ -598,9 +598,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캠퍼스 : 달" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-bN-X9R">
-                                <rect key="frame" x="53.5" y="88" width="213" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캠퍼스:달" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-bN-X9R">
+                                <rect key="frame" x="75" y="88" width="168" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -613,19 +613,19 @@
                             <constraint firstItem="x6H-Mx-BkV" firstAttribute="top" secondItem="gpg-WF-uKM" secondAttribute="bottom" constant="25" id="Agm-Zx-DTz"/>
                             <constraint firstAttribute="centerX" secondItem="uEb-w3-MIV" secondAttribute="centerX" id="ECX-d6-zgz"/>
                             <constraint firstAttribute="centerY" secondItem="yxj-d1-Opn" secondAttribute="centerY" id="Ef9-zY-joq"/>
-                            <constraint firstAttribute="centerX" secondItem="Y1l-dY-5OC" secondAttribute="centerX" constant="8" id="G0y-8r-T8e"/>
+                            <constraint firstAttribute="centerX" secondItem="Y1l-dY-5OC" secondAttribute="centerX" id="G0y-8r-T8e"/>
                             <constraint firstItem="1fm-bN-X9R" firstAttribute="top" secondItem="uEb-w3-MIV" secondAttribute="bottom" constant="1" id="TpS-Ro-QTP"/>
-                            <constraint firstAttribute="centerX" secondItem="1fm-bN-X9R" secondAttribute="centerX" id="U0u-zy-cYf"/>
+                            <constraint firstAttribute="centerX" secondItem="1fm-bN-X9R" secondAttribute="centerX" constant="1" id="U0u-zy-cYf"/>
                             <constraint firstItem="94c-sG-v9z" firstAttribute="top" secondItem="htP-4B-dRT" secondAttribute="bottom" constant="15" id="W0Q-wx-KXE"/>
-                            <constraint firstAttribute="centerX" secondItem="94c-sG-v9z" secondAttribute="centerX" constant="8" id="Xtu-S8-Rt9"/>
-                            <constraint firstItem="htP-4B-dRT" firstAttribute="leading" secondItem="1UL-Rg-D23" secondAttribute="leadingMargin" constant="8" id="aB6-p5-Xre"/>
+                            <constraint firstAttribute="centerX" secondItem="94c-sG-v9z" secondAttribute="centerX" id="Xtu-S8-Rt9"/>
+                            <constraint firstItem="htP-4B-dRT" firstAttribute="leading" secondItem="1UL-Rg-D23" secondAttribute="leadingMargin" id="aB6-p5-Xre"/>
                             <constraint firstItem="uEb-w3-MIV" firstAttribute="top" secondItem="gpg-WF-uKM" secondAttribute="bottom" constant="43" id="dkT-YK-N6b"/>
                             <constraint firstItem="htP-4B-dRT" firstAttribute="top" secondItem="x6H-Mx-BkV" secondAttribute="bottom" constant="14.5" id="gh6-aO-Ubi"/>
                             <constraint firstItem="94c-sG-v9z" firstAttribute="top" secondItem="Y1l-dY-5OC" secondAttribute="bottom" constant="9" id="pMM-AQ-fix"/>
                             <constraint firstAttribute="centerX" secondItem="yxj-d1-Opn" secondAttribute="centerX" id="s2s-zm-eDJ"/>
                             <constraint firstAttribute="centerY" secondItem="nOm-vz-rRH" secondAttribute="centerY" id="wT5-Qb-m9K"/>
                             <constraint firstAttribute="centerX" secondItem="x6H-Mx-BkV" secondAttribute="centerX" id="wfX-Gl-eSo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="htP-4B-dRT" secondAttribute="trailing" constant="8" id="y9D-V0-RNr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="htP-4B-dRT" secondAttribute="trailing" id="y9D-V0-RNr"/>
                         </constraints>
                     </view>
                     <connections>

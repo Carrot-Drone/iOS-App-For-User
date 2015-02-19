@@ -53,19 +53,27 @@
     [indicatorView stopAnimating];
     [indicatorView setHidden:YES];
     
+    // init title labels
+    [titleLabel setFont:FONT_L(27)];
+    [maintitleLabel setFont:FONT_EB(45)];
+    [subtitleLabel setFont:FONT_L(20)];
+    
     // init background color
     [self.view setBackgroundColor:MAIN_COLOR];
     
     // init buttons
     [selectCampusButton setBackgroundColor:[UIColor whiteColor]];
     [selectCampusButton setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
+    [[selectCampusButton titleLabel] setFont:FONT_L(15)];
     selectCampusButton.layer.cornerRadius = 5;
 
     
     [startButton setBackgroundColor:SUB_COLOR2];
     [startButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [[startButton titleLabel] setFont:FONT_L(15)];
     [startButton setUserInteractionEnabled:NO];
     startButton.layer.cornerRadius = 5;
+    
 }
 
 
@@ -76,6 +84,18 @@
     [campuses removeAllObjects];
     for (NSDictionary * campus_info in dic) {
         [campuses addObject:campus_info];
+    }
+    
+    
+    // init lastSelected indexpath if current campus exist
+    NSDictionary * currentCampusInfo = [Static campusInfo];
+    if(currentCampusInfo != nil){
+        for(int i=0; i<[campuses count]; i++){
+            NSDictionary * campus = [campuses objectAtIndex:i];
+            if([[campus objectForKey:@"name_eng"] isEqualToString:[currentCampusInfo objectForKey:@"name_eng"]]){
+                lastSelected = [NSIndexPath indexPathForRow:i inSection:0];
+            }
+        }
     }
     [campusTableView reloadData];
 }
@@ -101,18 +121,21 @@
     if(tabBarController != nil){
         tabBarController.selectedViewController = [tabBarController.viewControllers objectAtIndex:0];
     }
-    
-    
 }
 
 - (void)selectCampusButtonClicked{
     [selectCampusButton setHidden:YES];
     [campusTableView setHidden:NO];
     
-    // remove maintitleLabel to rearrange contraint
     [maintitleLabel setHidden:YES];
     [subtitleLabel setHidden:YES];
     [titleLabel setHidden:NO];
+    
+    if(lastSelected != nil){
+        [startButton setBackgroundColor:[UIColor whiteColor]];
+        [startButton setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
+        [startButton setUserInteractionEnabled:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,12 +162,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"campusCell"];
-
+    
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"campusCell"];
-        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
+    if (lastSelected == indexPath){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
     cell.textLabel.text = [[campuses objectAtIndex:indexPath.row] objectForKey:@"name_kor"];
     
     return cell;

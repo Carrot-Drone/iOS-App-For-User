@@ -74,6 +74,9 @@
 		F52A85CD1999126B0010C261 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A85CC1999126B0010C261 /* FavoriteViewController.m */; };
 		F536D599180CC8D600E73254 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F536D598180CC8D600E73254 /* MenuCell.m */; };
 		F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F536D59A180CC8E400E73254 /* MenuCell.xib */; };
+		F540F6031A95EA6B0051AFFD /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F540F6001A95EA6B0051AFFD /* NanumGothic.otf */; };
+		F540F6041A95EA6B0051AFFD /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F540F6011A95EA6B0051AFFD /* NanumGothicBold.otf */; };
+		F540F6051A95EA6B0051AFFD /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F540F6021A95EA6B0051AFFD /* NanumGothicExtraBold.otf */; };
 		F54118361800EC92006A2136 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54118351800EC92006A2136 /* RestaurantViewController.m */; };
 		F54CF570195AA21200B7C67A /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = F54CF56F195AA21200B7C67A /* Server.m */; };
 		F54D136F199B8E8700AFE026 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F54D136D199B8E8700AFE026 /* CategoryCell.m */; };
@@ -182,6 +185,9 @@
 		F536D597180CC8D600E73254 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		F536D598180CC8D600E73254 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		F536D59A180CC8E400E73254 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		F540F6001A95EA6B0051AFFD /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothic.otf; path = "font-resources/NanumGothic.otf"; sourceTree = "<group>"; };
+		F540F6011A95EA6B0051AFFD /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.otf; path = "font-resources/NanumGothicBold.otf"; sourceTree = "<group>"; };
+		F540F6021A95EA6B0051AFFD /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicExtraBold.otf; path = "font-resources/NanumGothicExtraBold.otf"; sourceTree = "<group>"; };
 		F54118341800EC92006A2136 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
 		F54118351800EC92006A2136 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
 		F54CF56E195AA21200B7C67A /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
@@ -330,6 +336,7 @@
 		F5110ACD17FC013C00D7AA85 /* Shadal */ = {
 			isa = PBXGroup;
 			children = (
+				F540F5FF1A95EA5E0051AFFD /* font_resources */,
 				493A76E31A9398E600C60719 /* image_resources */,
 				F5110AD617FC013C00D7AA85 /* AppDelegate.h */,
 				F5110AD717FC013C00D7AA85 /* AppDelegate.m */,
@@ -440,6 +447,16 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		F540F5FF1A95EA5E0051AFFD /* font_resources */ = {
+			isa = PBXGroup;
+			children = (
+				F540F6001A95EA6B0051AFFD /* NanumGothic.otf */,
+				F540F6011A95EA6B0051AFFD /* NanumGothicBold.otf */,
+				F540F6021A95EA6B0051AFFD /* NanumGothicExtraBold.otf */,
+			);
+			name = font_resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -537,10 +554,12 @@
 				F5110AE317FC013C00D7AA85 /* Images.xcassets in Resources */,
 				493A77191A9398E600C60719 /* BotIconStarSelect.png in Resources */,
 				493A77291A9398E600C60719 /* SearchIcon.png in Resources */,
+				F540F6051A95EA6B0051AFFD /* NanumGothicExtraBold.otf in Resources */,
 				493A77151A9398E600C60719 /* BotIconRandomSelect.png in Resources */,
 				493A77121A9398E600C60719 /* BotIconMoreSelect@2x.png in Resources */,
 				493A770E1A9398E600C60719 /* BotIconMainselect@2x.png in Resources */,
 				493A77261A9398E600C60719 /* iconPizza.png in Resources */,
+				F540F6031A95EA6B0051AFFD /* NanumGothic.otf in Resources */,
 				493A77221A9398E600C60719 /* iconChinese.png in Resources */,
 				493A770D1A9398E600C60719 /* BotIconMainselect.png in Resources */,
 				F5110AD217FC013C00D7AA85 /* InfoPlist.strings in Resources */,
@@ -562,6 +581,7 @@
 				F536D59B180CC8E400E73254 /* MenuCell.xib in Resources */,
 				493A77161A9398E600C60719 /* BotIconRandomSelect@2x.png in Resources */,
 				493A771F1A9398E600C60719 /* iconBab.png in Resources */,
+				F540F6041A95EA6B0051AFFD /* NanumGothicBold.otf in Resources */,
 				493A77181A9398E600C60719 /* BotIconStar@2x.png in Resources */,
 				F54D1378199B92E000AFE026 /* CustomTitleView.xib in Resources */,
 				493A770F1A9398E600C60719 /* BotIconMore.png in Resources */,

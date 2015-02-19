@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -62,34 +63,34 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHJ-oj-1R3">
-                    <rect key="frame" x="43" y="7" width="106" height="30"/>
+                    <rect key="frame" x="48.5" y="2" width="95" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconChic.png" translatesAutoresizingMaskIntoConstraints="NO" id="1NW-tl-1hi">
-                            <rect key="frame" x="12" y="0.0" width="30" height="30"/>
+                            <rect key="frame" x="12" y="5" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="1NW-tl-1hi" secondAttribute="height" multiplier="1:1" id="8iA-DO-zfx"/>
                                 <constraint firstAttribute="width" constant="30" id="qpx-A2-TeK"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="치킨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="5Z7-hV-OeD">
-                            <rect key="frame" x="50" y="-1" width="45" height="32"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <rect key="frame" x="50" y="4.5" width="45" height="31.5"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="1NW-tl-1hi" firstAttribute="leading" secondItem="UHJ-oj-1R3" secondAttribute="leading" constant="12" id="KIL-uS-3Nb"/>
-                        <constraint firstAttribute="height" constant="30" id="PXr-cb-bnD"/>
+                        <constraint firstAttribute="height" constant="40" id="PXr-cb-bnD"/>
                         <constraint firstAttribute="centerY" secondItem="5Z7-hV-OeD" secondAttribute="centerY" id="VTy-3p-Ml0"/>
                         <constraint firstAttribute="centerY" secondItem="1NW-tl-1hi" secondAttribute="centerY" id="nrE-vo-3ru"/>
-                        <constraint firstAttribute="trailing" secondItem="5Z7-hV-OeD" secondAttribute="trailing" constant="11" id="rKG-z3-hpa"/>
+                        <constraint firstAttribute="trailing" secondItem="5Z7-hV-OeD" secondAttribute="trailing" id="rKG-z3-hpa"/>
                         <constraint firstItem="5Z7-hV-OeD" firstAttribute="leading" secondItem="1NW-tl-1hi" secondAttribute="trailing" constant="8" id="wyI-KR-8S0"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="UHJ-oj-1R3" secondAttribute="centerX" constant="0.5" id="fpi-Yw-cmY"/>
+                <constraint firstAttribute="centerX" secondItem="UHJ-oj-1R3" secondAttribute="centerX" id="fpi-Yw-cmY"/>
                 <constraint firstAttribute="centerY" secondItem="UHJ-oj-1R3" secondAttribute="centerY" id="mgf-40-Y0i"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
