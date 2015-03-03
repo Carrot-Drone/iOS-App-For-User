@@ -13,21 +13,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캠퍼스:달" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8h-hr-VeR">
-                    <rect key="frame" x="20" y="8" width="83" height="27"/>
+                    <rect key="frame" x="10" y="8.5" width="82.5" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울대학교 관악캠퍼스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuq-Wd-3hw">
-                    <rect key="frame" x="108" y="17" width="117" height="16"/>
+                    <rect key="frame" x="97.5" y="18" width="116.5" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="H8h-hr-VeR" secondAttribute="centerY" id="HfY-Kv-ewZ"/>
-                <constraint firstItem="H8h-hr-VeR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Ltk-3X-A2h"/>
+                <constraint firstItem="H8h-hr-VeR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Ltk-3X-A2h"/>
                 <constraint firstItem="Yuq-Wd-3hw" firstAttribute="leading" secondItem="H8h-hr-VeR" secondAttribute="trailing" constant="5" id="VkW-GT-o3i"/>
-                <constraint firstItem="H8h-hr-VeR" firstAttribute="baseline" secondItem="Yuq-Wd-3hw" secondAttribute="baseline" id="ZsP-Sr-RhW"/>
+                <constraint firstItem="H8h-hr-VeR" firstAttribute="baseline" secondItem="Yuq-Wd-3hw" secondAttribute="baseline" constant="-1" id="ZsP-Sr-RhW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -103,7 +103,7 @@
         </view>
     </objects>
     <resources>
-        <image name="iconChic.png" width="80" height="80"/>
+        <image name="iconChic.png" width="113" height="115"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

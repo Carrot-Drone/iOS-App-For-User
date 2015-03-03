@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface SettingTableViewController : UITableViewController <MFMailComposeViewControllerDelegate>
+@interface SettingTableViewController : UIViewController <MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView * tableView;
 
 -(IBAction)linkToFacebook:(id)sender;
--(IBAction)showEmail:(id)sender;
+-(IBAction)showEmail:(id)sender option:(BOOL)flag;
+-(IBAction)talkPartyBannerClicked:(id)sender;
 
 @end

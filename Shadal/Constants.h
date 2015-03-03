@@ -36,6 +36,7 @@
 
 #define SEARCH_BAR_BACKGROUND_COLOR (UIColor *)[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0]
 
+
 // server
 //#define WEB_BASE_URL                @"http://localhost:3000"
 #define WEB_BASE_URL                @"http://www.shadal.kr"
@@ -49,5 +50,7 @@
 #define UPDATE_UUID                 @"/updateDevice"
 
 #define ALL_DATA                    @"/allRestaurants"
+
+#define TALK_PARTY_BANNER           @"http://talkparty.net/company/board_view.asp?ctype=1&idx=101"
 
 #endif

@@ -118,6 +118,8 @@
 - (void)start{
     [self dismissViewControllerAnimated:YES completion:nil];
 
+    [Static saveData];
+    
     if(tabBarController != nil){
         tabBarController.selectedViewController = [tabBarController.viewControllers objectAtIndex:0];
     }
@@ -136,6 +138,7 @@
         [startButton setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
         [startButton setUserInteractionEnabled:YES];
     }
+    [campusTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
