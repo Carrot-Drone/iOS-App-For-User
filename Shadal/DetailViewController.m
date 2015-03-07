@@ -238,7 +238,7 @@
         Restaurant * res;
         if(indexPath.section == 0) res = [resWithFlyer objectAtIndex:indexPath.row];
         else res = [resWithoutFlyer objectAtIndex:indexPath.row];
-        
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:category style:UIBarButtonItemStylePlain target:nil action:nil];
         [[segue destinationViewController] setDetailItem:res];
     }
 }
