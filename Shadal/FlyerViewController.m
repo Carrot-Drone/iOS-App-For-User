@@ -9,6 +9,7 @@
 #import "FlyerViewController.h"
 #import "UIImage+UIImage_Customized.h"
 #import "Constants.h"
+#import "Server.h"
 
 @interface FlyerViewController ()
 
@@ -62,6 +63,8 @@
     }
 }
 -(void)viewDidAppear:(BOOL)animated{
+    // GA
+    [Server sendGoogleAnalyticsScreen:@"전단지 화면"];
     
     float bottom_offset = 37;
     float content_width = [UIScreen mainScreen].bounds.size.width;

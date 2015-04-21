@@ -170,6 +170,10 @@
     
     NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
     [self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    
+    
+    // GA
+    [Server sendGoogleAnalyticsScreen:@"음식점 리스트 화면"];
 }
 
 #pragma mark - Table view data source
@@ -240,6 +244,9 @@
         else res = [resWithoutFlyer objectAtIndex:indexPath.row];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:category style:UIBarButtonItemStylePlain target:nil action:nil];
         [[segue destinationViewController] setDetailItem:res];
+        
+        // GA
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"res_clicked" label:res.name];
     }
 }
 

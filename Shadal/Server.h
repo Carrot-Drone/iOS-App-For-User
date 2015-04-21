@@ -24,5 +24,9 @@
 // Sync
 + (NSArray *)allRestaurants;
 
+// GA
++ (void)sendGoogleAnalyticsEvent:(NSString *)category action:(NSString *)action label:(NSString *)label;
++ (void)sendGoogleAnalyticsScreen:(NSString *)screenName;
+
 
 @end

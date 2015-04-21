@@ -11,6 +11,7 @@
 
 #import "Constants.h"
 #import "Static.h"
+#import "Server.h"
 #import "CustomTitleView.h"
 
 @interface SettingTableViewController ()
@@ -43,16 +44,29 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
+    // GA
+    [Server sendGoogleAnalyticsScreen:@"더보기 화면"];
+    
     NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
     [self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
 }
 -(IBAction)linkToFacebook:(id)sender{
+    // GA
+    [Server sendGoogleAnalyticsEvent:@"UX" action:@"link_to_facebook_clicked" label:@"facebook"];
+    
     [[UIApplication sharedApplication] openURL:
      [NSURL URLWithString: @"https://facebook.com/snushadal"]];
 }
 // if flag is true, send mail to individual's campus email
 // else if flag is false, send mail to campusdal email
 - (IBAction)showEmail:(id)sender option:(BOOL)flag{
+    // GA
+    if(flag){
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"send_email" label:@"individual"];
+    }else{
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"send_email" label:@"campusdal"];
+    }
+    
     if(![MFMailComposeViewController canSendMail] ) {
         NSLog(@"Cannot send mail\n%s", __PRETTY_FUNCTION__) ;
         [[[UIAlertView alloc] initWithTitle:nil message:@"등록된 메일 계정이 없습니다" delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil] show];
@@ -76,6 +90,9 @@
     if (controller) [self presentViewController:controller animated:YES completion:NULL];
 }
 -(IBAction)talkPartyBannerClicked:(id)sender{
+    // GA
+    [Server sendGoogleAnalyticsEvent:@"UX" action:@"talkparty" label:@"talkparty"];
+    
     [[UIApplication sharedApplication] openURL:
      [NSURL URLWithString: TALK_PARTY_BANNER]];
 }
@@ -180,6 +197,9 @@
     if([segue.identifier isEqualToString:@"selectCampus"]){
         SelectCampusViewController * vc =  segue.destinationViewController;
         vc.tabBarController = self.tabBarController;
+        
+        //GA
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"select_campus" label:[[Static campusInfo] objectForKey:@"name_kor_short"]];
     }
 }
 @end

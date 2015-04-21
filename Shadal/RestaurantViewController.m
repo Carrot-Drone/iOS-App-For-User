@@ -91,6 +91,9 @@
 }
 
 - (IBAction)call:(id)sender{
+    // GA
+    [Server sendGoogleAnalyticsEvent:@"UX" action:@"phonenumber_clicked" label:restaurant.name];
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     NSString * params = [NSString stringWithFormat:@"name=%@&phoneNumber=%@&device=ios&campus=%@&uuid=%@", restaurant.name, restaurant.phoneNumber, [Static campus], [Static UUID]];
@@ -105,6 +108,13 @@
     }
 }
 -(IBAction)favoriteButtonClicked:(id)sender{
+    // GA
+    if(restaurant.isFavorite){
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"favorite_button_disclicked" label:restaurant.name];
+    }else{
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"favorite_button_clicked" label:restaurant.name];
+    }
+    
     restaurant.isFavorite = !restaurant.isFavorite;
     [self updateUI];
 }
@@ -139,6 +149,8 @@
             [self updateViewData];
         });
     }
+    // GA
+    [Server sendGoogleAnalyticsScreen:@"음식점 화면"];
 }
 
 - (void)flyerClicked:(id)sender{

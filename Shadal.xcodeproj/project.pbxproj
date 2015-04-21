@@ -53,7 +53,10 @@
 		499E69F21A8AE6D80067E008 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E69EF1A8AE6D80067E008 /* SSKeychain.m */; };
 		499E69F31A8AE6D80067E008 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E69F11A8AE6D80067E008 /* SSKeychainQuery.m */; };
 		49C3DB271851C594002C9EBA /* FlyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3DB261851C594002C9EBA /* FlyerViewController.m */; };
+		A5E14BED7097920F0362F9B2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FD547DC08240F73F4E0875 /* libPods.a */; };
 		F5008D5719A0F65400831238 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5008D5619A0F65400831238 /* CustomButton.m */; };
+		F50403831AE0AC4E00E415E3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50403821AE0AC4E00E415E3 /* SystemConfiguration.framework */; };
+		F50403851AE0AD0800E415E3 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50403841AE0AD0800E415E3 /* libGoogleAnalyticsServices.a */; };
 		F5110AC817FC013C00D7AA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC717FC013C00D7AA85 /* Foundation.framework */; };
 		F5110ACA17FC013C00D7AA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */; };
 		F5110ACC17FC013C00D7AA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5110ACB17FC013C00D7AA85 /* UIKit.framework */; };
@@ -69,6 +72,9 @@
 		F5110AF617FC013C00D7AA85 /* ShadalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110AF517FC013C00D7AA85 /* ShadalTests.m */; };
 		F5110B0117FC044E00D7AA85 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0017FC044E00D7AA85 /* Restaurant.m */; };
 		F5110B0417FC10E200D7AA85 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5110B0317FC10E200D7AA85 /* DetailViewController.m */; };
+		F511BEDF1AE0A8C000B8E36F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F511BEDE1AE0A8C000B8E36F /* libz.dylib */; };
+		F511BEE11AE0A8EC00B8E36F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F511BEE01AE0A8EC00B8E36F /* CoreData.framework */; };
+		F511BEE31AE0A96300B8E36F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F511BEE21AE0A96300B8E36F /* AdSupport.framework */; };
 		F519367F199F324000339903 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F519367E199F324000339903 /* SettingTableViewController.m */; };
 		F52319BF19A6925B00236221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5110AD917FC013C00D7AA85 /* Main.storyboard */; };
 		F52A85CD1999126B0010C261 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A85CC1999126B0010C261 /* FavoriteViewController.m */; };
@@ -101,6 +107,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04FD547DC08240F73F4E0875 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD00A29A2F372675E7F070F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		49103D531851A63F00070801 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
 		49103D541851A63F00070801 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
 		49103D561851A65500070801 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
@@ -154,9 +162,12 @@
 		499E69F11A8AE6D80067E008 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		49C3DB251851C594002C9EBA /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyerViewController.h; sourceTree = "<group>"; };
 		49C3DB261851C594002C9EBA /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyerViewController.m; sourceTree = "<group>"; };
+		D4EF77E3EB439F27374E560D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F5008D5519A0F65400831238 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		F5008D5619A0F65400831238 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
-		F5110AC417FC013C00D7AA85 /* 캠퍼스:달.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "캠퍼스:달.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50403821AE0AC4E00E415E3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F50403841AE0AD0800E415E3 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "Pods/GoogleAnalytics-iOS-SDK/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
+		F5110AC417FC013C00D7AA85 /* 캠퍼스달.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "캠퍼스달.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5110AC717FC013C00D7AA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F5110ACB17FC013C00D7AA85 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -179,6 +190,10 @@
 		F5110B0017FC044E00D7AA85 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		F5110B0217FC10E200D7AA85 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F5110B0317FC10E200D7AA85 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F511BECB1AE09F2800B8E36F /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "Shadal/External Libraries/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
+		F511BEDE1AE0A8C000B8E36F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F511BEE01AE0A8EC00B8E36F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F511BEE21AE0A96300B8E36F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F519367D199F324000339903 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		F519367E199F324000339903 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		F52A85CB1999126B0010C261 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
@@ -207,6 +222,7 @@
 		F59DB07619A0D7DD007F9A71 /* UIColor+COLORCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+COLORCategories.m"; sourceTree = "<group>"; };
 		F59DB07719A0D7DD007F9A71 /* UIImage+IMAGECategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IMAGECategories.h"; sourceTree = "<group>"; };
 		F59DB07819A0D7DD007F9A71 /* UIImage+IMAGECategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IMAGECategories.m"; sourceTree = "<group>"; };
+		F5A00D531AE0AE88002E0AB6 /* &#49380;&#45804; copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "&#49380;&#45804; copy-Info.plist"; path = "/Users/swchoi06/Shadal/&#49380;&#45804; copy-Info.plist"; sourceTree = "<absolute>"; };
 		F5D3711D1804396F00241D9D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,10 +231,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50403851AE0AD0800E415E3 /* libGoogleAnalyticsServices.a in Frameworks */,
+				F50403831AE0AC4E00E415E3 /* SystemConfiguration.framework in Frameworks */,
+				F511BEE31AE0A96300B8E36F /* AdSupport.framework in Frameworks */,
+				F511BEE11AE0A8EC00B8E36F /* CoreData.framework in Frameworks */,
+				F511BEDF1AE0A8C000B8E36F /* libz.dylib in Frameworks */,
 				499E69EC1A8AE3C50067E008 /* Security.framework in Frameworks */,
 				F5110ACA17FC013C00D7AA85 /* CoreGraphics.framework in Frameworks */,
 				F5110ACC17FC013C00D7AA85 /* UIKit.framework in Frameworks */,
 				F5110AC817FC013C00D7AA85 /* Foundation.framework in Frameworks */,
+				A5E14BED7097920F0362F9B2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,13 +334,15 @@
 				F5110AEF17FC013C00D7AA85 /* ShadalTests */,
 				F5110AC617FC013C00D7AA85 /* Frameworks */,
 				F5110AC517FC013C00D7AA85 /* Products */,
+				FDB644531D0D275694BCA456 /* Pods */,
+				F5A00D531AE0AE88002E0AB6 /* &#49380;&#45804; copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		F5110AC517FC013C00D7AA85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5110AC417FC013C00D7AA85 /* 캠퍼스:달.app */,
+				F5110AC417FC013C00D7AA85 /* 캠퍼스달.app */,
 				F5110AE817FC013C00D7AA85 /* ShadalTests.xctest */,
 			);
 			name = Products;
@@ -327,11 +351,18 @@
 		F5110AC617FC013C00D7AA85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F50403841AE0AD0800E415E3 /* libGoogleAnalyticsServices.a */,
+				F50403821AE0AC4E00E415E3 /* SystemConfiguration.framework */,
+				F511BEE21AE0A96300B8E36F /* AdSupport.framework */,
+				F511BEE01AE0A8EC00B8E36F /* CoreData.framework */,
+				F511BEDE1AE0A8C000B8E36F /* libz.dylib */,
+				F511BECB1AE09F2800B8E36F /* libGoogleAnalyticsServices.a */,
 				499E69EB1A8AE3C50067E008 /* Security.framework */,
 				F5110AC717FC013C00D7AA85 /* Foundation.framework */,
 				F5110AC917FC013C00D7AA85 /* CoreGraphics.framework */,
 				F5110ACB17FC013C00D7AA85 /* UIKit.framework */,
 				F5110AE917FC013C00D7AA85 /* XCTest.framework */,
+				04FD547DC08240F73F4E0875 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -460,24 +491,35 @@
 			name = font_resources;
 			sourceTree = "<group>";
 		};
+		FDB644531D0D275694BCA456 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4EF77E3EB439F27374E560D /* Pods.debug.xcconfig */,
+				3AD00A29A2F372675E7F070F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F5110AC317FC013C00D7AA85 /* 샤달 */ = {
+		F5110AC317FC013C00D7AA85 /* 캠퍼스달 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "샤달" */;
+			buildConfigurationList = F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "캠퍼스달" */;
 			buildPhases = (
+				4FCB78023879C5964C9E123B /* Check Pods Manifest.lock */,
 				F5110AC017FC013C00D7AA85 /* Sources */,
 				F5110AC117FC013C00D7AA85 /* Frameworks */,
 				F5110AC217FC013C00D7AA85 /* Resources */,
+				19355BDDD0031BFBB99C28F4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "샤달";
+			name = "캠퍼스달";
 			productName = Shadal;
-			productReference = F5110AC417FC013C00D7AA85 /* 캠퍼스:달.app */;
+			productReference = F5110AC417FC013C00D7AA85 /* 캠퍼스달.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F5110AE717FC013C00D7AA85 /* ShadalTests */ = {
@@ -529,7 +571,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F5110AC317FC013C00D7AA85 /* 샤달 */,
+				F5110AC317FC013C00D7AA85 /* 캠퍼스달 */,
 				F5110AE717FC013C00D7AA85 /* ShadalTests */,
 			);
 		};
@@ -602,6 +644,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19355BDDD0031BFBB99C28F4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FCB78023879C5964C9E123B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F5110AC017FC013C00D7AA85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -646,7 +721,7 @@
 /* Begin PBXTargetDependency section */
 		F5110AEE17FC013C00D7AA85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5110AC317FC013C00D7AA85 /* 샤달 */;
+			target = F5110AC317FC013C00D7AA85 /* 캠퍼스달 */;
 			targetProxy = F5110AED17FC013C00D7AA85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -753,6 +828,7 @@
 		};
 		F5110AFA17FC013C00D7AA85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4EF77E3EB439F27374E560D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_all;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -762,8 +838,16 @@
 				GCC_PREFIX_HEADER = "Shadal/Shadal-Prefix.pch";
 				INFOPLIST_FILE = "Shadal/Shadal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_NAME = "캠퍼스:달";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Shadal",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "캠퍼스달";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -772,6 +856,7 @@
 		};
 		F5110AFB17FC013C00D7AA85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD00A29A2F372675E7F070F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_all;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -781,8 +866,16 @@
 				GCC_PREFIX_HEADER = "Shadal/Shadal-Prefix.pch";
 				INFOPLIST_FILE = "Shadal/Shadal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_NAME = "캠퍼스:달";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Shadal",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
+				);
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "캠퍼스달";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -847,7 +940,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "샤달" */ = {
+		F5110AF917FC013C00D7AA85 /* Build configuration list for PBXNativeTarget "캠퍼스달" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F5110AFA17FC013C00D7AA85 /* Debug */,

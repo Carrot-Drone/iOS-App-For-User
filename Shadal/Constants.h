@@ -53,4 +53,6 @@
 
 #define TALK_PARTY_BANNER           @"http://talkparty.net/company/board_view.asp?ctype=1&idx=101"
 
+#define ANALYTICS_ID                @"UA-61963094-1"
+
 #endif

@@ -20,6 +20,7 @@
 
 #import "Constants.h"
 #import "Static.h"
+#import "Server.h"
 
 
 @interface MasterViewController () {
@@ -96,6 +97,10 @@
     // init allData
     allData = [Static allData];
     [self.tableView reloadData];
+    
+    
+    // GA
+    [Server sendGoogleAnalyticsScreen:@"메인 화면"];
 }
 -(void)viewDidAppear:(BOOL)animated{
     if([Static campus]==nil){
@@ -225,12 +230,18 @@
         titleView.categoryImageView.image = categoryImg;
         titleView.categoryLabel.text = [categories objectAtIndex:index];
         viewController.navigationItem.titleView = titleView;
+        
+        // GA
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"category_clicked" label:viewController.category];
+        
     }else if ([[segue identifier] isEqualToString:@"Restaurant"]) {
         Restaurant * res = [searchResults objectAtIndex:selectedRow];
         [[segue destinationViewController] setDetailItem:res];
+        
+        // GA
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"searched_res_clicked" label:res.name];
     }
 }
-
 
 - (NSInteger)realRowNumberForIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView
 {

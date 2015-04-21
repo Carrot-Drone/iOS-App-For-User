@@ -76,6 +76,11 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //GA
+    [Server sendGoogleAnalyticsScreen:@"캠퍼스 선택하기 화면"];
+}
+
 
 // Notification from server
 - (void)campuses:(NSNotification *)notification{
@@ -104,10 +109,15 @@
     [indicatorView startAnimating];
     [indicatorView setHidden:NO];
     [self performSelector:@selector(startLoading:) withObject:nil afterDelay:0.1f];
+    
 }
 - (void)startLoading:(id)sender{
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        [Static setCampusInfo:[campuses objectAtIndex:lastSelected.row]];
+        NSDictionary * campus_info = [campuses objectAtIndex:lastSelected.row];
+        [Static setCampusInfo:campus_info];
+        
+        //GA
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"select_campus_start" label:[campus_info objectForKey:@"name_kor_short"]];
         
         [Static loadData];
         

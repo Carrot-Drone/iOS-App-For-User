@@ -14,6 +14,8 @@
 
 #import "RestaurantViewController.h"
 
+#import "GAI.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,6 +24,24 @@
     NSLog(@"%@",[Static UUID]);
     
     [Static loadData];
+    
+    // init GAI
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 10;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelInfo];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:ANALYTICS_ID];
+
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    // Enable IDFA collection.
+    tracker.allowIDFACollection = YES;
+    
     
     // init tabbar
     UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -49,6 +69,9 @@
             [((RestaurantViewController *)rootViewController) setDetailItem:[self randomRestaurant]];
             [((RestaurantViewController *)rootViewController) updateUI];
             ((RestaurantViewController *)rootViewController).isFromRandom = TRUE;
+            
+            //GA
+            [Server sendGoogleAnalyticsEvent:@"UX" action:@"random_res_clicked" label:((RestaurantViewController *)rootViewController).restaurant.name];
         }
     }
     return true;

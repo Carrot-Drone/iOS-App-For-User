@@ -12,6 +12,10 @@
 #import "Restaurant.h"
 #import "Reachability.h"
 
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+
 @implementation Server{
 }
 
@@ -143,6 +147,36 @@ static NSMutableData * responseData;
         [connection start];
     });
 }
+
+
+// GA Event Tracking
++ (void)sendGoogleAnalyticsEvent:(NSString *)category action:(NSString *)action label:(NSString *)label {
+    NSDictionary * campusInfo = [Static campusInfo];
+    if(campusInfo == nil){
+        campusInfo = [[NSDictionary alloc] init];
+    }
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:ANALYTICS_ID];
+    [tracker set:[GAIFields customDimensionForIndex:1] value:[campusInfo objectForKey:@"name_kor_short"]];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category
+                                                             action:action
+                                                              label:label
+                                                              value:nil] build]];
+}
+
+// GA Screen View
++ (void) sendGoogleAnalyticsScreen:(NSString *)screenName {
+    NSDictionary * campusInfo = [Static campusInfo];
+    if(campusInfo == nil){
+        campusInfo = [[NSDictionary alloc] init];
+    }
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:ANALYTICS_ID];
+    [tracker set:[GAIFields customDimensionForIndex:1] value:[campusInfo objectForKey:@"name_kor_short"]];
+    [tracker set:kGAIScreenName value:screenName];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 + (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
     NSLog(@"Did receiveResponse");

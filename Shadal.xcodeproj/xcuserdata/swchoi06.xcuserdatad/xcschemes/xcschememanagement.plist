@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>&amp;#49380;&amp;#45804; copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Shadal.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>F5110AE717FC013C00D7AA85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5A00CF71AE0AE87002E0AB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

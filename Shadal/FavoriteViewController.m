@@ -9,6 +9,7 @@
 #import "FavoriteViewController.h"
 #import "Constants.h"
 #import "Static.h"
+#import "Server.h"
 #import "CustomTitleView.h"
 #import "RestaurantViewController.h"
 @interface FavoriteViewController (){
@@ -51,6 +52,9 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated{
+    // GA
+    [Server sendGoogleAnalyticsScreen:@"즐겨찾기 화면"];
+    
     // init Favorite Res array
     for(id key in favoriteRes){
         NSMutableArray * array = [favoriteRes objectForKey:key];
@@ -144,6 +148,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Restaurant * res = [[favoriteRes objectForKey:[categories objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:res];
+        
+        // GA
+        [Server sendGoogleAnalyticsEvent:@"UX" action:@"res_in_favorite_clicked" label:res.name];
     }
 }
 
