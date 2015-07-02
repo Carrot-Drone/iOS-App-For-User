@@ -157,7 +157,9 @@ static NSMutableData * responseData;
     }
     
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:ANALYTICS_ID];
-    [tracker set:[GAIFields customDimensionForIndex:1] value:[campusInfo objectForKey:@"name_kor_short"]];
+    if(campusInfo != nil){
+        [tracker set:[GAIFields customDimensionForIndex:1] value:[campusInfo objectForKey:@"name_kor_short"]];
+    }
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category
                                                              action:action
                                                               label:label
@@ -172,7 +174,9 @@ static NSMutableData * responseData;
     }
     
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:ANALYTICS_ID];
-    [tracker set:[GAIFields customDimensionForIndex:1] value:[campusInfo objectForKey:@"name_kor_short"]];
+    if(campusInfo != nil){
+        [tracker set:[GAIFields customDimensionForIndex:1] value:[campusInfo objectForKey:@"name_kor_short"]];
+    }
     [tracker set:kGAIScreenName value:screenName];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
