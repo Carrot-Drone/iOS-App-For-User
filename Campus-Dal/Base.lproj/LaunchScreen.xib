@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,34 +11,59 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Carrot&amp;Drone. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6c-eh-65y">
+                    <rect key="frame" x="150" y="109" width="180" height="261"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리학교 배달앱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-yW-g8G">
+                            <rect key="frame" x="20.5" y="203" width="139.5" height="26.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캠퍼스:달" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI5-aT-Kjk">
+                            <rect key="frame" x="49" y="234" width="82.5" height="26.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start_app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="gRg-AC-Wwe">
+                            <rect key="frame" x="0.0" y="8" width="180" height="180"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gRg-AC-Wwe" secondAttribute="height" multiplier="1:1" id="4ZC-lx-42r"/>
+                                <constraint firstAttribute="width" constant="180" id="LgL-m4-AAj"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus-Dal" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="rI5-aT-Kjk" secondAttribute="bottom" id="3yx-ux-079"/>
+                        <constraint firstItem="fvY-yW-g8G" firstAttribute="centerX" secondItem="gRg-AC-Wwe" secondAttribute="centerX" id="5Pg-nA-cto"/>
+                        <constraint firstItem="gRg-AC-Wwe" firstAttribute="leading" secondItem="O6c-eh-65y" secondAttribute="leading" id="8HE-ho-tHt"/>
+                        <constraint firstAttribute="centerX" secondItem="gRg-AC-Wwe" secondAttribute="centerX" id="Lxf-f7-bWb"/>
+                        <constraint firstItem="rI5-aT-Kjk" firstAttribute="top" secondItem="fvY-yW-g8G" secondAttribute="bottom" constant="5" id="dj7-SX-Tbs"/>
+                        <constraint firstItem="fvY-yW-g8G" firstAttribute="top" secondItem="gRg-AC-Wwe" secondAttribute="bottom" constant="15" id="rNY-YY-zFu"/>
+                        <constraint firstItem="gRg-AC-Wwe" firstAttribute="top" secondItem="O6c-eh-65y" secondAttribute="top" constant="8" id="rgp-mQ-TQk"/>
+                        <constraint firstAttribute="trailing" secondItem="gRg-AC-Wwe" secondAttribute="trailing" id="xoL-vR-rSo"/>
+                        <constraint firstItem="fvY-yW-g8G" firstAttribute="centerX" secondItem="rI5-aT-Kjk" secondAttribute="centerX" id="yHt-OP-oMc"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.98431372549019602" green="0.4392156862745098" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstAttribute="centerY" secondItem="O6c-eh-65y" secondAttribute="centerY" id="0N3-DM-M9c"/>
+                <constraint firstAttribute="centerX" secondItem="O6c-eh-65y" secondAttribute="centerX" id="b41-LH-opy"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="Start_app_icon" width="180" height="180"/>
+    </resources>
 </document>

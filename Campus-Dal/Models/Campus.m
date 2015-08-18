@@ -15,6 +15,7 @@
 @synthesize nameKor=_nameKor;
 @synthesize nameKorShort=_nameKorShort;
 @synthesize email=_email;
+@synthesize administrator=_administrator;
 @synthesize categories=_categories;
 
 -(id)initWithDictionary:(NSDictionary *)dic{
@@ -24,6 +25,7 @@
         _nameKor = [dic stringForKey:@"name_kor"];
         _nameKorShort = [dic stringForKey:@"name_kor_short"];
         _email = [dic stringForKey:@"email"];
+        _administrator = [dic stringForKey:@"administrator"];
         NSArray * categories = [dic objectForKey:@"categories"];
         if (categories != nil){
             _categories = [[NSMutableArray alloc] init];
@@ -44,6 +46,7 @@
     _nameKor                = [aDecoder decodeObjectForKey:@"nameKor"];
     _nameKorShort           = [aDecoder decodeObjectForKey:@"nameKorShort"];
     _email                  = [aDecoder decodeObjectForKey:@"email"];
+    _administrator          = [aDecoder decodeObjectForKey:@"administrator"];
     _categories             = [aDecoder decodeObjectForKey:@"categories"];
     return self;
 }
@@ -53,6 +56,7 @@
     [aCoder encodeObject:_nameKor forKey:@"nameKor"];
     [aCoder encodeObject:_nameKorShort forKey:@"nameKorShort"];
     [aCoder encodeObject:_email forKey:@"email"];
+    [aCoder encodeObject:_administrator forKey:@"administrator"];
     [aCoder encodeObject:_categories forKey:@"categories"];
 }
 

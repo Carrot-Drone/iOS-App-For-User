@@ -3,4 +3,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'Reachability'
-pod 'SSKeychain', '~> 1.2'
+pod 'SDWebImage', '~>3.7'
+pod 'Google/Analytics', '~> 1.0.0'
+pod 'SSKeychain'

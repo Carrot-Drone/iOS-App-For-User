@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSNumber * price;
 @property (nonatomic, strong) NSMutableArray * submenus;
 
+-(NSString *)priceString;
 -(id)initWithDictionary:(NSDictionary *)dic;
 
 @end

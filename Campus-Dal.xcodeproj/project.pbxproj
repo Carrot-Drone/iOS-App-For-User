@@ -7,7 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9FB1650399536AC65F2D2A01 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A194F0B06F8A0F56921FE4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9EFAFBB8BD4CC7D606996FF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714AA64D4957DE4B1529E96 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F51344251B8379230003F03B /* libFlurry_6.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F51344241B8379230003F03B /* libFlurry_6.7.0.a */; };
+		F53B40FA1B7A3EB700E42B90 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F53B40F91B7A3EB700E42B90 /* MenuTableViewCell.m */; };
+		F53B40FC1B7A3EC300E42B90 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53B40FB1B7A3EC300E42B90 /* MenuTableViewCell.xib */; };
+		F53B40FF1B7A416900E42B90 /* RestaurantFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F53B40FE1B7A416900E42B90 /* RestaurantFooterView.m */; };
+		F53B41041B7A48A200E42B90 /* MenuTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = F53B41031B7A48A200E42B90 /* MenuTableViewSection.m */; };
+		F53B41061B7A48B700E42B90 /* MenuTableViewSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53B41051B7A48B700E42B90 /* MenuTableViewSection.xib */; };
+		F55740721B710E400052E722 /* RecentOrderTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F55740711B710E400052E722 /* RecentOrderTableViewHeader.m */; };
+		F55740781B7113220052E722 /* CustomTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F55740771B7113220052E722 /* CustomTitleView.xib */; };
+		F557407B1B7113400052E722 /* RecentOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F557407A1B7113400052E722 /* RecentOrderTableViewCell.m */; };
+		F557407E1B7117AD0052E722 /* CategoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F557407D1B7117AD0052E722 /* CategoriesTableViewCell.m */; };
+		F55740811B711F1C0052E722 /* RestaurantsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F55740801B711F1C0052E722 /* RestaurantsTableViewCell.m */; };
+		F57093CD1B70D1F600929EF3 /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57093CC1B70D1F600929EF3 /* RestaurantsViewController.m */; };
+		F57093D01B70E05B00929EF3 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57093CF1B70E05B00929EF3 /* RestaurantViewController.m */; };
+		F57A88761B75BC160048A3F6 /* RestaurantTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A88751B75BC160048A3F6 /* RestaurantTableViewHeader.m */; };
+		F57A88781B75BC290048A3F6 /* RestaurantTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F57A88771B75BC290048A3F6 /* RestaurantTableViewHeader.xib */; };
+		F580C35E1B72722E00946DE2 /* RSTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F580C35D1B72722E00946DE2 /* RSTableViewFooterView.m */; };
+		F580C3601B72725000946DE2 /* RSTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F580C35F1B72725000946DE2 /* RSTableViewFooterView.xib */; };
+		F5892D571B8301C900DBDB75 /* NSString+PHONENUMBERCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F5892D561B8301C900DBDB75 /* NSString+PHONENUMBERCategories.m */; };
+		F593AB411B7B19EA003A5B9E /* FlyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593AB401B7B19EA003A5B9E /* FlyerViewController.m */; };
+		F59402791B776AE900277DBA /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F59402771B776AE900277DBA /* NanumGothic.otf */; };
+		F594027A1B776AE900277DBA /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F59402781B776AE900277DBA /* NanumGothicBold.otf */; };
+		F59402841B77725100277DBA /* UIColor+COLORCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F594027F1B77725100277DBA /* UIColor+COLORCategories.m */; };
+		F59402851B77725100277DBA /* UIImage+IMAGECategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F59402811B77725100277DBA /* UIImage+IMAGECategories.m */; };
+		F59402861B77725100277DBA /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F59402831B77725100277DBA /* UIImage+ImageWithUIView.m */; };
+		F594028B1B77841800277DBA /* RecentOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F594028A1B77841800277DBA /* RecentOrderTableViewCell.xib */; };
+		F594028E1B77850F00277DBA /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F594028D1B77850F00277DBA /* CategoriesTableViewCell.xib */; };
+		F59402911B77858200277DBA /* CategoriesTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F59402901B77858200277DBA /* CategoriesTableViewFooter.m */; };
+		F59402941B77930000277DBA /* RestaurantsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59402931B77930000277DBA /* RestaurantsTableViewCell.xib */; };
+		F59402971B77A7BC00277DBA /* RSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59402961B77A7BC00277DBA /* RSTableViewCell.xib */; };
+		F59402991B77AA5900277DBA /* RSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F59402981B77AA5900277DBA /* RSTableViewCell.m */; };
+		F594029B1B77AE3500277DBA /* CategoriesTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = F594029A1B77AE3500277DBA /* CategoriesTableViewFooter.xib */; };
+		F59726381B71AA5300CD6895 /* CustomCurrentCampusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F59726371B71AA5300CD6895 /* CustomCurrentCampusCell.m */; };
+		F597263E1B71D43F00CD6895 /* RestaurantsTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F597263D1B71D43F00CD6895 /* RestaurantsTableViewHeader.m */; };
+		F59726411B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59726401B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.m */; };
+		F59726471B71F19200CD6895 /* RestaurantSuggestionSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F59726461B71F19200CD6895 /* RestaurantSuggestionSectionView.m */; };
+		F59726491B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59726481B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib */; };
+		F597264C1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F597264B1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m */; };
+		F59726511B71FCA400CD6895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59726501B71FCA400CD6895 /* Main.storyboard */; };
+		F5A1787F1B80744E008C232F /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1787E1B80744E008C232F /* KakaoOpenSDK.framework */; };
+		F5AB7CFA1B73B76B00AE380F /* UserRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB7CF91B73B76B00AE380F /* UserRequestViewController.m */; };
+		F5AB7CFD1B73B81800AE380F /* UserRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB7CFC1B73B81800AE380F /* UserRequestTableViewCell.m */; };
+		F5AB7D031B73B84900AE380F /* UserRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AB7D021B73B84900AE380F /* UserRequestTableViewCell.xib */; };
+		F5B610A11B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B610A01B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.m */; };
+		F5BE5CA21B73256600AAAC02 /* RSDFlyerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5C9D1B73256600AAAC02 /* RSDFlyerTableViewCell.m */; };
+		F5BE5CA31B73256600AAAC02 /* RSDCampusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5C9F1B73256600AAAC02 /* RSDCampusTableViewCell.m */; };
+		F5BE5CA41B73256600AAAC02 /* RSDTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CA11B73256600AAAC02 /* RSDTextFieldTableViewCell.m */; };
+		F5BE5CA81B73258E00AAAC02 /* CustomRSDTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5BE5CA71B73258E00AAAC02 /* CustomRSDTableViewCell.xib */; };
+		F5BE5CAB1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CAA1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m */; };
+		F5BE5CB31B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CB21B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m */; };
+		F5BE5CB61B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CB51B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m */; };
+		F5CF15801B788DDE00980A98 /* CustomTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF157F1B788DDE00980A98 /* CustomTableViewFooter.m */; };
+		F5CF15861B78A0D800980A98 /* RecommendationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF15851B78A0D800980A98 /* RecommendationTitleView.m */; };
+		F5CF15881B78A0E600980A98 /* RecommendationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5CF15871B78A0E600980A98 /* RecommendationTitleView.xib */; };
+		F5CF158A1B78D3D000980A98 /* RecommendRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5CF15891B78D3D000980A98 /* RecommendRestaurantView.xib */; };
+		F5CF158D1B78D75400980A98 /* RecommendRestaurantView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF158C1B78D75400980A98 /* RecommendRestaurantView.m */; };
+		F5D428C81B7B279D00B43D19 /* FlyerFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D428C71B7B279D00B43D19 /* FlyerFooterView.m */; };
+		F5D428CC1B7B357100B43D19 /* RestaurantCorrectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D428CB1B7B357100B43D19 /* RestaurantCorrectionViewController.m */; };
+		F5D428CF1B7B368300B43D19 /* RestaurantCorrectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D428CE1B7B368300B43D19 /* RestaurantCorrectionCell.m */; };
+		F5D428D31B7B36A200B43D19 /* RestaurantCorrectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D428D21B7B36A200B43D19 /* RestaurantCorrectionCell.xib */; };
+		F5E9BC5E1B710A5E0098E3A4 /* CustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E9BC5D1B710A5E0098E3A4 /* CustomTitleView.m */; };
 		F5EC8EB41B70885400E1517A /* ServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EB31B70885400E1517A /* ServerHelper.m */; };
 		F5EC8EB71B70886D00E1517A /* StaticHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EB61B70886D00E1517A /* StaticHelper.m */; };
 		F5EC8EC41B70A60A00E1517A /* Campus.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EBB1B70A60A00E1517A /* Campus.m */; };
@@ -15,14 +75,24 @@
 		F5EC8EC61B70A60A00E1517A /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EBF1B70A60A00E1517A /* Menu.m */; };
 		F5EC8EC71B70A60A00E1517A /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EC11B70A60A00E1517A /* Restaurant.m */; };
 		F5EC8ECB1B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8ECA1B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.m */; };
+		F5EC8ED21B70B00400E1517A /* RecentOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8ECF1B70B00400E1517A /* RecentOrderViewController.m */; };
+		F5EC8ED31B70B00400E1517A /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8ED11B70B00400E1517A /* CategoriesViewController.m */; };
+		F5EC8ED71B70B11D00E1517A /* RecommendationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8ED61B70B11D00E1517A /* RecommendationViewController.m */; };
+		F5EC8EDA1B70B15000E1517A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8ED91B70B15000E1517A /* AboutViewController.m */; };
+		F5EC8EDD1B70B21B00E1517A /* SelectCampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EDC1B70B21B00E1517A /* SelectCampusViewController.m */; };
+		F5EC8EE01B70B51C00E1517A /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EDF1B70B51C00E1517A /* MainTabBarController.m */; };
 		F5F3EB0E1B7078C500EB8186 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3EB0D1B7078C500EB8186 /* main.m */; };
 		F5F3EB111B7078C500EB8186 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3EB101B7078C500EB8186 /* AppDelegate.m */; };
-		F5F3EB141B7078C500EB8186 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3EB131B7078C500EB8186 /* FirstViewController.m */; };
-		F5F3EB171B7078C500EB8186 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3EB161B7078C500EB8186 /* SecondViewController.m */; };
-		F5F3EB1A1B7078C500EB8186 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F3EB181B7078C500EB8186 /* Main.storyboard */; };
 		F5F3EB1C1B7078C500EB8186 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F3EB1B1B7078C500EB8186 /* Images.xcassets */; };
 		F5F3EB1F1B7078C500EB8186 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F3EB1D1B7078C500EB8186 /* LaunchScreen.xib */; };
 		F5F3EB2B1B7078C500EB8186 /* Campus_DalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3EB2A1B7078C500EB8186 /* Campus_DalTests.m */; };
+		F5F7F0A21B83392D00B64511 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5569DB01B832278006DDB7C /* Security.framework */; };
+		F5F7F0A31B83393300B64511 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5569DB21B832309006DDB7C /* SystemConfiguration.framework */; };
+		F5FCB6721B7850B000A86A58 /* CustomCurrentCampusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FCB6711B7850B000A86A58 /* CustomCurrentCampusCell.xib */; };
+		F5FCB6751B78516500A86A58 /* CustomTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FCB6741B78516500A86A58 /* CustomTableViewSection.m */; };
+		F5FCB6771B78517200A86A58 /* CustomTableViewSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FCB6761B78517200A86A58 /* CustomTableViewSection.xib */; };
+		F5FCB67E1B78798700A86A58 /* CustomCampusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FCB67D1B78798700A86A58 /* CustomCampusCell.m */; };
+		F5FCB6821B7879AA00A86A58 /* CustomCampusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FCB6811B7879AA00A86A58 /* CustomCampusCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +107,117 @@
 
 /* Begin PBXFileReference section */
 		2A6896F8EEF78DD09D6EAF9C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		71A194F0B06F8A0F56921FE4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD86460F234E2A466403B656 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F51344221B8379230003F03B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		F51344231B8379230003F03B /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
+		F51344241B8379230003F03B /* libFlurry_6.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.7.0.a; sourceTree = "<group>"; };
+		F53B40F81B7A3EB700E42B90 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewCell.h; path = CustomComponents/MenuTableViewCell.h; sourceTree = "<group>"; };
+		F53B40F91B7A3EB700E42B90 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewCell.m; path = CustomComponents/MenuTableViewCell.m; sourceTree = "<group>"; };
+		F53B40FB1B7A3EC300E42B90 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuTableViewCell.xib; path = CustomComponents/MenuTableViewCell.xib; sourceTree = "<group>"; };
+		F53B40FD1B7A416900E42B90 /* RestaurantFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantFooterView.h; path = CustomComponents/RestaurantFooterView.h; sourceTree = "<group>"; };
+		F53B40FE1B7A416900E42B90 /* RestaurantFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantFooterView.m; path = CustomComponents/RestaurantFooterView.m; sourceTree = "<group>"; };
+		F53B41021B7A48A200E42B90 /* MenuTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewSection.h; path = CustomComponents/MenuTableViewSection.h; sourceTree = "<group>"; };
+		F53B41031B7A48A200E42B90 /* MenuTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewSection.m; path = CustomComponents/MenuTableViewSection.m; sourceTree = "<group>"; };
+		F53B41051B7A48B700E42B90 /* MenuTableViewSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuTableViewSection.xib; path = CustomComponents/MenuTableViewSection.xib; sourceTree = "<group>"; };
+		F5569DAE1B832271006DDB7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F5569DB01B832278006DDB7C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F5569DB21B832309006DDB7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F5569DB41B832314006DDB7C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F5569DB61B8323F7006DDB7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F55740701B710E400052E722 /* RecentOrderTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentOrderTableViewHeader.h; path = CustomComponents/RecentOrderTableViewHeader.h; sourceTree = "<group>"; };
+		F55740711B710E400052E722 /* RecentOrderTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentOrderTableViewHeader.m; path = CustomComponents/RecentOrderTableViewHeader.m; sourceTree = "<group>"; };
+		F55740771B7113220052E722 /* CustomTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomTitleView.xib; path = CustomComponents/CustomTitleView.xib; sourceTree = "<group>"; };
+		F55740791B7113400052E722 /* RecentOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentOrderTableViewCell.h; path = CustomComponents/RecentOrderTableViewCell.h; sourceTree = "<group>"; };
+		F557407A1B7113400052E722 /* RecentOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentOrderTableViewCell.m; path = CustomComponents/RecentOrderTableViewCell.m; sourceTree = "<group>"; };
+		F557407C1B7117AD0052E722 /* CategoriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesTableViewCell.h; path = CustomComponents/CategoriesTableViewCell.h; sourceTree = "<group>"; };
+		F557407D1B7117AD0052E722 /* CategoriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesTableViewCell.m; path = CustomComponents/CategoriesTableViewCell.m; sourceTree = "<group>"; };
+		F557407F1B711F1C0052E722 /* RestaurantsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantsTableViewCell.h; path = CustomComponents/RestaurantsTableViewCell.h; sourceTree = "<group>"; };
+		F55740801B711F1C0052E722 /* RestaurantsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantsTableViewCell.m; path = CustomComponents/RestaurantsTableViewCell.m; sourceTree = "<group>"; };
+		F57093CB1B70D1F600929EF3 /* RestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantsViewController.h; path = ViewControllers/RestaurantsViewController.h; sourceTree = "<group>"; };
+		F57093CC1B70D1F600929EF3 /* RestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantsViewController.m; path = ViewControllers/RestaurantsViewController.m; sourceTree = "<group>"; };
+		F57093CE1B70E05B00929EF3 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantViewController.h; path = ViewControllers/RestaurantViewController.h; sourceTree = "<group>"; };
+		F57093CF1B70E05B00929EF3 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantViewController.m; path = ViewControllers/RestaurantViewController.m; sourceTree = "<group>"; };
+		F57A88741B75BC160048A3F6 /* RestaurantTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantTableViewHeader.h; path = CustomComponents/RestaurantTableViewHeader.h; sourceTree = "<group>"; };
+		F57A88751B75BC160048A3F6 /* RestaurantTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantTableViewHeader.m; path = CustomComponents/RestaurantTableViewHeader.m; sourceTree = "<group>"; };
+		F57A88771B75BC290048A3F6 /* RestaurantTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestaurantTableViewHeader.xib; path = CustomComponents/RestaurantTableViewHeader.xib; sourceTree = "<group>"; };
+		F580C35C1B72722E00946DE2 /* RSTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSTableViewFooterView.h; path = CustomComponents/RSTableViewFooterView.h; sourceTree = "<group>"; };
+		F580C35D1B72722E00946DE2 /* RSTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSTableViewFooterView.m; path = CustomComponents/RSTableViewFooterView.m; sourceTree = "<group>"; };
+		F580C35F1B72725000946DE2 /* RSTableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RSTableViewFooterView.xib; path = CustomComponents/RSTableViewFooterView.xib; sourceTree = "<group>"; };
+		F5892D551B8301C900DBDB75 /* NSString+PHONENUMBERCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+PHONENUMBERCategories.h"; path = "Categories/NSString+PHONENUMBERCategories.h"; sourceTree = "<group>"; };
+		F5892D561B8301C900DBDB75 /* NSString+PHONENUMBERCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+PHONENUMBERCategories.m"; path = "Categories/NSString+PHONENUMBERCategories.m"; sourceTree = "<group>"; };
+		F593AB3F1B7B19EA003A5B9E /* FlyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlyerViewController.h; path = ViewControllers/FlyerViewController.h; sourceTree = "<group>"; };
+		F593AB401B7B19EA003A5B9E /* FlyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlyerViewController.m; path = ViewControllers/FlyerViewController.m; sourceTree = "<group>"; };
+		F59402771B776AE900277DBA /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothic.otf; path = Fonts/NanumGothic.otf; sourceTree = "<group>"; };
+		F59402781B776AE900277DBA /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.otf; path = Fonts/NanumGothicBold.otf; sourceTree = "<group>"; };
+		F594027E1B77725100277DBA /* UIColor+COLORCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+COLORCategories.h"; path = "Categories/UIColor+COLORCategories.h"; sourceTree = "<group>"; };
+		F594027F1B77725100277DBA /* UIColor+COLORCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+COLORCategories.m"; path = "Categories/UIColor+COLORCategories.m"; sourceTree = "<group>"; };
+		F59402801B77725100277DBA /* UIImage+IMAGECategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+IMAGECategories.h"; path = "Categories/UIImage+IMAGECategories.h"; sourceTree = "<group>"; };
+		F59402811B77725100277DBA /* UIImage+IMAGECategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+IMAGECategories.m"; path = "Categories/UIImage+IMAGECategories.m"; sourceTree = "<group>"; };
+		F59402821B77725100277DBA /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageWithUIView.h"; path = "Categories/UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
+		F59402831B77725100277DBA /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageWithUIView.m"; path = "Categories/UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
+		F594028A1B77841800277DBA /* RecentOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecentOrderTableViewCell.xib; path = CustomComponents/RecentOrderTableViewCell.xib; sourceTree = "<group>"; };
+		F594028D1B77850F00277DBA /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesTableViewCell.xib; path = CustomComponents/CategoriesTableViewCell.xib; sourceTree = "<group>"; };
+		F594028F1B77858200277DBA /* CategoriesTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesTableViewFooter.h; path = CustomComponents/CategoriesTableViewFooter.h; sourceTree = "<group>"; };
+		F59402901B77858200277DBA /* CategoriesTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesTableViewFooter.m; path = CustomComponents/CategoriesTableViewFooter.m; sourceTree = "<group>"; };
+		F59402931B77930000277DBA /* RestaurantsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestaurantsTableViewCell.xib; path = CustomComponents/RestaurantsTableViewCell.xib; sourceTree = "<group>"; };
+		F59402961B77A7BC00277DBA /* RSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RSTableViewCell.xib; path = CustomComponents/RSTableViewCell.xib; sourceTree = "<group>"; };
+		F59402981B77AA5900277DBA /* RSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSTableViewCell.m; path = CustomComponents/RSTableViewCell.m; sourceTree = "<group>"; };
+		F594029A1B77AE3500277DBA /* CategoriesTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesTableViewFooter.xib; path = CustomComponents/CategoriesTableViewFooter.xib; sourceTree = "<group>"; };
+		F59726361B71AA5300CD6895 /* CustomCurrentCampusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCurrentCampusCell.h; path = CustomComponents/CustomCurrentCampusCell.h; sourceTree = "<group>"; };
+		F59726371B71AA5300CD6895 /* CustomCurrentCampusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCurrentCampusCell.m; path = CustomComponents/CustomCurrentCampusCell.m; sourceTree = "<group>"; };
+		F597263C1B71D43F00CD6895 /* RestaurantsTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantsTableViewHeader.h; path = CustomComponents/RestaurantsTableViewHeader.h; sourceTree = "<group>"; };
+		F597263D1B71D43F00CD6895 /* RestaurantsTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantsTableViewHeader.m; path = CustomComponents/RestaurantsTableViewHeader.m; sourceTree = "<group>"; };
+		F597263F1B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantSuggestionDetailViewController.h; path = ViewControllers/RestaurantSuggestionDetailViewController.h; sourceTree = "<group>"; };
+		F59726401B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantSuggestionDetailViewController.m; path = ViewControllers/RestaurantSuggestionDetailViewController.m; sourceTree = "<group>"; };
+		F59726451B71F19200CD6895 /* RestaurantSuggestionSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantSuggestionSectionView.h; path = CustomComponents/RestaurantSuggestionSectionView.h; sourceTree = "<group>"; };
+		F59726461B71F19200CD6895 /* RestaurantSuggestionSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantSuggestionSectionView.m; path = CustomComponents/RestaurantSuggestionSectionView.m; sourceTree = "<group>"; };
+		F59726481B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestaurantSuggestionSectionView.xib; path = CustomComponents/RestaurantSuggestionSectionView.xib; sourceTree = "<group>"; };
+		F597264A1B71FA9E00CD6895 /* RestaurantSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantSuggestionViewController.h; path = ViewControllers/RestaurantSuggestionViewController.h; sourceTree = "<group>"; };
+		F597264B1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantSuggestionViewController.m; path = ViewControllers/RestaurantSuggestionViewController.m; sourceTree = "<group>"; };
+		F59726501B71FCA400CD6895 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F599C58B1B71FDDF009ADA44 /* RSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSTableViewCell.h; path = CustomComponents/RSTableViewCell.h; sourceTree = "<group>"; };
+		F5A1787E1B80744E008C232F /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		F5AB7CF81B73B76B00AE380F /* UserRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRequestViewController.h; path = ViewControllers/UserRequestViewController.h; sourceTree = "<group>"; };
+		F5AB7CF91B73B76B00AE380F /* UserRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRequestViewController.m; path = ViewControllers/UserRequestViewController.m; sourceTree = "<group>"; };
+		F5AB7CFB1B73B81800AE380F /* UserRequestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRequestTableViewCell.h; path = CustomComponents/UserRequestTableViewCell.h; sourceTree = "<group>"; };
+		F5AB7CFC1B73B81800AE380F /* UserRequestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRequestTableViewCell.m; path = CustomComponents/UserRequestTableViewCell.m; sourceTree = "<group>"; };
+		F5AB7D021B73B84900AE380F /* UserRequestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserRequestTableViewCell.xib; path = CustomComponents/UserRequestTableViewCell.xib; sourceTree = "<group>"; };
+		F5B6109F1B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SHUFFLECategories.h"; path = "Categories/NSMutableArray+SHUFFLECategories.h"; sourceTree = "<group>"; };
+		F5B610A01B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SHUFFLECategories.m"; path = "Categories/NSMutableArray+SHUFFLECategories.m"; sourceTree = "<group>"; };
+		F5BE5C9C1B73256600AAAC02 /* RSDFlyerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSDFlyerTableViewCell.h; path = CustomComponents/RSDFlyerTableViewCell.h; sourceTree = "<group>"; };
+		F5BE5C9D1B73256600AAAC02 /* RSDFlyerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSDFlyerTableViewCell.m; path = CustomComponents/RSDFlyerTableViewCell.m; sourceTree = "<group>"; };
+		F5BE5C9E1B73256600AAAC02 /* RSDCampusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSDCampusTableViewCell.h; path = CustomComponents/RSDCampusTableViewCell.h; sourceTree = "<group>"; };
+		F5BE5C9F1B73256600AAAC02 /* RSDCampusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSDCampusTableViewCell.m; path = CustomComponents/RSDCampusTableViewCell.m; sourceTree = "<group>"; };
+		F5BE5CA01B73256600AAAC02 /* RSDTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSDTextFieldTableViewCell.h; path = CustomComponents/RSDTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		F5BE5CA11B73256600AAAC02 /* RSDTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSDTextFieldTableViewCell.m; path = CustomComponents/RSDTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		F5BE5CA71B73258E00AAAC02 /* CustomRSDTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomRSDTableViewCell.xib; path = CustomComponents/CustomRSDTableViewCell.xib; sourceTree = "<group>"; };
+		F5BE5CA91B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSDPhoneNumberTableViewCell.h; path = CustomComponents/RSDPhoneNumberTableViewCell.h; sourceTree = "<group>"; };
+		F5BE5CAA1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSDPhoneNumberTableViewCell.m; path = CustomComponents/RSDPhoneNumberTableViewCell.m; sourceTree = "<group>"; };
+		F5BE5CB11B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantSuggestionCompleteViewController.h; path = ViewControllers/RestaurantSuggestionCompleteViewController.h; sourceTree = "<group>"; };
+		F5BE5CB21B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantSuggestionCompleteViewController.m; path = ViewControllers/RestaurantSuggestionCompleteViewController.m; sourceTree = "<group>"; };
+		F5BE5CB41B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantSuggestionSelectCampusViewController.h; path = ViewControllers/RestaurantSuggestionSelectCampusViewController.h; sourceTree = "<group>"; };
+		F5BE5CB51B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantSuggestionSelectCampusViewController.m; path = ViewControllers/RestaurantSuggestionSelectCampusViewController.m; sourceTree = "<group>"; };
+		F5CF157E1B788DDE00980A98 /* CustomTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewFooter.h; path = CustomComponents/CustomTableViewFooter.h; sourceTree = "<group>"; };
+		F5CF157F1B788DDE00980A98 /* CustomTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewFooter.m; path = CustomComponents/CustomTableViewFooter.m; sourceTree = "<group>"; };
+		F5CF15841B78A0D800980A98 /* RecommendationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendationTitleView.h; path = CustomComponents/RecommendationTitleView.h; sourceTree = "<group>"; };
+		F5CF15851B78A0D800980A98 /* RecommendationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendationTitleView.m; path = CustomComponents/RecommendationTitleView.m; sourceTree = "<group>"; };
+		F5CF15871B78A0E600980A98 /* RecommendationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecommendationTitleView.xib; path = CustomComponents/RecommendationTitleView.xib; sourceTree = "<group>"; };
+		F5CF15891B78D3D000980A98 /* RecommendRestaurantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecommendRestaurantView.xib; path = CustomComponents/RecommendRestaurantView.xib; sourceTree = "<group>"; };
+		F5CF158B1B78D75400980A98 /* RecommendRestaurantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendRestaurantView.h; path = CustomComponents/RecommendRestaurantView.h; sourceTree = "<group>"; };
+		F5CF158C1B78D75400980A98 /* RecommendRestaurantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendRestaurantView.m; path = CustomComponents/RecommendRestaurantView.m; sourceTree = "<group>"; };
+		F5D428C61B7B279D00B43D19 /* FlyerFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlyerFooterView.h; path = CustomComponents/FlyerFooterView.h; sourceTree = "<group>"; };
+		F5D428C71B7B279D00B43D19 /* FlyerFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlyerFooterView.m; path = CustomComponents/FlyerFooterView.m; sourceTree = "<group>"; };
+		F5D428CA1B7B357100B43D19 /* RestaurantCorrectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantCorrectionViewController.h; path = ViewControllers/RestaurantCorrectionViewController.h; sourceTree = "<group>"; };
+		F5D428CB1B7B357100B43D19 /* RestaurantCorrectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantCorrectionViewController.m; path = ViewControllers/RestaurantCorrectionViewController.m; sourceTree = "<group>"; };
+		F5D428CD1B7B368300B43D19 /* RestaurantCorrectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantCorrectionCell.h; path = CustomComponents/RestaurantCorrectionCell.h; sourceTree = "<group>"; };
+		F5D428CE1B7B368300B43D19 /* RestaurantCorrectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantCorrectionCell.m; path = CustomComponents/RestaurantCorrectionCell.m; sourceTree = "<group>"; };
+		F5D428D21B7B36A200B43D19 /* RestaurantCorrectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestaurantCorrectionCell.xib; path = CustomComponents/RestaurantCorrectionCell.xib; sourceTree = "<group>"; };
+		F5E9BC5C1B710A5E0098E3A4 /* CustomTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTitleView.h; path = CustomComponents/CustomTitleView.h; sourceTree = "<group>"; };
+		F5E9BC5D1B710A5E0098E3A4 /* CustomTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTitleView.m; path = CustomComponents/CustomTitleView.m; sourceTree = "<group>"; };
 		F5EC8EB21B70885400E1517A /* ServerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerHelper.h; path = Commons/ServerHelper.h; sourceTree = "<group>"; };
 		F5EC8EB31B70885400E1517A /* ServerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerHelper.m; path = Commons/ServerHelper.m; sourceTree = "<group>"; };
 		F5EC8EB51B70886D00E1517A /* StaticHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaticHelper.h; path = Commons/StaticHelper.h; sourceTree = "<group>"; };
 		F5EC8EB61B70886D00E1517A /* StaticHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StaticHelper.m; path = Commons/StaticHelper.m; sourceTree = "<group>"; };
-		F5EC8EB81B70888600E1517A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F5EC8EBA1B70A60A00E1517A /* Campus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Campus.h; path = Models/Campus.h; sourceTree = "<group>"; };
 		F5EC8EBB1B70A60A00E1517A /* Campus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Campus.m; path = Models/Campus.m; sourceTree = "<group>"; };
 		F5EC8EBC1B70A60A00E1517A /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryModel.h; path = Models/CategoryModel.h; sourceTree = "<group>"; };
@@ -54,21 +228,37 @@
 		F5EC8EC11B70A60A00E1517A /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurant.m; path = Models/Restaurant.m; sourceTree = "<group>"; };
 		F5EC8EC91B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SAFEACCESSCategories.h"; path = "Categories/NSDictionary+SAFEACCESSCategories.h"; sourceTree = "<group>"; };
 		F5EC8ECA1B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SAFEACCESSCategories.m"; path = "Categories/NSDictionary+SAFEACCESSCategories.m"; sourceTree = "<group>"; };
+		F5EC8ECE1B70B00400E1517A /* RecentOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentOrderViewController.h; path = ViewControllers/RecentOrderViewController.h; sourceTree = "<group>"; };
+		F5EC8ECF1B70B00400E1517A /* RecentOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentOrderViewController.m; path = ViewControllers/RecentOrderViewController.m; sourceTree = "<group>"; };
+		F5EC8ED01B70B00400E1517A /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesViewController.h; path = ViewControllers/CategoriesViewController.h; sourceTree = "<group>"; };
+		F5EC8ED11B70B00400E1517A /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesViewController.m; path = ViewControllers/CategoriesViewController.m; sourceTree = "<group>"; };
+		F5EC8ED41B70B01000E1517A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Commons/Constants.h; sourceTree = "<group>"; };
+		F5EC8ED51B70B11D00E1517A /* RecommendationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendationViewController.h; path = ViewControllers/RecommendationViewController.h; sourceTree = "<group>"; };
+		F5EC8ED61B70B11D00E1517A /* RecommendationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendationViewController.m; path = ViewControllers/RecommendationViewController.m; sourceTree = "<group>"; };
+		F5EC8ED81B70B15000E1517A /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = ViewControllers/AboutViewController.h; sourceTree = "<group>"; };
+		F5EC8ED91B70B15000E1517A /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = ViewControllers/AboutViewController.m; sourceTree = "<group>"; };
+		F5EC8EDB1B70B21B00E1517A /* SelectCampusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectCampusViewController.h; path = ViewControllers/SelectCampusViewController.h; sourceTree = "<group>"; };
+		F5EC8EDC1B70B21B00E1517A /* SelectCampusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectCampusViewController.m; path = ViewControllers/SelectCampusViewController.m; sourceTree = "<group>"; };
+		F5EC8EDE1B70B51C00E1517A /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = ViewControllers/MainTabBarController.h; sourceTree = "<group>"; };
+		F5EC8EDF1B70B51C00E1517A /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = ViewControllers/MainTabBarController.m; sourceTree = "<group>"; };
 		F5F3EB081B7078C500EB8186 /* Campus-Dal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Campus-Dal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F3EB0C1B7078C500EB8186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F3EB0D1B7078C500EB8186 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5F3EB0F1B7078C500EB8186 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F5F3EB101B7078C500EB8186 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F5F3EB121B7078C500EB8186 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		F5F3EB131B7078C500EB8186 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		F5F3EB151B7078C500EB8186 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F5F3EB161B7078C500EB8186 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		F5F3EB191B7078C500EB8186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5F3EB1B1B7078C500EB8186 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5F3EB1E1B7078C500EB8186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F5F3EB241B7078C500EB8186 /* Campus-DalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Campus-DalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F3EB291B7078C500EB8186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F3EB2A1B7078C500EB8186 /* Campus_DalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Campus_DalTests.m; sourceTree = "<group>"; };
+		F5FCB6711B7850B000A86A58 /* CustomCurrentCampusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCurrentCampusCell.xib; path = CustomComponents/CustomCurrentCampusCell.xib; sourceTree = "<group>"; };
+		F5FCB6731B78516500A86A58 /* CustomTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewSection.h; path = CustomComponents/CustomTableViewSection.h; sourceTree = "<group>"; };
+		F5FCB6741B78516500A86A58 /* CustomTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewSection.m; path = CustomComponents/CustomTableViewSection.m; sourceTree = "<group>"; };
+		F5FCB6761B78517200A86A58 /* CustomTableViewSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomTableViewSection.xib; path = CustomComponents/CustomTableViewSection.xib; sourceTree = "<group>"; };
+		F5FCB67C1B78798700A86A58 /* CustomCampusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCampusCell.h; path = CustomComponents/CustomCampusCell.h; sourceTree = "<group>"; };
+		F5FCB67D1B78798700A86A58 /* CustomCampusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCampusCell.m; path = CustomComponents/CustomCampusCell.m; sourceTree = "<group>"; };
+		F5FCB6811B7879AA00A86A58 /* CustomCampusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCampusCell.xib; path = CustomComponents/CustomCampusCell.xib; sourceTree = "<group>"; };
+		F714AA64D4957DE4B1529E96 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +266,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FB1650399536AC65F2D2A01 /* Pods.framework in Frameworks */,
+				F5F7F0A31B83393300B64511 /* SystemConfiguration.framework in Frameworks */,
+				F5F7F0A21B83392D00B64511 /* Security.framework in Frameworks */,
+				F5A1787F1B80744E008C232F /* KakaoOpenSDK.framework in Frameworks */,
+				F51344251B8379230003F03B /* libFlurry_6.7.0.a in Frameworks */,
+				9EFAFBB8BD4CC7D606996FF8 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +296,149 @@
 		97C90E4E18C95E1E9AF71A87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				71A194F0B06F8A0F56921FE4 /* Pods.framework */,
+				F5569DB61B8323F7006DDB7C /* CoreData.framework */,
+				F5569DB41B832314006DDB7C /* AdSupport.framework */,
+				F5569DB21B832309006DDB7C /* SystemConfiguration.framework */,
+				F5569DB01B832278006DDB7C /* Security.framework */,
+				F5569DAE1B832271006DDB7C /* Foundation.framework */,
+				F5A1787E1B80744E008C232F /* KakaoOpenSDK.framework */,
+				F714AA64D4957DE4B1529E96 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F508EFCD1B7A1675005D688F /* RestaurantViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F57093CE1B70E05B00929EF3 /* RestaurantViewController.h */,
+				F57093CF1B70E05B00929EF3 /* RestaurantViewController.m */,
+				F57A88741B75BC160048A3F6 /* RestaurantTableViewHeader.h */,
+				F57A88751B75BC160048A3F6 /* RestaurantTableViewHeader.m */,
+				F57A88771B75BC290048A3F6 /* RestaurantTableViewHeader.xib */,
+				F53B40F81B7A3EB700E42B90 /* MenuTableViewCell.h */,
+				F53B40F91B7A3EB700E42B90 /* MenuTableViewCell.m */,
+				F53B40FB1B7A3EC300E42B90 /* MenuTableViewCell.xib */,
+				F53B41021B7A48A200E42B90 /* MenuTableViewSection.h */,
+				F53B41031B7A48A200E42B90 /* MenuTableViewSection.m */,
+				F53B41051B7A48B700E42B90 /* MenuTableViewSection.xib */,
+				F53B40FD1B7A416900E42B90 /* RestaurantFooterView.h */,
+				F53B40FE1B7A416900E42B90 /* RestaurantFooterView.m */,
+			);
+			name = RestaurantViewController;
+			sourceTree = "<group>";
+		};
+		F51344211B8379230003F03B /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				F51344221B8379230003F03B /* Flurry.h */,
+				F51344231B8379230003F03B /* FlurryWatch.h */,
+				F51344241B8379230003F03B /* libFlurry_6.7.0.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
+		F593AB3E1B7B1517003A5B9E /* FlyerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F593AB3F1B7B19EA003A5B9E /* FlyerViewController.h */,
+				F593AB401B7B19EA003A5B9E /* FlyerViewController.m */,
+				F5D428C61B7B279D00B43D19 /* FlyerFooterView.h */,
+				F5D428C71B7B279D00B43D19 /* FlyerFooterView.m */,
+			);
+			name = FlyerViewController;
+			sourceTree = "<group>";
+		};
+		F59402761B776AE000277DBA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F59402771B776AE900277DBA /* NanumGothic.otf */,
+				F59402781B776AE900277DBA /* NanumGothicBold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		F59402871B7783BF00277DBA /* RecentOrderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5EC8ECE1B70B00400E1517A /* RecentOrderViewController.h */,
+				F5EC8ECF1B70B00400E1517A /* RecentOrderViewController.m */,
+				F55740701B710E400052E722 /* RecentOrderTableViewHeader.h */,
+				F55740711B710E400052E722 /* RecentOrderTableViewHeader.m */,
+				F55740791B7113400052E722 /* RecentOrderTableViewCell.h */,
+				F557407A1B7113400052E722 /* RecentOrderTableViewCell.m */,
+				F594028A1B77841800277DBA /* RecentOrderTableViewCell.xib */,
+			);
+			name = RecentOrderViewController;
+			sourceTree = "<group>";
+		};
+		F594028C1B7784C900277DBA /* CetegoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5EC8ED01B70B00400E1517A /* CategoriesViewController.h */,
+				F5EC8ED11B70B00400E1517A /* CategoriesViewController.m */,
+				F557407C1B7117AD0052E722 /* CategoriesTableViewCell.h */,
+				F557407D1B7117AD0052E722 /* CategoriesTableViewCell.m */,
+				F594028D1B77850F00277DBA /* CategoriesTableViewCell.xib */,
+				F594028F1B77858200277DBA /* CategoriesTableViewFooter.h */,
+				F59402901B77858200277DBA /* CategoriesTableViewFooter.m */,
+				F594029A1B77AE3500277DBA /* CategoriesTableViewFooter.xib */,
+			);
+			name = CetegoriesViewController;
+			sourceTree = "<group>";
+		};
+		F59402921B778C1E00277DBA /* RestauransViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F57093CB1B70D1F600929EF3 /* RestaurantsViewController.h */,
+				F57093CC1B70D1F600929EF3 /* RestaurantsViewController.m */,
+				F597263C1B71D43F00CD6895 /* RestaurantsTableViewHeader.h */,
+				F597263D1B71D43F00CD6895 /* RestaurantsTableViewHeader.m */,
+				F557407F1B711F1C0052E722 /* RestaurantsTableViewCell.h */,
+				F55740801B711F1C0052E722 /* RestaurantsTableViewCell.m */,
+				F59402931B77930000277DBA /* RestaurantsTableViewCell.xib */,
+			);
+			name = RestauransViewController;
+			sourceTree = "<group>";
+		};
+		F59402951B77A4EB00277DBA /* RestaurantSuggestionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F597264A1B71FA9E00CD6895 /* RestaurantSuggestionViewController.h */,
+				F597264B1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m */,
+				F599C58B1B71FDDF009ADA44 /* RSTableViewCell.h */,
+				F59402981B77AA5900277DBA /* RSTableViewCell.m */,
+				F59402961B77A7BC00277DBA /* RSTableViewCell.xib */,
+				F580C35C1B72722E00946DE2 /* RSTableViewFooterView.h */,
+				F580C35D1B72722E00946DE2 /* RSTableViewFooterView.m */,
+				F580C35F1B72725000946DE2 /* RSTableViewFooterView.xib */,
+				F594029C1B7823BA00277DBA /* RestaurantsSuggestionDetailViewController */,
+			);
+			name = RestaurantSuggestionViewController;
+			sourceTree = "<group>";
+		};
+		F594029C1B7823BA00277DBA /* RestaurantsSuggestionDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F597263F1B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.h */,
+				F59726401B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.m */,
+				F5BE5C9E1B73256600AAAC02 /* RSDCampusTableViewCell.h */,
+				F5BE5C9F1B73256600AAAC02 /* RSDCampusTableViewCell.m */,
+				F5BE5CA01B73256600AAAC02 /* RSDTextFieldTableViewCell.h */,
+				F5BE5CA11B73256600AAAC02 /* RSDTextFieldTableViewCell.m */,
+				F5BE5CA91B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.h */,
+				F5BE5CAA1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m */,
+				F5BE5C9C1B73256600AAAC02 /* RSDFlyerTableViewCell.h */,
+				F5BE5C9D1B73256600AAAC02 /* RSDFlyerTableViewCell.m */,
+				F5BE5CA71B73258E00AAAC02 /* CustomRSDTableViewCell.xib */,
+				F59726451B71F19200CD6895 /* RestaurantSuggestionSectionView.h */,
+				F59726461B71F19200CD6895 /* RestaurantSuggestionSectionView.m */,
+				F59726481B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib */,
+				F5BE5CB41B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.h */,
+				F5BE5CB51B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m */,
+				F5BE5CB11B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.h */,
+				F5BE5CB21B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m */,
+			);
+			name = RestaurantsSuggestionDetailViewController;
 			sourceTree = "<group>";
 		};
 		F5B2A0B81B707B8000AC4098 /* Models */ = {
@@ -122,10 +456,56 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F5C25A3E1B799B43009EFE19 /* CustomObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomObject;
+			sourceTree = "<group>";
+		};
+		F5CF157D1B788DA300980A98 /* UserRequestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5AB7CF81B73B76B00AE380F /* UserRequestViewController.h */,
+				F5AB7CF91B73B76B00AE380F /* UserRequestViewController.m */,
+				F5AB7CFB1B73B81800AE380F /* UserRequestTableViewCell.h */,
+				F5AB7CFC1B73B81800AE380F /* UserRequestTableViewCell.m */,
+				F5AB7D021B73B84900AE380F /* UserRequestTableViewCell.xib */,
+			);
+			name = UserRequestViewController;
+			sourceTree = "<group>";
+		};
+		F5CF15831B78A0AF00980A98 /* RecommendationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5EC8ED51B70B11D00E1517A /* RecommendationViewController.h */,
+				F5EC8ED61B70B11D00E1517A /* RecommendationViewController.m */,
+				F5CF15841B78A0D800980A98 /* RecommendationTitleView.h */,
+				F5CF15851B78A0D800980A98 /* RecommendationTitleView.m */,
+				F5CF15871B78A0E600980A98 /* RecommendationTitleView.xib */,
+				F5CF158B1B78D75400980A98 /* RecommendRestaurantView.h */,
+				F5CF158C1B78D75400980A98 /* RecommendRestaurantView.m */,
+				F5CF15891B78D3D000980A98 /* RecommendRestaurantView.xib */,
+			);
+			name = RecommendationViewController;
+			sourceTree = "<group>";
+		};
+		F5D428C91B7B354B00B43D19 /* RestaurantCorrectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5D428CA1B7B357100B43D19 /* RestaurantCorrectionViewController.h */,
+				F5D428CB1B7B357100B43D19 /* RestaurantCorrectionViewController.m */,
+				F5D428CD1B7B368300B43D19 /* RestaurantCorrectionCell.h */,
+				F5D428CE1B7B368300B43D19 /* RestaurantCorrectionCell.m */,
+				F5D428D21B7B36A200B43D19 /* RestaurantCorrectionCell.xib */,
+			);
+			name = RestaurantCorrectionViewController;
+			sourceTree = "<group>";
+		};
 		F5EC8EB11B70880B00E1517A /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				F5EC8EB81B70888600E1517A /* Constants.h */,
+				F5EC8ED41B70B01000E1517A /* Constants.h */,
 				F5EC8EB21B70885400E1517A /* ServerHelper.h */,
 				F5EC8EB31B70885400E1517A /* ServerHelper.m */,
 				F5EC8EB51B70886D00E1517A /* StaticHelper.h */,
@@ -137,8 +517,18 @@
 		F5EC8EB91B70A5ED00E1517A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F594027E1B77725100277DBA /* UIColor+COLORCategories.h */,
+				F594027F1B77725100277DBA /* UIColor+COLORCategories.m */,
+				F59402801B77725100277DBA /* UIImage+IMAGECategories.h */,
+				F59402811B77725100277DBA /* UIImage+IMAGECategories.m */,
+				F59402821B77725100277DBA /* UIImage+ImageWithUIView.h */,
+				F59402831B77725100277DBA /* UIImage+ImageWithUIView.m */,
 				F5EC8EC91B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.h */,
 				F5EC8ECA1B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.m */,
+				F5B6109F1B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.h */,
+				F5B610A01B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.m */,
+				F5892D551B8301C900DBDB75 /* NSString+PHONENUMBERCategories.h */,
+				F5892D561B8301C900DBDB75 /* NSString+PHONENUMBERCategories.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -146,6 +536,19 @@
 		F5EC8ECC1B70AF9600E1517A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5EC8EDE1B70B51C00E1517A /* MainTabBarController.h */,
+				F5EC8EDF1B70B51C00E1517A /* MainTabBarController.m */,
+				F59402871B7783BF00277DBA /* RecentOrderViewController */,
+				F594028C1B7784C900277DBA /* CetegoriesViewController */,
+				F59402921B778C1E00277DBA /* RestauransViewController */,
+				F59402951B77A4EB00277DBA /* RestaurantSuggestionViewController */,
+				F5D428C91B7B354B00B43D19 /* RestaurantCorrectionViewController */,
+				F5FCB6701B78507900A86A58 /* AboutViewController */,
+				F5FCB6781B7860EF00A86A58 /* SelectCampusViewController */,
+				F5CF157D1B788DA300980A98 /* UserRequestViewController */,
+				F508EFCD1B7A1675005D688F /* RestaurantViewController */,
+				F5CF15831B78A0AF00980A98 /* RecommendationViewController */,
+				F593AB3E1B7B1517003A5B9E /* FlyerViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +556,20 @@
 		F5EC8ECD1B70AF9C00E1517A /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F5E9BC5C1B710A5E0098E3A4 /* CustomTitleView.h */,
+				F5E9BC5D1B710A5E0098E3A4 /* CustomTitleView.m */,
+				F55740771B7113220052E722 /* CustomTitleView.xib */,
+				F59726361B71AA5300CD6895 /* CustomCurrentCampusCell.h */,
+				F59726371B71AA5300CD6895 /* CustomCurrentCampusCell.m */,
+				F5FCB6711B7850B000A86A58 /* CustomCurrentCampusCell.xib */,
+				F5FCB67C1B78798700A86A58 /* CustomCampusCell.h */,
+				F5FCB67D1B78798700A86A58 /* CustomCampusCell.m */,
+				F5FCB6811B7879AA00A86A58 /* CustomCampusCell.xib */,
+				F5FCB6731B78516500A86A58 /* CustomTableViewSection.h */,
+				F5FCB6741B78516500A86A58 /* CustomTableViewSection.m */,
+				F5FCB6761B78517200A86A58 /* CustomTableViewSection.xib */,
+				F5CF157E1B788DDE00980A98 /* CustomTableViewFooter.h */,
+				F5CF157F1B788DDE00980A98 /* CustomTableViewFooter.m */,
 			);
 			name = CustomComponents;
 			sourceTree = "<group>";
@@ -180,18 +597,17 @@
 		F5F3EB0A1B7078C500EB8186 /* Campus-Dal */ = {
 			isa = PBXGroup;
 			children = (
-				F5EC8ECD1B70AF9C00E1517A /* CustomComponents */,
+				F51344211B8379230003F03B /* Flurry */,
+				F5C25A3E1B799B43009EFE19 /* CustomObject */,
+				F59402761B776AE000277DBA /* Fonts */,
 				F5EC8ECC1B70AF9600E1517A /* ViewControllers */,
+				F5EC8ECD1B70AF9C00E1517A /* CustomComponents */,
 				F5EC8EB91B70A5ED00E1517A /* Categories */,
 				F5EC8EB11B70880B00E1517A /* Commons */,
 				F5B2A0B81B707B8000AC4098 /* Models */,
 				F5F3EB0F1B7078C500EB8186 /* AppDelegate.h */,
 				F5F3EB101B7078C500EB8186 /* AppDelegate.m */,
-				F5F3EB121B7078C500EB8186 /* FirstViewController.h */,
-				F5F3EB131B7078C500EB8186 /* FirstViewController.m */,
-				F5F3EB151B7078C500EB8186 /* SecondViewController.h */,
-				F5F3EB161B7078C500EB8186 /* SecondViewController.m */,
-				F5F3EB181B7078C500EB8186 /* Main.storyboard */,
+				F59726501B71FCA400CD6895 /* Main.storyboard */,
 				F5F3EB1B1B7078C500EB8186 /* Images.xcassets */,
 				F5F3EB1D1B7078C500EB8186 /* LaunchScreen.xib */,
 				F5F3EB0B1B7078C500EB8186 /* Supporting Files */,
@@ -225,6 +641,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F5FCB6701B78507900A86A58 /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5EC8ED81B70B15000E1517A /* AboutViewController.h */,
+				F5EC8ED91B70B15000E1517A /* AboutViewController.m */,
+			);
+			name = AboutViewController;
+			sourceTree = "<group>";
+		};
+		F5FCB6781B7860EF00A86A58 /* SelectCampusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5EC8EDB1B70B21B00E1517A /* SelectCampusViewController.h */,
+				F5EC8EDC1B70B21B00E1517A /* SelectCampusViewController.m */,
+			);
+			name = SelectCampusViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,8 +670,8 @@
 				F5F3EB041B7078C500EB8186 /* Sources */,
 				F5F3EB051B7078C500EB8186 /* Frameworks */,
 				F5F3EB061B7078C500EB8186 /* Resources */,
-				9B40AA0E77FD9716E9A5D045 /* Embed Pods Frameworks */,
 				C0FE4353713ECDC8CFDE32DF /* Copy Pods Resources */,
+				C99D6B89BA94DE71159965AD /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,7 +706,7 @@
 		F5F3EB001B7078C500EB8186 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Carrot&Drone";
 				TargetAttributes = {
 					F5F3EB071B7078C500EB8186 = {
@@ -308,8 +742,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F3EB1A1B7078C500EB8186 /* Main.storyboard in Resources */,
+				F5AB7D031B73B84900AE380F /* UserRequestTableViewCell.xib in Resources */,
+				F5CF158A1B78D3D000980A98 /* RecommendRestaurantView.xib in Resources */,
+				F5D428D31B7B36A200B43D19 /* RestaurantCorrectionCell.xib in Resources */,
+				F594028B1B77841800277DBA /* RecentOrderTableViewCell.xib in Resources */,
+				F5CF15881B78A0E600980A98 /* RecommendationTitleView.xib in Resources */,
+				F57A88781B75BC290048A3F6 /* RestaurantTableViewHeader.xib in Resources */,
+				F59402791B776AE900277DBA /* NanumGothic.otf in Resources */,
+				F59402971B77A7BC00277DBA /* RSTableViewCell.xib in Resources */,
+				F53B41061B7A48B700E42B90 /* MenuTableViewSection.xib in Resources */,
+				F59726491B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib in Resources */,
+				F53B40FC1B7A3EC300E42B90 /* MenuTableViewCell.xib in Resources */,
+				F5BE5CA81B73258E00AAAC02 /* CustomRSDTableViewCell.xib in Resources */,
+				F594029B1B77AE3500277DBA /* CategoriesTableViewFooter.xib in Resources */,
+				F5FCB6821B7879AA00A86A58 /* CustomCampusCell.xib in Resources */,
+				F5FCB6721B7850B000A86A58 /* CustomCurrentCampusCell.xib in Resources */,
+				F580C3601B72725000946DE2 /* RSTableViewFooterView.xib in Resources */,
+				F594027A1B776AE900277DBA /* NanumGothicBold.otf in Resources */,
 				F5F3EB1F1B7078C500EB8186 /* LaunchScreen.xib in Resources */,
+				F59726511B71FCA400CD6895 /* Main.storyboard in Resources */,
+				F5FCB6771B78517200A86A58 /* CustomTableViewSection.xib in Resources */,
+				F59402941B77930000277DBA /* RestaurantsTableViewCell.xib in Resources */,
+				F594028E1B77850F00277DBA /* CategoriesTableViewCell.xib in Resources */,
+				F55740781B7113220052E722 /* CustomTitleView.xib in Resources */,
 				F5F3EB1C1B7078C500EB8186 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,21 +794,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9B40AA0E77FD9716E9A5D045 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C0FE4353713ECDC8CFDE32DF /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +809,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C99D6B89BA94DE71159965AD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -376,16 +831,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F3EB171B7078C500EB8186 /* SecondViewController.m in Sources */,
+				F59402851B77725100277DBA /* UIImage+IMAGECategories.m in Sources */,
+				F5B610A11B7C9A9B00BD879B /* NSMutableArray+SHUFFLECategories.m in Sources */,
+				F5CF158D1B78D75400980A98 /* RecommendRestaurantView.m in Sources */,
+				F5AB7CFD1B73B81800AE380F /* UserRequestTableViewCell.m in Sources */,
+				F5CF15801B788DDE00980A98 /* CustomTableViewFooter.m in Sources */,
+				F5E9BC5E1B710A5E0098E3A4 /* CustomTitleView.m in Sources */,
+				F5BE5CAB1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m in Sources */,
+				F55740721B710E400052E722 /* RecentOrderTableViewHeader.m in Sources */,
+				F557407E1B7117AD0052E722 /* CategoriesTableViewCell.m in Sources */,
 				F5EC8EC51B70A60A00E1517A /* CategoryModel.m in Sources */,
+				F5CF15861B78A0D800980A98 /* RecommendationTitleView.m in Sources */,
+				F53B40FF1B7A416900E42B90 /* RestaurantFooterView.m in Sources */,
+				F57093CD1B70D1F600929EF3 /* RestaurantsViewController.m in Sources */,
 				F5EC8EB41B70885400E1517A /* ServerHelper.m in Sources */,
+				F55740811B711F1C0052E722 /* RestaurantsTableViewCell.m in Sources */,
+				F5BE5CA31B73256600AAAC02 /* RSDCampusTableViewCell.m in Sources */,
+				F57093D01B70E05B00929EF3 /* RestaurantViewController.m in Sources */,
+				F53B41041B7A48A200E42B90 /* MenuTableViewSection.m in Sources */,
+				F59402911B77858200277DBA /* CategoriesTableViewFooter.m in Sources */,
+				F59726411B71EE7000CD6895 /* RestaurantSuggestionDetailViewController.m in Sources */,
 				F5F3EB111B7078C500EB8186 /* AppDelegate.m in Sources */,
-				F5F3EB141B7078C500EB8186 /* FirstViewController.m in Sources */,
+				F5EC8EDD1B70B21B00E1517A /* SelectCampusViewController.m in Sources */,
 				F5EC8EC41B70A60A00E1517A /* Campus.m in Sources */,
+				F5AB7CFA1B73B76B00AE380F /* UserRequestViewController.m in Sources */,
+				F5BE5CB31B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m in Sources */,
+				F597263E1B71D43F00CD6895 /* RestaurantsTableViewHeader.m in Sources */,
+				F5FCB6751B78516500A86A58 /* CustomTableViewSection.m in Sources */,
 				F5EC8EC71B70A60A00E1517A /* Restaurant.m in Sources */,
+				F5892D571B8301C900DBDB75 /* NSString+PHONENUMBERCategories.m in Sources */,
 				F5F3EB0E1B7078C500EB8186 /* main.m in Sources */,
 				F5EC8EB71B70886D00E1517A /* StaticHelper.m in Sources */,
+				F59402991B77AA5900277DBA /* RSTableViewCell.m in Sources */,
+				F59402841B77725100277DBA /* UIColor+COLORCategories.m in Sources */,
+				F57A88761B75BC160048A3F6 /* RestaurantTableViewHeader.m in Sources */,
+				F5EC8ED21B70B00400E1517A /* RecentOrderViewController.m in Sources */,
+				F593AB411B7B19EA003A5B9E /* FlyerViewController.m in Sources */,
+				F5EC8ED31B70B00400E1517A /* CategoriesViewController.m in Sources */,
+				F5D428CC1B7B357100B43D19 /* RestaurantCorrectionViewController.m in Sources */,
+				F597264C1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m in Sources */,
+				F5BE5CA21B73256600AAAC02 /* RSDFlyerTableViewCell.m in Sources */,
+				F59402861B77725100277DBA /* UIImage+ImageWithUIView.m in Sources */,
+				F5D428C81B7B279D00B43D19 /* FlyerFooterView.m in Sources */,
+				F5EC8ED71B70B11D00E1517A /* RecommendationViewController.m in Sources */,
+				F5EC8EE01B70B51C00E1517A /* MainTabBarController.m in Sources */,
+				F59726471B71F19200CD6895 /* RestaurantSuggestionSectionView.m in Sources */,
+				F580C35E1B72722E00946DE2 /* RSTableViewFooterView.m in Sources */,
 				F5EC8EC61B70A60A00E1517A /* Menu.m in Sources */,
+				F5FCB67E1B78798700A86A58 /* CustomCampusCell.m in Sources */,
+				F59726381B71AA5300CD6895 /* CustomCurrentCampusCell.m in Sources */,
+				F5BE5CA41B73256600AAAC02 /* RSDTextFieldTableViewCell.m in Sources */,
+				F5BE5CB61B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m in Sources */,
+				F5D428CF1B7B368300B43D19 /* RestaurantCorrectionCell.m in Sources */,
+				F53B40FA1B7A3EB700E42B90 /* MenuTableViewCell.m in Sources */,
+				F5EC8EDA1B70B15000E1517A /* AboutViewController.m in Sources */,
+				F557407B1B7113400052E722 /* RecentOrderTableViewCell.m in Sources */,
 				F5EC8ECB1B70A6B100E1517A /* NSDictionary+SAFEACCESSCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,14 +909,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F5F3EB181B7078C500EB8186 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5F3EB191B7078C500EB8186 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F5F3EB1D1B7078C500EB8186 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -449,6 +941,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -464,7 +957,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -502,7 +995,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -515,8 +1008,33 @@
 			baseConfigurationReference = 2A6896F8EEF78DD09D6EAF9C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Campus-Dal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Campus-Dal/Flurry",
+					"$(PROJECT_DIR)/Campus-Dal/External",
+					Libraries/Flurry,
+					"$(PROJECT_DIR)/Campus-Dal/External",
+					Libraries/Flurry,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SSKeychain\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.Shadal;
 				PRODUCT_NAME = "Campus-Dal";
 			};
 			name = Debug;
@@ -526,8 +1044,33 @@
 			baseConfigurationReference = BD86460F234E2A466403B656 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Campus-Dal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Campus-Dal/Flurry",
+					"$(PROJECT_DIR)/Campus-Dal/External",
+					Libraries/Flurry,
+					"$(PROJECT_DIR)/Campus-Dal/External",
+					Libraries/Flurry,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SSKeychain\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.Shadal;
 				PRODUCT_NAME = "Campus-Dal";
 			};
 			name = Release;
@@ -546,7 +1089,9 @@
 				);
 				INFOPLIST_FILE = "Campus-DalTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carrot-drone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Campus-DalTests";
+				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Campus-Dal.app/Campus-Dal";
 			};
 			name = Debug;
@@ -561,7 +1106,9 @@
 				);
 				INFOPLIST_FILE = "Campus-DalTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carrot-drone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Campus-DalTests";
+				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Campus-Dal.app/Campus-Dal";
 			};
 			name = Release;

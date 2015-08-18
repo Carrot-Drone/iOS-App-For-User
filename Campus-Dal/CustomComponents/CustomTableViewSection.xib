@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="I2W-bX-XcG" customClass="CustomTableViewSection">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캠퍼스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIX-RA-X3j">
+                    <rect key="frame" x="41" y="23" width="36.5" height="17"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-r9-ffw">
+                    <rect key="frame" x="11" y="20" width="20" height="20"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="B1D-3Q-e3p"/>
+                        <constraint firstAttribute="width" constant="20" id="LuZ-0X-RPQ"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="sIX-RA-X3j" secondAttribute="centerY" constant="0.5" id="19H-Qw-uiC"/>
+                <constraint firstAttribute="bottom" secondItem="cUk-r9-ffw" secondAttribute="bottom" constant="5" id="EDp-9t-cCn"/>
+                <constraint firstItem="cUk-r9-ffw" firstAttribute="leading" secondItem="I2W-bX-XcG" secondAttribute="leading" constant="11" id="FtU-lM-5qI"/>
+                <constraint firstItem="sIX-RA-X3j" firstAttribute="bottom" secondItem="cUk-r9-ffw" secondAttribute="bottom" id="Pnt-bf-ghn"/>
+                <constraint firstAttribute="centerY" secondItem="cUk-r9-ffw" secondAttribute="centerY" id="T9c-Mc-4bY"/>
+                <constraint firstItem="sIX-RA-X3j" firstAttribute="leading" secondItem="cUk-r9-ffw" secondAttribute="trailing" constant="10" id="mXC-6g-zMP"/>
+                <constraint firstItem="sIX-RA-X3j" firstAttribute="leading" secondItem="I2W-bX-XcG" secondAttribute="leading" constant="50" id="ocO-0Q-PMq"/>
+                <constraint firstItem="cUk-r9-ffw" firstAttribute="top" secondItem="I2W-bX-XcG" secondAttribute="top" constant="20" id="oo3-80-ht0"/>
+                <constraint firstItem="cUk-r9-ffw" firstAttribute="centerY" secondItem="sIX-RA-X3j" secondAttribute="centerY" id="zq1-ab-9TC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="T9c-Mc-4bY"/>
+                    <exclude reference="zq1-ab-9TC"/>
+                    <exclude reference="19H-Qw-uiC"/>
+                    <exclude reference="ocO-0Q-PMq"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imageView" destination="cUk-r9-ffw" id="oXC-vF-Zbe"/>
+                <outlet property="titleLabel" destination="sIX-RA-X3j" id="JLD-0y-cFA"/>
+            </connections>
+            <point key="canvasLocation" x="291.5" y="314.5"/>
+        </view>
+    </objects>
+</document>
