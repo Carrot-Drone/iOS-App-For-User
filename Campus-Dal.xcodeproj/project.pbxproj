@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9EFAFBB8BD4CC7D606996FF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714AA64D4957DE4B1529E96 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F50FEFEB1B8483040005BBA9 /* Start_app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F50FEFE91B8483040005BBA9 /* Start_app_icon@2x.png */; };
+		F50FEFEC1B8483040005BBA9 /* Start_app_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F50FEFEA1B8483040005BBA9 /* Start_app_icon@3x.png */; };
 		F51344251B8379230003F03B /* libFlurry_6.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F51344241B8379230003F03B /* libFlurry_6.7.0.a */; };
 		F53B40FA1B7A3EB700E42B90 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F53B40F91B7A3EB700E42B90 /* MenuTableViewCell.m */; };
 		F53B40FC1B7A3EC300E42B90 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53B40FB1B7A3EC300E42B90 /* MenuTableViewCell.xib */; };
@@ -46,7 +48,6 @@
 		F59726491B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59726481B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib */; };
 		F597264C1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F597264B1B71FA9E00CD6895 /* RestaurantSuggestionViewController.m */; };
 		F59726511B71FCA400CD6895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59726501B71FCA400CD6895 /* Main.storyboard */; };
-		F5A1787F1B80744E008C232F /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1787E1B80744E008C232F /* KakaoOpenSDK.framework */; };
 		F5AB7CFA1B73B76B00AE380F /* UserRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB7CF91B73B76B00AE380F /* UserRequestViewController.m */; };
 		F5AB7CFD1B73B81800AE380F /* UserRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB7CFC1B73B81800AE380F /* UserRequestTableViewCell.m */; };
 		F5AB7D031B73B84900AE380F /* UserRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AB7D021B73B84900AE380F /* UserRequestTableViewCell.xib */; };
@@ -58,6 +59,7 @@
 		F5BE5CAB1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CAA1B73261B00AAAC02 /* RSDPhoneNumberTableViewCell.m */; };
 		F5BE5CB31B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CB21B7343B400AAAC02 /* RestaurantSuggestionCompleteViewController.m */; };
 		F5BE5CB61B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BE5CB51B734B8800AAAC02 /* RestaurantSuggestionSelectCampusViewController.m */; };
+		F5BFC1001B8554C4008F9D0B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5569DB21B832309006DDB7C /* SystemConfiguration.framework */; };
 		F5CF15801B788DDE00980A98 /* CustomTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF157F1B788DDE00980A98 /* CustomTableViewFooter.m */; };
 		F5CF15861B78A0D800980A98 /* RecommendationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF15851B78A0D800980A98 /* RecommendationTitleView.m */; };
 		F5CF15881B78A0E600980A98 /* RecommendationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5CF15871B78A0E600980A98 /* RecommendationTitleView.xib */; };
@@ -67,6 +69,7 @@
 		F5D428CC1B7B357100B43D19 /* RestaurantCorrectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D428CB1B7B357100B43D19 /* RestaurantCorrectionViewController.m */; };
 		F5D428CF1B7B368300B43D19 /* RestaurantCorrectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D428CE1B7B368300B43D19 /* RestaurantCorrectionCell.m */; };
 		F5D428D31B7B36A200B43D19 /* RestaurantCorrectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D428D21B7B36A200B43D19 /* RestaurantCorrectionCell.xib */; };
+		F5E355941B85542D006BD220 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1787E1B80744E008C232F /* KakaoOpenSDK.framework */; };
 		F5E9BC5E1B710A5E0098E3A4 /* CustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E9BC5D1B710A5E0098E3A4 /* CustomTitleView.m */; };
 		F5EC8EB41B70885400E1517A /* ServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EB31B70885400E1517A /* ServerHelper.m */; };
 		F5EC8EB71B70886D00E1517A /* StaticHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC8EB61B70886D00E1517A /* StaticHelper.m */; };
@@ -86,8 +89,6 @@
 		F5F3EB1C1B7078C500EB8186 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F3EB1B1B7078C500EB8186 /* Images.xcassets */; };
 		F5F3EB1F1B7078C500EB8186 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F3EB1D1B7078C500EB8186 /* LaunchScreen.xib */; };
 		F5F3EB2B1B7078C500EB8186 /* Campus_DalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3EB2A1B7078C500EB8186 /* Campus_DalTests.m */; };
-		F5F7F0A21B83392D00B64511 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5569DB01B832278006DDB7C /* Security.framework */; };
-		F5F7F0A31B83393300B64511 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5569DB21B832309006DDB7C /* SystemConfiguration.framework */; };
 		F5FCB6721B7850B000A86A58 /* CustomCurrentCampusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FCB6711B7850B000A86A58 /* CustomCurrentCampusCell.xib */; };
 		F5FCB6751B78516500A86A58 /* CustomTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FCB6741B78516500A86A58 /* CustomTableViewSection.m */; };
 		F5FCB6771B78517200A86A58 /* CustomTableViewSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FCB6761B78517200A86A58 /* CustomTableViewSection.xib */; };
@@ -108,9 +109,12 @@
 /* Begin PBXFileReference section */
 		2A6896F8EEF78DD09D6EAF9C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BD86460F234E2A466403B656 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F50FEFE91B8483040005BBA9 /* Start_app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Start_app_icon@2x.png"; path = "ImageResources/Start_app_icon@2x.png"; sourceTree = "<group>"; };
+		F50FEFEA1B8483040005BBA9 /* Start_app_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Start_app_icon@3x.png"; path = "ImageResources/Start_app_icon@3x.png"; sourceTree = "<group>"; };
 		F51344221B8379230003F03B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		F51344231B8379230003F03B /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
 		F51344241B8379230003F03B /* libFlurry_6.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.7.0.a; sourceTree = "<group>"; };
+		F53051131B847F68003E4F6C /* TMReachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMReachability.framework; path = "Pods/../build/Debug-iphoneos/TMReachability.framework"; sourceTree = "<group>"; };
 		F53B40F81B7A3EB700E42B90 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewCell.h; path = CustomComponents/MenuTableViewCell.h; sourceTree = "<group>"; };
 		F53B40F91B7A3EB700E42B90 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewCell.m; path = CustomComponents/MenuTableViewCell.m; sourceTree = "<group>"; };
 		F53B40FB1B7A3EC300E42B90 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuTableViewCell.xib; path = CustomComponents/MenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -266,9 +270,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F7F0A31B83393300B64511 /* SystemConfiguration.framework in Frameworks */,
-				F5F7F0A21B83392D00B64511 /* Security.framework in Frameworks */,
-				F5A1787F1B80744E008C232F /* KakaoOpenSDK.framework in Frameworks */,
+				F5BFC1001B8554C4008F9D0B /* SystemConfiguration.framework in Frameworks */,
+				F5E355941B85542D006BD220 /* KakaoOpenSDK.framework in Frameworks */,
 				F51344251B8379230003F03B /* libFlurry_6.7.0.a in Frameworks */,
 				9EFAFBB8BD4CC7D606996FF8 /* Pods.framework in Frameworks */,
 			);
@@ -296,6 +299,7 @@
 		97C90E4E18C95E1E9AF71A87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F53051131B847F68003E4F6C /* TMReachability.framework */,
 				F5569DB61B8323F7006DDB7C /* CoreData.framework */,
 				F5569DB41B832314006DDB7C /* AdSupport.framework */,
 				F5569DB21B832309006DDB7C /* SystemConfiguration.framework */,
@@ -609,6 +613,8 @@
 				F5F3EB101B7078C500EB8186 /* AppDelegate.m */,
 				F59726501B71FCA400CD6895 /* Main.storyboard */,
 				F5F3EB1B1B7078C500EB8186 /* Images.xcassets */,
+				F50FEFE91B8483040005BBA9 /* Start_app_icon@2x.png */,
+				F50FEFEA1B8483040005BBA9 /* Start_app_icon@3x.png */,
 				F5F3EB1D1B7078C500EB8186 /* LaunchScreen.xib */,
 				F5F3EB0B1B7078C500EB8186 /* Supporting Files */,
 			);
@@ -711,6 +717,7 @@
 				TargetAttributes = {
 					F5F3EB071B7078C500EB8186 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 8F8C98NKPP;
 					};
 					F5F3EB231B7078C500EB8186 = {
 						CreatedOnToolsVersion = 6.4;
@@ -745,6 +752,7 @@
 				F5AB7D031B73B84900AE380F /* UserRequestTableViewCell.xib in Resources */,
 				F5CF158A1B78D3D000980A98 /* RecommendRestaurantView.xib in Resources */,
 				F5D428D31B7B36A200B43D19 /* RestaurantCorrectionCell.xib in Resources */,
+				F50FEFEC1B8483040005BBA9 /* Start_app_icon@3x.png in Resources */,
 				F594028B1B77841800277DBA /* RecentOrderTableViewCell.xib in Resources */,
 				F5CF15881B78A0E600980A98 /* RecommendationTitleView.xib in Resources */,
 				F57A88781B75BC290048A3F6 /* RestaurantTableViewHeader.xib in Resources */,
@@ -752,6 +760,7 @@
 				F59402971B77A7BC00277DBA /* RSTableViewCell.xib in Resources */,
 				F53B41061B7A48B700E42B90 /* MenuTableViewSection.xib in Resources */,
 				F59726491B71F1A500CD6895 /* RestaurantSuggestionSectionView.xib in Resources */,
+				F50FEFEB1B8483040005BBA9 /* Start_app_icon@2x.png in Resources */,
 				F53B40FC1B7A3EC300E42B90 /* MenuTableViewCell.xib in Resources */,
 				F5BE5CA81B73258E00AAAC02 /* CustomRSDTableViewCell.xib in Resources */,
 				F594029B1B77AE3500277DBA /* CategoriesTableViewFooter.xib in Resources */,
@@ -1008,10 +1017,14 @@
 			baseConfigurationReference = 2A6896F8EEF78DD09D6EAF9C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Campus-Dal/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1027,7 +1040,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					"\"Reachability\"",
+					"\"TMReachability\"",
 					"-framework",
 					"\"SDWebImage\"",
 					"-framework",
@@ -1036,6 +1049,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.Shadal;
 				PRODUCT_NAME = "Campus-Dal";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1044,10 +1058,14 @@
 			baseConfigurationReference = BD86460F234E2A466403B656 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Campus-Dal/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1063,7 +1081,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					"\"Reachability\"",
+					"\"TMReachability\"",
 					"-framework",
 					"\"SDWebImage\"",
 					"-framework",
@@ -1072,6 +1090,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.Shadal;
 				PRODUCT_NAME = "Campus-Dal";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

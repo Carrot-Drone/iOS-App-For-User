@@ -29,7 +29,7 @@
             NSNumber * price = [dic numberForKey:@"price"];
             [submenus appendString:[NSString stringWithFormat:@"%@ : %@원\r\n", name, [price stringValue]]];
         }
-        return [submenus substringToIndex:[submenus length]-4];
+        return [submenus substringToIndex:[submenus length]-2];
     }
 }
 -(id)initWithDictionary:(NSDictionary *)dic{

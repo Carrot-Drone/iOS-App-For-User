@@ -243,6 +243,7 @@
     cell.retentionLabel.text = [restaurant retentionString];
     cell.nameLabel.text = [restaurant name];
     cell.flyerButton.hidden = ![[restaurant hasFlyer] boolValue];
+    cell.flyerImageView.hidden = ![[restaurant hasFlyer] boolValue];
     cell.flyerButton.tag = indexPath.row;
     [cell.flyerButton addTarget:self action:@selector(flyerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     

@@ -534,7 +534,7 @@
     }
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, SET_RESTAURANT_SUGGESTION]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20];
     
     [request setHTTPMethod:@"POST"];
     
@@ -657,7 +657,7 @@
 
 
 - (BOOL)isConnected{
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    TMReachability *networkReachability = [TMReachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         NSLog(@"Internet is not connected");

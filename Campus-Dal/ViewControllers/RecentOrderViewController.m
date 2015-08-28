@@ -29,6 +29,7 @@
     Restaurant * _selectedRestaurant;
     NSString * _currentPhoneNumber;
     int _sortBy;
+    
 }
 
 @end
@@ -63,6 +64,21 @@
     [_fixedTableViewHeader.sortByNameImageView setHidden:YES];
     [_fixedTableViewHeader.sortByRecentOrderImageView setHidden:NO];
     _sortBy = 3;
+    
+    // init delegate
+    self.navigationController.delegate = self;
+    
+    
+    // Register notification when restaurant suggestion is completed
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadRecentOrder:)
+                                                 name:@"reload_recent_order"
+                                               object:nil];
+}
+
+- (void)reloadRecentOrder:(NSNotification *)note{
+    [self reloadRestaurants];
+    [_tableView reloadData];
 }
 
 - (void)initNavigationController{
@@ -93,7 +109,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     // Remove notification
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"set_call_log" object:nil];
 }
 - (void)reloadRestaurants{
     // init _restaurants
@@ -282,5 +298,18 @@
 - (void)setCallLogCompleted:(NSNotification *) note{
 
     [self sortRestaurants];
+}
+
+# pragma mark - NavigationController Delegate
+- (void)navigationController:(UINavigationController *)navigationController
+      willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [viewController viewWillAppear:animated];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [viewController viewDidAppear:animated];
 }
 @end

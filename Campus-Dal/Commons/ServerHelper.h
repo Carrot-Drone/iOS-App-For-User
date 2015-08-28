@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Reachability/Reachability.h>
+#import <TMReachability/Reachability.h>
 
 @interface ServerHelper : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate, UIAlertViewDelegate>
 

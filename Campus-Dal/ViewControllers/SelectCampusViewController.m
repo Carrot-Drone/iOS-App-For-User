@@ -9,6 +9,7 @@
 #import "SelectCampusViewController.h"
 #import "MainTabBarController.h"
 #import "RestaurantSuggestionDetailViewController.h"
+#import "RecentOrderViewController.h"
 
 #import "Constants.h"
 #import "StaticHelper.h"
@@ -159,7 +160,39 @@
     [self.view setUserInteractionEnabled:NO];
     
     // Get restaurants Data
-    [[[ServerHelper alloc] init] get_restaurants:[campus serverID]];
+    // Check User Defaults first
+    NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+    NSData * data = [userDefault objectForKey:[NSString stringWithFormat:@"allData_%d", [[campus serverID] intValue]]];
+    
+    if(data == nil){
+        [[[ServerHelper alloc] init] get_restaurants:[campus serverID]];
+    }else{
+        
+        // Duplicated Code!!
+        NSMutableArray * categories = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [[StaticHelper staticHelper] saveAllData:categories];
+        [[StaticHelper staticHelper] resetCachedRecommendedRestaurants];
+        
+        // Send Notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"campus_changed" object:self];
+        
+        if(_isFromAboutVC){
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            MainTabBarController * mtc = (MainTabBarController *)appDelegate.window.rootViewController;
+            UINavigationController * vc1 = [mtc.viewControllers objectAtIndex:0];
+            UINavigationController * vc2 = [mtc.viewControllers objectAtIndex:1];
+            [vc1 popToRootViewControllerAnimated:NO];
+            [vc2 popToRootViewControllerAnimated:NO];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"reload_recent_order" object:nil];
+            
+            [mtc setSelectedIndex:0];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            appDelegate.window.rootViewController = appDelegate.mainTabBarController;
+        }
+    }
     
     
     // GA
@@ -171,7 +204,9 @@
         [ServerHelper sendGoogleAnalyticsEvent:@"UX" action:@"select_campus_start" label:[campus.serverID stringValue]];
     }
 }
-
+- (void)start{
+    
+}
 # pragma mark - Notifications
 - (void)getRestaurantsCompleted:(NSNotification *)note{
     // Stop Animating
@@ -194,6 +229,8 @@
             CategoryModel * category = [[CategoryModel alloc] initWithDictionary:category_dic];
             [categories addObject:category];
         }
+        
+        // Duplicated Code!!
         [[StaticHelper staticHelper] saveAllData:categories];
         [[StaticHelper staticHelper] resetCachedRecommendedRestaurants];
         
@@ -207,6 +244,8 @@
             UINavigationController * vc2 = [mtc.viewControllers objectAtIndex:1];
             [vc1 popToRootViewControllerAnimated:NO];
             [vc2 popToRootViewControllerAnimated:NO];
+
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"reload_recent_order" object:nil];
             
             [mtc setSelectedIndex:0];
             [self dismissViewControllerAnimated:YES completion:nil];

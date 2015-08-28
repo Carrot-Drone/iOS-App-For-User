@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -12,6 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pzJ-NE-Jby" id="Qr6-j3-IE2">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울대학교 관악캠퍼스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Im-eM-Xhv">
@@ -46,6 +48,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZY-Ar-UZ5" id="nTA-GZ-yQo">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ee-RM-0x7">
@@ -83,6 +86,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u3d-gj-NRP" id="3kS-qE-fUS">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8vx-zO-TUN">
@@ -113,6 +117,7 @@
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="KhI-Mw-CQV" secondAttribute="height" constant="1" id="6VL-8l-HpW"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="LbX-M7-fwK"/>
                             <constraint firstAttribute="height" constant="75" id="b4P-E8-7D0"/>
                             <constraint firstAttribute="width" constant="75" id="kvt-jG-gUa"/>
                         </constraints>
@@ -281,9 +286,9 @@
                     <constraint firstItem="8vx-zO-TUN" firstAttribute="trailing" secondItem="KhI-Mw-CQV" secondAttribute="trailing" id="Y4j-RU-nbA"/>
                     <constraint firstItem="9KV-02-MoC" firstAttribute="leading" secondItem="8IQ-lz-y77" secondAttribute="trailing" priority="900" constant="16" id="b9z-SM-V92"/>
                     <constraint firstItem="9KV-02-MoC" firstAttribute="width" secondItem="8IQ-lz-y77" secondAttribute="width" id="bXN-c3-x8k"/>
-                    <constraint firstAttribute="trailing" secondItem="kMN-AZ-IrA" secondAttribute="trailing" priority="900" constant="16" id="bqJ-Za-rMp"/>
+                    <constraint firstAttribute="trailing" secondItem="kMN-AZ-IrA" secondAttribute="trailing" priority="890" constant="16" id="bqJ-Za-rMp"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kMN-AZ-IrA" secondAttribute="trailing" constant="5" id="bsn-W5-nbh"/>
-                    <constraint firstItem="KhI-Mw-CQV" firstAttribute="leading" secondItem="3kS-qE-fUS" secondAttribute="leading" priority="900" constant="16" id="bvI-EF-3I7"/>
+                    <constraint firstItem="KhI-Mw-CQV" firstAttribute="leading" secondItem="3kS-qE-fUS" secondAttribute="leading" priority="910" constant="16" id="bvI-EF-3I7"/>
                     <constraint firstItem="6Y8-XX-7Js" firstAttribute="bottom" secondItem="kMN-AZ-IrA" secondAttribute="bottom" id="cHF-6t-uWC"/>
                     <constraint firstItem="9KV-02-MoC" firstAttribute="centerY" secondItem="DYI-ti-tPZ" secondAttribute="centerY" id="d1e-um-w07"/>
                     <constraint firstItem="9KV-02-MoC" firstAttribute="width" secondItem="kMN-AZ-IrA" secondAttribute="width" id="e1f-2h-zp6"/>

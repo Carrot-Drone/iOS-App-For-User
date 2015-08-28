@@ -120,25 +120,7 @@
         [cell.imageView setImage:[UIImage imageNamed:@"Icon_add_store"]];
         [cell.suggestionButton setTitle:@"음식점 제보하기" forState:UIControlStateNormal];
         cell.suggestionButton.tag = indexPath.row;
-
-        // Set Cutom Table Separator
-         CGFloat separatorInset; // Separator x position
-         CGFloat separatorHeight;
-         CGFloat separatorWidth;
-         CGFloat separatorY;
-         UIImageView *separator_bottom;
-         UIColor *separatorBGColor;
-         
-         separatorY      = cell.frame.size.height;
-         separatorHeight = (1.0 / [UIScreen mainScreen].scale);  // This assures you to have a 1px line height whatever the screen resolution
-         separatorWidth  = 10000;
-         separatorInset  = 0.0f;
-         separatorBGColor  = DIVIDER_COLOR2;
-         
-         
-         separator_bottom = [[UIImageView alloc] initWithFrame:CGRectMake(separatorInset, separatorY, separatorWidth,separatorHeight)];
-         separator_bottom.backgroundColor = separatorBGColor;
-         [cell addSubview: separator_bottom];
+        
 
     }else{
         cell.subLabel.text = @"수수료 0원, 입점비용 0원, 완전 무료!";
@@ -147,7 +129,25 @@
         [cell.imageView setImage:[UIImage imageNamed:@"Icon_add_chef"]];
         [cell.suggestionButton setTitle:@"음식점 등록하기" forState:UIControlStateNormal];
         cell.suggestionButton.tag = indexPath.row;
-
+        
+        // Set Cutom Table Separator
+        CGFloat separatorInset; // Separator x position
+        CGFloat separatorHeight;
+        CGFloat separatorWidth;
+        CGFloat separatorY;
+        UIImageView *separator_top;
+        UIColor *separatorBGColor;
+        
+        separatorY      = 0;
+        separatorHeight = (1.0 / [UIScreen mainScreen].scale);  // This assures you to have a 1px line height whatever the screen resolution
+        separatorWidth  = 10000;
+        separatorInset  = 0.0f;
+        separatorBGColor  = DIVIDER_COLOR2;
+        
+        
+        separator_top = [[UIImageView alloc] initWithFrame:CGRectMake(separatorInset, separatorY, separatorWidth,separatorHeight)];
+        separator_top.backgroundColor = separatorBGColor;
+        [cell addSubview: separator_top];
     }
     [cell.suggestionButton addTarget:self action:@selector(suggestionButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

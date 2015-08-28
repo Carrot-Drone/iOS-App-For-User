@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel * nameLabel;
 @property (nonatomic, strong) IBOutlet UIButton * flyerButton;
+@property (nonatomic, strong) IBOutlet UIImageView * flyerImageView;
 
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * leftMargin;
 

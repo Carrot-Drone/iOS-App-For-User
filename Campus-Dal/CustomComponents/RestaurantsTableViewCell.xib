@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -11,6 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="58k-UF-Z9i" id="feP-2n-PJv">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가가치킨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHj-QW-jsX">
@@ -20,19 +21,26 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T5P-Ie-95K">
+                        <rect key="frame" x="266.5" y="7.5" width="27" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="wnM-TE-hVn"/>
+                            <constraint firstAttribute="width" constant="27" id="zu0-ug-5xL"/>
+                        </constraints>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abN-9a-TSe">
-                        <rect key="frame" x="278" y="7.5" width="27" height="27"/>
+                        <rect key="frame" x="255" y="1" width="50" height="40"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="27" id="GTF-p3-MOC"/>
-                            <constraint firstAttribute="width" constant="27" id="XSA-fW-g6m"/>
+                            <constraint firstAttribute="height" constant="40" id="GTF-p3-MOC"/>
+                            <constraint firstAttribute="width" constant="50" id="XSA-fW-g6m"/>
                         </constraints>
-                        <state key="normal" image="Icon_list_advertisement_flyer">
+                        <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGk-0P-ZIR">
-                        <rect key="frame" x="21" y="10" width="40.5" height="22"/>
+                        <rect key="frame" x="18" y="10" width="40.5" height="22"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUh-7j-xEC">
                                 <rect key="frame" x="5" y="2" width="30.5" height="18"/>
@@ -87,16 +95,19 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="abN-9a-TSe" secondAttribute="trailing" constant="7" id="8SZ-U9-47v"/>
                     <constraint firstItem="abN-9a-TSe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QHj-QW-jsX" secondAttribute="trailing" constant="2" id="MW3-Ee-jGz"/>
-                    <constraint firstAttribute="centerY" secondItem="QHj-QW-jsX" secondAttribute="centerY" constant="0.25" id="Thg-kx-UCy"/>
+                    <constraint firstItem="T5P-Ie-95K" firstAttribute="centerX" secondItem="abN-9a-TSe" secondAttribute="centerX" id="Pzf-Xb-h3H"/>
+                    <constraint firstAttribute="centerY" secondItem="QHj-QW-jsX" secondAttribute="centerY" id="Thg-kx-UCy"/>
                     <constraint firstAttribute="centerY" secondItem="eGk-0P-ZIR" secondAttribute="centerY" id="Ue4-LU-d9j"/>
-                    <constraint firstItem="QHj-QW-jsX" firstAttribute="leading" secondItem="feP-2n-PJv" secondAttribute="leadingMargin" constant="92" id="bXu-XT-qNx"/>
+                    <constraint firstItem="T5P-Ie-95K" firstAttribute="centerY" secondItem="abN-9a-TSe" secondAttribute="centerY" id="W9P-Je-hZq"/>
+                    <constraint firstItem="QHj-QW-jsX" firstAttribute="leading" secondItem="feP-2n-PJv" secondAttribute="leading" constant="100" id="bXu-XT-qNx"/>
                     <constraint firstAttribute="centerY" secondItem="abN-9a-TSe" secondAttribute="centerY" constant="0.75" id="r17-2d-dL2"/>
-                    <constraint firstItem="eGk-0P-ZIR" firstAttribute="leading" secondItem="feP-2n-PJv" secondAttribute="leadingMargin" constant="13" id="sBB-sg-nYS"/>
+                    <constraint firstItem="eGk-0P-ZIR" firstAttribute="leading" secondItem="feP-2n-PJv" secondAttribute="leadingMargin" constant="10" id="sBB-sg-nYS"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
                 <outlet property="flyerButton" destination="abN-9a-TSe" id="MP1-S9-Bet"/>
+                <outlet property="flyerImageView" destination="T5P-Ie-95K" id="2Dl-tt-Nvl"/>
                 <outlet property="leftMargin" destination="bXu-XT-qNx" id="NCU-dl-2HT"/>
                 <outlet property="nameLabel" destination="QHj-QW-jsX" id="aQR-dV-Vjl"/>
                 <outlet property="retentionLabel" destination="EVf-1M-RX9" id="fcy-1e-2WH"/>
@@ -105,7 +116,4 @@
             <point key="canvasLocation" x="-401" y="-141"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Icon_list_advertisement_flyer" width="27" height="27"/>
-    </resources>
 </document>

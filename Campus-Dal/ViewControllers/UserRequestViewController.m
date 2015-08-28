@@ -22,6 +22,8 @@
 
     UITextField * _emailTextField;
     UITextView * _requestTextView;
+    
+    UITextField * _currentTextField;
 }
 
 @end
@@ -38,13 +40,12 @@
     _tableView.dataSource = self;
     _tableView.estimatedRowHeight = 50;
     _tableView.rowHeight = UITableViewAutomaticDimension;
-    _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    _tableView.separatorColor = [UIColor clearColor];
     
     // dismiss Keyboard by tap
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
-    
     [self.view addGestureRecognizer:tap];
     
     // init requestButton
@@ -90,6 +91,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(setUserRequestCompleted:)
                                                  name:@"set_user_request"
+                                               object:nil];
+    // Register notification when the keyboard will be show
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    // Register notification when the keyboard will be hide
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
                                                object:nil];
 }
 
@@ -195,6 +207,7 @@
 //  memoryze the current TextField
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    _currentTextField = textField;
     
 }
 
@@ -202,6 +215,13 @@
 //  release current TextField
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    _currentTextField = nil;
+}
+- (BOOL)textField:(nonnull UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(nonnull NSString *)string{
+    if([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+    }
+    return YES;
 }
 
 #pragma mark - TextView Delegate
@@ -212,9 +232,10 @@
         textView.textColor = [UIColor blackColor]; //optional
     }
     
+    /*
     // move table view up
     [self moveTableViewUp];
-    
+    */
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
@@ -223,17 +244,22 @@
         textView.text = TEXT_VIEW_PLACEHOLDER;
         textView.textColor = [UIColor lightGrayColor]; //optional
     }
-    
+    /*
     // move table view down
     [self moveTableViewDown];
+     */
 }
+#pragma mark - Keyboard Notification
 
-# pragma mark - Move Table View Up and Down
-- (void)moveTableViewUp{
+-(void) keyboardWillShow:(NSNotification *)note
+{
+    // Get the keyboard size
+    CGRect keyboardBounds;
+    [[note.userInfo valueForKey:UIKeyboardFrameBeginUserInfoKey] getValue: &keyboardBounds];
+    
     // Detect orientation
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    CGRect tableViewFrame = _tableView.frame;
-    CGRect requestButtonFrame = _footerView.frame;
+    CGRect frame = _tableView.frame;
     
     // Start animation
     [UIView beginAnimations:nil context:NULL];
@@ -241,47 +267,111 @@
     [UIView setAnimationDuration:0.3f];
     
     // Reduce size of the Table view
-    if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown){
-        tableViewFrame.origin.y -= 120;
-        requestButtonFrame.origin.y -= 120;
-    }
-    else{
-        tableViewFrame.origin.y -= 120;
-        requestButtonFrame.origin.y -= 120;
-    }
+    if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
+        frame.size.height -= keyboardBounds.size.height;
+    else
+        frame.size.height -= keyboardBounds.size.width;
     
     // Apply new size of table view
-    _tableView.frame = tableViewFrame;
-    _footerView.frame = requestButtonFrame;
+    _tableView.frame = frame;
+    
+    // Scroll the table view to see the TextField just above the keyboard
+    if (_currentTextField){
+        CGRect textFieldRect = [_tableView convertRect:_emailTextField.bounds fromView:_emailTextField];
+        [_tableView scrollRectToVisible:textFieldRect animated:NO];
+    }else{
+        CGRect textViewRect = [_tableView convertRect:_requestTextView.bounds fromView:_requestTextView];
+        [_tableView scrollRectToVisible:textViewRect animated:NO];
+    }
+
+    
     [UIView commitAnimations];
 }
 
-- (void)moveTableViewDown{
+-(void) keyboardWillHide:(NSNotification *)note
+{
+    // Get the keyboard size
+    CGRect keyboardBounds;
+    [[note.userInfo valueForKey:UIKeyboardFrameBeginUserInfoKey] getValue: &keyboardBounds];
+    
     // Detect orientation
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    CGRect tableViewFrame = _tableView.frame;
-    CGRect requestButtonFrame = _footerView.frame;
+    CGRect frame = _tableView.frame;
     
-    // Start animation
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.3f];
     
-    // Reduce size of the Table view
-    if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown){
-        tableViewFrame.origin.y += 120;
-        requestButtonFrame.origin.y += 120;
-    }
-    else{
-        tableViewFrame.origin.y += 120;
-        requestButtonFrame.origin.y += 120;
-    }
+    // Increase size of the Table view
+    if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
+        frame.size.height += keyboardBounds.size.height;
+    else
+        frame.size.height += keyboardBounds.size.width;
     
     // Apply new size of table view
-    _tableView.frame = tableViewFrame;
-    _footerView.frame = requestButtonFrame;
-    [UIView commitAnimations];
+    _tableView.frame = frame;
     
+    [UIView commitAnimations];
 }
+
+/*
+ 
+ # pragma mark - Move Table View Up and Down
+ - (void)moveTableViewUp{
+ // Detect orientation
+ UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+ CGRect tableViewFrame = _tableView.frame;
+ CGRect requestButtonFrame = _footerView.frame;
+ 
+ // Start animation
+ [UIView beginAnimations:nil context:NULL];
+ [UIView setAnimationBeginsFromCurrentState:YES];
+ [UIView setAnimationDuration:0.3f];
+ 
+ // Reduce size of the Table view
+ if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown){
+ tableViewFrame.origin.y -= 120;
+ requestButtonFrame.origin.y -= 120;
+ }
+ else{
+ tableViewFrame.origin.y -= 120;
+ requestButtonFrame.origin.y -= 120;
+ }
+ 
+ // Apply new size of table view
+ _tableView.frame = tableViewFrame;
+ _footerView.frame = requestButtonFrame;
+ [UIView commitAnimations];
+ }
+ 
+ - (void)moveTableViewDown{
+ // Detect orientation
+ UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+ CGRect tableViewFrame = _tableView.frame;
+ CGRect requestButtonFrame = _footerView.frame;
+ 
+ // Start animation
+ [UIView beginAnimations:nil context:NULL];
+ [UIView setAnimationBeginsFromCurrentState:YES];
+ [UIView setAnimationDuration:0.3f];
+ 
+ // Reduce size of the Table view
+ if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown){
+ tableViewFrame.origin.y += 120;
+ requestButtonFrame.origin.y += 120;
+ }
+ else{
+ tableViewFrame.origin.y += 120;
+ requestButtonFrame.origin.y += 120;
+ }
+ 
+ // Apply new size of table view
+ _tableView.frame = tableViewFrame;
+ _footerView.frame = requestButtonFrame;
+ [UIView commitAnimations];
+ 
+ }
+ */
+
 
 @end

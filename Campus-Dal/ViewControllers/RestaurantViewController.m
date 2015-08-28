@@ -49,7 +49,7 @@
     // init tableView
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 65, 0);
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 70;
     _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
@@ -62,8 +62,8 @@
     [tvh.likeButton addTarget:self action:@selector(likeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [tvh.dislikeButton addTarget:self action:@selector(dislikeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     _tableView.tableHeaderView = tvh;
-    [_tableView layoutIfNeeded];
     [tvh initWithRestaurant:_restaurant];
+    [_tableView layoutIfNeeded];
 
     // init footer view
     [_footerView.phoneNumberLabel setText:_restaurant.phoneNumber];
@@ -162,6 +162,7 @@
         // update Header
         RestaurantTableViewHeader * header =  (RestaurantTableViewHeader *)_tableView.tableHeaderView;
         [header initWithRestaurant:_restaurant];
+        _tableView.tableHeaderView = header;
         
         // update Footer
         [_footerView.phoneNumberLabel setText:_restaurant.phoneNumber];
@@ -275,6 +276,7 @@
     [[header.likeButtonImageView superview] setBackgroundColor:MAIN_COLOR];
     [header.dislikeButtonImageView setHidden:NO];
     [header.evaluationButton setHidden:YES];
+    [header.border3 setHidden:YES];
 }
 - (void)likeButtonClicked:(id)sender{
     if([_restaurant.myPreference intValue] == 1){
@@ -334,7 +336,7 @@
     }
     
     ServerHelper * serverHelper = [[ServerHelper alloc] init];
-    [serverHelper set_user_preference:_restaurant.serverID preference:[NSNumber numberWithInt:-1]];
+    [serverHelper set_user_preference:_restaurant.serverID preference:[NSNumber numberWithInt:0]];
     
     // update view
     RestaurantTableViewHeader * header =(RestaurantTableViewHeader *)_tableView.tableHeaderView;

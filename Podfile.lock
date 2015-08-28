@@ -12,17 +12,27 @@ PODS:
   - GoogleSymbolUtilities (1.0.0)
   - GoogleUtilities (1.0.1):
     - GoogleSymbolUtilities (~> 1.0)
-  - Reachability (3.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - SSKeychain (1.2.3)
+  - TMReachability (3.2)
 
 DEPENDENCIES:
   - Google/Analytics (~> 1.0.0)
-  - Reachability
   - SDWebImage (~> 3.7)
   - SSKeychain
+  - TMReachability (from `https://github.com/albertbori/Reachability`, commit `e34782b386307e386348b481c02c176d58ba45e6`)
+
+EXTERNAL SOURCES:
+  TMReachability:
+    :commit: e34782b386307e386348b481c02c176d58ba45e6
+    :git: https://github.com/albertbori/Reachability
+
+CHECKOUT OPTIONS:
+  TMReachability:
+    :commit: e34782b386307e386348b481c02c176d58ba45e6
+    :git: https://github.com/albertbori/Reachability
 
 SPEC CHECKSUMS:
   Google: 875f5a8ade86dd02e36586e4a54814843938c7f6
@@ -30,8 +40,8 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: a7b0feed1fe667c8d5e647177938d0ecd62d6948
   GoogleUtilities: e3475cd4d45134221d2f3f3626095a1c49b62041
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
+  TMReachability: 48c99d728a8b0ad4493800592484b8cbb65c896c
 
 COCOAPODS: 0.38.2

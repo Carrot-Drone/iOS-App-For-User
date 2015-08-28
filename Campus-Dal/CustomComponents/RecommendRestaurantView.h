@@ -27,6 +27,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * resTitleLabel;
 @property (nonatomic, strong) IBOutlet UILabel * resSubTitleLabel;
 
+@property (nonatomic, strong) IBOutlet UIView * evaluationView;
 @property (nonatomic, strong) IBOutlet UIView * likeView;
 @property (nonatomic, strong) IBOutlet UIImageView * likeImageView;
 @property (nonatomic, strong) IBOutlet UILabel * likeLabel;
