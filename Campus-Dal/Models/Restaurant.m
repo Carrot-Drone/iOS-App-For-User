@@ -113,7 +113,7 @@
         _phoneNumber = [dic stringForKey:@"phone_number"];
         _hasFlyer = [dic numberForKey:@"has_flyer"];
         _hasCoupon = [dic numberForKey:@"has_coupon"];
-        _notice = [dic objectForKey:@"notice"];
+        _notice = [dic stringForKey:@"notice"];
         _isNew = [dic numberForKey:@"is_new"];
         _openingHours = [dic numberForKey:@"opening_hours"];
         _closingHours = [dic numberForKey:@"closing_hours"];
@@ -151,7 +151,7 @@
                 [_menus addObject:sections];
             }
         }
-        _recentCallCounter = [[NSNumber alloc] initWithInt:0];
+        _recentCallCounter = [dic numberForKey:@"recent_call_counter"];
     }
     return self;
 }
@@ -180,8 +180,6 @@
     _flyersURL = restaurant.flyersURL;
     
     _menus = restaurant.menus;
-    
-    _recentCallCounter = restaurant.recentCallCounter;
 }
 
 # pragma NSCoding Delegates

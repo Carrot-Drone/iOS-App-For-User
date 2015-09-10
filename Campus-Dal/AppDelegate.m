@@ -17,6 +17,8 @@
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 
 #import  "Constants.h"
+#import "CategoryModel.h"
+#import "Menu.h"
 
 // GA
 #import "GAI.h"
@@ -154,20 +156,35 @@
         // init Restaurant View Controller
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         RestaurantViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantViewController"];
+        vc.hidesBottomBarWhenPushed = YES;
         Restaurant * restaurant = [[StaticHelper staticHelper] restaurant:restaurant_id];
         if(restaurant == nil) {
             restaurant = [[Restaurant alloc] init];
             restaurant.serverID = restaurant_id;
+            restaurant.notice = @"  ";
         }
+        
         [vc setDetailItem:restaurant];
         vc.campusNameForKakaoShare = campusName;
         
         if([self.window.rootViewController isMemberOfClass:[MainTabBarController class]]){
             MainTabBarController * mainTabBarController = (MainTabBarController *)self.window.rootViewController;
-            [(UINavigationController *)mainTabBarController.selectedViewController pushViewController:vc animated:YES];
+            
+            // disable Button for 0.5 sec
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [(UINavigationController *)mainTabBarController.selectedViewController pushViewController:vc animated:YES];
+            });
+            
         }else if([self.window.rootViewController isMemberOfClass:[UINavigationController class]]){
             UINavigationController * navigationController = (UINavigationController *)self.window.rootViewController;
-            [navigationController pushViewController:vc animated:YES];
+            // disable Button for 0.5 sec
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [navigationController pushViewController:vc animated:YES];
+            });
         }
         
         return YES;

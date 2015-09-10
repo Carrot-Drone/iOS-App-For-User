@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>ko_KR</string>
 	<key>CFBundleDisplayName</key>
 	<string>캠퍼스:달</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.2.0</string>
+	<string>3.3.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -27,14 +27,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakaodc0436140247c43a5281b730d2a892ac</string>
+				<string>kakao47fddf941c123ee06413a5734d51f491</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>320</string>
+	<string>329</string>
 	<key>KAKAO_APP_KEY</key>
-	<string>dc0436140247c43a5281b730d2a892ac</string>
+	<string>47fddf941c123ee06413a5734d51f491</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

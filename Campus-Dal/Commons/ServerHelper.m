@@ -17,6 +17,14 @@
 @implementation ServerHelper{
     
 }
++ (void)resetIsCallLogSent{
+    // disable Button for 0.5 sec
+    double delayInSeconds = 3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        isCallLogSent = NO;
+    });
+}
 
 // Sync
 - (NSArray *)get_campuses_list_sync{
@@ -40,6 +48,10 @@
         return nil;
     }
     
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
     NSString * dataURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_RESTAURANTS];
     dataURL = [dataURL stringByReplacingOccurrencesOfString:@":campus_id" withString:[campusID stringValue]];
     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:dataURL]];
@@ -51,6 +63,10 @@
 - (NSDictionary *)get_recommended_restaurants_sync:(NSNumber *)campusID{
     if(![self isConnected]){
         return nil;
+    }
+    
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
     }
     
     NSString * dataURL = [NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_RECOMMENDED_RESTAURANTS];
@@ -101,6 +117,10 @@
         return;
     }
     
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_CAMPUS];
     urlString = [urlString stringByReplacingOccurrencesOfString:@":campus_id" withString:[campusID stringValue]];
     NSMutableString * mutableUrlString = [NSMutableString stringWithString:urlString];
@@ -138,6 +158,10 @@
         return;
     }
     
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_RESTAURANTS];
     urlString = [urlString stringByReplacingOccurrencesOfString:@":campus_id" withString:[campusID stringValue]];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -170,6 +194,14 @@
     // Check For Internet Connection
     if(![self isConnected]){
         return;
+    }
+    
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
+    if(categoryID == nil){
+        categoryID = [NSNumber numberWithInt:0];
     }
     
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_RESTAURANTS_LIST_IN_CATEGORY];
@@ -212,6 +244,10 @@
     // Check For Internet Connection
     if(![self isConnected]){
         return;
+    }
+    
+    if(restaurantID == nil){
+        restaurantID = [NSNumber numberWithInt:0];
     }
     
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_RESTAURANT];
@@ -259,6 +295,10 @@
         return;
     }
     
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, GET_RECOMMENDED_RESTAURANTS];
     urlString = [urlString stringByReplacingOccurrencesOfString:@":campus_id" withString:[campusID stringValue]];
     NSMutableString * mutableUrlString = [NSMutableString stringWithString:urlString];
@@ -295,6 +335,10 @@
     // Check For Internet Connection
     if(![self isConnected]){
         return;
+    }
+    
+    if(restaurantID == nil){
+        restaurantID = [NSNumber numberWithInt:0];
     }
     
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, SET_USER_PREFERENCE];
@@ -334,11 +378,31 @@
 }
 - (void)set_call_log:(NSNumber *)campusID categoryID:(NSNumber *)categoryID restaurantID:(NSNumber *)restaurantID numberOfCalls:(NSNumber *)numberOfCalls hasRecentCall:(BOOL)hasRecentCall{
     
+    if(isCallLogSent){
+        NSLog(@"Not Sent");
+        return;
+    }else{
+        isCallLogSent = YES;
+        [ServerHelper resetIsCallLogSent];
+        NSLog(@"Sent");
+    }
+    
     // Check For Internet Connection
     if(![self isConnected]){
         return;
     }
     
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
+    if(categoryID == nil){
+        categoryID = [NSNumber numberWithInt:0];
+    }
+    
+    if(restaurantID == nil){
+        restaurantID = [NSNumber numberWithInt:0];
+    }
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, SET_CALLLOG];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
@@ -388,6 +452,10 @@
     // Check For Internet Connection
     if(![self isConnected]){
         return;
+    }
+    
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
     }
     
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, SET_DEVICE];
@@ -473,6 +541,10 @@
         return;
     }
     
+    if(restaurantID == nil){
+        restaurantID = [NSNumber numberWithInt:0];
+    }
+    
     NSString * urlString =[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, SET_RESTAURANT_CORRECTION];
     urlString = [urlString stringByReplacingOccurrencesOfString:@":restaurant_id" withString:[restaurantID stringValue]];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -518,6 +590,10 @@
         return;
     }
     
+    if(campusID == nil){
+        campusID = [NSNumber numberWithInt:0];
+    }
+    
     NSMutableArray * imageData = [[NSMutableArray alloc] init];
     for(UIImage * image in images){
         NSData *png = UIImageJPEGRepresentation(image, 1.0);
@@ -534,7 +610,7 @@
     }
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", WEB_BASE_URL, SET_RESTAURANT_SUGGESTION]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20];
     
     [request setHTTPMethod:@"POST"];
     
@@ -657,7 +733,7 @@
 
 
 - (BOOL)isConnected{
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    TMReachability *networkReachability = [TMReachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         NSLog(@"Internet is not connected");

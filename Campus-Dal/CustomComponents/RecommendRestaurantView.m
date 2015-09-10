@@ -36,6 +36,7 @@
 @synthesize resTitleLabel=_resTitleLabel;
 @synthesize resSubTitleLabel=_resSubTitleLabel;
 
+@synthesize evaluationView=_evaluationView;
 @synthesize likeView=_likeView;
 @synthesize likeImageView=_likeImageView;
 @synthesize likeLabel=_likeLabel;

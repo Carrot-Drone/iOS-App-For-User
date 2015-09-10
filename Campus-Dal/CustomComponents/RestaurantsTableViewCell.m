@@ -18,6 +18,7 @@
 
 @synthesize nameLabel=_nameLabel;
 @synthesize flyerButton=_flyerButton;
+@synthesize flyerImageView=_flyerImageView;
 
 @synthesize leftMargin=_leftMargin;
 
@@ -42,6 +43,7 @@
     [_nameLabel setTextColor:[UIColor colorWithRGBHex:0x333333]];
     
     [_flyerButton setImage:[UIImage imageNamed:@"Icon_list_advertisement_flyer"] forState:UIControlStateNormal];
+    [_flyerImageView setImage:[UIImage imageNamed:@"Icon_list_advertisement_flyer"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -29,6 +29,7 @@
     Restaurant * _selectedRestaurant;
     NSString * _currentPhoneNumber;
     int _sortBy;
+    
 }
 
 @end
@@ -63,6 +64,19 @@
     [_fixedTableViewHeader.sortByNameImageView setHidden:YES];
     [_fixedTableViewHeader.sortByRecentOrderImageView setHidden:NO];
     _sortBy = 3;
+    
+    
+    
+    // Register notification when restaurant suggestion is completed
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadRecentOrder:)
+                                                 name:@"reload_recent_order"
+                                               object:nil];
+}
+
+- (void)reloadRecentOrder:(NSNotification *)note{
+    [self reloadRestaurants];
+    [_tableView reloadData];
 }
 
 - (void)initNavigationController{
@@ -93,7 +107,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     // Remove notification
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"set_call_log" object:nil];
 }
 - (void)reloadRestaurants{
     // init _restaurants

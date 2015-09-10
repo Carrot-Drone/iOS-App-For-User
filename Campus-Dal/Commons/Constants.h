@@ -35,18 +35,19 @@
 #define DIVIDER_COLOR2              (UIColor *)[UIColor colorWithRed:200/255.0 green:199/255.0 blue:204/255.0 alpha:1.0]
 #define DIVIDER_COLOR3              (UIColor *)[UIColor colorWithRed:188/255.0 green:188/255.0 blue:188/255.0 alpha:1.0]
 
-#define POINT_COLOR         (UIColor *)[UIColor redColor]
+#define POINT_COLOR         (UIColor *)[UIColor colorWithRed:255/255.0 green:9/255.0 blue:9/255.0 alpha:1.0]
 #define DARK_GRAY           (UIColor *)[UIColor darkGrayColor]
 #define LiGHT_GRAY          (UIColor *)[UIColor lightGrayColor]
 
 #define DARK_BACKGROUND     (UIColor *)[UIColor darkGrayColor]
 #define LIGHT_BACKGORUND    (UIColor *)[UIColor lightGrayColor]
 
-#define BUTTON_BACKGROUND   (UIColor *)[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6]
+#define BUTTON_BACKGROUND   (UIColor *)[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.12]
 
 
 // Server
 #define WEB_BASE_URL                    @"http://shadal.kr/"
+//#define WEB_BASE_URL                    @"http://shadal.kr:3000/"
 
 #define GET_CAMPUS                          @"campus/:campus_id"
 #define GET_CAMPUSES_LIST                   @"campuses"

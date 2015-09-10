@@ -65,6 +65,7 @@
     // init ScrollView
     _mainScrollFrame = CGRectMake(0, 0, 0, 0);
     [self reloadViews];
+    
 
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -221,12 +222,12 @@
     RecommendRestaurantView * rv = (RecommendRestaurantView *)[[view subviews] objectAtIndex:0];
     NSArray * restaurants;
     if(i==0){
-        [rv.resNewImageView setHidden:NO];
+        [rv.resNewImageView setHidden:YES];
         restaurants = _trendRestaurants;
         rv.nextButton1.tag = 0;
         rv.nextButton2.tag = 0;
     }else{
-        [rv.resNewImageView setHidden:YES];
+        [rv.resNewImageView setHidden:NO];
         restaurants = _newRestaurants;
         rv.nextButton1.tag = 1;
         rv.nextButton2.tag = 1;
@@ -242,6 +243,23 @@
     [rv.buttonViewButton addTarget:self action:@selector(phoneCallButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [rv.nextButton1 addTarget:self action:@selector(scrollUpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [rv.nextButton2 addTarget:self action:@selector(scrollDownButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // init Tap Gesture
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]
+                                    initWithTarget:self
+                                    action:@selector(restaurantButtonClicked:)];
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]
+                                    initWithTarget:self
+                                    action:@selector(restaurantButtonClicked:)];
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]
+                                    initWithTarget:self
+                                    action:@selector(restaurantButtonClicked:)];
+    tap1.cancelsTouchesInView = NO;
+    tap2.cancelsTouchesInView = NO;
+    tap3.cancelsTouchesInView = NO;
+    [rv.titleView addGestureRecognizer:tap1];
+    [rv.evaluationView addGestureRecognizer:tap2];
+    [rv.statusView addGestureRecognizer:tap3];
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSLog(@"Decelerating");
@@ -446,8 +464,15 @@
     // GA
     [ServerHelper sendGoogleAnalyticsEvent:@"UX" action:@"category_in_recommend_clicked" label:[_selectedCategory.serverID stringValue]];
 }
-- (void)restaurantButtonClicked:(UIButton *)sender{
-    RecommendRestaurantView * view = (RecommendRestaurantView *)[[[sender superview] superview] superview];
+- (void)restaurantButtonClicked:(id)sender{
+    RecommendRestaurantView * view;
+    if([sender isKindOfClass:[UIButton class]]){
+        view = (RecommendRestaurantView *)[[[sender superview] superview] superview];
+
+    }else{
+        // From Tap Gesture
+        view = (RecommendRestaurantView *)[[[(UIGestureRecognizer *)sender view] superview] superview];
+    }
     Restaurant * restaurant = view.restaurant;
     _selectedRestaurant = restaurant;
     [self performSegueWithIdentifier:@"RestaurantViewController" sender:self];

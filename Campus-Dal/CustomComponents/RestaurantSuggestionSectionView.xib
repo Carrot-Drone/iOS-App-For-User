@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,14 +19,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(스캔 이미지인 경우 가장 좋습니다)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bt-MA-Gwn">
-                    <rect key="frame" x="77.5" y="23" width="166.5" height="14.5"/>
+                    <rect key="frame" x="77" y="23" width="167.5" height="14.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 필수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfv-bt-LYn">
-                    <rect key="frame" x="259" y="22" width="31.5" height="16"/>
+                    <rect key="frame" x="252.5" y="22" width="33" height="16"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,7 +50,7 @@
                 <constraint firstItem="kPd-NR-ehi" firstAttribute="leading" secondItem="rSJ-el-p6j" secondAttribute="leading" constant="50" id="H6H-xg-u11"/>
                 <constraint firstItem="HM8-od-Nh9" firstAttribute="top" secondItem="rSJ-el-p6j" secondAttribute="top" constant="20" id="JC1-f8-Q3p"/>
                 <constraint firstItem="HM8-od-Nh9" firstAttribute="centerY" secondItem="kfv-bt-LYn" secondAttribute="centerY" id="LXB-f1-09e"/>
-                <constraint firstItem="kfv-bt-LYn" firstAttribute="leading" secondItem="8Bt-MA-Gwn" secondAttribute="trailing" constant="15" id="SfR-WE-0uw"/>
+                <constraint firstItem="kfv-bt-LYn" firstAttribute="leading" secondItem="8Bt-MA-Gwn" secondAttribute="trailing" constant="8" id="SfR-WE-0uw"/>
                 <constraint firstItem="HM8-od-Nh9" firstAttribute="centerY" secondItem="kPd-NR-ehi" secondAttribute="centerY" id="b69-nb-cj5"/>
                 <constraint firstAttribute="bottom" secondItem="HM8-od-Nh9" secondAttribute="bottom" constant="5" id="gPo-XO-m41"/>
                 <constraint firstAttribute="centerY" secondItem="kPd-NR-ehi" secondAttribute="centerY" constant="0.5" id="hyZ-LH-2zr"/>

@@ -82,7 +82,7 @@
 
     
     // init TableView
-    _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    //_tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0);
@@ -289,6 +289,7 @@
     }else{
         [ServerHelper sendGoogleAnalyticsEvent:@"UX" action:@"restaurant_suggestion_by_restaurant" label:@""];
     }
+    [self performSegueWithIdentifier:@"RestaurantSuggestionCompleteViewController" sender:self];
     
 }
 
@@ -490,15 +491,16 @@
         didFinishPickingImage:(UIImage *)image
                   editingInfo:(NSDictionary *)editingInfo
 {
-    CGFloat scaleSize = 0.7;
+    CGFloat scaleSize = 1;
     while(1){
         NSData* data = UIImageJPEGRepresentation(image, 0.0);
         if(data.length <= 100*1024 || scaleSize <= 0.1){
             NSLog(@"%ldKB", data.length / 1024);
             break;
         }
+        scaleSize = pow(data.length/100.0*1024.0, 1/2)*0.9;
         // Compress data
-        image = [self resizeImage:image ToSize:CGSizeMake(image.size.width * 0.7, image.size.height * 0.7)];
+        image = [self resizeImage:image ToSize:CGSizeMake(image.size.width * scaleSize, image.size.height * scaleSize)];
     }
     
     [_images addObject:image];
@@ -574,6 +576,9 @@
 - (BOOL)textField:(UITextField *)textField
 shouldChangeCharactersInRange:(NSRange)range
  replacementString:(NSString *)string {
+    if([string isEqualToString:@"\n"]){
+        [textField resignFirstResponder];
+    }
     if(textField.tag == TF_PHONE_NUMBER){
         if (range.length <= 0)
         {
@@ -610,8 +615,6 @@ shouldChangeCharactersInRange:(NSRange)range
             UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"등록에 실패했습니다" message:@"잠시 후 다시 시도해주세요" delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil];
             [alertView show];
         }
-    }else{
-        [self performSegueWithIdentifier:@"RestaurantSuggestionCompleteViewController" sender:self];
     }
     
 }

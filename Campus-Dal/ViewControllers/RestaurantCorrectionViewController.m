@@ -122,8 +122,10 @@
     NSMutableString * correction = [[NSMutableString alloc] initWithString:@""];
     for(int i=0;i<=4; i++){
         RestaurantCorrectionCell * cell = [_cells objectForKey:[NSString stringWithFormat:@"cell%d",i]];
-        [correction appendString:cell.titleLabel.text];
-        [correction appendString:@"\n"];
+        if(cell.isSelected){
+            [correction appendString:cell.titleLabel.text];
+            [correction appendString:@"\n"];
+        }
     }
     
     ServerHelper * serverHelper = [[ServerHelper alloc] init];

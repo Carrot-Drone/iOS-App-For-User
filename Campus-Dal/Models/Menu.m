@@ -21,17 +21,59 @@
 
 -(NSString *)priceString{
     if(_submenus == nil || [_submenus count]==0){
-        return [NSString stringWithFormat:@"%@원", _price];
+        if([_price isEqualToNumber:[NSNumber numberWithInt:0]]){
+            return @"";
+        }else{
+            return [NSString stringWithFormat:@"%@원", _price];
+        }
     }else{
+        int max_length_name = 0;
+        int max_length_price = 0;
+        for(NSDictionary * dic in _submenus){
+            NSString * name = [dic stringForKey:@"name"];
+            NSNumber * price = [dic numberForKey:@"price"];
+            if(name.length > max_length_name){
+                max_length_name = (int)name.length;
+            }
+            if([price stringValue].length > max_length_price){
+                max_length_price = (int)[price stringValue].length;
+            }
+        }
         NSMutableString * submenus = [[NSMutableString alloc] initWithString:@""];
         for(NSDictionary * dic in _submenus){
             NSString * name = [dic stringForKey:@"name"];
             NSNumber * price = [dic numberForKey:@"price"];
-            [submenus appendString:[NSString stringWithFormat:@"%@ : %@원\r\n", name, [price stringValue]]];
+                        
+            //[submenus appendString:[NSString stringWithFormat:@"%@ : %@원\r\n", [self rightPadding:name WithWidth:max_length_name], [self leftPadding:[price stringValue] WithWidth:max_length_price]]];
+            [submenus appendString:[NSString stringWithFormat:@"%@ : %5s원\r\n", name, [[price stringValue] UTF8String]]];
         }
-        return [submenus substringToIndex:[submenus length]-4];
+        return [submenus substringToIndex:[submenus length]-2];
     }
 }
+- (NSString *)leftPadding:(NSString *)str WithWidth:(int)width{
+    if(str.length > width){
+        return str;
+    }else{
+        NSMutableString * mutableStr = [NSMutableString stringWithString:@""];
+        while(mutableStr.length < width - str.length){
+            [mutableStr appendString:@" "];
+        }
+        [mutableStr appendString:str];
+        return (NSString *)mutableStr;
+    }
+}
+- (NSString *)rightPadding:(NSString *)str WithWidth:(int)width{
+    if(str.length > width){
+        return str;
+    }else{
+        NSMutableString * mutableStr = [NSMutableString stringWithString:str];
+        while(mutableStr.length == width){
+            [mutableStr appendString:@" "];
+        }
+        return (NSString *)mutableStr;
+    }
+}
+
 -(id)initWithDictionary:(NSDictionary *)dic{
     self = [super init];
     if(self){

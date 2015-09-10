@@ -10,8 +10,8 @@
 
 #import "RecentOrderTableViewHeader.h"
 
-@interface RecentOrderViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+@interface RecentOrderViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+}
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) IBOutlet UILabel * placeHolderLabel;
 

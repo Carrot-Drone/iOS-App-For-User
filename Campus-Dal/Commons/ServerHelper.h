@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Reachability/Reachability.h>
+#import <TMReachability/Reachability.h>
+
+static BOOL isCallLogSent;
 
 @interface ServerHelper : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate, UIAlertViewDelegate>
 
@@ -16,7 +18,7 @@
 - (BOOL)isConnected;
 
 // API's
-
++ (void)resetIsCallLogSent;
 // Sync
 - (NSArray *)get_campuses_list_sync;
 - (NSDictionary *)get_recommended_restaurants_sync:(NSNumber *)campusID;

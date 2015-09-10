@@ -46,6 +46,8 @@
     }else if(screenWidth == 414){
         // iPhone 6+
         height = 179;
+    }else{
+        height = 179;
     }
     _heightConstraint.constant = height;
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);

@@ -55,17 +55,12 @@
     _tableView.dataSource = self;
     _tableView.separatorColor = [UIColor clearColor];
     [_tableView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-
     
-    CategoriesTableViewFooter * ctvf = (CategoriesTableViewFooter *)[[NSBundle mainBundle] loadNibNamed:@"CategoriesTableViewFooter" owner:nil options:nil][0];
-    NSString * campusName = [[[StaticHelper staticHelper] campus] nameKor];
-    NSString * administrator = [[[StaticHelper staticHelper] campus] administrator];
-    if(administrator == nil || [administrator isEqualToString:@""]){
-        administrator = @"캠퍼스:달";
-    }
-    [ctvf.subLabel1 setText:[NSString stringWithFormat:@"%@ 주변 음식점 정보의 수정 및 관리는", campusName]];
-    [ctvf.subLabel2 setText:[NSString stringWithFormat:@"%@에서 관리합니다", administrator]];
-    _tableView.tableFooterView = ctvf;
+    // init delegate
+    self.navigationController.delegate = self;
+    
+    // init footer
+    [self reloadFooter];
     
     // init categories image name
     _categoriesImageName = [[NSArray alloc] initWithObjects:@"Icon_list_food_chicken", @"Icon_list_food_pizza", @"Icon_list_food_chinese_dishes", @"Icon_list_food_korean_dishes", @"Icon_list_food_lunch",  @"Icon_list_food_jokbal", @"Icon_list_food_cold_noodles",@"Icon_list_food_etc",  nil];
@@ -78,7 +73,16 @@
     _searchController.searchBar.delegate = self;
     [_searchController.searchBar sizeToFit];
     [_searchController.searchBar setPlaceholder:@"음식점 이름이나 메뉴를 검색하세요"];
-    self.view.backgroundColor = MAIN_COLOR;
+    
+    // TODO
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    if(screenWidth > 414){
+        self.view.backgroundColor = [UIColor whiteColor];
+    }else{
+        self.view.backgroundColor = MAIN_COLOR;
+    }
+    
     [[UISearchBar appearance] setBackgroundImage:[UIImage image1x1WithColor:MAIN_COLOR]];
     _tableView.tableHeaderView = _searchController.searchBar;
     _tableView.backgroundColor =[UIColor clearColor];
@@ -87,17 +91,17 @@
 
     // init navigation controller
     [self initNavigationController];
-    
-    
 }
-
+- (void)dismissKeyboard{
+    [_searchController setActive:NO];
+}
 - (void)initNavigationController{
     // init navigation bar
     self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // init add left bar button item
-    [self setLeftBarButtonItem];
+    [self setRightBarButtonItem];
     
     // remove border in nav bar
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
@@ -111,15 +115,34 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
-- (void)setLeftBarButtonItem{
+- (void)reloadFooter{
+    _tableView.tableFooterView = nil;
+    CategoriesTableViewFooter * ctvf = (CategoriesTableViewFooter *)[[NSBundle mainBundle] loadNibNamed:@"CategoriesTableViewFooter" owner:nil options:nil][0];
+    NSString * campusName = [[[StaticHelper staticHelper] campus] nameKor];
+    NSString * administrator = [[[StaticHelper staticHelper] campus] administrator];
+    if(administrator == nil || [administrator isEqualToString:@""]){
+        administrator = @"캠퍼스:달";
+    }
+    [ctvf.subLabel1 setText:[NSString stringWithFormat:@"%@ 주변 음식점 정보의 수정 및 관리는", campusName]];
+    [ctvf.subLabel2 setText:[NSString stringWithFormat:@"%@에서 관리합니다", administrator]];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    if(screenWidth > 320){
+        // If not iPhone 4, 5
+        _tableView.tableFooterView = ctvf;
+    }
+}
+
+- (void)setRightBarButtonItem{
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:@"Icon_action_bar_plus"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(restaurantSuggestionButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
     [button setFrame:CGRectMake(0, 0, 44, 44)];
-    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -12, 0, 12)];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, 12, 0, -12)];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
 
-    self.navigationItem.leftBarButtonItem = barButton;
+    self.navigationItem.rightBarButtonItem = barButton;
 }
 - (void)viewWillAppear:(BOOL)animated{
     _categories = [[StaticHelper staticHelper] allData];
@@ -311,6 +334,13 @@
         [ServerHelper sendGoogleAnalyticsEvent:@"UX" action:@"category_in_categories_clicked" label:[category.serverID stringValue]];
     }
     
+}
+
+# pragma mark - NavigationController Delegate
+- (void)navigationController:(UINavigationController *)navigationController
+      willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [self reloadFooter];
 }
 
 @end

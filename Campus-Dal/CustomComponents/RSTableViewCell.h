@@ -15,4 +15,6 @@
 @property (nonatomic, strong) IBOutlet UIImageView * imageView;
 @property (nonatomic, strong) IBOutlet UIButton * suggestionButton;
 
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint * imageWidth;
+
 @end

@@ -86,10 +86,12 @@
     
     // Set Recommended restaurant
     ServerHelper * serverHelper = [[ServerHelper alloc] init];
-    [serverHelper get_recommended_restaurants:[[[StaticHelper staticHelper] campus] serverID]];
+    if([[StaticHelper staticHelper] campus] != nil && [[[StaticHelper staticHelper] campus] serverID] != nil){
+        [serverHelper get_recommended_restaurants:[[[StaticHelper staticHelper] campus] serverID]];
+    }
     
     // get Campus
-    if([[StaticHelper staticHelper] campus] != nil){
+    if([[StaticHelper staticHelper] campus] != nil && [[[StaticHelper staticHelper] campus] serverID] != nil){
         [serverHelper get_campus:[[[StaticHelper staticHelper] campus] serverID]];
     }
     

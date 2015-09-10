@@ -44,9 +44,9 @@
     
     if(screenWidth == 320){
         // If iPhone 4, 5
-        [_retentionLabel setFont:[UIFont fontWithName:MAIN_FONT size:10]];
-        [_officeHoursLabel setFont:[UIFont fontWithName:MAIN_FONT size:10]];
-        [_flyerLabel setFont:[UIFont fontWithName:MAIN_FONT size:10]];
+        [_retentionLabel setFont:[UIFont fontWithName:MAIN_FONT size:12]];
+        [_officeHoursLabel setFont:[UIFont fontWithName:MAIN_FONT size:12]];
+        [_flyerLabel setFont:[UIFont fontWithName:MAIN_FONT size:12]];
         _imageWidth1.constant = 10;
         _imageWidth2.constant = 10;
 

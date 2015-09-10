@@ -93,10 +93,20 @@
     }
     
     _percentageLabel.text = [NSString stringWithFormat:@"%d%%", percentage];
-    _gaugeWidth.constant = _gaugeBackgroundView.frame.size.width * (((double)percentage)/100.0);
+    
+    // Change Gauge bar with animation
+    [UIView animateWithDuration:5.0
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^ {
+                         _gaugeWidth.constant = _gaugeBackgroundView.frame.size.width * (((double)percentage)/100.0);
+                         
+                     }completion:^(BOOL finished) {
+                         
+                     }];
     
     // Status View
-    _retentionLabel.text = [NSString stringWithFormat:@"%d", (int)([restaurant.retention doubleValue]*100)];
+    _retentionLabel.text = [restaurant retentionString];
     _callLabel.text = [NSString stringWithFormat:@"%d", [restaurant.numberOfCalls intValue]];
     _totalCallLabel.text = [restaurant estimatedTotalCallString];
     
@@ -111,7 +121,7 @@
         [_evaluationButton removeFromSuperview];
         [_like_dislikeLabel removeFromSuperview];
         [_like_dislikeImageView removeFromSuperview];
-        
+        [_border3 removeFromSuperview];
     }else if([restaurant.myPreference intValue] == -1){
         [_likeButtonImageView setHidden:NO];
         [[_likeButtonImageView superview] setBackgroundColor:MAIN_COLOR];
@@ -122,15 +132,17 @@
         [_evaluationButton removeFromSuperview];
         [_like_dislikeLabel removeFromSuperview];
         [_like_dislikeImageView removeFromSuperview];
+        [_border3 removeFromSuperview];
     }else{
         [_likeButtonImageView setImage:[UIImage imageNamed:@"Icon_detail_page_bar_like"]];
         [_dislikeButtonImageView setImage:[UIImage imageNamed:@"Icon_detail_page_btn_hate"]];
     }
     
     // Notice View
+    
     if([restaurant notice] == nil || [restaurant.notice isEqualToString:@""]){
-        [_noticeView removeFromSuperview];
         self.frame = CGRectMake(0, 0, self.frame.size.width, _noticeView.frame.origin.y);
+        [_noticeView removeFromSuperview];
     }else{
         _noticeLabel.text = [restaurant notice];
         [_noticeLabel layoutIfNeeded];
@@ -139,6 +151,7 @@
     }
     
     [self layoutIfNeeded];
+
 }
 
 - (void)awakeFromNib{
@@ -148,22 +161,26 @@
     [_officeHourLabel setFont:[UIFont fontWithName:MAIN_FONT size:13]];
     [_officeHourLabel setTextColor:[UIColor colorWithRGBHex:0xffffff]];
     [_officeHourTitleLabel setFont:[UIFont fontWithName:MAIN_FONT_BOLD size:13]];
-    [_officeHourTitleLabel setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.6]];
+    //[_officeHourTitleLabel setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.6]];
+    [_officeHourTitleLabel setTextColor:[UIColor colorWithRGBHex:0xfdcdba]];
     
     [_minimumPriceDotImageView setImage:[UIImage imageNamed:@"Icon_detail_page_bar_dot"]];
     [_minimumPriceLabel setFont:[UIFont fontWithName:MAIN_FONT size:13]];
     [_minimumPriceLabel setTextColor:[UIColor colorWithRGBHex:0xffffff]];
     [_minimumPriceTitleLabel setFont:[UIFont fontWithName:MAIN_FONT_BOLD size:13]];
-    [_minimumPriceTitleLabel setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.6]];
+    //[_minimumPriceTitleLabel setTextColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.6]];
+    [_minimumPriceTitleLabel setTextColor:[UIColor colorWithRGBHex:0xfdcdba]];
     
     // Like View
     [_likeImageView setImage:[UIImage imageNamed:@"Icon_detail_page_bar_like"]];
     [_dislikeImageView setImage:[UIImage imageNamed:@"Icon_detail_page_bar_hate"]];
     [_gaugeView setBackgroundColor:LIKE_GAUGE_COLOR];
     
+    
     [_gaugeBackgroundView setBackgroundColor:[UIColor colorWithRGBHex:0xebebeb]];
     _gaugeBackgroundView.layer.cornerRadius = 8;
     _gaugeBackgroundView.clipsToBounds = YES;
+    _gaugeWidth.constant = 0;
     
     [_likeLabel setFont:[UIFont fontWithName:MAIN_FONT_BOLD size:12]];
     [_likeLabel setTextColor:[UIColor colorWithRGBHex:0xffffff]];
@@ -202,7 +219,7 @@
     // Border
     [_border1 setBackgroundColor:[UIColor colorWithRGBHex:0xececec]];
     [_border2 setBackgroundColor:[UIColor colorWithRGBHex:0xececec]];
-    [_border3 setBackgroundColor:[UIColor colorWithRGBHex:0xececec]];
+    [_border3 setBackgroundColor:[UIColor colorWithRGBHex:0xfdb787]];
     
     // Button View
     _buttonView.layer.cornerRadius = 5;

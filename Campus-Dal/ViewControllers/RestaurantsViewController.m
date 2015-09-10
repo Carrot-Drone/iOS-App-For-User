@@ -162,6 +162,8 @@
                     res.retention = [restaurantDic numberForKey:@"retention"];
                     res.openingHours = [restaurantDic numberForKey:@"opening_hours"];
                     res.closingHours = [restaurantDic numberForKey:@"closing_hours"];
+                    res.flyersURL = [restaurantDic objectForKey:@"flyers_url"];
+
                     isRemoved = false;
                     break;
                 }
@@ -243,6 +245,7 @@
     cell.retentionLabel.text = [restaurant retentionString];
     cell.nameLabel.text = [restaurant name];
     cell.flyerButton.hidden = ![[restaurant hasFlyer] boolValue];
+    cell.flyerImageView.hidden = ![[restaurant hasFlyer] boolValue];
     cell.flyerButton.tag = indexPath.row;
     [cell.flyerButton addTarget:self action:@selector(flyerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating>
+@interface CategoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) UISearchController * searchController;
