@@ -44,33 +44,9 @@
             NSString * name = [dic stringForKey:@"name"];
             NSNumber * price = [dic numberForKey:@"price"];
                         
-            //[submenus appendString:[NSString stringWithFormat:@"%@ : %@원\r\n", [self rightPadding:name WithWidth:max_length_name], [self leftPadding:[price stringValue] WithWidth:max_length_price]]];
             [submenus appendString:[NSString stringWithFormat:@"%@ : %5s원\r\n", name, [[price stringValue] UTF8String]]];
         }
         return [submenus substringToIndex:[submenus length]-2];
-    }
-}
-- (NSString *)leftPadding:(NSString *)str WithWidth:(int)width{
-    if(str.length > width){
-        return str;
-    }else{
-        NSMutableString * mutableStr = [NSMutableString stringWithString:@""];
-        while(mutableStr.length < width - str.length){
-            [mutableStr appendString:@" "];
-        }
-        [mutableStr appendString:str];
-        return (NSString *)mutableStr;
-    }
-}
-- (NSString *)rightPadding:(NSString *)str WithWidth:(int)width{
-    if(str.length > width){
-        return str;
-    }else{
-        NSMutableString * mutableStr = [NSMutableString stringWithString:str];
-        while(mutableStr.length == width){
-            [mutableStr appendString:@" "];
-        }
-        return (NSString *)mutableStr;
     }
 }
 

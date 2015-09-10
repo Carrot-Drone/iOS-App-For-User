@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <TMReachability/Reachability.h>
-
 static BOOL isCallLogSent;
 
 @interface ServerHelper : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate, UIAlertViewDelegate>

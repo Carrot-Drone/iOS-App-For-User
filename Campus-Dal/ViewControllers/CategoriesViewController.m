@@ -133,7 +133,6 @@
         _tableView.tableFooterView = ctvf;
     }
 }
-
 - (void)setRightBarButtonItem{
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:@"Icon_action_bar_plus"] forState:UIControlStateNormal];

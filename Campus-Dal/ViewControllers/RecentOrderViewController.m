@@ -64,7 +64,9 @@
     [_fixedTableViewHeader.sortByNameImageView setHidden:YES];
     [_fixedTableViewHeader.sortByRecentOrderImageView setHidden:NO];
     _sortBy = 3;
-    
+
+    // init delegate
+    self.navigationController.delegate = self;
     
     
     // Register notification when restaurant suggestion is completed
