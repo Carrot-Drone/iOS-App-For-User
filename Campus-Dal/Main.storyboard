@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -564,10 +565,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fts-eX-vVk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fts-eX-vVk">
                                 <rect key="frame" x="205.5" y="178.5" width="188.5" height="163.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="등록된 음식점이 없습니다ㅠㅠ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvZ-Ik-WEc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 음식점이 없습니다ㅠㅠ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvZ-Ik-WEc">
                                         <rect key="frame" x="0.0" y="144" width="188.5" height="19.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1541,7 +1542,7 @@
                         <outlet property="activityIndicator" destination="h1U-C4-2HI" id="nRo-n4-Hxl"/>
                         <outlet property="footer" destination="3QG-1S-8RZ" id="DZ0-dl-BCV"/>
                         <outlet property="tableView" destination="FkH-bs-5GM" id="jQI-Xa-3d7"/>
-                        <segue destination="KVY-5m-WVz" kind="presentation" identifier="RestaurantSuggestionCompleteViewController" modalPresentationStyle="fullScreen" animates="NO" id="C8l-2R-ngF"/>
+                        <segue destination="KVY-5m-WVz" kind="presentation" identifier="RestaurantSuggestionCompleteViewController" animates="NO" modalPresentationStyle="fullScreen" id="C8l-2R-ngF"/>
                         <segue destination="xnr-X1-uwg" kind="presentation" identifier="SelectCampusViewController" id="llj-r7-Xtf"/>
                     </connections>
                 </viewController>
@@ -1615,7 +1616,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필요한 경우 추가 연락을 드릴 수 있습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmX-Lg-hHP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="필요한 경우 추가 연락을 드릴 수 있습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmX-Lg-hHP">
                                                 <rect key="frame" x="56" y="313.5" width="182" height="13.5"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>

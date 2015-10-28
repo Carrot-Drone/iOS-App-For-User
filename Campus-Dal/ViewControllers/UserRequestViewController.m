@@ -249,6 +249,7 @@
     [self moveTableViewDown];
      */
 }
+
 #pragma mark - Keyboard Notification
 
 -(void) keyboardWillShow:(NSNotification *)note

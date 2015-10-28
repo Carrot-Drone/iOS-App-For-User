@@ -622,7 +622,7 @@
                     <rect key="frame" x="0.0" y="208" width="600" height="32"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Detail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-Yb-Gss">
-                            <rect key="frame" x="31" y="4" width="569" height="20"/>
+                            <rect key="frame" x="31" y="4" width="549" height="20"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -648,7 +648,7 @@
                         <constraint firstItem="Wzp-Yb-Gss" firstAttribute="top" secondItem="pSx-Aa-2UF" secondAttribute="top" id="ILH-nd-U9b"/>
                         <constraint firstItem="Wzp-Yb-Gss" firstAttribute="top" secondItem="1ED-1d-LFb" secondAttribute="top" id="KFL-ur-qKh"/>
                         <constraint firstAttribute="height" constant="82" id="X0x-fx-7PG"/>
-                        <constraint firstAttribute="trailing" secondItem="Wzp-Yb-Gss" secondAttribute="trailing" id="XMZ-cm-LJ8"/>
+                        <constraint firstAttribute="trailing" secondItem="Wzp-Yb-Gss" secondAttribute="trailing" constant="20" id="XMZ-cm-LJ8"/>
                         <constraint firstItem="1ED-1d-LFb" firstAttribute="leading" secondItem="pSx-Aa-2UF" secondAttribute="leading" constant="15" id="lFS-1i-9hh"/>
                         <constraint firstItem="Wzp-Yb-Gss" firstAttribute="leading" secondItem="pSx-Aa-2UF" secondAttribute="leading" constant="16" id="usb-1i-dlo"/>
                     </constraints>
