@@ -135,7 +135,6 @@
 }
 - (void)phoneCallButtonClicked:(UIButton *)sender{
     NSLog(@"Phone Call :");
-    
     // disable Button for 2 sec
     sender.enabled = NO;
     double delayInSeconds = 2.0;

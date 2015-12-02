@@ -26,6 +26,8 @@
 #import "StaticHelper.h"
 #import "ServerHelper.h"
 
+#import <AirBridge/AirBridge.h>
+
 @interface RestaurantViewController (){
     Restaurant * _restaurant;
     NSInteger _myPre;
@@ -179,6 +181,7 @@
 # pragma mark - Button Clicked
 - (void)phoneCallButtonClicked:(UIButton *)sender{
     NSLog(@"Phone Call :");
+    [[AirBridge instance]goalWithDescription:[NSString stringWithFormat:@"%@", _restaurant.name] key:[NSString stringWithFormat:@"%d", _restaurant.serverID]];
     
     // disable Button for 2 sec
     sender.enabled = NO;

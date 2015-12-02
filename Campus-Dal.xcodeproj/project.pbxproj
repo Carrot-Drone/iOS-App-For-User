@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9EFAFBB8BD4CC7D606996FF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714AA64D4957DE4B1529E96 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9EFAFBB8BD4CC7D606996FF8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714AA64D4957DE4B1529E96 /* Pods.framework */; };
 		F50FEFEB1B8483040005BBA9 /* Start_app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F50FEFE91B8483040005BBA9 /* Start_app_icon@2x.png */; };
 		F50FEFEC1B8483040005BBA9 /* Start_app_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F50FEFEA1B8483040005BBA9 /* Start_app_icon@3x.png */; };
 		F51344251B8379230003F03B /* libFlurry_6.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F51344241B8379230003F03B /* libFlurry_6.7.0.a */; };

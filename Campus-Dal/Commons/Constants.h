@@ -48,6 +48,7 @@
 // Server
 #define WEB_BASE_URL                    @"http://shadal.kr/"
 //#define WEB_BASE_URL                    @"http://shadal.kr:3000/"
+//#define WEB_BASE_URL                    @"http://211.249.50.56/"
 
 #define GET_CAMPUS                          @"campus/:campus_id"
 #define GET_CAMPUSES_LIST                   @"campuses"

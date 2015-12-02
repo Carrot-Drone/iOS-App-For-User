@@ -6,3 +6,4 @@ pod 'TMReachability', :git => 'https://github.com/albertbori/Reachability', :com
 pod 'SDWebImage', '~>3.7'
 pod 'Google/Analytics', '~> 1.0.0'
 pod 'SSKeychain'
+pod 'AirBridge'

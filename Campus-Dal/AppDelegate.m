@@ -28,6 +28,10 @@
 // Flurry
 #import "Flurry.h"
 
+// AirBridge
+#import <AirBridge/AirBridge.h>
+#import <AirBridge/ABCommon.h>
+
 @interface AppDelegate ()
 
 @end
@@ -35,6 +39,9 @@
 @implementation AppDelegate
 
 @synthesize mainTabBarController=_mainTabBarController;
+
+NSString *AIRBRIDGE_USER_TOKEN = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjIsInR5cCI6ImFpcmJyaWRnZS9hcGkvdjEiLCJhdWQiOiJBSVJCUklER0UifQ.JAYWkkE-9T09qoNbJXkJtdHAMAfQAIa-xy8vp2jrN9M";
+NSString *AIRBRIDGE_APP_TOKEN = @"3";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Set Status Bar color to white
@@ -81,6 +88,23 @@
     
     //init Flurry
     [Flurry startSession:FLURRY_API_KEY];
+    
+    //AirBridge
+    AirBridge* airbridge_instance = [AirBridge getInstance:AIRBRIDGE_USER_TOKEN appToken:AIRBRIDGE_APP_TOKEN];
+    [ABCommon showDebugConsole:YES];
+    
+    [airbridge_instance registDefaultRoutingCallback:^(NSString *routing, NSDictionary *params, NSError *error) {
+        NSNumber * restaurant_id = [NSNumber numberWithInt:[[params objectForKey:@"restaurant_id"] intValue]];
+        NSString * campusName = [[params objectForKey:@"campusName"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [self callRestaurantView:restaurant_id campusName:campusName];
+    }];
+    /*
+    
+    [airbridge_instance registRouting:@"//"
+                             callback:^(NSDictionary *params) {
+                                 
+                             }];
+    */
     return YES;
 }
 
@@ -137,6 +161,11 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
+    if ([[AirBridge instance] canHandleURL:url]) {
+        [[AirBridge instance]handleURL:url];
+        return YES;
+    }
+    
     if ([KOSession isKakaoLinkCallback:url]) {
         NSLog(@"KakaoLink callback! query string: %@", [url query]);
         
@@ -152,44 +181,48 @@
         NSNumber * restaurant_id = [NSNumber numberWithInt:[[paramDic objectForKey:@"restaurant_id"] intValue]];
         NSString * campusName = [[paramDic objectForKey:@"campusName"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
-        
-        // init Restaurant View Controller
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        RestaurantViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantViewController"];
-        vc.hidesBottomBarWhenPushed = YES;
-        Restaurant * restaurant = [[StaticHelper staticHelper] restaurant:restaurant_id];
-        if(restaurant == nil) {
-            restaurant = [[Restaurant alloc] init];
-            restaurant.serverID = restaurant_id;
-            restaurant.notice = @"  ";
-        }
-        
-        [vc setDetailItem:restaurant];
-        vc.campusNameForKakaoShare = campusName;
-        
-        if([self.window.rootViewController isMemberOfClass:[MainTabBarController class]]){
-            MainTabBarController * mainTabBarController = (MainTabBarController *)self.window.rootViewController;
-            
-            // disable Button for 0.5 sec
-            double delayInSeconds = 0.5;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [(UINavigationController *)mainTabBarController.selectedViewController pushViewController:vc animated:YES];
-            });
-            
-        }else if([self.window.rootViewController isMemberOfClass:[UINavigationController class]]){
-            UINavigationController * navigationController = (UINavigationController *)self.window.rootViewController;
-            // disable Button for 0.5 sec
-            double delayInSeconds = 0.5;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [navigationController pushViewController:vc animated:YES];
-            });
-        }
-        
+        [self callRestaurantView:restaurant_id campusName:campusName];
         return YES;
     }
     return NO;
+}
+- (void)callRestaurantView:(NSNumber *)restaurant_id campusName:(NSString *)campusName{
+    // init Restaurant View Controller
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RestaurantViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    Restaurant * restaurant = [[StaticHelper staticHelper] restaurant:restaurant_id];
+    if(restaurant == nil) {
+        restaurant = [[Restaurant alloc] init];
+        restaurant.serverID = restaurant_id;
+        restaurant.notice = @"  ";
+    }
+    
+    [vc setDetailItem:restaurant];
+    vc.campusNameForKakaoShare = campusName;
+    
+    [self.window makeKeyAndVisible];
+    if([self.window.rootViewController isMemberOfClass:[MainTabBarController class]]){
+        MainTabBarController * mainTabBarController = (MainTabBarController *)self.window.rootViewController;
+        
+        // disable Button for 0.5 sec
+        double delayInSeconds = 0.5;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [(UINavigationController *)mainTabBarController.selectedViewController pushViewController:vc animated:YES];
+        });
+        
+    }else if([self.window.rootViewController isMemberOfClass:[UINavigationController class]]){
+        UINavigationController * navigationController = (UINavigationController *)self.window.rootViewController;
+        // disable Button for 0.5 sec
+        double delayInSeconds = 0.5;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [navigationController pushViewController:vc animated:YES];
+        });
+    }
+    
+
 }
 
 @end
